@@ -1,0 +1,25 @@
+HTTrack3.43-9+libhtsjava.so.2 launched on Wed, 28 Mar 2012 16:29:45 at https://secure.urchin.com/helpwiki/en/Help_Center.html +* 5
+(httrack https://secure.urchin.com/helpwiki/en/Help_Center.html -O /home/m/mnin/websites/urchin +* -%v -r 5 -s0 -%c10 )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+16:29:45	Warning: 	* security warning: maximum number of connections per second limited to 5.000000 to avoid server overload
+16:30:02	Warning: 	File has moved from www.urchin.com/ to http://www.google.com/urchin/index.html
+16:32:17	Warning: 	File has moved from www.google.com/support/urchin45/ to http://support.google.com/urchin45/?
+16:33:35	Error: 	"Not Found" (404) at link https://secure.urchin.com/en/ (from https://secure.urchin.com/helpwiki/assets/helpwiki.js)
+16:33:36	Warning: 	File has moved from https://secure.urchin.com/helpwiki/ to https://secure.urchin.com/helpwiki/en/Help_Center.html
+16:33:36	Error: 	"Not Found" (404) at link www.google.com/urchin/features.html (from www.google.com/urchin/support_policies.html)
+16:33:37	Warning: 	File has moved from www.google.com/support/analytics/?hl=en to http://support.google.com/googleanalytics/?hl=en
+16:33:38	Warning: 	File has moved from www.google.com/ to http://www.google.de/
+16:33:41	Warning: 	File has moved from ws.apache.org/axis2/c/ to http://axis.apache.org/axis2/java/core/c/
+16:33:43	Warning: 	File has moved from www.mysql.com/company/legal/licensing/ to http://www.mysql.com/about/legal/licensing/
+16:33:46	Warning: 	File has moved from support.google.com/urchin45/? to http://support.google.com/urchin45/?hl=en
+16:33:50	Warning: 	File has moved from https://www.google.com/dashboard/?hl=en to https://www.google.com/accounts/ServiceLogin?service=datasummary&passive=900&continue=https://www.google.com/dashboard/?hl%3Den&followup=https://www.google.com/dashboard/?hl%3Den&hl=en
+16:33:51	Error: 	"Receive Error" (-4) after 2 retries at link 5/ (from primary/primary)
+16:33:53	Warning: 	File has moved from www.apache.org/LICENSE.txt to http://www.apache.org/licenses/
+
+HTTrack Website Copier/3.43-9 mirror complete in 4 minutes 8 seconds : 335 links scanned, 319 files written (2965577 bytes overall) [2557767 bytes received at 10313 bytes/sec], 722181 bytes transfered using HTTP compression in 53 files, ratio 30%, 1.0 requests per connection
+(3 errors, 11 warnings, 0 messages)

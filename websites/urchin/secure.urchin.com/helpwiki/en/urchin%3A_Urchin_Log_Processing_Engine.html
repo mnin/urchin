@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/urchin%253A_Urchin_Log_Processing_Engine.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>urchin: Urchin Log Processing</strong> <p class="line867"><strong>Overview</strong> <p class="line874">The Urchin Log Processing Engine, urchin, is the core log processing component of Urchin. Ordinarily, the log processing engine is invoked from the Urchin Scheduler (urchind) when a task is run. However, it is possible to execute urchin directly from a command shell to run a specific profile. This is useful in highly scripted environments where running Urchin tasks from an external source such as the Windows Task Scheduler or cron on UNIX-type systems. It is also useful for running a profile under special circumstances, such as to process only hits for a particular day, or to do some type of debugging. <p class="line874">Urchin is not truly an utility - it is documented here because it provides some limited command-line capabilities that may prove useful in certain environments. <p class="line867"><strong>Usage</strong> <p class="line874">urchin is located in the bin directory of the Urchin distribution. Usage is as follows: <pre>urchin [options...] (-p &lt;profile name&gt; | -P &lt;profile id&gt;)
+</pre><p class="line874">Options: <pre>-a &lt;account name&gt;       Specifies the account name for the profile. Default account name is '(NONE)'
+-D                      Enables debug mode
+-d &lt;YYYYMMDD&gt;           Specifies the reprocess date
+-H                      Specifies to log run output to history file. A new task history record is created if -H is specified and -T is not specified
+-h                      Prints help information and exits
+-P &lt;profile id&gt;         Specifies the profile id to process
+-p &lt;profile name&gt;       Specifies the profile name to process
+-T &lt;task id&gt;            Specifies the task history record to update. Specifying -T forces use of -H
+-t                      Prints configuration data and exits
+-v                      Prints version number and exits
+</pre><p class="line867"><strong>Considerations</strong> <ul><li>On UNIX-type systems, urchin should be run as the user/UID that Urchin is installed as to ensure that the databases for the profile are owned by that UID, since urchin will create them if they do not already exist. </li></ul></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/urchin%253A_Urchin_Log_Processing_Engine.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

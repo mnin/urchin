@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en"
+class="">
+
+<!-- Mirrored from support.google.com/urchin45/bin/answer.py?hl=en&answer=28710&ctx=cb&src=cb&cbid=-1ib7gk8u6z5r0&cbrank=4 by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:34:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<script type="text/javascript">serverResponseTimeDelta=window.external&&window.external.pageT?window.external.pageT:-1;pageStartTime=new Date().getTime();</script>
+<title>Urchin Traffic Monitor (UTM) - Urchin Version 4 &amp; 5 Help</title>
+<meta charset="utf-8">
+<meta http-equiv="X-FRAME-Options" content="SameOrigin" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Overview
+The patent-pending Urchin Traffic Monitor (UTM), originally
+available in Urchin 4, 
+was specifically designed to provide the most accurate
+measurements 
+of unique website visitors.  For busin" />
+<link rel="canonical" href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28710" />
+<link rel="shortcut icon" href="http://www.google.com/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="resource/all799c.css?v=400_" />
+<style type="text/css">#gbar,#guser{font-size:13px;padding-right:8px;padding-top:4px !important;}#gbar{padding-left:8px;height:22px}#guser{padding-bottom:7px !important;text-align:right}.gbh,.gbd{border-top:1px solid #c9d7f1;font-size:1px}.gbh{height:0;position:absolute;top:24px;width:100%}@media all{.gb1{height:22px;margin-right:.5em;vertical-align:top}#gbar{float:left}}a.gb1,a.gb4{text-decoration:underline !important}a.gb1,a.gb4{color:#00c !important}.gbi .gb4{color:#dd8e27 !important}.gbf .gb4{color:#900 !important}</style>
+<script type="text/javascript">
+var internal = 0;
+var hc_protocol = "http://";
+var hc_host = "support.google.com";
+var hc_url_root = "/urchin45";
+var hc_page_info = "answer=28710";
+var track = function() {};
+var hc_urchin_enabled = true;
+var country = 'DE';
+var countryGroup = 'EMEA';
+var global_error_general = 'Sorry, we weren\x27t able to submit your information. Please try again.';
+var search_form_id = 'search-form';
+var hc_urchin = "UA-18001-2";
+var global_hc_bookmark = new Array("add","remove","toggle");
+global_hc_bookmark.add = new Array();
+global_hc_bookmark.remove = new Array();
+global_hc_bookmark.toggle = new Array();
+global_hc_bookmark["add"].url = "";
+global_hc_bookmark["add"].token = "";
+global_hc_bookmark["remove"].url = "";
+global_hc_bookmark["remove"].token = "";
+global_hc_bookmark["toggle"].url = "";
+global_hc_bookmark["toggle"].token = "";
+var hiddenZippyLists = '{"experiments": {"answerId": "28710", "zippiesString": "These instructions are optimized for your current system\x27s configuration. To view these instructions for another configuration, select the configuration:&nbsp;", "defaultValue": "", "hidePicker": "1", "validItems": {"0": "e0", "1": "e1", "2": "e2", "3": "e3", "4": "e4", "5": "e5"}}, "country": {"answerId": "28710", "zippiesString": "These instructions are optimized for your current system\x27s configuration. To view these instructions for another configuration, select the configuration:&nbsp;", "defaultValue": "DE", "hidePicker": "0", "validItems": {"AF": "Afghanistan", "AL": "Albania", "DZ": "Algeria", "AS": "American Samoa", "AO": "Angola", "AI": "Anguilla", "AQ": "Antarctica", "AD": "Andorra", "AR": "Argentina", "AM": "Armenia", "AW": "Aruba", "AT": "Austria", "AU": "Australia", "AZ": "Azerbaijan", "BS": "Bahamas", "BH": "Bahrain", "BD": "Bangladesh", "BB": "Barbados", "AG": "Barbuda", "BY": "Belarus", "BZ": "Belize", "BE": "Belgium", "BN": "Benin", "BM": "Bermuda", "BT": "Bhutan", "BO": "Bolivia", "BW": "Botswana", "BA": "Bosnia and Herzegovina", "BR": "Brazil", "VG": "British Virgin Islands", "BN": "Brunei", "BN": "Brunei Darussalam", "BG": "Bulgaria", "BF": "Burkina Faso", "BI": "Burundi", "CM": "Cameroon", "KH": "Cambodia", "CA": "Canada", "CV": "Cape Verde Islands", "KY": "Cayman Islands", "CF": "Central African Republic", "TD": "Chad", "CL": "Chile", "CN": "China", "CX": "Christmas Island", "CC": "Cocos Islands", "CO": "Colombia", "CK": "Cook Islands", "KM": "Comoros", "CG": "Congo", "CR": "Costa Rica", "CI": "Cote d\x27Ivoire", "HR": "Croatia", "CU": "Cuba", "CY": "Cyprus", "CZ": "Czech Republic", "DK": "Denmark", "DJ": "Djibouti", "DM": "Dominica", "DO": "Dominican Republic", "EC": "Ecuador", "EG": "Egypt", "SV": "El Salvador", "GQ": "Equitorial Guinea", "ER": "Eritrea", "EE": "Estonia", "ET": "Ethiopia", "FK": "Falkland Islands", "FO": "Faroe Islands", "FJ": "Fiji", "FI": "Finland", "FR": "France", "GF": "French Guiana", "PF": "French Polynesia", "TF": "French Southern Territories", "GA": "Gabon", "GM": "Gambia", "GE": "Georgia", "DE": "Germany", "GH": "Ghana", "GI": "Gibraltar", "GR": "Greece", "GL": "Greenland", "GD": "Grenada", "CP": "Guadeloupe", "GU": "Guam", "GT": "Guatemala", "GF": "Guiana", "GN": "Guinea", "GW": "Guinea-Bissau", "GY": "Guyana", "HT": "Haiti", "HN": "Honduras", "HK": "Hong Kong", "HU": "Hungary", "IS": "Iceland", "IN": "India", "ID": "Indonesia", "IR": "Iran", "IQ": "Iraq", "IE": "Ireland", "IL": "Israel", "IT": "Italy", "JM": "Jamaica", "JP": "Japan", "JO": "Jordan", "KZ": "Kazakhstan", "KI": "Kiribati", "KE": "Kenya", "KW": "Kuwait", "KG": "Kyrgyzstan", "LA": "Laos", "LV": "Latvia", "LB": "Lebanon", "LS": "Lesotho", "LR": "Liberia", "LY": "Libyan Arab Jamahiriya", "LI": "Liechtenstein", "LT": "Lithuania", "LU": "Luxembourg", "MO": "Macau", "MK": "Macedonia", "MG": "Madagascar", "MY": "Malaysia", "MT": "Malta", "MW": "Malawi", "MV": "Maldives", "ML": "Mali", "MP": "Mariana Islands", "MH": "Marshall Islands", "MQ": "Martinique", "MR": "Mauritania", "MU": "Mauritius", "YT": "Mayotte Island", "MX": "Mexico", "MD": "Moldova", "FM": "Micronesia", "MC": "Monaco", "MN": "Mongolia", "MS": "Montserrat", "MA": "Morocco", "MZ": "Mozambique", "MM": "Myanmar", "NA": "Namibia", "NR": "Nauru", "NP": "Nepal", "NL": "Netherlands", "AN": "Netherlands Antilles", "KN": "Nevis", "NC": "New Caledonia", "NI": "Nicaragua", "NE": "Niger", "NG": "Nigeria", "NU": "Niue", "KR": "North Korea", "NO": "Norway", "NZ": "New Zealand", "OM": "Oman", "PW": "Palau", "PK": "Pakistan", "PS": "Palestine", "PA": "Panama", "PG": "Papua New Guinea", "PY": "Paraguay", "PE": "Peru", "PH": "Philippines", "PN": "Pitcairn Islands", "PL": "Poland", "PT": "Portugal", "PR": "Puerto Rico", "QA": "Qatar", "RE": "Reunion Island", "RO": "Romania", "RU": "Russia", "RW": "Rwanda", "WS": "Samoa", "ST": "Sao Tome and Principe", "SM": "San Marino", "SA": "Saudi Arabia", "SN": "Senegal", "CS": "Serbia and Montenegro", "SC": "Seychelles", "SL": "Sierra Leone", "SG": "Singapore", "SK": "Slovakia", "SI": "Slovenia", "ES": "Spain", "SO": "Somalia", "SB": "Solomon Islands", "ZA": "South Africa", "KP": "South Korea", "LK": "Sri Lanka", "SR": "Suriname", "SD": "Sudan", "SS": "South Sudan", "SH": "St. Helena", "KN": "St. Kitts and Nevis", "LC": "St. Lucia", "PM": "St. Pierreet Miquelon", "VC": "St. Vincent and the Grenadines", "SZ": "Swaziland", "SE": "Sweden", "CH": "Switzerland", "SY": "Syrian Arab Republic", "TW": "Taiwan", "TJ": "Tajikistan", "TZ": "Tanzania", "TH": "Thailand", "TB": "Tibet", "TL": "Timor", "TG": "Togo", "TK": "Tokelau", "TO": "Tonga", "TT": "Trinidad and Tobago", "TN": "Tunisia", "TR": "Turkey", "TM": "Turkmenistan", "TC": "Turks and Caicos Islands", "TV": "Tuvalu", "UK": "Ukraine", "UG": "Uganda", "UE": "United Arab Emirates", "GB": "United Kingdom", "US": "USA", "VI": "U.S. Virgin Islands", "UY": "Uruguay", "UZ": "Uzbekistan", "VU": "Vanuatu", "VA": "The Vatican", "VE": "Venezuela", "VN": "Vietnam", "EH": "Western Sahara", "YE": "Yemen", "CD": "Zaire", "ZM": "Zambia", "ZW": "Zimbabwe", "other": "Other"}}}';
+var lang_dismiss_str = "Dismiss";
+var localizedMonths = [
+'January',
+'February',
+'March',
+'April',
+'May',
+'June',
+'July',
+'August',
+'September',
+'October',
+'November',
+'December'
+];
+</script>
+<script
+src="http://support.google.com/urchin45/bin/resource/js_variables.js?v=9&amp;hl=en"
+type="text/javascript"></script>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load('search', 1);
+function init() {
+google.search.CustomSearchControl.attachAutoCompletion(
+'+qptype:1',
+document.getElementById('query'),
+search_form_id);
+}
+google.setOnLoadCallback(init);
+</script>
+<script
+src="resource/js_minified22af.js?v=142"
+type="text/javascript"></script>
+<script src="https://plusone.google.com/js/plusone.js">
+{lang: 'en', parsetags: 'explicit'}
+</script>
+</head>
+<body onload="
+setCookies_default('WebUserLocale',
+'en','formLoad'); registerSearchForm(search_form_id, 'query');makeRequest('/urchin45/bin/stats?r='+serverResponseTimeDelta+'&l='+(new Date().getTime()-pageStartTime)); 
+"
+dir="ltr"
+class=" answer_page  streamlined-header-1 ltr lang_en show_modules show_leftnav other  win98 win ">
+<a href="#content" class="skiplink">Skip to content</a>
+<div class="wrapper" id="baseDiv">
+<div id=gbar><nobr><a class=gb1 href="https://mail.google.com/mail/">Mail</a> <a class=gb1 href="https://www.google.com/calendar">Calendar</a> <a class=gb1 href="https://docs.google.com/">Documents</a> <a onclick=gbar.qs(this); class=gb1 href="http://picasaweb.google.com/home?hl=en">Photos</a> <a class=gb1 href="https://sites.google.com/">Sites</a> <a onclick=gbar.qs(this); class=gb1 href="../../../groups.google.com/grphpfef7.html?hl=en">Groups</a> <a onclick=gbar.qs(this); class=gb1 href="http://www.google.com/webhp?hl=en">Search</a> <a class=gb1 style="text-decoration:none" href="http://www.google.com/intl/en/options/"><u>More</u> &raquo;</a></nobr></div><div id=guser width=100%><nobr><span id=gbn class=gbi></span><span id=gbf class=gbf></span><span id=gbe></span><a id=gb_70 href="https://www.google.com/accounts/ServiceLogin?passive=1209600&amp;continue=http://support.google.com/urchin45/bin/answer.py?hl%3Den%26answer%3D28710%26ctx%3Dcb%26src%3Dcb%26cbid%3D-1ib7gk8u6z5r0%26cbrank%3D4&amp;followup=http://support.google.com/urchin45/bin/answer.py?hl%3Den%26answer%3D28710%26ctx%3Dcb%26src%3Dcb%26cbid%3D-1ib7gk8u6z5r0%26cbrank%3D4&amp;hl=en" class=gb4>Sign in</a></nobr></div><div class=gbh style=left:0></div><div class=gbh style=right:0></div>
+<div id="hc_error"></div>
+<div class="header-wrapper">
+<div class="header-logo ">
+<a class="logo-container" href="http://support.google.com/urchin45">
+<img src="http://www.google.com/images/logos/google_logo_41.png"
+alt="Google"
+class="logo" /></a>
+<div class="searchbox">
+<form name="search-form"
+id="search-form"
+title="Search Help"
+method="get"
+action="http://support.google.com/urchin45/bin/search.py"
+onsubmit="track('Search Help',
+document.getElementById('query').value);return false;">
+<input autocomplete="off"
+class="search-box"
+type="text"
+name="query"
+id="query"
+maxlength="2048"
+placeholder="Search Urchin Version 4 &amp; 5 help"
+title="Search"
+x-webkit-speech
+spellcheck="false" /><button type="submit"
+name="btnG"
+class="search-button"
+alt="Search Help">
+<img src="http://www.google.com/help/hc/images/hc_magnifying_glass.png">
+</button>
+<input type="hidden" name="ctx" value="en:searchbox" />
+</form>
+</div>
+</div>
+<div class="header-bar ">
+<h1>
+<a href="http://support.google.com/urchin45" onclick="track('Header', 'HC Title ');">
+<span>
+Urchin Version 4 &amp; 5 Help
+</span>
+<div class="">
+</div>
+</a>
+</h1>
+<div class="clear"></div>
+</div>
+</div>
+<div class="main-content-container">
+<table class="layout" border="0" cellpadding="0" cellspacing="0"><tr>
+<td class="left_column">
+<ul class="leftnav">
+<li class="">
+<a href="../index.html"
+onclick='track("Left Nav", "Help topics");'>Help topics</a>
+</li>
+<li class="leftnav_topics nav_link_on">
+<a href="http://support.google.com/urchin45/bin/topic.py?topic=7353"
+onclick='track("Left Nav", "topic=7353");'>Urchin 5</a>
+</li>
+<li class="leftnav_topics ">
+<a href="http://support.google.com/urchin45/bin/topic.py?topic=7363"
+onclick='track("Left Nav", "topic=7363");'>Urchin 4</a>
+</li>
+<li class="LeftNav_Urchin67 first">
+<a href="https://secure.urchin.com/helpwiki/en/Help_Center"  onclick="track('LeftNav', 'Urchin67');">Urchin 6/7</a>
+</li>
+</td>
+<td class="content">
+<div class="inner_content ">
+<p class="breadcrumbs" >
+<a href="../index.html" onclick="track('Breadcrumbs', 'Help Home');">Help articles</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?topic=7353" onclick="track('Breadcrumbs', '7353');">Urchin 5</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?topic=7355" onclick="track('Breadcrumbs', '7355');">Visitor Tracking</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?topic=7375" onclick="track('Breadcrumbs', '7375');">Visitor Identification Methods</a><span class="br-seperator"> &rsaquo; </span>Urchin Traffic Monitor (UTM)&nbsp;
+</p>
+<div id="hcError" style="display:none"></div>
+<script type="text/javascript">
+var p13nFeed = new googlehelp.Feed.P13n();
+</script>
+<div class="clear"></div>
+<div class="p13n_box2 top has-bg"
+id="p13n_box"
+style="background-image:url(http://www.google.com/help/hc/images/alert18.gif);background-repeat:no-repeat;display:auto;">
+<a href="javascript:setCookies_default('p13n_box_50_urchin67', 1, '','30');
+hideLayer('p13n_box');
+track('P13n Box - urchin67', 'Hide');"
+class="hide_link">
+Hide
+</a>
+<h2>Support for Urchin 4/5 is not currently available</h2>
+<p>Please check out <a href="http://www.google.com/urchin/features.html">the latest Urchin version and features</a>.</p>
+<div id="p13n_box_content"></div>
+</div>
+<script type="text/javascript">
+var promoDisplayDict = {
+'type': "promo",
+'func': function(){
+document.getElementById("p13n_box").style.display = 'block';
+}
+};
+p13nFeed.setDisplayFunc(4,
+promoDisplayDict);
+</script>
+<a name="content"></a>
+<div id="page-content">
+<div id="zippy-dropdown-container"
+class="zippy-dropdown-container-hide"></div>
+<div class="answer_heading">
+<h2 class="answer-title">
+Urchin Traffic Monitor (UTM)
+</h2>
+<div class="clear"></div>
+</div>
+<div class="article_content article-content-28710" id="article-content-div">
+<p><b>Overview</b><p>
+The patent-pending Urchin Traffic Monitor (UTM), originally
+available in Urchin 4,
+was specifically designed to provide the most accurate
+measurements
+of unique website visitors. For businesses looking to get a
+deeper
+understanding of their online visitor behavior, the UTM is an
+extremely valuable technology that combines the best of
+client and
+server side information while letting you control the data.
+Easy to
+install, this technology allows business owners to exactly
+identify
+unique visitors, click paths, and return loyalty metrics
+including:
+first time visitors, returning visitors, and frequency of use.
+The second version of UTM, UTM-2, released with Urchin 5,
+expands
+these capabilities, capturing additional browser parameters and
+loyalty metrics. UTM-3, released with Urchin 5.5, adds a
+powerful
+campaign tracking capability. Subsequent versions of the UTM
+released with Urchin
+5.6, and Urchin 5.7 contain
+a number of enhancements to the campaign tracking capability.
+<p>
+There are two components to the Urchin Traffic Monitor
+System: the
+UTM Sensor, which is a lightweight module installed into the
+content
+of the website; and the UTM Engine which is part of the log
+processing Urchin Engine. The UTM Sensor enables
+client-side data
+collection, which is then funneled back through the web server
+augmenting the normal logfile. The client-side information is
+combined with the existing server-side data by the UTM
+Engine to
+provide a more accurate and complete picture of website
+activity.
+<p>
+The UTM Sensor is a small amount of JavaScript code that
+accomplishes
+two important functions. First, the Sensor negates the
+effects of
+caching by forcing at least one hit to progress to the
+original web
+server for each pageview. The impact on the server is
+minimal, and
+the details about the additional hit are logged into the
+normal web
+logfiles resulting in a more complete data set. Secondly,
+the UTM
+Sensor uniquely identifies each visitor by using client-side
+"1st party" cookies
+to keep track of first time and returning visitors. This
+cookie
+identifier is a communication tag only viewable to your web
+server in
+the same nature as session ids. It is <i>not</i> a third party
+cookie, which provides information outside your system,
+violating
+many privacy policies.
+<p>
+<img src="http://www.google.com/analytics/hc/images//utm_system.gif">
+<p>
+The above diagram illustrates the operation of the UTM
+System. The
+web server in the middle of the diagram provides two basic
+functions:
+content delivery and logging. The content of the website
+includes
+the UTM Sensor which is delivered to the userï¿½s browser,
+shown on the
+left. The UTM Sensor sets unique identifiers and sends an
+additional
+request back to the same web server. This additional
+request is
+logged into the normal log file along with all of the normal
+traffic. The UTM Engine, which is part of the Urchin log
+processing
+engine, understands this additional data and merges the two
+types of
+data together providing an accurate and more complete
+picture of
+visitor behavior.
+<p>
+<b>UTM Sensor</b><p>
+The UTM Sensor increases the accuracy and completeness of
+logfile
+data by negating the effects of caching and proxying. The
+following
+example illustrates how the UTM Sensor handles caching.
+Shown in the
+figure below, the user receives the content of a pageview
+from the
+cached memory of the browser. This typically occurs when
+the user
+goes back to a previously viewed page. The same model
+applies if the
+caching is provided by a service provider. In the example, the
+content for page "X" is not delivered from the web server,
+but from
+the cached memory of the browser. At this point, there is no
+knowledge of the pageview as it is not seen by the web server.
+However, the UTM Sensor activates an additional unique hit that
+forces at least one small record back to the original web
+server.
+This information is logged in the normal logfile, which now has
+knowledge of the originating "X" pageview.
+<p>
+<img src="http://www.google.com/analytics/hc/images//utm_caching.gif">
+<p>
+The second important function of the UTM Sensor is to uniquely
+identify both sessions and unique visitors. Through a
+patent-pending
+combination of browser cookies, the Sensor detects and
+initializes
+the unique visitor and session identifiers allowing exact
+monitoring
+of new and returning visitors regardless of service provider
+proxy
+behavior. Most service providers take advantage of proxying by
+recycling IP addresses and clustering users behind
+firewalls. This
+can cause problems with normal logfile tracking, which
+typically
+utilizes the IP address as an identifier of the user.
+<p>
+In the example shown in the figure below, the UTM Sensor is
+able to
+pierce the veil of the proxy by utilizing the cookie
+identifiers
+instead of the IP addresses. In the figure, a first time
+unique
+visitor accesses the website through a firewall with IP
+address #1.
+The delivered Pageview contains the UTM Sensor, which sets the
+identifier on the visitorï¿½s browser.
+<p>
+On the return visit by the same visitor shown in the bottom
+of the
+figure, the unique id is passed to the web server along with
+each
+request. So even if the user is now assigned a second IP
+address,
+the UTM technology properly identifies the visitor with the
+original
+id. In addition to negating the effects of complex proxying
+techniques, this also tracks visitors who travel and may use
+their
+laptops from several locations and through several providers.
+<p>
+<img src="http://www.google.com/analytics/hc/images//utm_proxy.gif">
+<p>
+Once the additional UTM data is recorded in the normal web
+server
+log , the UTM Engine will recognize and process these
+additional hits
+in order to create an exact analysis of each click of the
+user.
+During installation, it is important that the logging format is
+checked for both referral and cookie logging to be present
+so that
+all of the appropriate data is stored.
+<p>
+<b>Installation</b><p>
+There are four steps to installing the UTM system, which can be
+accomplished in a very short amount of time. Complex sites
+may be
+able to take advantage of existing server-side includes or
+centralized delivery
+methods to shorten the installation. During installation,
+you will
+need access and permissions to modify the content of the
+website.
+You may also need to modify the logging of the web server,
+which may
+require a different set of permissions. The following four
+steps do
+not necessarily need to be performed in order.
+<p>
+<b>Upgrade Note:</b> UTM-2, which ships with Urchin 5, is
+not recognized
+by Urchin 4. Once UTM-2 is installed, you will no longer be
+able to
+run Urchin 4. All versions of Urchin 5 recognize both UTM-1
+and UTM-2. As well,
+as of Urchin 5.5 there is UTM-3. Only Urchin 5.5 and up can
+process UTM-3
+data. Therefore,
+when upgrading, it is important to migrate to the
+appropriate version of
+Urchin before installing a more recent version of the UTM
+sensor. UTM-4 data, however, can be processed by any Urchin
+5.x version.
+<p>
+<b>1. Install UTM Sensor into content:</b> The first
+step in
+installing the UTM is to include the JavaScript and GIF
+components of
+the UTM Sensor in the content of the site. The two pieces
+necessary for completing this step are included in the
+util/utm/
+folder within the Urchin distribution. It is important that
+the
+names of these two files are not changed and that they are
+copied to
+the document root directory of the website. Either drag and
+drop,
+upload, or copy the __utm.js and the __utm.gif files into
+the main
+directory of your website.
+<p>
+<p>
+<img src="http://www.google.com/analytics/hc/images//utm_copy.gif">
+<p>
+Once these files are in place, you will need to include the
+__utm.js
+file at the beginning of each webpage in the website. If
+your site
+utilizes server side includes and you use a header include
+for each
+file, it is possible to include the UTM in the beginning of
+this
+include file only. It will then automatically be a part of
+each
+webpage. For static HTML sites that do not use includes,
+you will
+need to modify and add the UTM entry to each page
+individually. For
+dynamic sites that use a content generation engine, the UTM
+can be
+included at the beginning of the template that is delivered
+to the
+customer.
+<p>
+In any case, the following line of code should be included
+in the
+beginning of each HTML page, but after any META tags, that
+is delivered to the end
+user. For
+static sites, edit each webpage and add the line
+below before
+the rest of the HTML content (but after any META tags).
+<p>
+<PRE>
+&lt;script src="/__utm.js"
+type="text/javascript"&gt;&lt;/script&gt;
+</pre>
+<p>
+For sites that undergo regular maintenance or have multiple
+authors,
+be sure to build the addition of this line into the your
+internal
+website authoring procedures, guidelines, and QA processes.
+<p>
+If you are using a package like "HTML Tidy", you may want to
+include
+the Javascript line in the HEAD area of your page to make it
+more
+palatable, for instance:
+<nobr>
+<pre nowrap>
+&lt;html>
+&lt;head&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html;
+charset=ISO-
+8859-1"&gt;
+  &lt;script src="/__utm.js"
+type="text/javascript"&gt;&lt;/script&gt;
+  ...
+&lt;/head&gt;
+</pre>
+</nobr>
+<p>
+<b>2. Set UTM Domain (if necessary):</b>
+The UTM (beginning with UTM-2) has a
+domain setting
+that controls the scope of the cookies. For single
+websites, the default
+setting, "auto", can be left alone. If you have multiple
+websites that
+share a common root domain and you wish to process them
+together, then
+the domain should be set to the common root domain.
+<p>
+To set the domain setting, edit the __utm.js file that
+was copied into your document root in step 1. Towards the
+top, you
+will see the line:
+<pre>
+   var _udn="auto";    /*-- ...
+</pre>
+Change the word "auto" to the domain that the cookies should
+apply
+to. The domain must be part or all of the actual URL for
+this site.
+Example:
+<pre>
+   var _udn="urchin.com";    /*-- ...
+</pre>
+<p>
+<b>3. Activate cookies in the logging:</b> The third step to
+installing the UTM System is to verify and potentially
+modify the
+logging format of your web server. For the UTM to function
+properly,
+it is required that both referral and cookie information is
+logged.
+You will need access to the configuration of the web server.
+The
+following general guidelines should work for most IIS and
+Apache
+users, however you should check with your system
+administrator to
+ensure proper formats.
+<p>
+<u>For Apache Users:</u><br>
+Apache servers typically use a configuration file
+called "httpd.conf." Within this file, configuration
+directives
+determine the format and location of logfiles. By default,
+most
+Apache configurations will log in the NCSA Extended Combined
+format,
+which includes referrals and user-agents, but is missing the
+cookie
+information. Be sure that your logfiles contain the
+"{Cookie}i"
+field specification. To modify your logging format from the
+default,
+a "special" LogFormat directive can be added and then the
+log files
+can reference this format using the CustomLog directive.
+<p>
+<img src="http://www.google.com/analytics/hc/images//utm_apache.gif">
+<p>
+The above example is provided as a reference and does not
+apply to
+all possible Apache settings. Please refer to the Apache
+documentation and consult with your system administrator on the
+actual directives needed to activate cookie logging. The
+LogFormat
+directive specifies the specific format of the log file.
+The example
+shows the addition of the cookie information to the end of
+the log
+file. This format is then named "special" so that it can be
+identified in the virtual host configurations. The CustomLog
+directive in the virtual host specification identifies the
+location
+of the log file and the format to use. The example uses
+the "special" format as defined previously.
+<p>
+<u>For Microsoft IIS users:</u><br>
+The Internet Services Manager provides a point-and-click
+interface
+for adjusting the web server configuration. To access this
+manager,
+you will need to login to the web server with the appropriate
+administrator privileges.
+<p>
+To access the Internet Services Manager, click on the
+"Start" menu --
+&gt;
+Settings --&gt; Control Panel, and then double click on the
+Administrative
+Tools Folder and then on the Internet Services Manager icon
+to open
+the manager.
+<p>
+<img src="http://www.google.com/analytics/hc/images//utm_iis1.gif">
+<p>
+Modifications to each website can either be made
+individually or the
+entire server can be modified. In the left window either
+right-click
+on the server name to modify the entire server, or
+right-click on the
+website name such as "mysite1.com." Select the "Properties"
+option
+to open the properties dialog box. For the entire server,
+click on
+the "Editï¿½E button with "WWW Services" selected in the menu
+to bring
+up the Properties dialog box shown on the left below.
+<p>
+<img src="http://www.google.com/analytics/hc/images//utm_iis2.gif">
+<p>
+Shown in the above figure, be sure
+that logging is enabled and set to the "W3C Extended Log File
+Format." Then select the "Propertiesï¿½E button to configure
+the log
+file format specifics.
+<p>
+<img src="http://www.google.com/analytics/hc/images//utm_iis3.gif">
+<p>
+The window shown above will appear.
+Click on the "Extended Properties" tab, scroll down and make
+sure
+both the "Cookie" and "Referrer" boxes are checked. If not,
+check
+these boxes and "Apply" the changes to the site.
+<p>
+Whether you use IIS, Apache or another web server, please
+refer to
+your server documentation for more information on
+configuring logfile
+formats. All major web servers support the logging of
+cookies and
+are easily modified to activate this feature.
+<p>
+<b>4. Set Urchin configuration to UTM:</b> The final step in
+configuring the UTM for your site is to enable the UTM
+tracking in
+the Urchin Configuration. This is either done at the time
+the Profile
+was created or after by editing the Profile.
+Open the Urchin Configuration either
+directly on the machine or by logging in remotely as the
+"admin"
+user. Your installation instructions will provide more
+details on
+how to access the configuration.
+<p>
+Once open, Click on the "Configuration" icon to the left to
+provide a
+list of the existing Profiles in the configuration. To
+enable UTM
+tracking for a particular Profile, click the "Edit" to the
+right of
+the profile name. (Note: if you have not already added the
+profile,
+do so now using the "Add" button). After clicking on the
+"Edit"
+button, click on the "Reporting" tab to bring up the
+Reporting Settings
+Window.
+<p>
+<img src="http://www.google.com/analytics/hc/images//utm2_config.gif">
+<p>
+Under the "Visitor Tracking Options" section, use the menu to
+select "Urchin Traffic Monitor (UTM)" for the Visitor
+Tracking Method.
+If you explicitly set the UTM Domain in step 2, then set the
+UTM Domain
+setting in the above figure to the same value as in step 2.
+If you did
+not specify the domain in step 2, then set the UTM Domain to
+the address
+of your website without the "www.". If your website domain
+does not start
+with "www.", then use the whole thing. Click the "Update"
+button to
+save your settings. Thatï¿½s it. The installation is
+complete, and
+future traffic will contain and benefit from the the UTM System.
+</p>
+<script type="text/javascript">
+if(document.getElementById('kb_other') != null)
+showLayer('kb_other');
+if(document.getElementById('kb_other_win') != null)
+showLayer('kb_other_win');
+if(document.getElementById('z_other') != null)
+toggleZippy('z_other');
+if(document.getElementById('z_other_win') != null)
+toggleZippy('z_other_win');
+if(document.getElementById('kb_win'))
+showLayer('kb_win');
+if(document.getElementById('z_win'))
+toggleZippy('z_win');
+if(document.getElementById('kb_win98'))
+showLayer('kb_win98');
+if(document.getElementById('z_win98'))
+toggleZippy('z_win98');
+if(document.getElementById('kb_DE'))
+showLayer('kb_DE');
+if(document.getElementById('z_DE'))
+toggleZippy('z_DE');
+if(document.getElementById('kb_non_US'))
+showLayer('kb_non_US');
+if(document.getElementById('z_non_US'))
+toggleZippy('z_non_US');
+</script>
+</div>
+<div class="clear"></div>
+<a href="#" name="helpful" ></a>
+<div class="answer-features">
+<div class="button plus-one">
+<div id="plusone"></div>
+<script type="text/javascript">
+gapi.plusone.render('plusone', {size: 'small', count: 'true',
+href: 'http:\x2F\x2Fsupport.google.com\x2Furchin45\x2Fbin\x2Fanswer.py?hl=en\x26answer=28710\x26ctx=plusone'});
+</script>
+</div>
+</div>
+<script type="text/javascript">
+function setSurveyCookie(){
+setCookies_default("survey_50", 1, "", 30);
+}
+</script>
+<p class="survey-invite-green ">
+<a href="requestdefc.html?contact_type=survey" id="surveyLink" target="_blank" onclick="setSurveyCookie();track('Survey Link', 'Click new');"><strong>Tell us how we're doing -</strong> Answer five short questions about your help center experience</a>
+</p>
+</div>
+<div class="clear"></div>
+</div>
+</td>
+<td class="right_column">
+<div class="module">
+<h2>Related</h2>
+<ul class="no_bullets right-nav-cb">
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28325&amp;ctx=cb&amp;src=cb&amp;cbid=-rbymavpdl3nq&amp;cbrank=0"
+onclick="track('Recommended Articles Module', 'cb 28325');">
+Visitor Identification Methods
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7363&amp;parent=TopLevel&amp;ctx=topic" onclick="track('Breadcrumbs', '7363');">Urchin 4</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7365&amp;parent=7363&amp;ctx=topic" onclick="track('Breadcrumbs', '7365');">Visitor Tracking</a>
+</span>
+</li>
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28631&amp;ctx=cb&amp;src=cb&amp;cbid=ko7x74y6wgd6&amp;cbrank=1"
+onclick="track('Recommended Articles Module', 'cb 28631');">
+Report-Side Filtering
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7357&amp;parent=7353&amp;ctx=topic" onclick="track('Breadcrumbs', '7357');">Reporting Interface</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7384&amp;parent=7357&amp;ctx=topic" onclick="track('Breadcrumbs', '7384');">Interface Features and Settings</a>
+</span>
+</li>
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28725&amp;ctx=cb&amp;src=cb&amp;cbid=-jb3n5gfdlrhr&amp;cbrank=2"
+onclick="track('Recommended Articles Module', 'cb 28725');">
+Visitor Correlation
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7358&amp;parent=7353&amp;ctx=topic" onclick="track('Breadcrumbs', '7358');">E-commerce Module</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7385&amp;parent=7358&amp;ctx=topic" onclick="track('Breadcrumbs', '7385');">E-commerce Tracking</a>
+</span>
+</li>
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28202&amp;ctx=cb&amp;src=cb&amp;cbid=-b8pzcdwvd3x1&amp;cbrank=3"
+onclick="track('Recommended Articles Module', 'cb 28202');">
+Log Formats - Apache and IIS
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7366&amp;parent=7363&amp;ctx=topic" onclick="track('Breadcrumbs', '7366');">Urchin Administration</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7419&amp;parent=7366&amp;ctx=topic" onclick="track('Breadcrumbs', '7419');">Log Files</a>
+</span>
+</li>
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28653&amp;ctx=cb&amp;src=cb&amp;cbid=1pobjvkudraxq&amp;cbrank=4"
+onclick="track('Recommended Articles Module', 'cb 28653');">
+Session-ID Identification
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7355&amp;parent=7353&amp;ctx=topic" onclick="track('Breadcrumbs', '7355');">Visitor Tracking</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7375&amp;parent=7355&amp;ctx=topic" onclick="track('Breadcrumbs', '7375');">Visitor Identification Methods</a>
+</span>
+</li>
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28400&amp;ctx=cb&amp;src=cb&amp;cbid=-1cpmdb7274ozy&amp;cbrank=5"
+onclick="track('Recommended Articles Module', 'cb 28400');">
+Campaign Tracking Overview
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7353&amp;parent=TopLevel&amp;ctx=topic" onclick="track('Breadcrumbs', '7353');">Urchin 5</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7359&amp;parent=7353&amp;ctx=topic" onclick="track('Breadcrumbs', '7359');">Campaign Tracking Module</a>
+</span>
+</li>
+</ul>
+</div>
+</td>
+</tr></table>
+</div>
+<div class="nocontent footer-nav-streamlined" role="contentinfo">
+<ul class="first-row">
+<li>
+<a href="http://www.urchin.com/"
+onclick="track('Footer', 'Product home')">
+Urchin Version 4 &amp; 5
+</a>
+</li>
+<li>
+<a href="request.html"
+onclick="track('Footer', 'Contacting us')">
+Contacting Us
+</a>
+</li>
+<li>
+<a href="http://www.google.com/support/?hl=en"
+onclick="track('Footer', 'Help with other products')">
+Help for other Google products
+</a>
+</li>
+</ul>
+<ul class="second-row">
+<li class='footer-copyright' dir='ltr'>
+&copy;2012 Google
+</li>
+<li >
+<a href="http://www.google.com/intl/en/"
+onclick="track('Footer', 'GoogleHome');
+">Google Home</a>
+</li>
+<li >
+<a href="http://www.google.com/intl/en/privacy.html"
+onclick="track('Footer', 'PrivacyPolicy');
+"><span class="important">New!</span> Privacy Policy</a>
+</li>
+<li >
+<a href="http://www.google.com/accounts/TOS?hl=en&amp;loc=DE"
+onclick="track('Footer', 'Terms');
+">Terms of Service</a>
+</li>
+</ul>
+</div>
+</div>
+<script type="text/javascript"></script>
+<script type="text/javascript">
+googlehelp.Links.initLinks(
+['', 'NO-GMAIL', 'NO-PLUS', browser, browserGroup,
+os, osGroup, country], internal);
+if (googlehelp.initEls) {
+googlehelp.initEls(['', 'NO-GMAIL', 'NO-PLUS', browser, browserGroup,
+os, osGroup, country, countryGroup],
+userSettings, userSettingsDropdownText);
+}
+if (convertLinksToButtons) {
+convertLinksToButtons();
+}
+</script>
+<script src='http://www.google-analytics.com/ga.js'
+type='text/javascript'></script>
+<script type="text/javascript">
+var analytics_async = 0;
+</script>
+<script
+src="resource/urchin_util8e0e.js?v=8"
+type="text/javascript"></script>
+<script type="text/javascript">
+var cookiePathArray = [];
+</script>
+<script type="text/javascript">
+urchinTracker('\x2Furchin45\x2Fbin\x2Fanswer.py?hl=en\x26answer=28710\x26ctx=cb\x26src=cb\x26cbid=-1ib7gk8u6z5r0\x26cbrank=4');
+</script>
+<script
+src="resource/js_validate_static8fa7.js?v=18"
+type="text/javascript"></script>
+<script type="text/javascript">
+track('P13n Box - urchin67',
+'Impression');
+track('LeftNav',
+'Urchin67 - Impression');
+track('Survey Link',
+'Impression');
+setCookies_default('p13n_box_impr_50_urchin67',
+'1',
+'',
+'30');
+</script>
+<script type="text/javascript">
+initPageTimer('http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28710&amp;ctx=cb&amp;src=cb&amp;cbid=-1ib7gk8u6z5r0&amp;cbrank=4\x2F\x2Fsupport.google.com\x2Furchin45\x2Fapi\x2Fmetrics?hl=en',false);
+</script>
+<script type="text/javascript">
+new googlehelp.Lightbox(
+'\x26laquo\x3B Previous',
+'Next \x26raquo\x3B');
+</script>
+<script src="http://www.google.com/sidewiki/static/sidebar_element/sidebar-element-compiled.js"></script>
+<script defer="defer">
+var sidebarElement = new google.elements.sidewiki.SidebarElement(
+window.location.href,false);
+sidebarElement.bindToElement("sidewiki-open-ui-button");
+</script>
+</body>
+
+<!-- Mirrored from support.google.com/urchin45/bin/answer.py?hl=en&answer=28710&ctx=cb&src=cb&cbid=-1ib7gk8u6z5r0&cbrank=4 by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:34:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

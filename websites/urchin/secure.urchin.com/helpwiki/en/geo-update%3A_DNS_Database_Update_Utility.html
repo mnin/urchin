@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/geo-update%253A_DNS_Database_Update_Utility.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>geo-update: DNS Database Update Utility (pre-Urchin 7)</strong> <p class="line867"><strong>Overview</strong> <p class="line874">The geo-update utility is used to check for the updates to Urchin's internal DNS database and to download the updates if they are available.  It allows you to download the updates from Google download servers as well as from a local directory (new for Urchin 6). <p class="line867"><strong>Usage</strong> <p class="line874">The geo-update utility can be invoked by the Urchin scheduler (urchind) on monthly basis or manually through command line. When invoked via scheduler, it always updates from the google download server. When invoked on command line, it provides an additional option of updating DNS database from some local path. This task is set to check for new updates once per month and can be configured by the user to occur at a certain time using the admin interface. <p class="line874">If a task has been created for geo-update, then it appears on Task History screen with name "geo-update". <p class="line874">The default behavior is to check for updates, download the new databases and overwrite the existing ones. The default behaviors can be overridden by running geo-update from the command line with the appropriate options. The usage is as follows: <p class="line867"><pre>geo-update [-Hhv] [-D | -F] [-i file]
+</pre><p class="line874">where <p class="line867"><pre>  -F            Forces download of geo databases
+  -f            Pathname of geo.zip file on local filesystem [optional]
+  -H            Specifies to log run output to history file
+  -h            Prints help information and exits
+  -T &lt;task id&gt;  Specifies the task history record to update
+                Specifying -T forces use of -H
+  -V            Prints geo-database version number and exits
+  -v            Prints version number and exits
+</pre><p class="line874">Using the -F option will force the download of new databases even if the databases are already up to date. This feature is useful if you imported incorrect custom domain information or otherwise damaged your domain database and wish to start over with a fresh copy. <p class="line862">Logging output to a history file with the -H option will make the run information available when viewing the Task History screen in the Configuration-&gt;Scheduler area of the Urchin administration interface. <p class="line862">Use of option -T allows you to enforce an update of a particular task from the CLI specified by &lt;Task_ID&gt;. The Task_ID value can be found in the Urchin 6 database using the following query: <p class="line867"><pre>mysql&gt; select * from ugeo_tasks\G
+</pre><p class="line867"><strong>Examples</strong> <p class="line874">To force a download of the latest domains database: <p class="line867"><pre>geo-update -F
+</pre><p class="line874">To update task manually from CLI (when task ID is already retrieved from DB): <p class="line867"><pre>geo-update -T &lt;Task_ID&gt; -H
+</pre><p class="line874">The geo-update utility needs an internet connection to be able to check for and download new updates. The utility uses port 80 to communicate with the webserver providing the updates. It is possible that you will have problems when going through firewalls and proxy servers when doing updates. Please consult your network administrator if this is the case. <p class="line867"><strong>geo-update: DNS Database Update Utility (Urchin 7+) </strong> <p class="line874">Use the geo-update utility to check for updates to Urchin's internal DNS database files and download the updates if they are available. The utility can also be used to import custom entries into the DNS databases by using the domain.local file or another specified text file. <p class="line874">geo-update options: <pre>-F     Forces download of geo databases
+-f     Path to geo database ZIP packages on local filesystem [optional]
+-h     Prints help information and exits
+-g     &lt;filename&gt; Update a specific geo database
+-l     Lists geo databases available on server
+-V     Prints geo-database version number and exits
+-v     Prints version number and exits
+-I     Import domain data only. If this option is provided, geo-update utility performs custom DNS import only, without updating the geo databases.
+-i     &lt;filename&gt;  Import domain data from specified file
+-I     Import domain data only. If this flag is provided, geo-update utility should perform custom DNS import ONLY, without updating the geo databases.
+-i     &lt;filename&gt; Specify the file to import domain data from. If the filename is specified, it will be used for import, otherwise the URCHIN_HOME/data/geodata/domain.local file will be used, if it presents.
+</pre></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/geo-update%253A_DNS_Database_Update_Utility.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

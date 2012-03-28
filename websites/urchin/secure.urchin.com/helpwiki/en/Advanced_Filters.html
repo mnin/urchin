@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Advanced_Filters.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Advanced Filters</strong> <p class="line867"><strong>Introduction</strong> <p class="line874">The Advanced Filter option allows you to construct Fields for reporting from one or two existing Fields. POSIX regular expressions and corresponding variables can be used to capture all or parts of Fields and combine the result in any order you wish. <p class="line867"><strong>Using Advanced Filters</strong> <p class="line867"><img alt="Advanced_Filters" src="https://secure.urchin.com/helpwiki/images/Advanced_Filters.jpg" title="Advanced_Filters" /> <p class="line874">Shown in the figure above, the Advanced Filter takes up to two fields: Field A and Field B, and constructs the Output Field. The construction occurs in the following manner. The Extract A expression is applied to Field A, and the Extract B expression is applied to Field B. These expression can use complete or partial text matches and include wildcards. The following is a list of the most common wildcards and their meanings. The expressions conform to POSIX Regular Expressions. <p class="line867"><pre>.   match any single character
+*   match zero or more of the previous item
++   match one or more of the previous item
+?   match zero or one of the previous item
+()  remember contents of parenthesis as item
+[]  match one item in this list
+-   create a range in a list
+|   or
+^   match to the beginning of the field
+$   match to the end of the field
+\   escape any of the above
+
+</pre><p class="line874">Use the parenthesis () to capture parts of the Fields. These can be referenced in the Constructor using the $A1, $A2, $B1, $B2 notation. The A|B refers to the Field, and the number refers to which parenthesis to grab. In the above example, the entire A Field and the entire B Field are captured and assembled as the new field. The Output To Field can be a separate field or the same field as Field A or Field B. <p class="line867"><strong>Controls</strong> <p class="line874">The 'Override Output Field' control allows you to decide what to do if the Output Field already exists. The 'Field Required' allows you to decide what to do if one of the expressions does not match.  </div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Advanced_Filters.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

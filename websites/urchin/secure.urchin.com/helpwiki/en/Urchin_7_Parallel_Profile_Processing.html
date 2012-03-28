@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Urchin_7_Parallel_Profile_Processing.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Urchin 7 Parallel Profile Processing</strong> <p class="line867"><strong>Overview</strong> <p class="line874">Previous versions of Urchin processed profiles in serial manner. For example, if it took 1 minute to process 1 profile, processing 100 profiles would require approximately 100 minutes. <p class="line874">To address this issue, Urchin 7.0 introduces parallel profile processing. Now, several profile processing jobs can be run simultaneously. This functionality targets middle and high volume enterprise clients: <ul><li>hosting providers </li><li>clients with huge number of profiles </li></ul><p class="line867"><strong>Configuration of parallel profile processing</strong> <p class="line874">By default, a newly installed or upgraded instance of Urchin 7.0 allows only a single profile to be processed at a time. To enable parallel profile processing: <ol type="1"><li><p class="line862">Uncomment the option MaxConcurrentProfileTasks in &lt;urchin_home&gt;/etc/urchin.conf and set it to necessary value. <ul><li style="list-style-type:none">For example: </li></ul></li></ol><p class="line867"><pre>MaxConcurrentProfileTasks: 2
+</pre><ol type="2"><li>Restart Urchin services: </li></ol><p class="line867"><pre>urchinctl restart
+</pre><p class="line867"><strong>Note:</strong>  Urchin profile is processed exclusively by one instance of the processing engine. <p class="line867"><strong>Restrictions</strong> <p class="line862">The profile processing job is extremely RAM- and IO-hungry. Blindly increasing the parameter MaxConcurrentProfileTasks  will most likely exhaust system resources and significantly degrade processing speed. <p class="line862">You should increase MaxConcurrentProfileTasks only: <ul><li>if you have enough RAM to fit several jobs in memory </li><li><p class="line862">when profiles and log sources are physically located <strong>on different physical hard disk drives</strong> or you have a high-speed hard disk drive </li><li>if Urchin is used in Data Center mode </li></ul><p class="line874">Approximate resource consumption: <div><table><tbody><tr>  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">Number of  parallel jobs </td>
+  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">RAM, MB </td>
+  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">IO read, MB/s </td>
+  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">IO write, MB/s </td>
+</tr>
+<tr>  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">1 </td>
+  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">1000 </td>
+  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">10 </td>
+  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">5 </td>
+</tr>
+<tr>  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">2 </td>
+  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">2000 </td>
+  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">20 </td>
+  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">10 </td>
+</tr>
+</tbody></table></div></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Urchin_7_Parallel_Profile_Processing.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en"
+class="">
+
+<!-- Mirrored from support.google.com/urchin45/bin/answer.py?hl=en&topic=7385&answer=28448 by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:34:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<script type="text/javascript">serverResponseTimeDelta=window.external&&window.external.pageT?window.external.pageT:-1;pageStartTime=new Date().getTime();</script>
+<title>ELF & ELF2 Log Formats - Urchin Version 4 &amp; 5 Help</title>
+<meta charset="utf-8">
+<meta http-equiv="X-FRAME-Options" content="SameOrigin" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Overview
+The E-commerce log formats (ELF &amp; ELF2) were designed to
+record information about 
+customer 
+transactions from online shopping sites.  ELF was originally
+created for use with 
+Urchin 3 and ma" />
+<link rel="canonical" href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28448" />
+<link rel="shortcut icon" href="http://www.google.com/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="resource/all799c.css?v=400_" />
+<style type="text/css">#gbar,#guser{font-size:13px;padding-right:8px;padding-top:4px !important;}#gbar{padding-left:8px;height:22px}#guser{padding-bottom:7px !important;text-align:right}.gbh,.gbd{border-top:1px solid #c9d7f1;font-size:1px}.gbh{height:0;position:absolute;top:24px;width:100%}@media all{.gb1{height:22px;margin-right:.5em;vertical-align:top}#gbar{float:left}}a.gb1,a.gb4{text-decoration:underline !important}a.gb1,a.gb4{color:#00c !important}.gbi .gb4{color:#dd8e27 !important}.gbf .gb4{color:#900 !important}</style>
+<script type="text/javascript">
+var internal = 0;
+var hc_protocol = "http://";
+var hc_host = "support.google.com";
+var hc_url_root = "/urchin45";
+var hc_page_info = "answer=28448";
+var track = function() {};
+var hc_urchin_enabled = true;
+var country = 'DE';
+var countryGroup = 'EMEA';
+var global_error_general = 'Sorry, we weren\x27t able to submit your information. Please try again.';
+var search_form_id = 'search-form';
+var hc_urchin = "UA-18001-2";
+var global_hc_bookmark = new Array("add","remove","toggle");
+global_hc_bookmark.add = new Array();
+global_hc_bookmark.remove = new Array();
+global_hc_bookmark.toggle = new Array();
+global_hc_bookmark["add"].url = "";
+global_hc_bookmark["add"].token = "";
+global_hc_bookmark["remove"].url = "";
+global_hc_bookmark["remove"].token = "";
+global_hc_bookmark["toggle"].url = "";
+global_hc_bookmark["toggle"].token = "";
+var hiddenZippyLists = '{"experiments": {"answerId": "28448", "zippiesString": "These instructions are optimized for your current system\x27s configuration. To view these instructions for another configuration, select the configuration:&nbsp;", "defaultValue": "", "hidePicker": "1", "validItems": {"0": "e0", "1": "e1", "2": "e2", "3": "e3", "4": "e4", "5": "e5"}}, "country": {"answerId": "28448", "zippiesString": "These instructions are optimized for your current system\x27s configuration. To view these instructions for another configuration, select the configuration:&nbsp;", "defaultValue": "DE", "hidePicker": "0", "validItems": {"AF": "Afghanistan", "AL": "Albania", "DZ": "Algeria", "AS": "American Samoa", "AO": "Angola", "AI": "Anguilla", "AQ": "Antarctica", "AD": "Andorra", "AR": "Argentina", "AM": "Armenia", "AW": "Aruba", "AT": "Austria", "AU": "Australia", "AZ": "Azerbaijan", "BS": "Bahamas", "BH": "Bahrain", "BD": "Bangladesh", "BB": "Barbados", "AG": "Barbuda", "BY": "Belarus", "BZ": "Belize", "BE": "Belgium", "BN": "Benin", "BM": "Bermuda", "BT": "Bhutan", "BO": "Bolivia", "BW": "Botswana", "BA": "Bosnia and Herzegovina", "BR": "Brazil", "VG": "British Virgin Islands", "BN": "Brunei", "BN": "Brunei Darussalam", "BG": "Bulgaria", "BF": "Burkina Faso", "BI": "Burundi", "CM": "Cameroon", "KH": "Cambodia", "CA": "Canada", "CV": "Cape Verde Islands", "KY": "Cayman Islands", "CF": "Central African Republic", "TD": "Chad", "CL": "Chile", "CN": "China", "CX": "Christmas Island", "CC": "Cocos Islands", "CO": "Colombia", "CK": "Cook Islands", "KM": "Comoros", "CG": "Congo", "CR": "Costa Rica", "CI": "Cote d\x27Ivoire", "HR": "Croatia", "CU": "Cuba", "CY": "Cyprus", "CZ": "Czech Republic", "DK": "Denmark", "DJ": "Djibouti", "DM": "Dominica", "DO": "Dominican Republic", "EC": "Ecuador", "EG": "Egypt", "SV": "El Salvador", "GQ": "Equitorial Guinea", "ER": "Eritrea", "EE": "Estonia", "ET": "Ethiopia", "FK": "Falkland Islands", "FO": "Faroe Islands", "FJ": "Fiji", "FI": "Finland", "FR": "France", "GF": "French Guiana", "PF": "French Polynesia", "TF": "French Southern Territories", "GA": "Gabon", "GM": "Gambia", "GE": "Georgia", "DE": "Germany", "GH": "Ghana", "GI": "Gibraltar", "GR": "Greece", "GL": "Greenland", "GD": "Grenada", "CP": "Guadeloupe", "GU": "Guam", "GT": "Guatemala", "GF": "Guiana", "GN": "Guinea", "GW": "Guinea-Bissau", "GY": "Guyana", "HT": "Haiti", "HN": "Honduras", "HK": "Hong Kong", "HU": "Hungary", "IS": "Iceland", "IN": "India", "ID": "Indonesia", "IR": "Iran", "IQ": "Iraq", "IE": "Ireland", "IL": "Israel", "IT": "Italy", "JM": "Jamaica", "JP": "Japan", "JO": "Jordan", "KZ": "Kazakhstan", "KI": "Kiribati", "KE": "Kenya", "KW": "Kuwait", "KG": "Kyrgyzstan", "LA": "Laos", "LV": "Latvia", "LB": "Lebanon", "LS": "Lesotho", "LR": "Liberia", "LY": "Libyan Arab Jamahiriya", "LI": "Liechtenstein", "LT": "Lithuania", "LU": "Luxembourg", "MO": "Macau", "MK": "Macedonia", "MG": "Madagascar", "MY": "Malaysia", "MT": "Malta", "MW": "Malawi", "MV": "Maldives", "ML": "Mali", "MP": "Mariana Islands", "MH": "Marshall Islands", "MQ": "Martinique", "MR": "Mauritania", "MU": "Mauritius", "YT": "Mayotte Island", "MX": "Mexico", "MD": "Moldova", "FM": "Micronesia", "MC": "Monaco", "MN": "Mongolia", "MS": "Montserrat", "MA": "Morocco", "MZ": "Mozambique", "MM": "Myanmar", "NA": "Namibia", "NR": "Nauru", "NP": "Nepal", "NL": "Netherlands", "AN": "Netherlands Antilles", "KN": "Nevis", "NC": "New Caledonia", "NI": "Nicaragua", "NE": "Niger", "NG": "Nigeria", "NU": "Niue", "KR": "North Korea", "NO": "Norway", "NZ": "New Zealand", "OM": "Oman", "PW": "Palau", "PK": "Pakistan", "PS": "Palestine", "PA": "Panama", "PG": "Papua New Guinea", "PY": "Paraguay", "PE": "Peru", "PH": "Philippines", "PN": "Pitcairn Islands", "PL": "Poland", "PT": "Portugal", "PR": "Puerto Rico", "QA": "Qatar", "RE": "Reunion Island", "RO": "Romania", "RU": "Russia", "RW": "Rwanda", "WS": "Samoa", "ST": "Sao Tome and Principe", "SM": "San Marino", "SA": "Saudi Arabia", "SN": "Senegal", "CS": "Serbia and Montenegro", "SC": "Seychelles", "SL": "Sierra Leone", "SG": "Singapore", "SK": "Slovakia", "SI": "Slovenia", "ES": "Spain", "SO": "Somalia", "SB": "Solomon Islands", "ZA": "South Africa", "KP": "South Korea", "LK": "Sri Lanka", "SR": "Suriname", "SD": "Sudan", "SS": "South Sudan", "SH": "St. Helena", "KN": "St. Kitts and Nevis", "LC": "St. Lucia", "PM": "St. Pierreet Miquelon", "VC": "St. Vincent and the Grenadines", "SZ": "Swaziland", "SE": "Sweden", "CH": "Switzerland", "SY": "Syrian Arab Republic", "TW": "Taiwan", "TJ": "Tajikistan", "TZ": "Tanzania", "TH": "Thailand", "TB": "Tibet", "TL": "Timor", "TG": "Togo", "TK": "Tokelau", "TO": "Tonga", "TT": "Trinidad and Tobago", "TN": "Tunisia", "TR": "Turkey", "TM": "Turkmenistan", "TC": "Turks and Caicos Islands", "TV": "Tuvalu", "UK": "Ukraine", "UG": "Uganda", "UE": "United Arab Emirates", "GB": "United Kingdom", "US": "USA", "VI": "U.S. Virgin Islands", "UY": "Uruguay", "UZ": "Uzbekistan", "VU": "Vanuatu", "VA": "The Vatican", "VE": "Venezuela", "VN": "Vietnam", "EH": "Western Sahara", "YE": "Yemen", "CD": "Zaire", "ZM": "Zambia", "ZW": "Zimbabwe", "other": "Other"}}}';
+var lang_dismiss_str = "Dismiss";
+var localizedMonths = [
+'January',
+'February',
+'March',
+'April',
+'May',
+'June',
+'July',
+'August',
+'September',
+'October',
+'November',
+'December'
+];
+</script>
+<script
+src="http://support.google.com/urchin45/bin/resource/js_variables.js?v=9&amp;hl=en"
+type="text/javascript"></script>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load('search', 1);
+function init() {
+google.search.CustomSearchControl.attachAutoCompletion(
+'+qptype:1',
+document.getElementById('query'),
+search_form_id);
+}
+google.setOnLoadCallback(init);
+</script>
+<script
+src="resource/js_minified22af.js?v=142"
+type="text/javascript"></script>
+<script src="https://plusone.google.com/js/plusone.js">
+{lang: 'en', parsetags: 'explicit'}
+</script>
+</head>
+<body onload="
+setCookies_default('WebUserLocale',
+'en','formLoad'); registerSearchForm(search_form_id, 'query');makeRequest('/urchin45/bin/stats?r='+serverResponseTimeDelta+'&l='+(new Date().getTime()-pageStartTime)); 
+"
+dir="ltr"
+class=" answer_page  streamlined-header-1 ltr lang_en show_modules show_leftnav other  win98 win topic_7385 ">
+<a href="#content" class="skiplink">Skip to content</a>
+<div class="wrapper" id="baseDiv">
+<div id=gbar><nobr><a class=gb1 href="https://mail.google.com/mail/">Mail</a> <a class=gb1 href="https://www.google.com/calendar">Calendar</a> <a class=gb1 href="https://docs.google.com/">Documents</a> <a onclick=gbar.qs(this); class=gb1 href="http://picasaweb.google.com/home?hl=en">Photos</a> <a class=gb1 href="https://sites.google.com/">Sites</a> <a onclick=gbar.qs(this); class=gb1 href="../../../groups.google.com/grphpfef7.html?hl=en">Groups</a> <a onclick=gbar.qs(this); class=gb1 href="http://www.google.com/webhp?hl=en">Search</a> <a class=gb1 style="text-decoration:none" href="http://www.google.com/intl/en/options/"><u>More</u> &raquo;</a></nobr></div><div id=guser width=100%><nobr><span id=gbn class=gbi></span><span id=gbf class=gbf></span><span id=gbe></span><a id=gb_70 href="https://www.google.com/accounts/ServiceLogin?passive=1209600&amp;continue=http://support.google.com/urchin45/bin/answer.py?hl%3Den%26topic%3D7385%26answer%3D28448&amp;followup=http://support.google.com/urchin45/bin/answer.py?hl%3Den%26topic%3D7385%26answer%3D28448&amp;hl=en" class=gb4>Sign in</a></nobr></div><div class=gbh style=left:0></div><div class=gbh style=right:0></div>
+<div id="hc_error"></div>
+<div class="header-wrapper">
+<div class="header-logo ">
+<a class="logo-container" href="http://support.google.com/urchin45">
+<img src="http://www.google.com/images/logos/google_logo_41.png"
+alt="Google"
+class="logo" /></a>
+<div class="searchbox">
+<form name="search-form"
+id="search-form"
+title="Search Help"
+method="get"
+action="http://support.google.com/urchin45/bin/search.py"
+onsubmit="track('Search Help',
+document.getElementById('query').value);return false;">
+<input autocomplete="off"
+class="search-box"
+type="text"
+name="query"
+id="query"
+maxlength="2048"
+placeholder="Search Urchin Version 4 &amp; 5 help"
+title="Search"
+x-webkit-speech
+spellcheck="false" /><button type="submit"
+name="btnG"
+class="search-button"
+alt="Search Help">
+<img src="http://www.google.com/help/hc/images/hc_magnifying_glass.png">
+</button>
+<input type="hidden" name="ctx" value="en:searchbox" />
+</form>
+</div>
+</div>
+<div class="header-bar ">
+<h1>
+<a href="http://support.google.com/urchin45" onclick="track('Header', 'HC Title ');">
+<span>
+Urchin Version 4 &amp; 5 Help
+</span>
+<div class="">
+</div>
+</a>
+</h1>
+<div class="clear"></div>
+</div>
+</div>
+<div class="main-content-container">
+<table class="layout" border="0" cellpadding="0" cellspacing="0"><tr>
+<td class="left_column">
+<ul class="leftnav">
+<li class="">
+<a href="../index.html"
+onclick='track("Left Nav", "Help topics");'>Help topics</a>
+</li>
+<li class="leftnav_topics nav_link_on">
+<a href="http://support.google.com/urchin45/bin/topic.py?topic=7353"
+onclick='track("Left Nav", "topic=7353");'>Urchin 5</a>
+</li>
+<li class="leftnav_topics ">
+<a href="http://support.google.com/urchin45/bin/topic.py?topic=7363"
+onclick='track("Left Nav", "topic=7363");'>Urchin 4</a>
+</li>
+<li class="LeftNav_Urchin67 first">
+<a href="https://secure.urchin.com/helpwiki/en/Help_Center"  onclick="track('LeftNav', 'Urchin67');">Urchin 6/7</a>
+</li>
+</td>
+<td class="content">
+<div class="inner_content ">
+<p class="breadcrumbs" >
+<a href="../index.html" onclick="track('Breadcrumbs', 'Help Home');">Help articles</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?topic=7353" onclick="track('Breadcrumbs', '7353');">Urchin 5</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?topic=7358" onclick="track('Breadcrumbs', '7358');">E-commerce Module</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?topic=7385" onclick="track('Breadcrumbs', '7385');">E-commerce Tracking</a><span class="br-seperator"> &rsaquo; </span>ELF & ELF2 Log Formats&nbsp;
+</p>
+<div id="hcError" style="display:none"></div>
+<script type="text/javascript">
+var p13nFeed = new googlehelp.Feed.P13n();
+</script>
+<div class="clear"></div>
+<div class="p13n_box2 top has-bg"
+id="p13n_box"
+style="background-image:url(http://www.google.com/help/hc/images/alert18.gif);background-repeat:no-repeat;display:auto;">
+<a href="javascript:setCookies_default('p13n_box_50_urchin67', 1, '','30');
+hideLayer('p13n_box');
+track('P13n Box - urchin67', 'Hide');"
+class="hide_link">
+Hide
+</a>
+<h2>Support for Urchin 4/5 is not currently available</h2>
+<p>Please check out <a href="http://www.google.com/urchin/features.html">the latest Urchin version and features</a>.</p>
+<div id="p13n_box_content"></div>
+</div>
+<script type="text/javascript">
+var promoDisplayDict = {
+'type': "promo",
+'func': function(){
+document.getElementById("p13n_box").style.display = 'block';
+}
+};
+p13nFeed.setDisplayFunc(4,
+promoDisplayDict);
+</script>
+<a name="content"></a>
+<div id="page-content">
+<div id="zippy-dropdown-container"
+class="zippy-dropdown-container-hide"></div>
+<div class="answer_heading">
+<h2 class="answer-title">
+ELF & ELF2 Log Formats
+</h2>
+<div class="clear"></div>
+</div>
+<div class="article_content article-content-28448" id="article-content-div">
+<p><b>Overview</b><p>
+The E-commerce log formats (ELF & ELF2) were designed to
+record information about
+customer
+transactions from online shopping sites. ELF was originally
+created for use with
+Urchin 3 and may
+be used
+with Urchin 5 when processing data with the IP-Only visitor
+method. ELF2 is similar to
+ELF and
+includes additional fields that allow for visitor
+correlation using the
+IP+UserAgent,
+UTM, and other
+visitor tracking methods. It is recommended to log data in
+the ELF2 format since it is
+able to
+provide better
+visitor correlation with your webserver data. If you cannot
+set up your shopping cart
+software
+to log in ELF/ELF2, then you must configure your own Urchin
+custom log format prior to
+attempting to process your e-commerce data.
+<p>
+This document describes the format of the ELF and ELF2 log
+files that are created by the
+shopping cart software and explains how to configure Urchin
+for processing of e-
+commerce logs.
+<p>
+<b>Configuring Urchin for ELF/ELF2 Log Files</b><p>
+You must select specific Urchin configuration parameters
+depending on your e-commerce
+log type.
+<P>ELF processing
+<ul>
+<li>In the Log Source->Log Settings screen set the Log
+Format to either elf or auto
+<li>In the Profile->Reporting screen set the Visitor
+Tracking Method in the Profile to
+IP-ONLY,
+which is the only method supported when using ELF e-commerce
+log formats
+</ul>
+<P>ELF2 processing
+<ul>
+<li>In the Log Source->Log Settings screen set the Log
+Format to either elf2 or auto
+<li>In the Profile->Reporting screen set the Visitor
+Tracking Method to any of the
+choices, which
+are all supported when using ELF2
+</ul>
+<p>Your e-commerce log should be listed as a second log
+source along with your main
+website log
+in the profile that is created to handle your e-commerce
+reporting. The logs are
+processed
+sequentially by Urchin.
+<p><b>ELF/ELF2 Log Format Description</b><p>
+Both ELF and ELF2 are tab-separated multi-line log formats.
+The first line begins with
+an '!'
+exclamation character and contains overall information about
+the purchase. Subsequent
+lines
+contain detailed information about the items purchased. The
+first line is referred to
+as the
+transaction and the subsequent lines are referred to as
+items. Blank fields should
+contain a '-'
+character. Since tabs are used to separate fields, the tab
+character is not allowed to
+be used
+within a field.
+<p>
+A typical ELF/ELF2 log file will have the following general
+form:<P>
+!transation1<br>
+item1<br>
+item2<br>
+item3<br>
+!transaction_2<br>
+item1<br>
+item2<br>
+...<p>
+<p>
+<b><u>ELF2 Log Format</u></b>
+<p>
+<b>ELF2 Transaction Line</b><p>
+The ELF2 transaction line begins with an '!' exclamation and
+contains the following tab
+separated
+fields (empty fields should contain a '-' character):<p>
+!%{ORDERID} %{REMOTE_HOST} %{DATE/TIME} %{STORE}
+%{SESSIONID} %{TOTAL} %{TAX}<br>
+%{SHIPPING}
+%{BILL_CITY} %{BILL_STATE} %{BILL_ZIP} %{BILL_COUNTRY}
+%{USER_AGENT} %{COOKIES}<p>
+where:
+<ul>
+<li>%{ORDERID} is the order number
+<li>%{REMOTE_HOST} is the hostname/ip address of the remote
+machine
+<li>%{DATE/TIME} is the time in the common log format
+[dd/mmm/yyyy:HH:MM:SS +/-ZZZZ]
+<li>%{STORE} is the name/id of the storefront
+<li>%{SESSIONID} is the unique session identifier of the
+customer
+<li>%{TOTAL} is the transaction total including tax and
+shipping (decimal only, no '$'
+characters)
+<li>%{TAX} is the amount of tax charged to the subtotal
+<li>%{SHIPPING} is the amount of shipping charges
+<li>%{BILL_CITY} is the billing city of the customer
+<li>%{BILL_STATE} is the billing state of the customer
+<li>%{BILL_ZIP} is the billing zip code of the customer
+<li>%{BILL_COUNTRY} is the billing country of the customer
+<li>%{USER_AGENT} is the user agent of the customers browser
+<li>%{COOKIES} are the incoming cookies contained in the
+headers from the customers
+browser
+</ul>
+<p>
+<b>ELF2 Item Line</b><p>
+The ELF2 item line contains the following tab separated
+fields (empty fields should
+contain a '-'
+character):<p>
+%{ORDERID} %{REMOTE_HOST} %{DATE/TIME} %{PRODUCT_CODE}
+%{PRODUCT_NAME} %{VARIATION}<br>
+%{PRICE} %{QUANTITY} %{UPSOLD} %{USER_AGENT} %{COOKIES}<p>
+where:
+<ul>
+<li>%{ORDERID} is the order number
+<li>%{REMOTE_HOST} is the hostname/ip address of the remote
+machine
+<li>%{DATE/TIME} is the time in the common log format
+[dd/mm/yyyy:HH:MM:SS +/-ZZZZ]
+<li>%{PRODUCT_CODE} is the identifier of the product
+<li>%{PRODUCT_NAME} is the name of the product
+<li>%{VARIATION} is an optional variation of the product for
+colors, sizes, etc
+<li>%{PRICE} is the unit price of the product (decimal only,
+no '$' signs)
+<li>%{QUANTITY} is the quantity ordered of this product
+<li>%{UPSOLD} is a boolean (0|1) if the product was on sale
+<li>%{USER_AGENT} is the user agent of the customers browser
+<li>%{COOKIES} are the incoming cookies contained in the
+headers from the customers
+browser
+</ul>
+<p>
+<b>ELF2 Log File Example</b><p>
+The following 2 lines demonstrate a transaction and
+corresponding item entry in an ELF2
+log:
+<pre>
+!36530  123.123.123.123  [21/Aug/2003:11:31:45 -0800]  -  -
+ 895.00  -  -
+Virginia Beach  VA  23452  US  "Mozilla/4.0 (compatible; MSIE
+6.0; Windows NT 5.1)"
+"__utma=171060324.2002410569.1061216915.1061216915.1061490246.2;
+__utmb=171060324;__utmc=171060324"
+36530  123.123.123.123  [21/Aug/2003:11:31:45 -0800] 
+U5-BASE  Urchin 5 Base License  -
+895.00  1  -  "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT
+5.1)"
+"__utma=171060324.2002410569.1061216915.1061216915.1061490246.2;
+__utmb=171060324;__utmc=171060324"
+</pre>
+<p>
+<b><u>ELF Log Format</u></b>
+<p>
+<b>ELF Transaction Line</b><p>
+The ELF transaction line begins with an '!' exclamation and
+contains the following tab
+separated
+fields (empty fields should contain a '-' character):<p>
+!%{ORDERID} %{REMOTE_HOST} %{STORE} %{SESSIONID}
+%{DATE/TIME} %{TOTAL} %{TAX}
+%{SHIPPING} %{BILL_CITY} %{BILL_STATE} %{BILL_ZIP}
+%{BILL_COUNTRY}<p>
+where:
+<ul>
+<li>%{ORDERID} is the order number
+<li>%{REMOTE_HOST} is the hostname/ip address of the remote
+machine
+<li>%{STORE} is the name/id of the storefront
+<li>%{SESSIONID} is the unique session identifier of the
+customer
+<li>%{DATE/TIME} is the time in the common log format
+[dd/mmm/yyyy:HH:MM:SS +/-ZZZZ]
+<li>%{TOTAL} is the transaction total including tax and
+shipping (decimal only, no '$'
+characters)
+<li>%{TAX} is the amount of tax charged to the subtotal
+<li>%{SHIPPING} is the amount of shipping charges
+<li>%{BILL_CITY} is the billing city of the customer
+<li>%{BILL_STATE} is the billing state of the customer
+<li>%{BILL_ZIP} is the billing zip code of the customer
+<li>%{BILL_COUNTRY} is the billing country of the customer
+</ul>
+<b>ELF Item Line</b><p>
+The ELF item line contains the following tab separated
+fields (empty fields should
+contain a '-'
+character):<p>
+%{ORDERID} %{PRODUCT_CODE} %{PRODUCT_NAME} %{VARIATION}
+%{PRICE} %{QUANTITY} %{UPSOLD}
+<p>
+where:
+<ul>
+<li>%{ORDERID} is the order number
+<li>%{PRODUCT_CODE} is the identifier of the product
+<li>%{PRODUCT_NAME} is the name of the product
+<li>%{VARIATION} is an optional variation of the product for
+colors, sizes, etc
+<li>%{PRICE} is the unit price of the product (decimal only,
+no '$' signs)
+<li>%{QUANTITY} is the quantity ordered of this product
+<li>%{UPSOLD} is a boolean (0|1) if the product was on sale
+</ul>
+<b>ELF Log File Example</b><p>
+The following lines demonstrate 2 transactions and
+corresponding item entries in an ELF
+log:
+<pre>
+!12313  ppp-46.mia-tc-2.netrox.net  ZongStore  1102323131 
+[27/Jul/1999:11:43:02 -0700]
+198.12  8.12  10.00  Cedar Rapids  Iowa  52403  US
+12313	102	T Shirt	XL	10.00	10	0
+12313	103	Boxers	L	9.00	10	0
+!12314  213.12.54.123  -  110123413  [27/Jul/1999:11:43:02
+-0700]  11.75  0.75  1.00
+Santa Ana  CA  92705  US
+12314  102  T Shirt  S  10.00  1  0
+</pre></p>
+<script type="text/javascript">
+if(document.getElementById('kb_other') != null)
+showLayer('kb_other');
+if(document.getElementById('kb_other_win') != null)
+showLayer('kb_other_win');
+if(document.getElementById('z_other') != null)
+toggleZippy('z_other');
+if(document.getElementById('z_other_win') != null)
+toggleZippy('z_other_win');
+if(document.getElementById('kb_win'))
+showLayer('kb_win');
+if(document.getElementById('z_win'))
+toggleZippy('z_win');
+if(document.getElementById('kb_win98'))
+showLayer('kb_win98');
+if(document.getElementById('z_win98'))
+toggleZippy('z_win98');
+if(document.getElementById('kb_DE'))
+showLayer('kb_DE');
+if(document.getElementById('z_DE'))
+toggleZippy('z_DE');
+if(document.getElementById('kb_non_US'))
+showLayer('kb_non_US');
+if(document.getElementById('z_non_US'))
+toggleZippy('z_non_US');
+</script>
+</div>
+<div class="clear"></div>
+<a href="#" name="helpful" ></a>
+<div class="answer-features">
+<div class="button plus-one">
+<div id="plusone"></div>
+<script type="text/javascript">
+gapi.plusone.render('plusone', {size: 'small', count: 'true',
+href: 'http:\x2F\x2Fsupport.google.com\x2Furchin45\x2Fbin\x2Fanswer.py?hl=en\x26answer=28448\x26ctx=plusone'});
+</script>
+</div>
+</div>
+<script type="text/javascript">
+function setSurveyCookie(){
+setCookies_default("survey_50", 1, "", 30);
+}
+</script>
+<p class="survey-invite-green ">
+<a href="requestdefc.html?contact_type=survey" id="surveyLink" target="_blank" onclick="setSurveyCookie();track('Survey Link', 'Click new');"><strong>Tell us how we're doing -</strong> Answer five short questions about your help center experience</a>
+</p>
+</div>
+<div class="clear"></div>
+</div>
+</td>
+<td class="right_column">
+<div class="module">
+<h2>Related</h2>
+<ul class="no_bullets right-nav-cb">
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28364&amp;ctx=cb&amp;src=cb&amp;cbid=8xab0a2lywry&amp;cbrank=0"
+onclick="track('Recommended Articles Module', 'cb 28364');">
+Why is the Visitors and Sessions report blank?
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7370&amp;parent=7363&amp;ctx=topic" onclick="track('Breadcrumbs', '7370');">FAQ Categories</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7405&amp;parent=7370&amp;ctx=topic" onclick="track('Breadcrumbs', '7405');">Reporting Issues</a>
+</span>
+</li>
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28126&amp;ctx=cb&amp;src=cb&amp;cbid=1leizpflsj6rg&amp;cbrank=1"
+onclick="track('Recommended Articles Module', 'cb 28126');">
+Disabling Automatic Urchin Database Backups / Archives
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7368&amp;parent=7363&amp;ctx=topic" onclick="track('Breadcrumbs', '7368');">Advanced Topics</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7412&amp;parent=7368&amp;ctx=topic" onclick="track('Breadcrumbs', '7412');">Performance &amp; Tuning</a>
+</span>
+</li>
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28472&amp;ctx=cb&amp;src=cb&amp;cbid=-l14uv008sg05&amp;cbrank=2"
+onclick="track('Recommended Articles Module', 'cb 28472');">
+Filtering Overview
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7356&amp;parent=7353&amp;ctx=topic" onclick="track('Breadcrumbs', '7356');">Urchin Administration</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7380&amp;parent=7356&amp;ctx=topic" onclick="track('Breadcrumbs', '7380');">Filtering</a>
+</span>
+</li>
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28460&amp;ctx=cb&amp;src=cb&amp;cbid=6acfkd0grhfo&amp;cbrank=3"
+onclick="track('Recommended Articles Module', 'cb 28460');">
+Exporting Data
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7357&amp;parent=7353&amp;ctx=topic" onclick="track('Breadcrumbs', '7357');">Reporting Interface</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7384&amp;parent=7357&amp;ctx=topic" onclick="track('Breadcrumbs', '7384');">Interface Features and Settings</a>
+</span>
+</li>
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28504&amp;ctx=cb&amp;src=cb&amp;cbid=-1ar9az08ktlb2&amp;cbrank=4"
+onclick="track('Recommended Articles Module', 'cb 28504');">
+How are H-Sphere and Urchin 5 Integrated?
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7360&amp;parent=7353&amp;ctx=topic" onclick="track('Breadcrumbs', '7360');">Advanced Topics</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7388&amp;parent=7360&amp;ctx=topic" onclick="track('Breadcrumbs', '7388');">Customization</a>
+</span>
+</li>
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28343&amp;ctx=cb&amp;src=cb&amp;cbid=1w250t5rvyhj8&amp;cbrank=5"
+onclick="track('Recommended Articles Module', 'cb 28343');">
+Why are my Urchin 3 Visitor (Session) counts different than my Urchin 4 Session counts?
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7370&amp;parent=7363&amp;ctx=topic" onclick="track('Breadcrumbs', '7370');">FAQ Categories</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7405&amp;parent=7370&amp;ctx=topic" onclick="track('Breadcrumbs', '7405');">Reporting Issues</a>
+</span>
+</li>
+</ul>
+</div>
+</td>
+</tr></table>
+</div>
+<div class="nocontent footer-nav-streamlined" role="contentinfo">
+<ul class="first-row">
+<li>
+<a href="http://www.urchin.com/"
+onclick="track('Footer', 'Product home')">
+Urchin Version 4 &amp; 5
+</a>
+</li>
+<li>
+<a href="request.html"
+onclick="track('Footer', 'Contacting us')">
+Contacting Us
+</a>
+</li>
+<li>
+<a href="http://www.google.com/support/?hl=en"
+onclick="track('Footer', 'Help with other products')">
+Help for other Google products
+</a>
+</li>
+</ul>
+<ul class="second-row">
+<li class='footer-copyright' dir='ltr'>
+&copy;2012 Google
+</li>
+<li >
+<a href="http://www.google.com/intl/en/"
+onclick="track('Footer', 'GoogleHome');
+">Google Home</a>
+</li>
+<li >
+<a href="http://www.google.com/intl/en/privacy.html"
+onclick="track('Footer', 'PrivacyPolicy');
+"><span class="important">New!</span> Privacy Policy</a>
+</li>
+<li >
+<a href="http://www.google.com/accounts/TOS?hl=en&amp;loc=DE"
+onclick="track('Footer', 'Terms');
+">Terms of Service</a>
+</li>
+</ul>
+</div>
+</div>
+<script type="text/javascript"></script>
+<script type="text/javascript">
+googlehelp.Links.initLinks(
+['', 'NO-GMAIL', 'NO-PLUS', browser, browserGroup,
+os, osGroup, country], internal);
+if (googlehelp.initEls) {
+googlehelp.initEls(['', 'NO-GMAIL', 'NO-PLUS', browser, browserGroup,
+os, osGroup, country, countryGroup],
+userSettings, userSettingsDropdownText);
+}
+if (convertLinksToButtons) {
+convertLinksToButtons();
+}
+</script>
+<script src='http://www.google-analytics.com/ga.js'
+type='text/javascript'></script>
+<script type="text/javascript">
+var analytics_async = 0;
+</script>
+<script
+src="resource/urchin_util8e0e.js?v=8"
+type="text/javascript"></script>
+<script type="text/javascript">
+var cookiePathArray = [];
+</script>
+<script type="text/javascript">
+urchinTracker('\x2Furchin45\x2Fbin\x2Fanswer.py?hl=en\x26topic=7385\x26answer=28448');
+</script>
+<script
+src="resource/js_validate_static8fa7.js?v=18"
+type="text/javascript"></script>
+<script type="text/javascript">
+track('P13n Box - urchin67',
+'Impression');
+track('LeftNav',
+'Urchin67 - Impression');
+track('Survey Link',
+'Impression');
+setCookies_default('p13n_box_impr_50_urchin67',
+'1',
+'',
+'30');
+</script>
+<script type="text/javascript">
+initPageTimer('http://support.google.com/urchin45/bin/answer.py?hl=en&amp;topic=7385&amp;answer=28448\x2F\x2Fsupport.google.com\x2Furchin45\x2Fapi\x2Fmetrics?hl=en',false);
+</script>
+<script type="text/javascript">
+new googlehelp.Lightbox(
+'\x26laquo\x3B Previous',
+'Next \x26raquo\x3B');
+</script>
+<script src="http://www.google.com/sidewiki/static/sidebar_element/sidebar-element-compiled.js"></script>
+<script defer="defer">
+var sidebarElement = new google.elements.sidewiki.SidebarElement(
+window.location.href,false);
+sidebarElement.bindToElement("sidewiki-open-ui-button");
+</script>
+</body>
+
+<!-- Mirrored from support.google.com/urchin45/bin/answer.py?hl=en&topic=7385&answer=28448 by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:34:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

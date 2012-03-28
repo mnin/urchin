@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Log_Rotation_Best_Practices.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Log Rotation Best Practices</strong> <p class="line867"><strong>Overview</strong> <p class="line874">It is very typical in most operating environments for the system services and applications such as webservers to generate logfiles that record actions and events related to those services. In most cases, it is also standard practice for the operating system and/or applications to perform regular maintenance on the logfiles to keep the size of the logfiles in check. This prevents the logfiles from growing without bounds and eventually running out of disk space. <p class="line874">A common approach to managing logs is to have a regularly scheduled log rotation task that renames the existing logs with a timestamp and then restarts the service or application with a new, zero length logfile. It is also a standard practice for the log rotation task to compress the old logfiles, and to delete logfiles after a certain age or rotation cycle threshold has been reached. <p class="line874">In the specific case of webserver logs, the rotation is usually handled on a daily basis to ensure that the logs remain at a manageable size. In addition, a daily rotation schedule is generally a good granularity to facilitate post-processing of webserver logs with an analysis tool like Urchin. Some webservers such as Microsoft's IIS have built-in log rotation functionality, which, when enabled, will rotate logs on a daily basis by default. Other webservers such as Apache have no explicit log rotation handler, but provide tools for easily restarting the webserver (without loss of web service) to accommodate the log rotation operation (e.g. apachectl restart ). <p class="line867"><strong>Log Rotation Practices</strong> <p class="line874">The need for log rotation to avoid duplicate processing of logs has been eliminated thanks to Urchin's Log Tracking technology. This allows Urchin much greater flexibility in processing of logs, such as the ability to process "live" logs that are still being written by the webserver, or to process logs that are rotated on an manual or irregular basis. <p class="line867"><strong>Important Note:</strong> Unlike some previous versions of Urchin, Urchin 6 does not provide hooks for invoking a log rotation procedure or restarting a webserver after log rotation tasks have been performed, although certain post-log-processing actions are possible as described below. <p class="line874">While Urchin 6 operation does not require that webserver logs be rotated regularly or at all, it is recommended that a standard log rotation scheme be implemented to ensure smooth operation and to keep the Log Tracking utility from having to do a lot of unnecessary processing. It is much more efficient from both a system and application standpoint to manage several smaller logs than one very large log, as file operations tend to slow considerably as files get larger. Smaller files are also much easier to back up and restore in the event of a disk failure or other system failure. <p class="line874">Log rotation mechanisms needn't be overly complex -- in most cases, a simple shell script or Perl script run daily from cron on UNIX-type systems is all that is necessary. The script merely needs to rotate the existing webserver log and timestamp it (using the %Y%m%d or YYYYMMDD formats is recommended), and restart the webserver. Additional logic can be added to prune old logfiles to keep disk space usage in check.  <p class="line867"><strong>Configuring Urchin for Use with Log Rotation</strong> <p class="line862">Once you have your log rotation scheme in place, it is a simple matter to configure Urchin to process your rotated log. You can either set up the Log File Path specification to use a wildcard which matches the time-stamped log filename pattern when configuring a Log Source (.e.g. access-log.* for Apache logs or ex*.log for IIS logs) or you can use Urchin's built-in timestamp pattern matching (e.g. access-log.%Y%m%d for Apache, ex%y%m%d.log for IIS). When Urchin encounters this pattern, it will substitute yesterday's date for the %Y%m%d pattern and process the log with the resulting filename (e.g. access-log.20020617). For further information on the date matching pattern, please see <a href="https://secure.urchin.com/helpwiki/en/Wildcard_&amp;_Date_Substitution_in_Log_Path.html">Wildcard &amp; Date Substitution in Log Path</a>. <p class="line874">The wildcard specification has the advantage of allowing you to place a number of unprocessed logs in a single directory and have Urchin process them the next time it runs. This is especially convenient for handling situations where the expected logfiles are not in place when Urchin runs, e.g. due to a remote webserver being down or loss of network connectivity. The disadvantage is that Urchin must open up the directory and search each log file to determine if it has already been processed, and this can induce significant overhead when many log files are resident in the directory. If you deem your log rotation scheme to be reliable, using the YYYYMMDD pattern matching scheme is a more efficient method. <p class="line862">You may also wish to have Urchin 6 delete or archive/compress the log once it has been processed. Different Log Destiny options can be set in the the Advanced Settings of a Log Source. For more information on these Log Destiny settings, please see <a href="https://secure.urchin.com/helpwiki/en/Log_Management.html">Log Management</a>. <p class="line867"><strong>Important!</strong> Log Destiny options should not be used with live logs that have not been rotated! <p class="line867"><strong>Configuring Log Rotation on UNIX-type systems</strong> <p class="line874">Due to the large variation operating system functionality and webserver configurations, and the high likelyhood that log rotation procedures are highly site-specific, there is no cookbook method for establishing webserver log rotation on UNIX-type systems.  <p class="line867"><strong>Configuring Log Rotation for Windows IIS Webserver</strong> <p class="line874">As mentioned above, the management functions of IIS allow for automatic log rotation of webserver logs, though this functionality is not enabled by default. Please follow the steps below to configure an IIS webserver for proper log rotation. It is recommended that the logs be rotated daily, and that the log rotation be set to happen in relation to local time. By default, IIS will rotate logs at midnight GMT rather than localtime. <p class="line874">Under Windows 2000, you should insure that IIS webserver is configured properly to do log rotation. This is accomplished using the Computer Management function of Windows 2000. Windows NT, Windows XP and Windows 2003 Server utilize a similar procedure. To open Computer Management and establish log rotation, perform the following actions: <ul><li><p class="line862">Click Start -&gt; Settings -&gt; Control Panel </li><li>Double-click Administrative Tools </li><li>Double-click Computer Management. </li><li>Double-click on Internet Information Services </li><li>Right-click on Default Web Site and select Properties </li><li>In the pop-up window, select the Web Site tab </li><li>At the bottom of the window, click on the Properties tab </li><li>Click the Daily radio button under the New Log Time Period heading </li><li>Click the Use local time for file naming and rollover checkbox. </li></ul><p class="line874">This will ensure that IIS rotates the webserver logs on a daily basis just after midnight. </div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Log_Rotation_Best_Practices.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

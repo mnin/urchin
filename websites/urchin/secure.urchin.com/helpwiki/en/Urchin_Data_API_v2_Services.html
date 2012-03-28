@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Urchin_Data_API_v2_Services.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867">
+<h3 id="head-1419347a6ec3bc8d20ef0acca7693873ca1fdef0">Urchin Data API v2 Services</h3>
+<p class="line867"><strong>Overview</strong> <p class="line874">The Urchin Data API v1 provides entry level data mining capabilities - aggregates, custom tables, totals, visitor and transaction details. Along with sorting and pagination, it introduces basic regular expression and numeric filters. <p class="line874">The Urchin Data API v2 significantly extends the analysis machinery introducing visit, path and transaction segmentations. It now becomes possible to specify up to 50 filters of each type per single query and squeeze the most valuable data out of the reporting database. <p class="line867"><strong>Introduction to the Urchin Data API v2 Web Services</strong> <p class="line862">Urchin 7.0 is bundled with v1 and v2 instances of the Data API. V2 is the default, although the API can be easily switched back to v1 by setting DataApiVersion  to 1 in &lt;urchin_home&gt;/etc/urchin.conf. <p class="line874">WSDL location: <p class="line867"><pre>AdminService:  http://your_host:your_port/services/v2/adminservice?wsdl
+ReportService: http://your_host:your_port/services/v2/reportservice?wsdl
+</pre><p class="line874">REST methods URIs: <p class="line867"><pre>AdminService: http://your_host:your_port/services/v2/adminservice
+ReportService:http://your_host:your_port/services/v2/reportservice
+</pre><p class="line862">REST services explorer is also available at <a class="http" href="http://your_host:your_port/uapi.html">http://your_host:your_port/uapi.html</a> <p class="line874">The Report Service allows to extract the following information: <ul><li>Aggregate dimensions and metrics - tables from #1 to #43 </li><li><p class="line862">Custom tables - user defined tables from &lt;urchin_home&gt;/lib/custom folder </li><li>Visit related dimensions and metrics - table #256 </li><li>Transaction related dimensions and metrics - table #257 </li><li>Page related dimensions and metrics - table #259 </li><li>Totals and metrics over time - table #258 </li></ul><p class="line867">
+<h3 id="head-7f6e1d60a92bb4f9c2c656edebe40f3734e75370">Data API v2 Reference</h3>
+<p class="line867"><strong>Admin service (v2)</strong> <p class="line874">The Admin service provides operations for retrieving account and profile information. <p class="line862">WSDL location: <a class="http" href="http://your_host:your_port/services/v2/adminservice?wsdl">http://your_host:your_port/services/v2/adminservice?wsdl</a> <p class="line874">This service provides the following methods: <ul><li><p class="line891"><strong>getAccountList</strong> - Method was not changed and works as described in the v1 version. To see more information please refer to the article <a href="https://secure.urchin.com/helpwiki/en/Data_API.html">Data API</a>. </li><li><p class="line891"><strong>getProfileList</strong> - Method was not changed and works as described in the v1 version. To see more information please refer to the article <a href="https://secure.urchin.com/helpwiki/en/Data_API.html">Data API</a>. </li></ul><p class="line867"><strong>Report service (v2)</strong> <p class="line874">The Report Service lets you extract data and generate reports from Urchin. <p class="line862">WSDL location:  <a class="http" href="http://your_host:your_port/services/v2/reportservice?wsdl">http://your_host:your_port/services/v2/reportservice?wsdl</a> <p class="line874">This service provides the following methods: <ul><li><p class="line891"><strong>getTableList</strong> - Method was extended with new fields "nregexfilters" and "nnumericfilters".  Sample response: </li></ul><p class="line867"><pre>&lt;tns:getTableListResponse xmlns:tns="https://urchin.com/api/urchin/v2/"&gt;
+&lt;table&gt;
+&lt;tableId&gt;257&lt;/tableId&gt;
+&lt;dimensions&gt;
+  &lt;dimension&gt;u:transaction_id&lt;/dimension&gt;
+  ...
+&lt;/dimensions&gt;
+&lt;metrics&gt;
+  &lt;metric&gt;u:transactions&lt;/metric&gt;
+  ...
+&lt;/metrics&gt;
+&lt;nregexfilters&gt;50&lt;/nregexfilters&gt;
+&lt;nnumericfilters&gt;50&lt;/nnumericfilters&gt;
+&lt;/table&gt;
+&lt;/tns:getTableListResponse&gt;
+</pre><p class="line862">This response shows that Urchin table #257 can be filtered by 50 numeric and 50 regular expression filters. For more information, please refer to the help article <a href="https://secure.urchin.com/helpwiki/en/Data_API.html">Data API</a>. <ul><li><p class="line862">getData - Beginning with v2, the method fully supports regular expression and numeric filters. For more information, please refer to the help article <a href="https://secure.urchin.com/helpwiki/en/Data_API.html">Data API</a>. </li></ul><p class="line867"><strong>Filtering gears</strong> <ul><li><p class="line891"><strong>tables ##1-43</strong> - tables contain aggregated dimensions and metrics, support filtering by dimensions and metrics from the queried table only </li><li><p class="line891"><strong>table #256</strong> - the table contains all visit details, supports filtering by visit, transaction and path dimensions from tables #256, #257, #258; visit metrics from table #256 </li><li><p class="line891"><strong>table #257</strong> - the table contains all transaction and visit details, supports filtering by visit, transaction and path dimensions from #256, #257, #258; transaction metrics from table #257 </li><li><p class="line891"><strong>table #258</strong> - the table contains total data and metrics over time, supports filtering by metrics from table #258 only </li><li><p class="line891"><strong>table #259</strong> - the table contains all page and visit details, supports filtering by visit, transaction and path dimensions from #256, #257, #258; page metrics from table #259 </li></ul><p class="line867"><strong>Note:</strong> In order to see all available dimensions and metrics of these tables, please retrieve information via the method "getTableList" of the Report Service or refer to services explorer at <a class="http" href="http://your_host:your_port/uapi.html">http://your_host:your_port/uapi.html</a>. <p class="line874">For example: extract visit details using REST request. <ul><li style="list-style-type:none">Sample REST request: </li></ul><p class="line867"><pre>http://&lt;urchin host&gt;:&lt;port&gt;/services/v2/reportservice/data?login=admin&amp;password=urchin&amp;ids=7&amp;start-date=2008-01-01&amp;end-date=2010-01-01
+&amp;dimensions=u:session_id,u:visitor_id,u:session_ip,u:session_start_time,u:session_end_time&amp;metrics=u:pages,u:visits&amp;table=256
+</pre><p class="line874">Sample REST response: <p class="line867"><pre>&lt;tns:getDataResponse xmlns:tns="https://urchin.com/api/urchin/v2/"&gt;
+&lt;record&gt;
+  &lt;recordId&gt;1&lt;/recordId&gt;
+&lt;dimensions&gt;
+  &lt;dimension name="u:session_id"&gt;1262784738&lt;/dimension&gt;
+  &lt;dimension name="u:visitor_id"&gt;HWH2-C43FX-GSPE&lt;/dimension&gt;
+  &lt;dimension name="u:session_ip"&gt;10.6.28.81&lt;/dimension&gt;
+  &lt;dimension name="u:session_start_time"&gt;2010-01-06T07:32:37-08:00&lt;/dimension&gt;
+  &lt;dimension name="u:session_end_time"&gt;2010-01-06T07:32:49-08:00&lt;/dimension&gt;
+&lt;/dimensions&gt;
+&lt;metrics&gt;
+  &lt;u:pages xmlns:u="https://urchin.com/api/urchin/v2/"&gt;1&lt;/u:pages&gt;
+  &lt;u:visits xmlns:u="https://urchin.com/api/urchin/v2/"&gt;1&lt;/u:visits&gt;
+&lt;/metrics&gt;
+&lt;/record&gt;
+&lt;/tns:getDataResponse&gt;
+</pre><p class="line867"><strong>Query Examples</strong> Get visits from yahoo.com where more than one page has been visited and order by visitor ID: <p class="line867"><pre>http://&lt;urchin host&gt;:&lt;port&gt;/services/v2/reportservice/data?login=admin&amp;password=urchin&amp;ids=7&amp;start-date=2008-01-01&amp;end-date=2010-01-01
+&amp;dimensions=u:visitor_id,u:session_ip,u:utm_campaign&amp;metrics=u:pages,u:visits,u:transactions&amp;sort=u:visitor_id&amp;filters=u:utm_source%3D~yahoo,u:pages%3E1&amp;table=256
+</pre><p class="line874">Get visitors from google.com and number of bookings they conducted: <p class="line867"><pre>http://&lt;urchin host&gt;:&lt;port&gt;/services/v2/reportservice/data?login=admin&amp;password=urchin&amp;ids=7&amp;start-date=2008-01-01&amp;end-date=2010-01-01
+&amp;dimensions=u:visitor_id&amp;metrics=u:pages,u:visits,u:transactions&amp;filters=u:utm_source%3D~google,u:request_stem%3D~cart.html&amp;table=256
+</pre><p class="line874">Get all transactions resulting from bing.com searches for a given term: <p class="line867"><pre>http://&lt;urchin host&gt;:&lt;port&gt;/services/v2/reportservice/data?login=admin&amp;password=urchin&amp;ids=7&amp;start-date=2008-01-01&amp;end-date=2010-01-01
+&amp;dimensions=u:transaction_id&amp;metrics=u:transactions,u:revenue,u:tax,u:shipping,u:items&amp;filters=u:utm_source%3D~msn,u:utm_term%3D~schwag&amp;table=257
+</pre><p class="line874">Get daily metrics for a given period: <p class="line867"><pre>http://&lt;urchin host&gt;:&lt;port&gt;/services/v2/reportservice/data?login=admin&amp;password=urchin&amp;ids=7&amp;start-date=2008-01-01&amp;end-date=2010-01-01
+&amp;dimensions=u:day&amp;metrics=u:pages,u:visits&amp;table=258
+</pre><p class="line874">Get all pages visited by a given visitor during a period of time: <p class="line867"><pre>http://&lt;urchin host&gt;:&lt;port&gt;/services/v2/reportservice/data?login=admin&amp;password=urchin&amp;ids=7&amp;start-date=2008-01-01&amp;end-date=2010-01-01
+&amp;dimensions=u:request_stem&amp;metrics=u:pages&amp;filters=u:visitor_id%3D~N8T3-DU4N9-7RPL&amp;table=259
+</pre><p class="line867"><strong>How to enable the older version of the Urchin Data API in Urchin 7.0</strong> <p class="line862">By default, newly installed or upgraded instances of Urchin 7.0 use the latest version of the Data API. To switch to another version, please refer to section "How do I switch to another version of the Urchin Data API" of the article <a href="https://secure.urchin.com/helpwiki/en/Urchin_Data_API_FAQ.html">Urchin Data API FAQ</a>. </div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Urchin_Data_API_v2_Services.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

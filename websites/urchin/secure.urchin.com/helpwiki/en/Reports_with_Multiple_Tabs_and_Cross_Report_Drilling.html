@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Reports_with_Multiple_Tabs_and_Cross_Report_Drilling.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Reports with Multiple Tabs and Cross Report Drilling</strong> <p class="line874">In Urchin7 supported report structures have been extended with the following new features: <ul><li>reports with multiple tabs </li><li>ability to display different metric sets at different drill-down levels </li><li>ability to switch the detail level in reports </li></ul><p class="line867"><strong>Reports with Multiple Tabs</strong> <p class="line874">In rs2-file, each report with tabs has NDATA field equal to number of tabs and each tab has prefix T in unique report ID in the tab definition list after the main report. <p class="line862">On the picture below, you can see how two reports "Top Files" and "Downloads" from "IT Report/Pages&amp;Files" section can be merged in one report with two tabs <p class="line867"><img alt="2tab_report" src="https://secure.urchin.com/helpwiki/images/2tab_report.png" title="2tab_report" /> <p class="line867"><strong>Cross Report Drilling and Detail Level Selectors</strong> <p class="line874">Each report that requires variance at drill levels(different set of metrics or drilling sequence) is described by a combination of a main report that is visible in the navigation menu and a set of hidden pages that describe the variance. <p class="line874">TITLE,CTITLES and TABLE columns have been changed to allow you to specify different values depending on currently selected drill level. The values are separated with the usual Urchin level separation sign (|). A shortened notation is allowed if the field values at all drill levels are the same, i.e. instead of writing 43|43|43 as a TABLE field value, one can simply write 43. New DLEVELS and DTITLES columns specify the reports to load when the user switches between detail levels and UI titles respectively, i.e. 0|1333,1334|0 means no variation at the 1st level, switching between reports 1333 and 1334 allowed on the 2nd level and no variation at the 3rd level. Metric set and column types for all drill levels are not allowed to vary. <p class="line874">Here is the sample for Event Tracking "Categories" hierarchy. It allows the following drill paths: <ul><li><p class="line862">Categories -&gt; Actions -&gt; Labels </li><li><p class="line862">Categories -&gt; Labels -&gt; Actions </li></ul><p class="line874">The rs2 records that define this hierarchy are described as <div><table><tbody><tr>  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">ID </td>
+  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">TITLE     </td>
+  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">CTITLES                </td>
+  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">TABLE</td>
+  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">DXFORMAT</td>
+  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">DLEVELS</td>
+  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">DTITLES</td>
+</tr>
+<tr>  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">S1333</td>
+  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">949|950|951  </td>
+  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">  949|950|951,948,952,904,953 </td>
+  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">42|41|40 </td>
+  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">$A|$B|$C,38,11,40,40/38 </td>
+  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">0|1333,1334|0  </td>
+  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">  0|950,951|0 </td>
+</tr>
+<tr>  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">P1334</td>
+  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">949|951|950 </td>
+  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862"> 949|951|950,948,952,904,953 </td>
+  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">42|40|40 </td>
+  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">$A|$C|$B,38,11,40,40/38  </td>
+  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">0|1333,1334|0  </td>
+  <td style="border: 1px solid rgb(170, 170, 170);  padding: 5px;"><p class="line862">  0|950,951|0 </td>
+</tr>
+</tbody></table></div><p class="line874">Two different reports describe the two different drill paths a user can take. The DLEVELS field can be read as follows: at 1st level, only Categories are displayed, on 2nd level user can switch between Actions and Labels, and no variation at 3rd field because it depends upon previously selected drill path. <p class="line867"><em>Basic information on rs2-files and Custom Report creation can be found in article <a href="https://secure.urchin.com/helpwiki/en/How_To_Create_Custom_Reports.html">How To Create Custom Reports</a></em>. </div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Reports_with_Multiple_Tabs_and_Cross_Report_Drilling.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Active_Directory.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Urchin 6.602 HC: External Authentication (Urchin 6.602+)</strong> <p class="line867"><strong>1. Overview</strong> <ul><li style="list-style-type:none">Urchin 6.6 (and later) supports external authentication, including MSAD and LDAP providers. Urchin enforces authentication type on a "per-user" basis, which allows the use of several authentication methods across various users. </li></ul><p class="line867"><strong>2. Configuring External Authentication</strong> <ul><li style="list-style-type:none"><p class="line862">Additional authentication methods are provided through the external authentication modules. These modules can be configured in the &lt;urchin_home&gt;/etc/session.conf file. </li></ul><p class="line874">The following syntax should be used for each external authentication module: <p class="line867"><pre>    AUTHENTICATION_BIN[1..N]: ../bin/ldapauth(.exe)
+    AUTHENTICATION_NAME[1..N]: Display Name
+    AUTHENTICATION_TIMEOUT1[1..N]: 100
+    AUTHENTICATION_CONFIG[1..N]: [url] [rootdn] [rootpw] [searchbase] [nameattr] [require_cert] [ca_cert_file] [start_tls]
+</pre><p class="line874">where <p class="line867"><pre>    AUTHENTICATION_BIN - External authentication module. Must be set to ../bin/ldapauth.exe by default on Windows and to ../bin/ldapauth Unix.
+    AUTHENTICATION_NAME - Unique name of authentication method for module (no more than 20 characters); This will be displayed in UI. Note: Don't change this value if external users were added or imported into Urchin.
+    AUTHENTICATION_TIMEOUT - Authentication timeout value (in seconds)
+    AUTHENTICATION_CONFIG - Parameters that are transfered to authentication module. This parameter consists of the following external provider specific attributes:
+
+        * url - LDAP server URL in form ldap(s)://server_name[:port]. It is used to connect to the server. Host name can include an optional port number which is separated from the host with a colon (:);
+        * rootdn - Username or User entry Distinguished Name (DN) used for binding to external provider for user validation;
+        * rootpw - Encrypted user password used for binding to External provider for user validation. To encrypt user password please refer the section "4. LDAP Sync utility".
+        * searchbase - Company and External provider specific search base for user validation. This parameter must be enclosed in double quotes when contains spaces;
+        * nameattr - External provider attribute used for identifying external user as Urchin login;
+        * require_cert - Request TLS certificate from server. This is optional parameter and set to "hard" by default. Possible values are:
+              o never - Don't request server certificate.
+              o allow - Request certificate, but proceed normally if it's missing or invalid.
+              o try - Request certificate, proceed normally if it's missing, but fail if it's invalid.
+              o hard - Request certificate, and fail if it's missing or invalid.
+        * ca_cert_file -  A file which contains certificates of certification authorities. This option is set to "util/curl-ca-bundle.crt" by default.
+        * start_tls - Start TLS session. This is optional parameter.
+
+        NOTE: All values of AUTHENTICATION_CONFIG attributes must be enclosed in single quotes.
+    [1..N] - Sequence number of authentication module configuration.
+</pre><p class="line874">Here is the sample LDAP configuration for a Windows user: <p class="line867"><pre>    AUTHENTICATION_BIN1: ../bin/ldapauth.exe
+    AUTHENTICATION_NAME1: LDAP Provider
+    AUTHENTICATION_TIMEOUT1: 100
+    AUTHENTICATION_CONFIG1: url=ldap://ldap.test.com:389 rootdn='cn=admin,dc=test,dc=com' rootpw='USCX|527a2d0b79398b1e' searchbase='ou=urchin_users,dc=test,dc=com' nameattr='sn'
+</pre><p class="line874">Here is the sample MSAD configuration with TLS session for a Windows user: <p class="line867"><pre>    AUTHENTICATION_BIN2: ../bin/ldapauth.exe
+    AUTHENTICATION_NAME2: MSAD Provider
+    AUTHENTICATION_TIMEOUT1: 100
+    AUTHENTICATION_CONFIG2: url=ldap://ldapmsad.test.com:389 rootdn='someone@test.com' rootpw='USCX|14578dg2d0b7we8561q' searchbase='CN=Users,CN=Configuration' nameattr='sAMAccountName' start_tls='1' require_cert='allow'
+</pre><p class="line867"><strong>3. Creating and extending users</strong> <ul><li style="list-style-type:none"><p class="line862">Urchin logins with external authentication are configured in the same way as ordinary Urchin logins on the "Configuration/Users &amp; Groups/Users" page. </li></ul><p class="line862">The user adds them via "User Wizard", extended with just one listbox "Authentication method", which lists the available configured authentication methods, e.g. Native/LDAP/MSAD. Names of external authentication modules are taken from respective AUTHENTICATION_NAMEx string in etc/session.conf file. If the value of "Authentication method" listbox is set to non-Native - fields "Password" and "Verify Password" will be disabled. IMPORTANT: "Authentication method" drop down is available ONLY when there are external providers configured in the &lt;urchin&gt;/etc/session.conf file. <p class="line867"><strong>4. LDAP Sync utility</strong> <ul><li style="list-style-type:none">The Urchin LDAP Synchronize Utility (ldap-sync) allows you to replicate LDAP users to target group in Urchin. These operations will be necessary if the current Urchin installation is configured with external providers (such as LDAP/MSAD) and LDAP users need to be imported into Urchin. </li></ul><p class="line874">The ldap-sync utility provides the following functionality: <ul><li>import of LDAP users into Urchin as external user; </li><li>import of LDAP users into Urchin as native user; </li><li>encrypt user password. </li></ul><p class="line867"><strong>Usage</strong> <p class="line874">The ldap-sync utility is located in the util directory of the Urchin 6 distribution. <p class="line874">Usage of the utility is described below: <p class="line867"><pre>    ldap-sync -h
+    ldap-sync -v
+    ldap-sync encrypt
+    ldap-sync url searchbase [filter] [usac_id] [usgr_id] [uius_level] [rootdn [rootpw]] [ucus_auth_type] [pagesize] [timeout] [ucus_region] [ucus_language][ucus_password] [ifexists] [print] [require_cert] [ca_cert_file] [start_tls] [ucus_language]
+</pre><p class="line874">where <p class="line867"><pre>    -h             Print usage information;
+
+    -v             Print the version of ldap-sync utility;
+
+    encrypt        Encrypt the provided user password;
+
+    url            LDAP server URL in form ldap(s)://server_name[:port]. It is used to connect to the server. Host name can include an optional port number which is separated from the host with a colon (:);
+
+    searchbase     Distinguished name of the LDAP directory from which the search starts. This parameter must be enclosed in double quotes if it contains spaces;
+
+    filter         Search filter. This parameter is optional. Default value '(objectClass=*)';
+
+    usac_id        Numeric identifier of target Urchin account. This parameter is optional. If it is not specified, the utility will assign users to default account ("(NONE)" id=1);
+
+    groupid        Numeric identifier of target Urchin group. This parameter is optional. If it is not specified, the utility will not assign users to Urchin group;
+
+    uius_level     Numeric identifier of target Urchin's privileges. This parameter is optional. If it is not specified, the utility will assign "User" privileges to imported users. Possible values: 1 - Super admin, 4 - User, 8 - User-No Update, 16 - Account admin;
+
+    rootdn         Distinguished name of user used for binding to the specified LDAP server. This parameter is optional.
+
+    rootpw         Respective password used for binding to the specified LDAP server. This parameter is optional.
+
+    ifexists       Specifies what the utility has to do if the user with the same name already exists in Urchin. This parameter is optional. Possible values: 'overwrite' - overwrite the existing user; 'skip' - do nothing (the default value);
+
+    nameattr       LDAP user attribute used for identifying external user as Urchin username;
+
+    fnameattr      LDAP user attribute used for identifying external user information as Urchin Full Name;
+
+    ucus_auth_type Name of external authentication module (no more than 20 characters). The parameter can be taken from respective AUTHENTICATION_NAMEx string in etc/session.conf file. This parameter is optional. If it isn't specified, the utility will import LDAP users to Urchin as internal users. Note: The LDAP Sync utility will not import users when this parameter is more than 20 characters;
+
+    ucus_password  User password to be assigned to imported users in Urchin. This is an optional parameter. It must be specified if the LDAP users are to be imported as Urchin internal users;
+
+    ucus_language  User language that will be assigned to imported users in Urchin. This is an optional parameter.
+
+    print                 Print level. Possible values: 'quiet', 'error', 'status' or 'all'.
+
+    pagesize             The number of entries to return in each page. This parameter is optional.
+
+    timeout               The search time-out value in seconds.  This parameter is optional.
+
+    ucus_region      User region. This parameter is optional.
+
+    ucus_language  User language.  This parameter is optional.
+
+    require_cert       Request TLS certificate from server. This is optional parameter and set to "hard" by default. Possible values are:
+
+        * never - Don't request server certificate.
+
+        * allow - Request certificate, but proceed normally if it's missing or invalid.
+
+        * try - Request certificate, proceed normally if it's missing,  fail if it's invalid.
+
+        * hard - Request certificate, and fail if it's missing or invalid.
+
+
+    ca_cert_file  A file which contains certificates of certification authorities. This option is set to "util/curl-ca-bundle.crt" by default.
+
+    start_tls     Start TLS session. This is optional parameter.
+
+</pre><p class="line867"><strong>Examples</strong> <p class="line874">1. Importing LDAP users to Urchin as external user via TLS session. <p class="line867"><pre>    command: ldap-sync url=ldap://ldap.test.com searchbase="OU=Users,DC=test,DC=com" rootdn="cn=admin,dc=test,dc=com" filter="(objectClass=*)" rootpw=password fnameattr="cn" nameattr="sn" ucus_auth_type="LDAP" usac_id=1 group_id=1 uius_level=4 ifexists=overwrite print=all start_tls='1' require_cert='allow'
+</pre><p class="line867"><pre>    output:
+        usac_id = 1
+        uius_level = 4
+        ucus_auth_type = LDAP
+        LDAP initializing succeeded.
+        LDAP bind succeeded.
+        Found user: CN=Test User 1,OU=Users,DC=test,DC=com
+             ucus_full_name = Test User 1
+             ucus_name = test_user1
+        User inserted. ID : 14
+        Found user: CN=Test User 2,OU=Users,DC=test,DC=com
+             ucus_full_name = Test User 2
+             ucus_name = test_user2
+        User inserted. ID : 15
+        Found user: CN=Test User 3,OU=Users,DC=test,DC=com
+             ucus_full_name = Test User 3
+             ucus_name = test_user3
+        User inserted. ID : 16
+
+        Imported 3 users.
+</pre><p class="line874">2. Importing LDAP users to Urchin as native user <p class="line867"><pre>    command: ldap-sync url=ldap://ldap.test.com searchbase="OU=Users,DC=test,DC=com" rootdn="cn=admin,dc=test,dc=com" filter="(objectClass=*)" rootpw=password fnameattr="cn" nameattr="sn" usac_id=1 group_id=1 uius_level=16 ifexists=overwrite ucus_password="12345678" print=all
+</pre><p class="line867"><pre>    output:
+        usac_id = 1
+        ucus_password = 12345678
+        uius_level = 16
+        LDAP initializing succeeded.
+        LDAP bind succeeded.
+        Found user: CN=Test User 1,OU=Users,DC=test,DC=com
+             ucus_full_name = Test User 1
+             ucus_name = test_user1
+        User inserted. ID : 14
+        Found user: CN=Test User 2,OU=Users,DC=test,DC=com
+             ucus_full_name = Test User 2
+             ucus_name = test_user2
+        User inserted. ID : 15
+        Found user: CN=Test User 3,OU=Users,DC=test,DC=com
+             ucus_full_name = Test User 3
+             ucus_name = test_user3
+        User inserted. ID : 16
+
+        Imported 3 users.
+</pre><p class="line874">3. Encrypting user password <ul><li style="list-style-type:none">To encrypt a user password, run the ldap-sync utility with the following syntax: </li></ul><p class="line867"><pre>    command: ldap-sync encrypt=test_password
+</pre><p class="line867"><pre>    output: USCX|4f9c3ce2928d23ef34f001185a03a9be
+</pre><p class="line867"><strong>5. Known Constraints</strong> <p class="line874">The following limitations apply to external authentication: <ul><li><p class="line862">All values of AUTHENTICATION_CONFIG attributes must be enclosed in single quotes in the &lt;urchin_home&gt;/etc/session.conf file. </li><li>AUTHENTICATION_NAME value must be unique for external provider and if this name contains more than 20 characters, it will not be displayed in the UI. </li><li>Urchin doesn't allow space characters in user names for any authentication type. </li><li>LDAP Sync utility doesn't import external users to Urchin when imported username login (that will be used as Urchin user name) contains a space character. </li><li>LDAP Sync utility will not start importing external users when ucus_auth_type parameter value more than 20 characters. </li><li>Only basic authentication is supported when using SSL connection to LDAP server. </li><li>Path with spaces is incorrectly parsed - this can be resolved by entering additional quotes, e.g. searchbase='"CN=AU Urchin Users,OU=Local Applications,OU=Application Access,OU=Groups,DC=au,DC=business,DC=com"'. </li></ul></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Active_Directory.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

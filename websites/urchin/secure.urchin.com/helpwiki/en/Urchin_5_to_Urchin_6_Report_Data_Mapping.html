@@ -1,0 +1,1715 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Urchin_5_to_Urchin_6_Report_Data_Mapping.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867">
+<h1 id="head-292de8b5d7586ce070ee93df3cfbb1aa2a822b50">Urchin 5 to Urchin 6 Report Data Mapping</h1>
+<p class="line874">Urchin 5 Profile settings and reports with data aren't migrated to Urchin 6 fully as is: <ul><li>Migration of Goals created in Urchin 5 is not supported. </li><li>"ELF" log format is not supported in Urchin 6 and logs of this format are skipped during migration. </li><li>Urchin 6 has different set of Visitor Tracking methods, compared to Urchin 5. The table below summarizes how these methods are converted after migration. </li></ul><div><table style="width: 424px"><tbody><tr>  <td class="xl68" style="background-color: #999999; height: 20px; width: 212px"><p class="line891"><strong>Urchin 5 Visitor Tracking Method</strong> </td>
+  <td class="xl69" style="background-color: #999999; height: 20px; width: 212px"><p class="line891"><strong>Urchin 6 Visitor Tracking Method</strong> </td>
+</tr>
+<tr>  <td class="xl65" style="height: 20px"><p class="line862">IP+User-Agent </td>
+  <td class="xl65"><p class="line862">IP+User-Agent </td>
+</tr>
+<tr>  <td class="xl65" style="height: 20px"><p class="line862">Username </td>
+  <td class="xl65"><p class="line862">IP+User-Agent </td>
+</tr>
+<tr>  <td class="xl65" style="height: 20px"><p class="line862">Session ID </td>
+  <td class="xl65"><p class="line862">IP+User-Agent </td>
+</tr>
+<tr>  <td class="xl65" style="height: 20px"><p class="line862">Urchin Traffic Monitor (UTM) </td>
+  <td class="xl66"><p class="line862">Urchin Traffic Monitor (UTM) </td>
+</tr>
+<tr>  <td class="xl67" style="height: 21px"><p class="line862">IP ONLY </td>
+  <td class="xl65"><p class="line862">IP+User-Agent </td>
+</tr>
+</tbody></table></div><p class="line874">Mappings between Urchin 5 and Urchin 6 reports with metrics are listed in the table below. <div><table style="width: 1223px"><tbody><tr>  <td class="xl81" style="text-align: center; ; width: 141px; height: 40px; background-color: #999999"><p class="line891"><strong>Report Section</strong> </td>
+  <td class="xl82" style="text-align: center; ; background-color: #999999; height: 40px; width: 141px"><p class="line891"><strong>Urchin 5 Report</strong> </td>
+  <td class="xl82" style="text-align: center; ; background-color: #999999; height: 40px; width: 141px"><p class="line891"><strong>Metric</strong> </td>
+  <td class="xl82" style="text-align: center; ; background-color: #999999; height: 40px; width: 141px"><p class="line891"><strong>Urchin 6 Report</strong> </td>
+  <td class="xl82" style="text-align: center; ; background-color: #999999; height: 40px; width: 141px"><p class="line891"><strong>Metric</strong> </td>
+  <td class="xl87" style="text-align: center; ; background-color: #999999; height: 40px; width: 141px"><p class="line891"><strong>Visitor Tracking Method </strong> </td>
+  <td class="xl83" style="text-align: center; ; background-color: #999999; height: 40px; width: 141px"><p class="line891"><strong>Comments</strong> </td>
+</tr>
+<tr>  <td style="vertical-align: top;"><p class="line862"> </td>
+  <td style="vertical-align: top;"><p class="line862"> </td>
+  <td style="vertical-align: top;"><p class="line862"> </td>
+  <td style="vertical-align: top;"><p class="line862"> </td>
+  <td style="vertical-align: top;"><p class="line862"> </td>
+  <td style="vertical-align: top;"><p class="line862"> </td>
+  <td style="vertical-align: top;"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl84" colspan="7" style="text-align: center; ; width: 1223px; height: 20px; background-color: #cccccc"><p class="line891"><strong>Traffic</strong> </td>
+</tr>
+<tr>  <td class="xl69" style="width: 141px; height: 40px"><p class="line862"> </td>
+  <td class="xl66" style="width: 198px"><p class="line862">Session Graph </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Sessions </td>
+  <td class="xl66" style="width: 309px"><p class="line862">Marketing Optimization&gt;Unique Visitor Tracking&gt;Visits &amp; Pageview Tracking </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+  <td class="xl89" colspan="1" rowspan="13" style="text-align: center; ; width: 111px"><p class="line862">"UTM" and "IP+User-Agent" </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl69" style="width: 141px; height: 40px"><p class="line862"> </td>
+  <td class="xl66" style="width: 198px"><p class="line862">Pageviews Graph </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Pageviews </td>
+  <td class="xl66" style="width: 309px"><p class="line862">Marketing Optimization&gt;Unique Visitor Tracking&gt;Visits &amp; Pageview Tracking </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Pageviews </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl69" style="width: 141px; height: 20px"><p class="line862"> </td>
+  <td class="xl66" style="width: 198px"><p class="line862">Hits Graph </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Hits </td>
+  <td class="xl66" style="width: 309px"><p class="line862">IT Reports&gt;Hits &amp; Bytes Tracking </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Valid Hits </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl69" style="width: 141px; height: 20px"><p class="line862"> </td>
+  <td class="xl66" style="width: 198px"><p class="line862">Bytes Graph </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Bytes </td>
+  <td class="xl66" style="width: 309px"><p class="line862">IT Reports&gt;Hits &amp; Bytes Tracking </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Bytes </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl69" style="width: 141px; height: 20px"><p class="line862"> </td>
+  <td class="xl67" style="background-color: #ffcc99; width: 198px"><p class="line862">Summary </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl70" colspan="1" rowspan="8" style="text-align: center; ; height: 160px; width: 141px"><p class="line891"><strong>Load Balancing</strong> </td>
+  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; width: 198px"><p class="line862">Log Source by Hits </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Log Source </td>
+  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; width: 309px"><p class="line862">IT Reports&gt;Load Balancing </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Log Source </td>
+  <td class="xl97" colspan="1" rowspan="3" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Hits </td>
+  <td class="xl66" style="width: 188px"><p class="line862">All Hits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Bytes </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; height: 80px; width: 198px"><p class="line862">Log Source by Bytes </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Log Source </td>
+  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; width: 309px"><p class="line862">IT Reports&gt;Load Balancing </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Log Source </td>
+  <td class="xl97" colspan="1" rowspan="4" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Bytes </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Bytes </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">All Hits </td>
+</tr>
+<tr>  <td class="xl69" colspan="7" style="text-align: center; ; width: 1223px; height: 20px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl84" colspan="7" style="text-align: center; ; width: 1223px; height: 20px; background-color: #cccccc"><p class="line891"><strong>Visitors &amp; Sessions</strong> </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="2" style="text-align: center; ; height: 40px; width: 141px"><p class="line862"> </td>
+  <td class="xl66" colspan="1" rowspan="2" style="text-align: center; ; width: 198px"><p class="line862">Visitors By Day </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Visitors </td>
+  <td class="xl66" colspan="1" rowspan="2" style="text-align: center; ; width: 309px"><p class="line862">Marketing Optimization&gt;Unique Visitor Tracking&gt;Daily Visitors </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visitors </td>
+  <td class="xl89" colspan="1" rowspan="10" style="text-align: center; ; width: 111px"><p class="line862">"UTM" </td>
+  <td class="xl97" colspan="1" rowspan="2" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">New Visitors </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="3" style="text-align: center; ; height: 80px; width: 141px"><p class="line862"> </td>
+  <td class="xl66" colspan="1" rowspan="3" style="text-align: center; ; width: 198px"><p class="line862">Sessions By Day </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Sessions </td>
+  <td class="xl66" colspan="1" rowspan="3" style="text-align: center; ; width: 309px"><p class="line862">Marketing Optimization&gt;Unique Visitor Tracking&gt;Visits &amp; Pageview Tracking </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+  <td class="xl97" colspan="1" rowspan="3" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Pageviews </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 40px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Average Pageviews per Visit (P/Visit) </td>
+</tr>
+<tr>  <td class="xl69" style="width: 141px; height: 40px"><p class="line862"> </td>
+  <td class="xl66" style="width: 198px"><p class="line862">Unique Visitors </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Unique Visitors </td>
+  <td class="xl66" style="width: 309px"><p class="line862">Marketing Optimization&gt;Unique Visitor Tracking&gt;Absolute Unique Visitors </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Unique Visitors </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl69" style="width: 141px; height: 20px"><p class="line862"> </td>
+  <td class="xl67" style="background-color: #ffcc99; width: 198px"><p class="line862">Unique Sessions </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl69" style="width: 141px; height: 40px"><p class="line862"> </td>
+  <td class="xl66" style="width: 198px"><p class="line862">Visitor Loyalty </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Visits </td>
+  <td class="xl66" style="width: 309px"><p class="line862">Marketing Optimization&gt;Unique Visitor Tracking&gt;Visitor Loyalty </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl69" style="width: 141px; height: 40px"><p class="line862"> </td>
+  <td class="xl66" style="width: 198px"><p class="line862">Session Frequency </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Sessions </td>
+  <td class="xl66" style="width: 309px"><p class="line862">Marketing Optimization&gt;Unique Visitor Tracking&gt;Visitor Recency </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl69" style="width: 141px; height: 20px"><p class="line862"> </td>
+  <td class="xl67" style="background-color: #ffcc99; width: 198px"><p class="line862">Summary </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl69" colspan="7" style="text-align: center; ; width: 1223px; height: 20px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl84" colspan="7" style="text-align: center; ; width: 1223px; height: 20px; background-color: #cccccc"><p class="line891"><strong>Pages &amp; Files</strong> </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="7" style="text-align: center; ; height: 140px; width: 141px"><p class="line862"> </td>
+  <td class="xl66" colspan="1" rowspan="7" style="text-align: center; ; width: 198px"><p class="line862">Requested Pages </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Pages </td>
+  <td class="xl66" colspan="1" rowspan="7" style="text-align: center; ; width: 309px"><p class="line862">Content Optimization&gt;Content Performance&gt;Top Content </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Content </td>
+  <td class="xl92" colspan="1" rowspan="51" style="text-align: center; ; width: 111px"><p class="line862">"UTM" and "IP+User-Agent" </td>
+  <td class="xl97" colspan="1" rowspan="7" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Pageviews </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Pageviews </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Avg Time </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">% Exit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">$ Index </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="4" style="text-align: center; ; height: 80px; width: 141px"><p class="line862"> </td>
+  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; width: 198px"><p class="line862">Downloads </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Downloads </td>
+  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; width: 309px"><p class="line862">IT Reports&gt;Pages &amp; Files&gt;Downloads </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Downloads </td>
+  <td class="xl97" colspan="1" rowspan="4" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Hits </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Hits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Bytes </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="3" style="text-align: center; ; height: 60px; width: 141px"><p class="line862"> </td>
+  <td class="xl66" colspan="1" rowspan="3" style="text-align: center; ; width: 198px"><p class="line862">Page Query Terms </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Pages Query Terms </td>
+  <td class="xl66" colspan="1" rowspan="3" style="text-align: center; ; width: 309px"><p class="line862">Content Optimization&gt;Content Performance&gt;Page Query Terms </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Pages/Query Terms </td>
+  <td class="xl97" colspan="1" rowspan="3" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Count </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Count </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Percent </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="3" style="text-align: center; ; height: 60px; width: 141px"><p class="line862"> </td>
+  <td class="xl66" colspan="1" rowspan="3" style="text-align: center; ; width: 198px"><p class="line862">Posted Forms </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Posted Forms </td>
+  <td class="xl66" colspan="1" rowspan="3" style="text-align: center; ; width: 309px"><p class="line862">IT Reports&gt;Pages &amp; Files&gt;Posted Forms </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Posted Forms </td>
+  <td class="xl97" colspan="1" rowspan="3" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Hits </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Valid Hits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Percent </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="3" style="text-align: center; ; height: 60px; width: 141px"><p class="line862"> </td>
+  <td class="xl66" colspan="1" rowspan="3" style="text-align: center; ; width: 198px"><p class="line862">Status and Errors </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Status and Errors </td>
+  <td class="xl66" colspan="1" rowspan="3" style="text-align: center; ; width: 309px"><p class="line862">IT Reports&gt;Pages &amp; Files&gt;Status Codes </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Status Codes </td>
+  <td class="xl97" colspan="1" rowspan="3" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Hits </td>
+  <td class="xl66" style="width: 188px"><p class="line862">All Hits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Percent </td>
+</tr>
+<tr>  <td class="xl70" colspan="1" rowspan="8" style="text-align: center; ; height: 160px; width: 141px"><p class="line891"><strong>All Files</strong> </td>
+  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; width: 198px"><p class="line862">All Files By Hits </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Files </td>
+  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; width: 309px"><p class="line862">IT Reports&gt;Pages &amp; Files&gt;Top Files </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Files </td>
+  <td class="xl97" colspan="1" rowspan="4" style="text-align: center; ; width: 155px"><p class="line862">This report is not migrated directly: the Urchin 6 "Valid Hits" field contains the total number of hits, i.e. valid+error hits. </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Hits </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Valid Hits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Bytes </td>
+</tr>
+<tr>  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; height: 80px; width: 198px"><p class="line862">All Files By Bytes </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Files </td>
+  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; width: 309px"><p class="line862">IT Reports&gt;Pages &amp; Files&gt;Top Files </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Files </td>
+  <td class="xl97" colspan="1" rowspan="4" style="text-align: center; ; width: 155px"><p class="line862">This report is not migrated directly: the Urchin 6 "Valid Hits" field contains the total number of hits, i.e. valid+error hits. </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Bytes </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Bytes </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Valid Hits </td>
+</tr>
+<tr>  <td class="xl70" colspan="1" rowspan="15" style="text-align: center; ; height: 300px; width: 141px"><p class="line891"><strong>Directory Drilldown</strong> </td>
+  <td class="xl66" colspan="1" rowspan="7" style="text-align: center; ; width: 198px"><p class="line862">Directory by Pages Drilldown </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Directory and Pages </td>
+  <td class="xl66" colspan="1" rowspan="7" style="text-align: center; ; width: 309px"><p class="line862">Content Optimization&gt;Content Performance&gt;Content Drilldown </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Directory and Pages </td>
+  <td class="xl97" colspan="1" rowspan="7" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Pageviews </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Pageviews </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Avg Time </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">% Exit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">$ Index </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+</tr>
+<tr>  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; height: 80px; width: 198px"><p class="line862">Directory by Files Drilldown </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Directory and Files </td>
+  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; width: 309px"><p class="line862">IT Reports&gt;Pages &amp; Files&gt;File Drilldown </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Directory and Files </td>
+  <td class="xl97" colspan="1" rowspan="4" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Hits </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Valid Hits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Bytes </td>
+</tr>
+<tr>  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; height: 80px; width: 198px"><p class="line862">Directory by Bytes Drilldown </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Directory and Files </td>
+  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; width: 309px"><p class="line862">IT Reports&gt;Pages &amp; Files&gt;File Drilldown </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Directory and Files </td>
+  <td class="xl97" colspan="1" rowspan="4" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Bytes </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Bytes </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Valid Hits </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="8" style="text-align: center; ; height: 160px; width: 141px"><p class="line891"><strong> File Types</strong> </td>
+  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; width: 198px"><p class="line862">File Types by Hits </td>
+  <td class="xl66" style="width: 121px"><p class="line862">File Types </td>
+  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; width: 309px"><p class="line862">IT Reports&gt;Pages &amp; Files&gt;File Types </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Mime Types </td>
+  <td class="xl97" colspan="1" rowspan="4" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Hits </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Hits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Bytes </td>
+</tr>
+<tr>  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; height: 80px; width: 198px"><p class="line862">File Types by Bytes </td>
+  <td class="xl66" style="width: 121px"><p class="line862">File Types </td>
+  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; width: 309px"><p class="line862">IT Reports&gt;Pages &amp; Files&gt;File Types </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Mime Types </td>
+  <td class="xl97" colspan="1" rowspan="4" style="text-align: center; ; width: 155px"><p class="line862">Slight deviation of data might occur after   migration of this report. </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Bytes </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Bytes </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Hits </td>
+</tr>
+<tr>  <td class="xl69" colspan="7" style="text-align: center; ; width: 1223px; height: 20px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl84" colspan="7" style="text-align: center; ; width: 1223px; height: 20px; background-color: #cccccc"><p class="line891"><strong>Navigation</strong> </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="5" style="text-align: center; ; height: 100px; width: 141px"><p class="line862"> </td>
+  <td class="xl66" colspan="1" rowspan="5" style="text-align: center; ; width: 198px"><p class="line862">Entrance Pages </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Entrance Pages </td>
+  <td class="xl66" colspan="1" rowspan="5" style="text-align: center; ; width: 309px"><p class="line862">Content Optimization&gt;Navigation Analysis&gt;Entrance Bounce Rates </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Top Entrances </td>
+  <td class="xl89" colspan="1" rowspan="39" style="text-align: center; ; width: 111px"><p class="line862">"UTM" and "IP+User-Agent" </td>
+  <td class="xl97" colspan="1" rowspan="5" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Pageviews </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Entrances </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Bounces </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Bounce Rate </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="5" style="text-align: center; ; height: 100px; width: 141px"><p class="line862"> </td>
+  <td class="xl66" colspan="1" rowspan="5" style="text-align: center; ; width: 198px"><p class="line862">Exit Pages </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Exit Pages </td>
+  <td class="xl66" colspan="1" rowspan="5" style="text-align: center; ; width: 309px"><p class="line862">Content Optimization&gt;Navigation Analysis&gt;Top Exit Points </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Top Exits </td>
+  <td class="xl97" colspan="1" rowspan="5" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Pageviews </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Exits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Pageviews </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">% Exit </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="4" style="text-align: center; ; height: 80px; width: 141px"><p class="line862"> </td>
+  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; width: 198px"><p class="line862">Bounce Rate </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Bounce Pages </td>
+  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; width: 309px"><p class="line862">Content Optimization&gt;Navigation Analysis&gt;Entrance Bounce Rates </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Top Entrances </td>
+  <td class="xl97" colspan="1" rowspan="4" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Bounces </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Bounces </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Entrances </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Entrances </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Bounce Rate </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Bounce Rate </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="6" style="text-align: center; ; height: 120px; width: 141px"><p class="line862"> </td>
+  <td class="xl66" colspan="1" rowspan="6" style="text-align: center; ; width: 198px"><p class="line862">Click Paths </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Click Paths </td>
+  <td class="xl66" colspan="1" rowspan="6" style="text-align: center; ; width: 309px"><p class="line862">Content Optimization&gt;Navigation Analysis&gt;Initial Navigation </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Initial Path </td>
+  <td class="xl97" colspan="1" rowspan="6" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Sessions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">G1/Visit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">T/Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">$/Visits </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="10" style="text-align: center; ; height: 200px; width: 141px"><p class="line862"> </td>
+  <td class="xl66" colspan="1" rowspan="10" style="text-align: center; ; width: 198px"><p class="line862">Click To and From </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Directory and Files </td>
+  <td class="xl66" colspan="1" rowspan="10" style="text-align: center; ; width: 309px"><p class="line862">Content Optimization&gt;Navigation Analysis&gt;All Navigation </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Directory and Pages </td>
+  <td class="xl97" colspan="1" rowspan="10" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Pageviews </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Previous Pages </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Top 10 Clicks From </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Next Pages </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Top 10 Clicks To </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Clicks </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Clicks </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Clicks % </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">G1/Clicks </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">T/Clicks </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Avg. Score </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="7" style="text-align: center; ; height: 140px; width: 141px"><p class="line862"> </td>
+  <td class="xl66" colspan="1" rowspan="7" style="text-align: center; ; width: 198px"><p class="line862">Length of Pageview </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Pages </td>
+  <td class="xl66" colspan="1" rowspan="7" style="text-align: center; ; width: 309px"><p class="line862">Content Optimization&gt;Content Performance&gt;Content Drilldown </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Directory and Pages </td>
+  <td class="xl97" colspan="1" rowspan="7" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Pageviews </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Average Time </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Avg Time </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">% Exit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">$ Index </td>
+</tr>
+<tr>  <td class="xl69" style="width: 141px; height: 40px"><p class="line862"> </td>
+  <td class="xl66" style="width: 198px"><p class="line862">Depth of Session </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Sessions </td>
+  <td class="xl66" style="width: 309px"><p class="line862">Content Optimization&gt;Content Performance&gt;Depth of Visit </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl69" style="width: 141px; height: 40px"><p class="line862"> </td>
+  <td class="xl66" style="width: 198px"><p class="line862">Length of Session </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Sessions </td>
+  <td class="xl66" style="width: 309px"><p class="line862">Content Optimization&gt;Content Performance&gt;Engagement Metrics </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl69" colspan="7" style="text-align: center; ; width: 1223px; height: 20px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl84" colspan="7" style="text-align: center; ; width: 1223px; height: 20px; background-color: #cccccc"><p class="line891"><strong>Referrals</strong> </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="7" style="text-align: center; ; height: 140px; width: 141px"><p class="line862"> </td>
+  <td class="xl66" colspan="1" rowspan="7" style="text-align: center; ; width: 198px"><p class="line862">Referrals </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Referrals </td>
+  <td class="xl66" colspan="1" rowspan="7" style="text-align: center; ; width: 309px"><p class="line862">Marketing Optimization&gt;Marketing Campaign Results&gt;Referral Conversion </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Referrals </td>
+  <td class="xl89" colspan="1" rowspan="31" style="text-align: center; ; width: 111px"><p class="line862">"UTM" and "IP+User-Agent" </td>
+  <td class="xl97" colspan="1" rowspan="7" style="text-align: center; ; width: 155px"><p class="line862">This report can not be migrated directly: only "referral" pageviews are included in this Urchin 6 report ("organic" and "cpc" pageviews are excluded). </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Sessions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">P/Visit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">G1/Visit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">T/Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">$/Visits </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="7" style="text-align: center; ; height: 140px; width: 141px"><p class="line862"> </td>
+  <td class="xl66" colspan="1" rowspan="7" style="text-align: center; ; width: 198px"><p class="line862">Referral Drilldown </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Referrals </td>
+  <td class="xl66" colspan="1" rowspan="7" style="text-align: center; ; width: 309px"><p class="line862">Marketing Optimization&gt;Marketing Campaign Results&gt;Referral Conversion </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Referrals </td>
+  <td class="xl97" colspan="1" rowspan="7" style="text-align: center; ; width: 155px"><p class="line862">This report can not be migrated directly: only "refferal" pageviews are included in this Urchin 6 report ("organic" and "cpc" pageviews are excluded). </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Sessions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">P/Visit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">G1/Visit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">T/Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">$/Visits </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="7" style="text-align: center; ; height: 140px; width: 141px"><p class="line862"> </td>
+  <td class="xl66" colspan="1" rowspan="7" style="text-align: center; ; width: 198px"><p class="line862">Search Terms </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Search Terms </td>
+  <td class="xl66" colspan="1" rowspan="7" style="text-align: center; ; width: 309px"><p class="line862">Marketing Optimization&gt;Search Engine Marketing&gt;Overall Keyword Conversion </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Keyword/Source[Medium] </td>
+  <td class="xl98" colspan="1" rowspan="7" style="text-align: center; ; width: 155px"><p class="line862">This report can not be migrated directly if Urchin 5 profile is processed with "UTM" Visitor Tracking Method. </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Sessions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">P/Visit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">G1/Visit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">T/Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">$/Visits </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="7" style="text-align: center; ; height: 140px; width: 141px"><p class="line862"> </td>
+  <td class="xl66" colspan="1" rowspan="7" style="text-align: center; ; width: 198px"><p class="line862">Search Engines </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Search Engines </td>
+  <td class="xl66" colspan="1" rowspan="7" style="text-align: center; ; width: 309px"><p class="line862">Marketing Optimization&gt;Search Engine Marketing&gt;CPC vs Organic Conversion </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Source[Medium]/Keyword </td>
+  <td class="xl98" colspan="1" rowspan="7" style="text-align: center; ; width: 155px"><p class="line862">This report does not migrate directly if Urchin 5 profile is processed with "UTM" Visitor Tracking Method. </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Sessions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">P/Visit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">G1/Visit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">T/Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">$/Visits </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="3" style="text-align: center; ; height: 60px; width: 141px"><p class="line862"> </td>
+  <td class="xl66" colspan="1" rowspan="3" style="text-align: center; ; width: 198px"><p class="line862">Referral Errors </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Referral Errors </td>
+  <td class="xl66" colspan="1" rowspan="3" style="text-align: center; ; width: 309px"><p class="line862">IT Reports&gt;Pages &amp; Files&gt;Referral Errors </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Error Codes/Content/Referral </td>
+  <td class="xl97" colspan="1" rowspan="3" style="text-align: center; ; width: 155px"><p class="line862">"401" error codes are excluded from reporting data while migrating to Urchin 6. </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Hits </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Error Hits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Percent </td>
+</tr>
+<tr>  <td class="xl69" colspan="7" style="text-align: center; ; width: 1223px; height: 20px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl84" colspan="7" style="text-align: center; ; width: 1223px; height: 20px; background-color: #cccccc"><p class="line862"> <strong>Domains &amp; Users</strong> </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="7" style="text-align: center; ; height: 140px; width: 141px"><p class="line862"> </td>
+  <td class="xl66" colspan="1" rowspan="7" style="text-align: center; ; width: 198px"><p class="line862">Domains </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Domains </td>
+  <td class="xl66" colspan="1" rowspan="7" style="text-align: center; ; width: 309px"><p class="line862">Marketing Optimization&gt;Visitor Segment Performance&gt;Domains </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Domains </td>
+  <td class="xl89" colspan="1" rowspan="44" style="text-align: center; ; width: 111px"><p class="line862">"UTM" and "IP+User-Agent" </td>
+  <td class="xl97" colspan="1" rowspan="7" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Sessions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">P/Visit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">G1/Visit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">T/Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">$/Visits </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="5" style="text-align: center; ; height: 100px; width: 141px"><p class="line862"> </td>
+  <td class="xl66" colspan="1" rowspan="5" style="text-align: center; ; width: 198px"><p class="line862">Domain Drilldown </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Domains </td>
+  <td class="xl66" colspan="1" rowspan="5" style="text-align: center; ; width: 309px"><p class="line862">IT Reports&gt;Domains &amp; Users&gt;Domain Drilldown </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Primary Domain/Domain </td>
+  <td class="xl97" colspan="1" rowspan="5" style="text-align: center; ; width: 155px"><p class="line862">This report can not be migrated due to incompatibilities in datamaps. </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Sessions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">All Hits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Bytes </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="7" style="text-align: center; ; height: 140px; width: 141px"><p class="line862"> </td>
+  <td class="xl66" colspan="1" rowspan="7" style="text-align: center; ; width: 198px"><p class="line862">Countries </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Countries </td>
+  <td class="xl66" colspan="1" rowspan="7" style="text-align: center; ; width: 309px"><p class="line862">Marketing Optimization&gt;Visitor Segment Performance&gt;Geo Location </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Country/Region/City </td>
+  <td class="xl97" colspan="1" rowspan="7" style="text-align: center; ; width: 155px"><p class="line862">This report can not be migrated due to incompatibilities in datamaps. </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Sessions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">P/Visit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">G1/Visit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">T/Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">$/Visits </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="5" style="text-align: center; ; height: 100px; width: 141px"><p class="line862"> </td>
+  <td class="xl66" colspan="1" rowspan="5" style="text-align: center; ; width: 198px"><p class="line862">IP Addresses </td>
+  <td class="xl66" style="width: 121px"><p class="line862">IP Addresses </td>
+  <td class="xl66" colspan="1" rowspan="5" style="text-align: center; ; width: 309px"><p class="line862">IT Reports&gt;Domains &amp; Users&gt;IP Addresses </td>
+  <td class="xl66" style="width: 188px"><p class="line862">IP Addresses </td>
+  <td class="xl97" colspan="1" rowspan="5" style="text-align: center; ; width: 155px"><p class="line862">This report can not be migrated due to incompatibilities in datamaps. </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Sessions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">All Hits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Bytes </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="5" style="text-align: center; ; height: 100px; width: 141px"><p class="line862"> </td>
+  <td class="xl66" colspan="1" rowspan="5" style="text-align: center; ; width: 198px"><p class="line862">IP Drilldown </td>
+  <td class="xl66" style="width: 121px"><p class="line862">IP Addresses </td>
+  <td class="xl66" colspan="1" rowspan="5" style="text-align: center; ; width: 309px"><p class="line862">IT Reports&gt;Domains &amp; Users&gt;IP Drilldown </td>
+  <td class="xl66" style="width: 188px"><p class="line862">IP Addresses </td>
+  <td class="xl97" colspan="1" rowspan="5" style="text-align: center; ; width: 155px"><p class="line862">This report can not be migrated due to incompatibilities in datamaps. </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Sessions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">All Hits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Bytes </td>
+</tr>
+<tr>  <td class="xl70" colspan="1" rowspan="15" style="text-align: center; ; height: 300px; width: 141px"><p class="line891"><strong>Usernames</strong> </td>
+  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; width: 198px"><p class="line862">Usernames by Hits </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Usernames </td>
+  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; width: 309px"><p class="line862">IT Reports&gt;Domains&amp;Users&gt;Usernames </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Usernames </td>
+  <td class="xl97" colspan="1" rowspan="4" style="text-align: center; ; width: 155px"><p class="line862">This report can not be migrated directly: the Urchin 6 "Valid Hits" field contains the total number of hits, i.e. valid+error hits. </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Hits </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Valid Hits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Bytes </td>
+</tr>
+<tr>  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; height: 80px; width: 198px"><p class="line862">Usernames by Bytes </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Usernames </td>
+  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; width: 309px"><p class="line862">IT Reports&gt;Domains&amp;Users&gt;Usernames </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Usernames </td>
+  <td class="xl97" colspan="1" rowspan="4" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Bytes </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Bytes </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Valid Hits </td>
+</tr>
+<tr>  <td class="xl66" colspan="1" rowspan="7" style="text-align: center; ; height: 140px; width: 198px"><p class="line862">Usernames by Sessions </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Usernames </td>
+  <td class="xl66" colspan="1" rowspan="7" style="text-align: center; ; width: 309px"><p class="line862">Marketing Optimization&gt;Visitor Segment Performance&gt;Usernames </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Usernames </td>
+  <td class="xl97" colspan="1" rowspan="7" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Sessions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">P/Visit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">G1/Visit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">T/Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">$/Visits </td>
+</tr>
+<tr>  <td class="xl69" colspan="7" style="text-align: center; ; width: 1223px; height: 20px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl84" colspan="7" style="text-align: center; ; width: 1223px; height: 20px; background-color: #cccccc"><p class="line891"><strong>Browsers &amp; Robots</strong> </td>
+</tr>
+<tr>  <td class="xl70" colspan="1" rowspan="11" style="text-align: center; ; height: 220px; width: 141px"><p class="line891"><strong>Browsers</strong> </td>
+  <td class="xl66" colspan="1" rowspan="3" style="text-align: center; ; width: 198px"><p class="line862">Browsers by Session Drilldown </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Browsers </td>
+  <td class="xl66" colspan="1" rowspan="3" style="text-align: center; ; width: 309px"><p class="line862">Content Optimization&gt;Web Design Parameters&gt;Browser Versions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Browsers </td>
+  <td class="xl89" colspan="1" rowspan="42" style="text-align: center; ; width: 111px"><p class="line862">"UTM" and "IP+User-Agent" </td>
+  <td class="xl97" colspan="1" rowspan="3" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Sessions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Percent </td>
+</tr>
+<tr>  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; height: 80px; width: 198px"><p class="line862">Browsers by Hits Drilldown </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Browsers </td>
+  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; width: 309px"><p class="line862">IT Reports&gt;Browsers &amp; Robots&gt;Browser Versions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Browsers </td>
+  <td class="xl97" colspan="1" rowspan="4" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Hits </td>
+  <td class="xl66" style="width: 188px"><p class="line862">All Hits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Bytes </td>
+</tr>
+<tr>  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; height: 80px; width: 198px"><p class="line862">Browsers by Bytes Drilldown </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Browsers </td>
+  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; width: 309px"><p class="line862">IT Reports&gt;Browsers &amp; Robots&gt;Browser Versions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Browsers </td>
+  <td class="xl97" colspan="1" rowspan="4" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Bytes </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Bytes </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">All Hits </td>
+</tr>
+<tr>  <td class="xl70" colspan="1" rowspan="11" style="text-align: center; ; height: 220px; width: 141px"><p class="line891"><strong>Platforms</strong> </td>
+  <td class="xl66" colspan="1" rowspan="3" style="text-align: center; ; width: 198px"><p class="line862">Platforms by Session Drilldown </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Platforms </td>
+  <td class="xl66" colspan="1" rowspan="3" style="text-align: center; ; width: 309px"><p class="line862">Content Optimization&gt;Web Design Parameters&gt;Platform Versions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Platforms </td>
+  <td class="xl97" colspan="1" rowspan="3" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Sessions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Percent </td>
+</tr>
+<tr>  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; height: 80px; width: 198px"><p class="line862">Platforms by Hits Drilldown </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Platforms </td>
+  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; width: 309px"><p class="line862">IT Reports&gt;Browsers &amp; Robots&gt;Platform Versions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Platforms </td>
+  <td class="xl97" colspan="1" rowspan="4" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Hits </td>
+  <td class="xl66" style="width: 188px"><p class="line862">All Hits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Bytes </td>
+</tr>
+<tr>  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; height: 80px; width: 198px"><p class="line862">Platforms by Bytes Drilldown </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Platforms </td>
+  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; width: 309px"><p class="line862">IT Reports&gt;Browsers &amp; Robots&gt;Platform Versions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Platforms </td>
+  <td class="xl97" colspan="1" rowspan="4" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Bytes </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Bytes </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">All Hits </td>
+</tr>
+<tr>  <td class="xl70" colspan="1" rowspan="11" style="text-align: center; ; height: 220px; width: 141px"><p class="line891"><strong>Combos</strong> </td>
+  <td class="xl66" colspan="1" rowspan="3" style="text-align: center; ; width: 198px"><p class="line862">Combos by Sessions </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Browsers </td>
+  <td class="xl66" colspan="1" rowspan="3" style="text-align: center; ; width: 309px"><p class="line862">Content Optimization&gt;Web Design Parameters&gt;Browser &amp; Platform Combos </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Browsers </td>
+  <td class="xl97" colspan="1" rowspan="3" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Sessions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Percent </td>
+</tr>
+<tr>  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; height: 80px; width: 198px"><p class="line862">Combos by Hits </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Combos </td>
+  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; width: 309px"><p class="line862">IT Reports&gt;Browsers &amp; Robots&gt;Browser &amp; Platform Combos </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Browsers - Platform </td>
+  <td class="xl97" colspan="1" rowspan="4" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Hits </td>
+  <td class="xl66" style="width: 188px"><p class="line862">All Hits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Bytes </td>
+</tr>
+<tr>  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; height: 80px; width: 198px"><p class="line862">Combos by Bytes </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Combos </td>
+  <td class="xl66" colspan="1" rowspan="4" style="text-align: center; ; width: 309px"><p class="line862">IT Reports&gt;Browsers &amp; Robots&gt;Browser &amp; Platform Combos </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Browsers - Platform </td>
+  <td class="xl97" colspan="1" rowspan="4" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Bytes </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Bytes </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">All Hits </td>
+</tr>
+<tr>  <td class="xl70" colspan="1" rowspan="9" style="text-align: center; ; height: 180px; width: 141px"><p class="line891"><strong>Robots</strong> </td>
+  <td class="xl66" colspan="1" rowspan="3" style="text-align: center; ; width: 198px"><p class="line862">Robots by Hits Drilldown </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Robots </td>
+  <td class="xl66" colspan="1" rowspan="3" style="text-align: center; ; width: 309px"><p class="line862">IT Reports&gt;Browsers &amp; Robots&gt;Robot Content </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Robots/User-Agent </td>
+  <td class="xl97" colspan="1" rowspan="3" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Hits </td>
+  <td class="xl66" style="width: 188px"><p class="line862">All Hits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Percent </td>
+</tr>
+<tr>  <td class="xl66" colspan="1" rowspan="6" style="text-align: center; ; height: 120px; width: 198px"><p class="line862">Robots by Bytes Drilldown </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Robots </td>
+  <td class="xl66" colspan="1" rowspan="6" style="text-align: center; ; width: 309px"><p class="line862">IT Reports&gt;Browsers &amp; Robots&gt;Robots </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Robots/User-Agen </td>
+  <td class="xl97" colspan="1" rowspan="6" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Valid Hits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Error Hits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">All Hits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Bytes </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Bytes </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl69" colspan="7" style="text-align: center; ; width: 1223px; height: 20px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl84" colspan="7" style="text-align: center; ; width: 1223px; height: 20px; background-color: #cccccc"><p class="line891"><strong>Client Parameters</strong> </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="3" style="text-align: center; ; height: 60px; width: 141px"><p class="line862"> </td>
+  <td class="xl66" colspan="1" rowspan="3" style="text-align: center; ; width: 198px"><p class="line862">Screen Resolution </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Screen Resolution </td>
+  <td class="xl66" colspan="1" rowspan="3" style="text-align: center; ; width: 309px"><p class="line862">Content Optimization&gt;Web Design Parameters&gt;Screen Resolutions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Screen Resolution </td>
+  <td class="xl89" colspan="1" rowspan="14" style="text-align: center; ; width: 111px"><p class="line862">"UTM" </td>
+  <td class="xl97" colspan="1" rowspan="3" style="text-align: center; ; width: 155px"><p class="line862">This report can not be migrated due to incompatibilities in datamaps. </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Sessions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Percent </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="3" style="text-align: center; ; height: 60px; width: 141px"><p class="line862"> </td>
+  <td class="xl66" colspan="1" rowspan="3" style="text-align: center; ; width: 198px"><p class="line862">Screen Colors </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Color Depth </td>
+  <td class="xl66" colspan="1" rowspan="3" style="text-align: center; ; width: 309px"><p class="line862">Content Optimization&gt;Web Design Parameters&gt;Screen Colors </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Screen Color </td>
+  <td class="xl97" colspan="1" rowspan="3" style="text-align: center; ; width: 155px"><p class="line862">This report can not be migrated due to incompatibilities in datamaps. </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Sessions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Percent </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="3" style="text-align: center; ; height: 100px; width: 141px"><p class="line862"> </td>
+  <td class="xl66" colspan="1" rowspan="3" style="text-align: center; ; width: 198px"><p class="line862">Languages </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Languages </td>
+  <td class="xl66" style="width: 309px"><p class="line862">Content Optimization&gt;Web Design Parameters&gt;Languages </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Languages </td>
+  <td class="xl97" colspan="1" rowspan="3" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 40px"><p class="line862">Sessions </td>
+  <td class="xl66" style="width: 309px"><p class="line862">Marketing Optimization&gt;Visitor Segment Performance&gt;Language </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 309px"><p class="line862"> </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Percent </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="3" style="text-align: center; ; height: 60px; width: 141px"><p class="line862"> </td>
+  <td class="xl66" colspan="1" rowspan="3" style="text-align: center; ; width: 198px"><p class="line862">Java Enabled </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Java Enabled </td>
+  <td class="xl66" colspan="1" rowspan="3" style="text-align: center; ; width: 309px"><p class="line862">Content Optimization&gt;Web Design Parameters&gt;Java Enabled </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Java Enabled </td>
+  <td class="xl97" colspan="1" rowspan="3" style="text-align: center; ; width: 155px"><p class="line862">This report can not be migrated due to incompatibilities in datamaps. </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Sessions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Percent </td>
+</tr>
+<tr>  <td class="xl69" style="width: 141px; height: 20px"><p class="line862"> </td>
+  <td class="xl67" style="background-color: #ffcc99; width: 198px"><p class="line862">Timezone Offset </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl69" style="width: 141px; height: 20px"><p class="line862"> </td>
+  <td class="xl67" style="background-color: #ffcc99; width: 198px"><p class="line862">Javascript Version </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl69" colspan="7" style="text-align: center; ; width: 1223px; height: 20px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl84" colspan="7" style="text-align: center; ; width: 1223px; height: 20px; background-color: #cccccc"><p class="line891"><strong>E-Commerce</strong> </td>
+</tr>
+<tr>  <td class="xl69" style="width: 141px; height: 40px"><p class="line862"> </td>
+  <td class="xl66" style="width: 198px"><p class="line862">Revenue </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Revenue </td>
+  <td class="xl66" style="width: 309px"><p class="line862">E-Commerce Analysis&gt;Commerce Tracking&gt;Revenue &amp; Transactions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Revenue </td>
+  <td class="xl89" colspan="1" rowspan="54" style="text-align: center; ; width: 111px"><p class="line862">"UTM" and "IP+User-Agent", with "E-Commerce Website" enabled </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl69" style="width: 141px; height: 40px"><p class="line862"> </td>
+  <td class="xl66" style="width: 198px"><p class="line862">Number of Transactions </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Transactions </td>
+  <td class="xl66" style="width: 309px"><p class="line862">E-Commerce Analysis&gt;Commerce Tracking&gt;Revenue &amp; Transactions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Transactions </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl69" colspan="1" rowspan="6" style="text-align: center; ; height: 200px; width: 141px"><p class="line862"> </td>
+  <td class="xl66" colspan="1" rowspan="6" style="text-align: center; ; width: 198px"><p class="line862">E-Commerce Summary </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Total Revenue </td>
+  <td class="xl66" colspan="1" rowspan="6" style="text-align: center; ; width: 309px"><p class="line862">Executive View&gt;E-Commerce Summary </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Revenue </td>
+  <td class="xl97" colspan="1" rowspan="6" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Total Transactions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Trans </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 40px"><p class="line862">Average Revenue Per Transaction </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Average </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 40px"><p class="line862">Average Revenue Per Day </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 40px"><p class="line862">Average Transactions Per Day </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 40px"><p class="line862">Average Revenue Per Session </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl70" colspan="1" rowspan="28" style="text-align: center; ; height: 560px; width: 141px"><p class="line891"><strong>Products</strong> </td>
+  <td class="xl66" colspan="1" rowspan="7" style="text-align: center; ; width: 198px"><p class="line862">Products by Revenue </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Products </td>
+  <td class="xl66" colspan="1" rowspan="7" style="text-align: center; ; width: 309px"><p class="line862">E-Commerce Analysis&gt;Product Merchandising&gt;Product Performance </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Products/SKU </td>
+  <td class="xl97" colspan="1" rowspan="7" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Items </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Trans </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Revenue </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Revenue </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Avg Price </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Avg QTY </td>
+</tr>
+<tr>  <td class="xl66" colspan="1" rowspan="7" style="text-align: center; ; height: 140px; width: 198px"><p class="line862">Products by Quantity </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Products </td>
+  <td class="xl66" colspan="1" rowspan="7" style="text-align: center; ; width: 309px"><p class="line862">E-Commerce Analysis&gt;Product Merchandising&gt;Product Performance </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Products/SKU </td>
+  <td class="xl97" colspan="1" rowspan="7" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Items </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Items </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Trans </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Revenue </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Avg Price </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Avg QTY </td>
+</tr>
+<tr>  <td class="xl66" colspan="1" rowspan="7" style="text-align: center; ; height: 140px; width: 198px"><p class="line862">Products by Revenue Drilldown </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Regions </td>
+  <td class="xl66" colspan="1" rowspan="7" style="text-align: center; ; width: 309px"><p class="line862">E-Commerce Analysis&gt;Product Merchandising&gt;Product Performance </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Products/SKU </td>
+  <td class="xl97" colspan="1" rowspan="7" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Items </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Trans </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Revenue </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Revenue </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Avg Price </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Avg QTY </td>
+</tr>
+<tr>  <td class="xl66" colspan="1" rowspan="7" style="text-align: center; ; height: 140px; width: 198px"><p class="line862">Products by Quantity Drilldown </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Products </td>
+  <td class="xl66" colspan="1" rowspan="7" style="text-align: center; ; width: 309px"><p class="line862">E-Commerce Analysis&gt;Product Merchandising&gt;Product Performance </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Products/SKU </td>
+  <td class="xl97" colspan="1" rowspan="7" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Items </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Items </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Trans </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Revenue </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Avg Price </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Avg QTY </td>
+</tr>
+<tr>  <td class="xl70" colspan="1" rowspan="18" style="text-align: center; ; height: 382px; width: 141px"><p class="line891"><strong>Revenue Source</strong> </td>
+  <td class="xl66" colspan="1" rowspan="5" style="text-align: center; ; width: 198px"><p class="line862">Revenue by Region Drilldown </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Regions </td>
+  <td class="xl66" colspan="1" rowspan="5" style="text-align: center; ; width: 309px"><p class="line862">E-Commerce Analysis&gt;Revenue Sources&gt;Country Drilldown </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Country/Region/City </td>
+  <td class="xl97" colspan="1" rowspan="5" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Revenue </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Revenue </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Trans </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">$/Trans </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Percent $ </td>
+</tr>
+<tr>  <td class="xl66" colspan="1" rowspan="5" style="text-align: center; ; height: 100px; width: 198px"><p class="line862">Revenue by City </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Cities </td>
+  <td class="xl66" colspan="1" rowspan="5" style="text-align: center; ; width: 309px"><p class="line862">E-Commerce Analysis&gt;Revenue Sources&gt;Top Cities </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Country/Region/City </td>
+  <td class="xl97" colspan="1" rowspan="5" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Revenue </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Revenue </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Trans </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">$/Trans </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Percent $ </td>
+</tr>
+<tr>  <td class="xl68" colspan="1" rowspan="5" style="text-align: center; ; height: 100px; width: 198px"><p class="line862">Revenue by Referrals </td>
+  <td class="xl96"><p class="line862">Referrals </td>
+  <td class="xl66" colspan="1" rowspan="5" style="text-align: center; ; width: 309px"><p class="line862">E-Commerce Analysis&gt;Revenue Sources&gt;Referring Sources </td>
+  <td class="xl65"><p class="line862">Source [Medium] </td>
+  <td class="xl97" colspan="1" rowspan="5" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Revenue </td>
+  <td class="xl65"><p class="line862"> Revenue </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl65"><p class="line862">Trans </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl65"><p class="line862">$/Trans </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Percent </td>
+  <td class="xl65"><p class="line862">Percent $ </td>
+</tr>
+<tr>  <td class="xl67" style="background-color: #ffcc99; height: 20px; width: 198px"><p class="line862">Revenue by Search Terms </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl67" style="background-color: #ffcc99; height: 20px; width: 198px"><p class="line862">Revenue by Search Engines Drilldown </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl67" style="background-color: #ffcc99; height: 20px; width: 198px"><p class="line862">Revenue by Domains Drilldown </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl69" colspan="7" style="text-align: center; ; width: 1223px; height: 20px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl84" colspan="7" style="text-align: center; ; width: 1223px; height: 20px; background-color: #cccccc"><p class="line891"><strong>Campaign Tracking</strong> </td>
+</tr>
+<tr>  <td class="xl69" style="width: 141px; height: 20px"><p class="line862"> </td>
+  <td class="xl67" style="background-color: #ffcc99; width: 198px"><p class="line862">Overall Results </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl89" colspan="1" rowspan="87" style="text-align: center; ; width: 111px"><p class="line862">"UTM" with "Campaign Tracking" enabled </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl69" style="width: 141px; height: 20px"><p class="line862"> </td>
+  <td class="xl67" style="background-color: #ffcc99; width: 198px"><p class="line862">Goal Results </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl70" colspan="1" rowspan="14" style="text-align: center; ; height: 280px; width: 141px"><p class="line891"><strong>Lead Sources</strong> </td>
+  <td class="xl67" style="background-color: #ffcc99; width: 198px"><p class="line862">Acquisition </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" colspan="1" rowspan="11" style="text-align: center; ; height: 220px; width: 198px"><p class="line862">Quality </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Source </td>
+  <td class="xl66" colspan="1" rowspan="11" style="text-align: center; ; width: 309px"><p class="line862">Marketing Optimization&gt;Marketing Campaign Results&gt;Source Conversion </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Source [Medium] </td>
+  <td class="xl97" colspan="1" rowspan="11" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Clicks </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Pageviews </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Sessions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Depth </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Loyalty </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">P/Visit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">G1/Visit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">G4/Visit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">T/Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">$/Visits </td>
+</tr>
+<tr>  <td class="xl67" style="background-color: #ffcc99; height: 20px; width: 198px"><p class="line862">Conversion </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl67" style="background-color: #ffcc99; height: 20px; width: 198px"><p class="line862">Cost Breakdown </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl70" colspan="1" rowspan="13" style="text-align: center; ; height: 260px; width: 141px"><p class="line891"><strong>Keyword Analysis</strong> </td>
+  <td class="xl67" style="background-color: #ffcc99; width: 198px"><p class="line862">Acquisition </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" colspan="1" rowspan="10" style="text-align: center; ; height: 200px; width: 198px"><p class="line862">Quality </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Source/Keyword </td>
+  <td class="xl66" colspan="1" rowspan="10" style="text-align: center; ; width: 309px"><p class="line862">Marketing Optimization&gt;Search Engine Marketing&gt;CPC vs Organic Conversion </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Source[Medium]/Keyword </td>
+  <td class="xl97" colspan="1" rowspan="10" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Clicks </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Pageviews </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Sessions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Depth </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Loyalty </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">P/Visit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">G1/Visit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">T/Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">$/Visits </td>
+</tr>
+<tr>  <td class="xl67" style="background-color: #ffcc99; height: 20px; width: 198px"><p class="line862">Conversion </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl67" style="background-color: #ffcc99; height: 20px; width: 198px"><p class="line862">Cost Breakdown </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl70" colspan="1" rowspan="11" style="text-align: center; ; height: 220px; width: 141px"><p class="line891"><strong>Keyword Comparison</strong> </td>
+  <td class="xl67" style="background-color: #ffcc99; height: 20px; width: 198px"><p class="line862">Acquisition </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" colspan="1" rowspan="8" style="text-align: center; ; height: 160px; width: 198px"><p class="line862">Quality </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Keyword/Source </td>
+  <td class="xl66" colspan="1" rowspan="8" style="text-align: center; ; width: 309px"><p class="line862">Marketing Optimization&gt;Search Engine Marketing&gt;Overall Keyword Conversion </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Keyword/Source[Medium] </td>
+  <td class="xl97" colspan="1" rowspan="8" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Clicks </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Pageviews </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Sessions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Depth </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Loyalty </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">T/Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">$/Visits </td>
+</tr>
+<tr>  <td class="xl67" style="background-color: #ffcc99; height: 20px; width: 198px"><p class="line862">Conversion </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl67" style="background-color: #ffcc99; height: 20px; width: 198px"><p class="line862">Cost Breakdown </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl70" colspan="1" rowspan="13" style="text-align: center; ; height: 260px; width: 141px"><p class="line891"><strong>Campaign Comparison&gt;...</strong> </td>
+  <td class="xl67" style="background-color: #ffcc99; height: 20px; width: 198px"><p class="line862">Acquisition </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" colspan="1" rowspan="10" style="text-align: center; ; height: 200px; width: 198px"><p class="line862">Quality </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Campaign/Source </td>
+  <td class="xl66" colspan="1" rowspan="10" style="text-align: center; ; width: 309px"><p class="line862">Marketing Optimization&gt;Marketing Campaign Results&gt;Campaign Conversion </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Campaign/Source </td>
+  <td class="xl97" colspan="1" rowspan="10" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Clicks </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Pageviews </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Sessions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Depth </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Loyalty </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">P/Visit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">G1/Visit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">T/Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">$/Visits </td>
+</tr>
+<tr>  <td class="xl67" style="background-color: #ffcc99; height: 20px; width: 198px"><p class="line862">Conversion </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl67" style="background-color: #ffcc99; height: 20px; width: 198px"><p class="line862">Cost Breakdown </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl70" colspan="1" rowspan="13" style="text-align: center; ; height: 260px; width: 141px"><p class="line891"><strong>Medium Comparison</strong> </td>
+  <td class="xl67" style="background-color: #ffcc99; height: 20px; width: 198px"><p class="line862">Acquisition </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" colspan="1" rowspan="10" style="text-align: center; ; height: 200px; width: 198px"><p class="line862">Quality </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Medium/Source </td>
+  <td class="xl66" colspan="1" rowspan="10" style="text-align: center; ; width: 309px"><p class="line862">Marketing Optimization&gt; Marketing Campaign Results&gt;Medium Conversion </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Medium/Source </td>
+  <td class="xl97" colspan="1" rowspan="10" style="text-align: center; ; width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Clicks </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Pageviews </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Sessions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Depth </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Loyalty </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">P/Visit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">G1/Visit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">T/Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">$/Visits </td>
+</tr>
+<tr>  <td class="xl67" style="background-color: #ffcc99; height: 20px; width: 198px"><p class="line862">Conversion </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl67" style="background-color: #ffcc99; height: 20px; width: 198px"><p class="line862">Cost Breakdown </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl70" colspan="1" rowspan="13" style="text-align: center; ; height: 260px; width: 141px"><p class="line891"><strong>Content (A/B) Testing&gt;...</strong> </td>
+  <td class="xl67" style="background-color: #ffcc99; width: 198px"><p class="line862">Acquisition </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl66" colspan="1" rowspan="10" style="text-align: center; ; height: 200px; width: 198px"><p class="line862">Quality </td>
+  <td class="xl66" style="width: 121px"><p class="line862">Source/Content </td>
+  <td class="xl66" colspan="1" rowspan="10" style="text-align: center; ; width: 309px"><p class="line862">Ad Version Testing&gt;Source Specific Testing </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Source/Content </td>
+  <td class="xl97" colspan="1" rowspan="10" style="text-align: center; ; width: 155px"><p class="line862">This report can not be migrated directly: records with "referral" sources are excluded from corresponding Urchin 6 report. </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Clicks </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Pageviews </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Sessions </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Depth </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">Loyalty </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">P/Visit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">G1/Visit </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">T/Visits </td>
+</tr>
+<tr>  <td class="xl66" style="width: 121px; height: 20px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">$/Visits </td>
+</tr>
+<tr>  <td class="xl67" style="background-color: #ffcc99; height: 20px; width: 198px"><p class="line862">Conversion </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl67" style="background-color: #ffcc99; height: 20px; width: 198px"><p class="line862">Cost Breakdown </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl72" colspan="1" rowspan="4" style="text-align: center; ; height: 120px; width: 141px"><p class="line891"><strong>Latency Reports</strong> </td>
+  <td class="xl67" style="background-color: #ffcc99; height: 20px; width: 198px"><p class="line862">Time to Goal </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl67" style="background-color: #ffcc99; height: 20px; width: 198px"><p class="line862">Sessions to Goal </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl68" style="width: 198px; height: 40px"><p class="line862">Time to Transaction </td>
+  <td class="xl102" style="width: 121px"><p class="line862">Transactions </td>
+  <td class="xl66" style="width: 309px"><p class="line862">E-Commerce Analysis&gt;Loyalty &amp; Latency&gt;Time to Transaction </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Trans </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl68" style="width: 198px; height: 40px"><p class="line862">Sessions to Transaction </td>
+  <td class="xl102" style="width: 121px"><p class="line862">Transactions </td>
+  <td class="xl66" style="width: 309px"><p class="line862">E-Commerce Analysis&gt;Loyalty &amp; Latency&gt;Visits to Transaction </td>
+  <td class="xl66" style="width: 188px"><p class="line862">Trans </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl79" colspan="1" rowspan="2" style="text-align: center; ; height: 44px; width: 141px"><p class="line891"><strong>Day Parts Breakdown</strong> </td>
+  <td class="xl77" style="background-color: #ffcc99; width: 198px"><p class="line862">Goal Conversion By Hour </td>
+  <td class="xl78" style="width: 121px"><p class="line862"> </td>
+  <td class="xl78" style="width: 309px"><p class="line862">- </td>
+  <td class="xl78" style="width: 188px"><p class="line862">- </td>
+  <td class="xl99" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl67" style="background-color: #ffcc99; width: 198px"><p class="line862">Sales Conversion By Hour </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl73" colspan="1" rowspan="2" style="text-align: center; ; height: 41px; width: 141px"><p class="line891"><strong>Click Fraud Watch</strong> </td>
+  <td class="xl67" style="background-color: #ffcc99; width: 198px"><p class="line862">Repeat Clicks by IP </td>
+  <td class="xl66" style="width: 121px"><p class="line862"> </td>
+  <td class="xl66" style="width: 309px"><p class="line862">- </td>
+  <td class="xl66" style="width: 188px"><p class="line862">- </td>
+  <td class="xl97" style="width: 155px"><p class="line862"> </td>
+</tr>
+<tr>  <td class="xl75" style="background-color: #ffcc99; width: 198px"><p class="line862">Repeat Clicks by Source </td>
+  <td class="xl76" style="width: 121px"><p class="line862"> </td>
+  <td class="xl76" style="width: 309px"><p class="line862">- </td>
+  <td class="xl76" style="width: 188px"><p class="line862">- </td>
+  <td class="xl100" style="width: 155px"><p class="line862"> </td>
+</tr>
+</tbody></table></div></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Urchin_5_to_Urchin_6_Report_Data_Mapping.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

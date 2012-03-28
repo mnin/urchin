@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/CPC_Sources.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>CPC (Cost per Click) Sources (Urchin 6.5+)</strong> <p class="line862">Urchin 6.5 features a new type of data source: Cost Per Click (CPC) Source. Somewhat similar to log sources, CPC Sources enable automatic extraction of CPC Campaign Data from external sources. Linked with existing profiles like Log Sources and Filters, CPC sources enable automatic inclusion of CPC Data into Urchin reports. CPC Sources may be created for Google Ad<tt class="backtick"></tt>Words (Urchin 6.5+) and Yahoo! Search Marketing (Urchin 6.6+). <p class="line862">Note: Due to Ad<tt class="backtick"></tt>Words Starter Edition limitations, CPC Sources will not work for Ad<tt class="backtick"></tt>Words Starter Edition accounts. To use CPC Sources, you'll need to upgrade to the Ad<tt class="backtick"></tt>Words Standard Edition. <p class="line867"><strong>Important Note regarding 6.500 to 6.501 upgrades:</strong> When upgrading from 6.500 to 6.501, you must manually delete your old CPC data. To do this,  delete all contents of the following directories: <p class="line867"><pre>&lt;path_to_urchin_6500_installation&gt;/data/cpc/...
+&lt;path_to_urchin_6500_installation&gt;/data/history/cpc/...
+</pre><p class="line867"><strong>CPC Source Manager</strong> <p class="line862">The CPC Source Manager section can be found in the Configuration &gt; Urchin Profiles section (Urchin 6.5 +). <p class="line867"><img alt="CPC_Source_Manager_Select" src="https://secure.urchin.com/helpwiki/images/CPC_Source_Manager_Select.jpg" title="CPC_Source_Manager_Select" /> <p class="line874">The CPC Source Manager displays a list of Cost Per Click (CPC) Sources that have been configured on the current Urchin instance and contains UI controls that enable an Administrator to create and modify CPC Sources. <p class="line867"><strong>Creating a New CPC Source</strong> <p class="line874">To add and configure new CPC Source click the Add button at the top-right of the CPC Source Manager.  <p class="line867"><img alt="CPC_Source_Manager_Add" src="https://secure.urchin.com/helpwiki/images/CPC_Source_Manager_Add.jpg" title="CPC_Source_Manager_Add" /> <p class="line874">This launches the "Add CPC Source Wizard" which will walk you through the steps of adding/configuring a CPC Source. <p class="line874">On the first Wizard step, fill in the following data: <p class="line874">-          Optional Account  - specify which Account newly added CPC Source will be linked to (Data Center Mode only). <p class="line874">-          CPC Source Name – name of CPC Source; <p class="line874">-          CPC Source Type: <ul><li><p class="line891"><strong>Google Ad<tt class="backtick"></tt>Words</strong> <ul><li><p class="line862">Email* - login e-mail of an Ad<tt class="backtick"></tt>Words Account being accessed or an My Client Center (MCC) account login; </li><li>Password* – password of the login account; </li><li><p class="line862">Developer Token – This is the unique string that identifies an authorized developer of the Ad<tt class="backtick"></tt>Words API (optional). Urchin comes with a default Developer Token, therefore unless you have an intention to use your own Developer Token you leave this field blank. </li><li><p class="line862">Application Token -This is the Application Token that will be used when accessing the Ad<tt class="backtick"></tt>Words API. As with the Developer Token, you can leave this field blank. </li><li>Client E-mail – In case of MCC login (Email is a login of an MCC account), contains the login e-mail of the client account being accessed. </li><li><p class="line862">Customer ID – In case of MCC login, a Customer ID of an Ad<tt class="backtick"></tt>Words account being accessed (a number such as 123-456-7890 seen at the top-right corner of the screen in Google Ad<tt class="backtick"></tt>Words) . This element can be provided instead of Client E-mail. </li></ul></li></ul><p class="line862">You can validate your CPC Source settings by pressing the "<strong>Test CPC Source</strong>" button. <p class="line867"><img alt="CPC_Source_Test" src="https://secure.urchin.com/helpwiki/images/CPC_Source_Test.jpg" title="CPC_Source_Test" /> <ul><li><p class="line891"><strong>Yahoo! Search Marketing</strong> <ul><li>Username* - This is the username for the YSM account being accessed. It can be the advertiser's email address or the email address of the agency accessing the report on behalf of the advertiser; </li><li>Password* – This is the password for the YSM account being accessed; </li><li>Master Account ID*  – This is the advertiser's master account ID; </li><li>Account ID* - This is the advertiser's account ID; </li><li>License Key - This is the license key for the user that is logging-in, the advertiser or the agency; </li><li>On-Behalf-of Username - This is the advertiser's on-behalf-of username. It is only required if the agency username was provided instead of the advertiser username (optional); </li><li>On-Behalf-of Password - This is the advertiser's on-behalf-of password (optional).  </li></ul></li></ul><p class="line862">Click <strong>'Finish</strong>' button to complete the procedure. <p class="line867"><img alt="CPC_Source_Finish" src="https://secure.urchin.com/helpwiki/images/CPC_Source_Finish.jpg" title="CPC_Source_Finish" /> <p class="line867"><strong>Editing the CPC Source</strong> <p class="line874">Once the CPC Source has been added, you can modify its settings, delete or schedule it for download.  <p class="line867"><img alt="CPC_Source_Edit_Del_Download" src="https://secure.urchin.com/helpwiki/images/CPC_Source_Edit_Del_Download.jpg" title="CPC_Source_Edit_Del_Download" /> <p class="line874">To edit the existing CPC Source settings, click the 'Edit' button near the desired CPC Source. <p class="line867"><img alt="CPC_Report_Download_Enabled" src="https://secure.urchin.com/helpwiki/images/CPC_Report_Download_Enabled.jpg" title="CPC_Report_Download_Enabled" /> <p class="line862">You can modify the login settings for an Ad<tt class="backtick"></tt>Words or YSM account as well as enable or disable the future downloads of this CPC Source. <em>NOTE: Even if you select to disable future report downloads, the profiles linked with this CPC Source will keep using already downloaded reports.</em> <p class="line862">On the <strong>'Profiles</strong>' tab, you can link your CPC Source to one or more existing profiles. The list of profiles available for linking is limited to the current Urchin account. The CPC data from the linked CPC Sources will appear in these profiles' reports. <p class="line867"><img alt="CPC_Source_Profiles" src="https://secure.urchin.com/helpwiki/images/CPC_Source_Profiles.jpg" title="CPC_Source_Profiles" /> <p class="line867"><strong>Scheduling the CPC Source</strong> <p class="line862">On the <strong>Schedule</strong> tab of the <strong>Edit CPC Source</strong> screen, you’ll be able to define your CPC Source Download settings: <ul><li style="list-style-type:none"><p class="line862">-          <strong>Schedule – Download Interval</strong> – CPC Download is split into two distinct stages. In first stage, the CPC credentials are validated and the report request is made to the CPC server. In the second stage, report availability is checked periodically until it becomes available. The second stage ends with the actual download of the report. It takes some time before a report becomes available on the server, depending upon the number of campaigns in the account, the amount of data retrieved, the current load of the servers, etc. This interval determines when Urchin starts checking the availability of report after it has been requested. The general suggestion here is to set this interval to higher values for very large accounts that have a large amount of click traffic. <p class="line862">-          <strong>Download - Hour of the Day</strong> – here you can configure the time of the day when the updated report for this CPC Source should be downloaded. IMPORTANT: Since CPC data is extracted on a daily (and not hourly) schedule, we <strong>highly recommend</strong> that you allow at least 2 hours after the full day is complete in your Ad<tt class="backtick"></tt>Words or YSM account timezone before downloading. This will ensure that all CPC data for the day is available on Ad<tt class="backtick"></tt>Words and YSM servers. It's best to schedule profiles with CPC Sources so that they process after the CPC data has been downloaded. This way, you'll get the latest CPC data in your reports. <p class="line862">-            <strong>Account Data - Download Interval (only for Ad<tt class="backtick"></tt>Words in Urchin 6.6+)</strong> - use this option to set the Download Interval for the Ad<tt class="backtick"></tt>Words account structure download. The Ad<tt class="backtick"></tt>Words Account structure must be downloaded before you can view Campaign and Keyword metadata or use the Keyword Generator, Copy Campaign, and Ad<tt class="backtick"></tt>Words Tag Manager tools. </li></ul><p class="line867"><img alt="CPC_Source_Schedule_new" src="https://secure.urchin.com/helpwiki/images/CPC_Source_Schedule_new.jpg" title="CPC_Source_Schedule_new" /> <p class="line874">On the CPC Source Update tab of Global Settings screen, you can define default global CPC Source Download settings. <p class="line867"><img alt="CPC_Source_Global_Settings" src="https://secure.urchin.com/helpwiki/images/CPC_Source_Global_Settings.jpg" title="CPC_Source_Global_Settings" /> </div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/CPC_Sources.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

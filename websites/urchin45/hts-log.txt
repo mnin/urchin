@@ -1,0 +1,76 @@
+HTTrack3.43-9+libhtsjava.so.2 launched on Wed, 28 Mar 2012 16:29:40 at http://support.google.com/urchin45/?hl=en +* 5
+(httrack http://support.google.com/urchin45/?hl=en -O /home/m/mnin/websites/urchin45 +* -%v -r 5 -s0 -%c10 )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+16:29:40	Warning: 	* security warning: maximum number of connections per second limited to 5.000000 to avoid server overload
+16:29:40	Info: 	engine: warning: entry cleaned up, but no trace on heap: www.google.com/favicon.ico (/home/m/mnin/websites/urchin45/www.google.com/favicon.ico)
+16:30:19	Info: 	engine: warning: entry cleaned up, but no trace on heap: www.google.com/help/hc/images/icons/hc_icon_zippy_alt_collapsed.png (/home/m/mnin/websites/urchin45/www.google.com/help/hc/images/icons/hc_icon_zippy_alt_collapsed.png)
+16:30:20	Info: 	engine: warning: entry cleaned up, but no trace on heap: www.google.com/images/icons/feature/mail-lb16.png (/home/m/mnin/websites/urchin45/www.google.com/images/icons/feature/mail-lb16.png)
+16:30:21	Info: 	engine: warning: entry cleaned up, but no trace on heap: www.google.com/help/hc/images/orkut_button_R.gif (/home/m/mnin/websites/urchin45/www.google.com/help/hc/images/orkut_button_R.gif)
+16:30:22	Info: 	engine: warning: entry cleaned up, but no trace on heap: www.google.com/images/icons/feature/chat-b32.png (/home/m/mnin/websites/urchin45/www.google.com/images/icons/feature/chat-b32.png)
+16:30:23	Info: 	engine: warning: entry cleaned up, but no trace on heap: www.google.com/images/icons/feature/babyblock-r16.png (/home/m/mnin/websites/urchin45/www.google.com/images/icons/feature/babyblock-r16.png)
+16:30:24	Info: 	engine: warning: entry cleaned up, but no trace on heap: www.google.com/images/icons/flag-16.gif (/home/m/mnin/websites/urchin45/www.google.com/images/icons/flag-16.gif)
+16:30:25	Info: 	engine: warning: entry cleaned up, but no trace on heap: www.google.com/images/icons/feature/mail-b32.png (/home/m/mnin/websites/urchin45/www.google.com/images/icons/feature/mail-b32.png)
+16:30:26	Info: 	engine: warning: entry cleaned up, but no trace on heap: www.google.com/help/hc/images/icons/hc_icon_check_blue_global.png (/home/m/mnin/websites/urchin45/www.google.com/help/hc/images/icons/hc_icon_check_blue_global.png)
+16:30:27	Info: 	engine: warning: entry cleaned up, but no trace on heap: www.google.com/images/icons/loading-16.gif (/home/m/mnin/websites/urchin45/www.google.com/images/icons/loading-16.gif)
+16:30:28	Info: 	engine: warning: entry cleaned up, but no trace on heap: www.google.com/images/icons/feature/play-g16.png (/home/m/mnin/websites/urchin45/www.google.com/images/icons/feature/play-g16.png)
+16:30:29	Info: 	engine: warning: entry cleaned up, but no trace on heap: www.google.com/images/icons/feature/phone-lb42.png (/home/m/mnin/websites/urchin45/www.google.com/images/icons/feature/phone-lb42.png)
+16:30:30	Info: 	engine: warning: entry cleaned up, but no trace on heap: www.google.com/help/hc/images/hc_lb_close_icon.png (/home/m/mnin/websites/urchin45/www.google.com/help/hc/images/hc_lb_close_icon.png)
+16:30:31	Info: 	engine: warning: entry cleaned up, but no trace on heap: www.google.com/help/hc/images/nav_logo3.png (/home/m/mnin/websites/urchin45/www.google.com/help/hc/images/nav_logo3.png)
+16:30:32	Info: 	engine: warning: entry cleaned up, but no trace on heap: www.google.com/images/icons/search-32.gif (/home/m/mnin/websites/urchin45/www.google.com/images/icons/search-32.gif)
+16:30:33	Info: 	engine: warning: entry cleaned up, but no trace on heap: www.google.com/help/hc/images/hc_icon_back_global.png (/home/m/mnin/websites/urchin45/www.google.com/help/hc/images/hc_icon_back_global.png)
+16:30:34	Info: 	engine: warning: entry cleaned up, but no trace on heap: www.google.com/help/hc/images/hc_icon_streamlined_arrow_left.png (/home/m/mnin/websites/urchin45/www.google.com/help/hc/images/hc_icon_streamlined_arrow_left.png)
+16:30:35	Info: 	engine: warning: entry cleaned up, but no trace on heap: www.google.com/help/hc/images/hc_yarnlett_global.png (/home/m/mnin/websites/urchin45/www.google.com/help/hc/images/hc_yarnlett_global.png)
+16:30:36	Info: 	engine: warning: entry cleaned up, but no trace on heap: www.google.com/images/icons/feature/chat-g48.png (/home/m/mnin/websites/urchin45/www.google.com/images/icons/feature/chat-g48.png)
+16:30:37	Info: 	engine: warning: entry cleaned up, but no trace on heap: www.google.com/images/icons/feature/screwdriver_wrench-24.gif (/home/m/mnin/websites/urchin45/www.google.com/images/icons/feature/screwdriver_wrench-24.gif)
+16:30:38	Info: 	engine: warning: entry cleaned up, but no trace on heap: ssl.gstatic.com/ui/v1/menu/checkmark-partial.png (/home/m/mnin/websites/urchin45/ssl.gstatic.com/ui/v1/menu/checkmark-partial.png)
+16:30:40	Info: 	engine: warning: entry cleaned up, but no trace on heap: ssl.gstatic.com/ui/v1/menu/tristate-partial.png (/home/m/mnin/websites/urchin45/ssl.gstatic.com/ui/v1/menu/tristate-partial.png)
+16:30:41	Info: 	engine: warning: entry cleaned up, but no trace on heap: ssl.gstatic.com/ui/v1/disclosure/light-grey-disclosure-arrow-down.png (/home/m/mnin/websites/urchin45/ssl.gstatic.com/ui/v1/disclosure/light-grey-disclosure-arrow-down.png)
+16:30:42	Info: 	engine: warning: entry cleaned up, but no trace on heap: ssl.gstatic.com/ui/v1/rating/rating-blank.png (/home/m/mnin/websites/urchin45/ssl.gstatic.com/ui/v1/rating/rating-blank.png)
+16:30:43	Info: 	engine: warning: entry cleaned up, but no trace on heap: ssl.gstatic.com/ui/v1/star/star4.png (/home/m/mnin/websites/urchin45/ssl.gstatic.com/ui/v1/star/star4.png)
+16:30:44	Info: 	engine: warning: entry cleaned up, but no trace on heap: ssl.gstatic.com/ui/v1/star/star-lit-active4.png (/home/m/mnin/websites/urchin45/ssl.gstatic.com/ui/v1/star/star-lit-active4.png)
+16:30:45	Info: 	engine: warning: entry cleaned up, but no trace on heap: www.google.com/help/hc/images/adwords/question_mark_over_rtl.jpg (/home/m/mnin/websites/urchin45/www.google.com/help/hc/images/adwords/question_mark_over_rtl.jpg)
+16:30:46	Info: 	engine: warning: entry cleaned up, but no trace on heap: www.google.com/help/hc/images/adwords/awr_email.png (/home/m/mnin/websites/urchin45/www.google.com/help/hc/images/adwords/awr_email.png)
+16:30:47	Info: 	engine: warning: entry cleaned up, but no trace on heap: www.google.com/help/hc/images/adwords/awr_tip_36.png (/home/m/mnin/websites/urchin45/www.google.com/help/hc/images/adwords/awr_tip_36.png)
+16:30:48	Info: 	engine: warning: entry cleaned up, but no trace on heap: ssl.gstatic.com/inproduct_help/helpwidgets/spin.gif (/home/m/mnin/websites/urchin45/ssl.gstatic.com/inproduct_help/helpwidgets/spin.gif)
+16:30:48	Warning: 	File has moved from https://mail.google.com/mail/ to https://accounts.google.com/ServiceLogin?service=mail&passive=true&rm=false&continue=https://mail.google.com/mail/&ss=1&scc=1&ltmpl=googlemail
+16:30:49	Info: 	engine: warning: entry cleaned up, but no trace on heap: ssl.gstatic.com/accounts/ui/google-signin-flat.png (/home/m/mnin/websites/urchin45/ssl.gstatic.com/accounts/ui/google-signin-flat.png)
+16:30:49	Info: 	engine: warning: entry cleaned up, but no trace on heap: ssl.gstatic.com/images/logos/google_logo_41.png (/home/m/mnin/websites/urchin45/ssl.gstatic.com/images/logos/google_logo_41.png)
+16:30:57	Warning: 	File has moved from https://sites.google.com/ to https://www.google.com/a/UniversalLogin?service=jotspot&passive=1209600&continue=https://sites.google.com/&followup=https://sites.google.com/
+16:30:57	Error: 	"Forbidden" (403) at link groups.google.com/grphp?hl=en (from support.google.com/urchin45/?hl=en)
+16:31:09	Warning: 	File has moved from www.google.com/intl/en/options/ to http://www.google.com/intl/en/about/products/index.html
+16:31:14	Warning: 	File has moved from support.google.com/urchin45/ to http://support.google.com/urchin45/?hl=en
+16:31:29	Error: 	"Not Found" (404) at link www.google.com/urchin/features.html (from support.google.com/urchin45/?hl=en)
+16:33:38	Info: 	engine: warning: entry cleaned up, but no trace on heap: www.google.com/analytics/hc/images//visitor_proxy.gif (/home/m/mnin/websites/urchin45/www.google.com/analytics/hc/images_/visitor_proxy.gif)
+16:33:40	Warning: 	File has moved from www.urchin.com/ to http://www.google.com/urchin/index.html
+16:33:41	Warning: 	File has moved from www.google.com/support/?hl=en to http://support.google.com/?hl=en
+16:33:41	Warning: 	File has moved from www.google.com/intl/en/ to http://www.google.com/webhp?hl=en
+16:33:51	Error: 	"Not Found" (404) at link www.google.com/sidewiki/intl/en/images/icon_yellowbubble.png (from support.google.com/urchin45/bin/resource/all.css?v=400_)
+16:33:58	Error: 	"Not Found" (404) at link https://accounts.google.com/ServiceLogin?service=mail%26passive=true%26rm=false%26continue=https://mail.google.com/mail/%26ss=1%26scc=1%26ltmpl=googlemail (from https://mail.google.com/mail/)
+16:33:59	Error: 	"Not Found" (404) at link www.google.com/intl/en/googlecalendar/about.html (from https://accounts.google.com/ServiceLogin?service=cl&passive=1209600&continue=https://www.google.com/calendar/render&followup=https://www.google.com/calendar/render&scc=1)
+16:33:59	Error: 	"Not Found" (404) at link https://docs.google.com/'https://www.google.com/accounts/ServiceLogin?service=writely&passive=1209600&continue=https://docs.google.com/&followup=https://docs.google.com/&ltmpl=homepage' (from https://docs.google.com/)
+16:34:00	Warning: 	File has moved from googlephotos.blogspot.com/ to http://googlephotos.blogspot.de/
+16:34:00	Error: 	"Not Found" (404) at link picasa.google.com/linux/ (from https://accounts.google.com/ServiceLogin?hl=en_US&continue=https%3A%2F%2Fpicasaweb.google.com%2Flh%2Flogin%3Fcontinue%3Dhttps%253A%252F%252Fpicasaweb.google.com%252Fhome%253Fhl%253Den&service=lh2&ltmpl=gp&passive=true)
+16:34:00	Warning: 	File has moved from www.google.com/intl/en/privacy/ to http://www.google.com/intl/en/policies/privacy/
+16:34:04	Warning: 	File has moved from picasa.google.com/support/?hl=en to http://www.google.com/sorry/?continue=http://picasa.google.com/support/%3Fhl%3Den
+16:34:04	Error: 	"Not Found" (404) at link support.google.com/picasa/bin/answer.py?hl=en&answer=53205 (from https://accounts.google.com/ServiceLogin?hl=en_US&continue=https%3A%2F%2Fpicasaweb.google.com%2Flh%2Flogin%3Fcontinue%3Dhttps%253A%252F%252Fpicasaweb.google.com%252Fhome%253Fhl%253Den&service=lh2&ltmpl=gp&passive=true)
+16:34:04	Error: 	"Not Found" (404) at link https://www.google.com/a/UniversalLogin?service=jotspot%26passive=1209600%26continue=https://sites.google.com/%26followup=https://sites.google.com/ (from https://sites.google.com/)
+16:34:05	Warning: 	File has moved from video.google.com/?hl=en&tab=wv to http://www.google.com/videohp?hl=en
+16:34:05	Warning: 	File has moved from https://mail.google.com/mail/?tab=wm to https://accounts.google.com/ServiceLogin?service=mail&passive=true&rm=false&continue=https://mail.google.com/mail/?tab%3Dwm&scc=1&ltmpl=googlemail
+16:34:10	Warning: 	File has moved from www.google.com/support/accounts/?hl=en to http://www.google.com/sorry/?continue=http://www.google.com/support/accounts/%3Fhl%3Den
+16:34:14	Warning: 	File has moved from www.google.com/support/urchin45/ to http://www.google.com/sorry/?continue=http://www.google.com/support/urchin45/
+16:34:17	Error: 	"Not Found" (404) at link www.google.com/analytics/hc/images//link_to_page.JPG (from support.google.com/urchin45/bin/answer.py?hl=en&answer=28400&ctx=cb&src=cb&cbid=9ajz9104cckx&cbrank=1)
+16:34:17	Error: 	"Not Found" (404) at link support.google.com/urchin45/bin/answer.py?hl=en&topic=7964&answer=28674 (from support.google.com/urchin45/bin/answer.py?hl=en&answer=34352&ctx=cb&src=cb&cbid=1m1fb4mue53k4&cbrank=4)
+16:34:17	Error: 	"Not Found" (404) at link support.google.com/urchin45/bin/answer.py?hl=en&topic=7964&answer=28537 (from support.google.com/urchin45/bin/answer.py?hl=en&answer=34352&ctx=cb&src=cb&cbid=1m1fb4mue53k4&cbrank=4)
+16:34:17	Error: 	"Not Found" (404) at link support.google.com/urchin45/bin/answer.py?hl=en&topic=7964&answer=28538 (from support.google.com/urchin45/bin/answer.py?hl=en&answer=34352&ctx=cb&src=cb&cbid=1m1fb4mue53k4&cbrank=4)
+16:34:20	Warning: 	File has moved from support.google.com/?hl=en to http://www.google.com/sorry/?continue=http://support.google.com/%3Fhl%3Den
+16:34:20	Warning: 	File has moved from www.google.com/ to http://www.google.de/
+16:34:23	Warning: 	File has moved from https://www.google.com/dashboard/?hl=en to https://www.google.com/accounts/ServiceLogin?service=datasummary&passive=900&continue=https://www.google.com/dashboard/?hl%3Den&followup=https://www.google.com/dashboard/?hl%3Den&hl=en
+16:34:24	Error: 	"Receive Error" (-4) after 2 retries at link 5/ (from primary/primary)
+
+HTTrack Website Copier/3.43-9 mirror complete in 4 minutes 51 seconds : 659 links scanned, 635 files written (12584546 bytes overall) [5158918 bytes received at 17728 bytes/sec], 11218866 bytes transfered using HTTP compression in 480 files, ratio 28%
+(14 errors, 18 warnings, 33 messages)

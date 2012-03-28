@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Why_do_I_have_so_many_'No_Referral'_entries_in_my_Referrals_report%253F.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Why do I have so many 'No Referral' entries in my Referrals report?</strong> <p class="line874">The "No Referral" entry in the Urchin Referral report is typically due to one or more of the following conditions: <ul><li>Your web server log files are not formatted correctly </li><li>Visitors are accessing the site directly (by typing in the URL or book marking the site) </li><li>Visitors are accessing the site directly by clicking on a link contained within an email. </li><li>Search Engine Web spiders are identifying the web pages </li><li>Internal referrals resulting from cached page requests (not applicable when the Urchin Traffic Monitor (UTM) is properly configured).  </li></ul><p class="line867"><strong>Log Format:</strong> In order for Urchin to report Referrals, the log files must be configured to include a Referral field. See <a href="https://secure.urchin.com/helpwiki/en/Logging_-_Apache_and_IIS.html">Logging - Apache and IIS</a> for more detail on configuring Apache or IIS log files. <p class="line867"><strong>Direct Address:</strong> If a visitor types your website address into an explorer address bar, there will not be any referral information passed to the web server. Every file request -or "hit"- to a web server is logged in a file, and each entry has a referral field which may or may not contain data. When an address is accessed manually as described above, no information is recorded in the referral field because the visitor was not referred by a link on another site. <p class="line867"><strong>Email link:</strong> When a visitor clicks a link in an email message (such as an email advertising campaign) there may not be any referral information passed. It is possible to create email links that pass referral information to the web server the site resides on. But, this must be setup by the individual that creates the email content. <p class="line867"><strong>Web spiders:</strong> Robots crawlers and spiders spawned by search engines usually account for the majority of "No Referral" hits. these are all programs that visit Web sites and read their pages and other information in order to create entries for a search engine index. <p class="line867"><strong>Internal Referrals:</strong> Urchin does not include any internal referrals in its reports if they are configured correctly. An internal referral is a referral from the same website that the first requested page belongs to. If an internal referral is discovered in the referral field, it will be included in the report as a "No Referral" hit. It is uncommon for an internal referral to appear in the initial request for a web page. But, there is one specific circumstance in which such referrals are common. <p class="line874">Many large ISPs and Search Engine sites use cache servers to capture web site content. By doing so, they can reduce the time and network traffic necessary to serve these pages to visitors faster. But, when a visitor requests your web page and a cache server responds to that request, your web server log has no knowledge of that request. As a result, your web server log file will not contain any information about the request either. The net result of this action is that a new visitor will often not be seen by your web server until a second or third page request is made. By that time, the pages he or she requests will be accessed from links on other pages on your web site. Therefore, the referral field in the log file will display your own pages as the referral. This results in the internal referral hits that urchin adds to the "No Referral" report. Urchin 6 can reclaim the missing log file data if you configure the Urchin Traffic Monitor (UTM). More information, read <a href="https://secure.urchin.com/helpwiki/en/How_the_Urchin_Traffic_Monitor_(UTM)_Works.html">How the Urchin Traffic Monitor (UTM) Works</a>.  </div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Why_do_I_have_so_many_'No_Referral'_entries_in_my_Referrals_report%253F.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

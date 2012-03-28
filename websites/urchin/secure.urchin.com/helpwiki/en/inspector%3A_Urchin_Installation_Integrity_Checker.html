@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/inspector%253A_Urchin_Installation_Integrity_Checker.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>inspector: Urchin Installation Integrity Checker</strong> <p class="line867"><strong>Overview</strong> <p class="line874">The Urchin Installation Integrity Checker, inspector, provides a means of checking the Urchin distribution and reporting <ul><li>the status of Urchin 6 servers (webserver and scheduler) </li><li>license or permissions issues  </li><li>missing files </li><li>other configuration problems   </li></ul><p class="line874">By default, it also provides a summary of information about the Urchin installation and the type of platform it is installed on. <p class="line874">The types of operations that inspector can perform are: <ul><li>Perform a sanity check on the Urchin distribution, including existance of files and proper permissions </li><li>Check availability of a webserver port (for Urchin's webserver) </li><li>Reset proper permissions on the Urchin distribution </li></ul><p class="line867"><strong>Usage</strong> <p class="line874">inspector is located in the util directory of the Urchin 6 distribution. <p class="line874">Usage of the utility is as follows: <pre>  inspector [-h] (prints usage message and exits)
+  inspector [-v]  prints the version of inspector
+  inspector [-p]  checks a specified port to determine availability
+  inspector [-r]  specifies to fix permissions on the distribution files
+</pre><p class="line874">When called with no command line arguments, inspector will perform a number of sanity checks on the Urchin installation to ensure integrity of the installation. Specifically, it performs the following operations: <ol type="1"><li>Prints the Urchin version and Server information such as the operating system version and hostname </li><li>Verifies that all the proper Urchin binaries and utilities are in place and are the correct version. On UNIX-type platforms, discrepancies in the permissions of the binaries and files in the Urchin distribtuion are also noted. </li><li>Checks and reports the status of the Urchin Apache webserver (urchinwebd) </li><li>Checks and reports the status of the Urchin Scheduler (urchind) </li><li>Checks the Urchin configuration and reports the total number of records and some summary licensing information </li><li>Urchin 6 configuration information (serial number, license status, license version) </li></ol><p class="line874">When invoked with the "-p" argument, inspector will check for the availability of the specified port to use by the Urchin6 webserver.  <p class="line874">The "-r" (repair) option will cause the utility to attempt to repair the permissions of any files in the Urchin distribution that are not consistent with the the original installation. This is typically only useful on UNIX-type platforms, and in most cases will require that the utility be run as the "root" user. </div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/inspector%253A_Urchin_Installation_Integrity_Checker.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

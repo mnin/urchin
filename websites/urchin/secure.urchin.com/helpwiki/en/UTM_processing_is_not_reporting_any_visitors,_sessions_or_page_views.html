@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/UTM_processing_is_not_reporting_any_visitors,_sessions_or_page_views.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>UTM processing is not reporting any visitors, sessions or page views</strong> <p class="line874">This article describes common UTM misconfiguration problems. In order to troubleshoot, you need: <ul><li>access to the Urchin configuration </li><li>at least one complete and current log file that was created after the UTM was configured and installed. </li></ul><p class="line862">As a first step, make sure that you have configured Urchin and your site as described in <a href="https://secure.urchin.com/helpwiki/en/UTM_Quick-Install_(Apache).html">UTM Quick-Install (Apache)</a> or <a href="https://secure.urchin.com/helpwiki/en/UTM_Quick-Install_(IIS).html">UTM Quick-Install (IIS)</a>. <p class="line867"><strong>Common Misconfiguration Problems</strong> <ul><li><p class="line862">In the Admin tool, edit your profile and click the Settings tab. Make sure that the value for "UTM domain" on the Reporting tab matches the value used for the "_udn" variable in the <tt class="backtick">__</tt>utm.js file in the document root of the website. If "UTM domain" is not set or not set properly, no sessions or pageviews will be recorded. Leave this blank under normal conditions. The UTM will automatically detect the domain for the site. </li><li><p class="line862">Make sure that the <tt class="backtick">__</tt>utm.gif file is installed in the document root of the website, and that its permissions are set so that it can be accessed. A missing or permission-inaccessible <tt class="backtick">__</tt>utm.gif results in the hits to <tt class="backtick">__</tt>utm.gif being recorded in the webserver log with a 404 (not found) status code. This, in turn, will result in no sessions or pageviews being recorded. </li><li><p class="line862">Make sure that all pages on the website contain the SCRIPT line that calls <tt class="backtick">__</tt>utm.js. Compare the Content Optimization &gt; Navigational Analysis &gt; Entrance Bounce Rates report from Urchin 6 with the IT Reports &gt; Pages &amp; Files &gt; Top Files report. If you are seeing hits to your pages, but no actual page entrances are being recorded it is highly likely that the <tt class="backtick">__</tt>utm.js file is not being called in your page. </li><li><p class="line862">Use the correct version of the <tt class="backtick">__</tt>utm.js file in the website's document root. For all versions of Urchin 5 and Urchin 6, the correct version of the <tt class="backtick">__</tt>utm.js file can be found in the util/utm directory of the Urchin distribution. </li></ul><p class="line862">NOTE: You can use filter with exclude gif files in Urchin 6 without affect on visitors reports because it excludes all gif files except <tt class="backtick">__</tt>utm.gif </div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/UTM_processing_is_not_reporting_any_visitors,_sessions_or_page_views.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

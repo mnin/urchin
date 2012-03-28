@@ -1,0 +1,2819 @@
+<!DOCTYPE html>
+<html lang="en"
+class="">
+
+<!-- Mirrored from support.google.com/urchin45/bin/answer.py?hl=en&answer=28182&ctx=cb&src=cb&cbid=vyv01vmeikgo&cbrank=3 by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:34:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<script type="text/javascript">serverResponseTimeDelta=window.external&&window.external.pageT?window.external.pageT:-1;pageStartTime=new Date().getTime();</script>
+<title>Importing, Exporting, and Scripting the Configuration - Urchin Version 4 &amp; 5 Help</title>
+<meta charset="utf-8">
+<meta http-equiv="X-FRAME-Options" content="SameOrigin" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Overview
+Urchin 4 provides utilities and functionality to allow the
+administrator to script all 
+operations.  Only the report viewing requires the web-based interface
+to be 
+operational.  All configu" />
+<link rel="canonical" href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28182" />
+<link rel="shortcut icon" href="http://www.google.com/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="resource/all799c.css?v=400_" />
+<style type="text/css">#gbar,#guser{font-size:13px;padding-right:8px;padding-top:4px !important;}#gbar{padding-left:8px;height:22px}#guser{padding-bottom:7px !important;text-align:right}.gbh,.gbd{border-top:1px solid #c9d7f1;font-size:1px}.gbh{height:0;position:absolute;top:24px;width:100%}@media all{.gb1{height:22px;margin-right:.5em;vertical-align:top}#gbar{float:left}}a.gb1,a.gb4{text-decoration:underline !important}a.gb1,a.gb4{color:#00c !important}.gbi .gb4{color:#dd8e27 !important}.gbf .gb4{color:#900 !important}</style>
+<script type="text/javascript">
+var internal = 0;
+var hc_protocol = "http://";
+var hc_host = "support.google.com";
+var hc_url_root = "/urchin45";
+var hc_page_info = "answer=28182";
+var track = function() {};
+var hc_urchin_enabled = true;
+var country = 'DE';
+var countryGroup = 'EMEA';
+var global_error_general = 'Sorry, we weren\x27t able to submit your information. Please try again.';
+var search_form_id = 'search-form';
+var hc_urchin = "UA-18001-2";
+var global_hc_bookmark = new Array("add","remove","toggle");
+global_hc_bookmark.add = new Array();
+global_hc_bookmark.remove = new Array();
+global_hc_bookmark.toggle = new Array();
+global_hc_bookmark["add"].url = "";
+global_hc_bookmark["add"].token = "";
+global_hc_bookmark["remove"].url = "";
+global_hc_bookmark["remove"].token = "";
+global_hc_bookmark["toggle"].url = "";
+global_hc_bookmark["toggle"].token = "";
+var hiddenZippyLists = '{"experiments": {"answerId": "28182", "zippiesString": "These instructions are optimized for your current system\x27s configuration. To view these instructions for another configuration, select the configuration:&nbsp;", "defaultValue": "", "hidePicker": "1", "validItems": {"0": "e0", "1": "e1", "2": "e2", "3": "e3", "4": "e4", "5": "e5"}}, "country": {"answerId": "28182", "zippiesString": "These instructions are optimized for your current system\x27s configuration. To view these instructions for another configuration, select the configuration:&nbsp;", "defaultValue": "DE", "hidePicker": "0", "validItems": {"AF": "Afghanistan", "AL": "Albania", "DZ": "Algeria", "AS": "American Samoa", "AO": "Angola", "AI": "Anguilla", "AQ": "Antarctica", "AD": "Andorra", "AR": "Argentina", "AM": "Armenia", "AW": "Aruba", "AT": "Austria", "AU": "Australia", "AZ": "Azerbaijan", "BS": "Bahamas", "BH": "Bahrain", "BD": "Bangladesh", "BB": "Barbados", "AG": "Barbuda", "BY": "Belarus", "BZ": "Belize", "BE": "Belgium", "BN": "Benin", "BM": "Bermuda", "BT": "Bhutan", "BO": "Bolivia", "BW": "Botswana", "BA": "Bosnia and Herzegovina", "BR": "Brazil", "VG": "British Virgin Islands", "BN": "Brunei", "BN": "Brunei Darussalam", "BG": "Bulgaria", "BF": "Burkina Faso", "BI": "Burundi", "CM": "Cameroon", "KH": "Cambodia", "CA": "Canada", "CV": "Cape Verde Islands", "KY": "Cayman Islands", "CF": "Central African Republic", "TD": "Chad", "CL": "Chile", "CN": "China", "CX": "Christmas Island", "CC": "Cocos Islands", "CO": "Colombia", "CK": "Cook Islands", "KM": "Comoros", "CG": "Congo", "CR": "Costa Rica", "CI": "Cote d\x27Ivoire", "HR": "Croatia", "CU": "Cuba", "CY": "Cyprus", "CZ": "Czech Republic", "DK": "Denmark", "DJ": "Djibouti", "DM": "Dominica", "DO": "Dominican Republic", "EC": "Ecuador", "EG": "Egypt", "SV": "El Salvador", "GQ": "Equitorial Guinea", "ER": "Eritrea", "EE": "Estonia", "ET": "Ethiopia", "FK": "Falkland Islands", "FO": "Faroe Islands", "FJ": "Fiji", "FI": "Finland", "FR": "France", "GF": "French Guiana", "PF": "French Polynesia", "TF": "French Southern Territories", "GA": "Gabon", "GM": "Gambia", "GE": "Georgia", "DE": "Germany", "GH": "Ghana", "GI": "Gibraltar", "GR": "Greece", "GL": "Greenland", "GD": "Grenada", "CP": "Guadeloupe", "GU": "Guam", "GT": "Guatemala", "GF": "Guiana", "GN": "Guinea", "GW": "Guinea-Bissau", "GY": "Guyana", "HT": "Haiti", "HN": "Honduras", "HK": "Hong Kong", "HU": "Hungary", "IS": "Iceland", "IN": "India", "ID": "Indonesia", "IR": "Iran", "IQ": "Iraq", "IE": "Ireland", "IL": "Israel", "IT": "Italy", "JM": "Jamaica", "JP": "Japan", "JO": "Jordan", "KZ": "Kazakhstan", "KI": "Kiribati", "KE": "Kenya", "KW": "Kuwait", "KG": "Kyrgyzstan", "LA": "Laos", "LV": "Latvia", "LB": "Lebanon", "LS": "Lesotho", "LR": "Liberia", "LY": "Libyan Arab Jamahiriya", "LI": "Liechtenstein", "LT": "Lithuania", "LU": "Luxembourg", "MO": "Macau", "MK": "Macedonia", "MG": "Madagascar", "MY": "Malaysia", "MT": "Malta", "MW": "Malawi", "MV": "Maldives", "ML": "Mali", "MP": "Mariana Islands", "MH": "Marshall Islands", "MQ": "Martinique", "MR": "Mauritania", "MU": "Mauritius", "YT": "Mayotte Island", "MX": "Mexico", "MD": "Moldova", "FM": "Micronesia", "MC": "Monaco", "MN": "Mongolia", "MS": "Montserrat", "MA": "Morocco", "MZ": "Mozambique", "MM": "Myanmar", "NA": "Namibia", "NR": "Nauru", "NP": "Nepal", "NL": "Netherlands", "AN": "Netherlands Antilles", "KN": "Nevis", "NC": "New Caledonia", "NI": "Nicaragua", "NE": "Niger", "NG": "Nigeria", "NU": "Niue", "KR": "North Korea", "NO": "Norway", "NZ": "New Zealand", "OM": "Oman", "PW": "Palau", "PK": "Pakistan", "PS": "Palestine", "PA": "Panama", "PG": "Papua New Guinea", "PY": "Paraguay", "PE": "Peru", "PH": "Philippines", "PN": "Pitcairn Islands", "PL": "Poland", "PT": "Portugal", "PR": "Puerto Rico", "QA": "Qatar", "RE": "Reunion Island", "RO": "Romania", "RU": "Russia", "RW": "Rwanda", "WS": "Samoa", "ST": "Sao Tome and Principe", "SM": "San Marino", "SA": "Saudi Arabia", "SN": "Senegal", "CS": "Serbia and Montenegro", "SC": "Seychelles", "SL": "Sierra Leone", "SG": "Singapore", "SK": "Slovakia", "SI": "Slovenia", "ES": "Spain", "SO": "Somalia", "SB": "Solomon Islands", "ZA": "South Africa", "KP": "South Korea", "LK": "Sri Lanka", "SR": "Suriname", "SD": "Sudan", "SS": "South Sudan", "SH": "St. Helena", "KN": "St. Kitts and Nevis", "LC": "St. Lucia", "PM": "St. Pierreet Miquelon", "VC": "St. Vincent and the Grenadines", "SZ": "Swaziland", "SE": "Sweden", "CH": "Switzerland", "SY": "Syrian Arab Republic", "TW": "Taiwan", "TJ": "Tajikistan", "TZ": "Tanzania", "TH": "Thailand", "TB": "Tibet", "TL": "Timor", "TG": "Togo", "TK": "Tokelau", "TO": "Tonga", "TT": "Trinidad and Tobago", "TN": "Tunisia", "TR": "Turkey", "TM": "Turkmenistan", "TC": "Turks and Caicos Islands", "TV": "Tuvalu", "UK": "Ukraine", "UG": "Uganda", "UE": "United Arab Emirates", "GB": "United Kingdom", "US": "USA", "VI": "U.S. Virgin Islands", "UY": "Uruguay", "UZ": "Uzbekistan", "VU": "Vanuatu", "VA": "The Vatican", "VE": "Venezuela", "VN": "Vietnam", "EH": "Western Sahara", "YE": "Yemen", "CD": "Zaire", "ZM": "Zambia", "ZW": "Zimbabwe", "other": "Other"}}}';
+var lang_dismiss_str = "Dismiss";
+var localizedMonths = [
+'January',
+'February',
+'March',
+'April',
+'May',
+'June',
+'July',
+'August',
+'September',
+'October',
+'November',
+'December'
+];
+</script>
+<script
+src="http://support.google.com/urchin45/bin/resource/js_variables.js?v=9&amp;hl=en"
+type="text/javascript"></script>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load('search', 1);
+function init() {
+google.search.CustomSearchControl.attachAutoCompletion(
+'+qptype:1',
+document.getElementById('query'),
+search_form_id);
+}
+google.setOnLoadCallback(init);
+</script>
+<script
+src="resource/js_minified22af.js?v=142"
+type="text/javascript"></script>
+<script src="https://plusone.google.com/js/plusone.js">
+{lang: 'en', parsetags: 'explicit'}
+</script>
+</head>
+<body onload="
+setCookies_default('WebUserLocale',
+'en','formLoad'); registerSearchForm(search_form_id, 'query');makeRequest('/urchin45/bin/stats?r='+serverResponseTimeDelta+'&l='+(new Date().getTime()-pageStartTime)); 
+"
+dir="ltr"
+class=" answer_page  streamlined-header-1 ltr lang_en show_modules show_leftnav other  win98 win ">
+<a href="#content" class="skiplink">Skip to content</a>
+<div class="wrapper" id="baseDiv">
+<div id=gbar><nobr><a class=gb1 href="https://mail.google.com/mail/">Mail</a> <a class=gb1 href="https://www.google.com/calendar">Calendar</a> <a class=gb1 href="https://docs.google.com/">Documents</a> <a onclick=gbar.qs(this); class=gb1 href="http://picasaweb.google.com/home?hl=en">Photos</a> <a class=gb1 href="https://sites.google.com/">Sites</a> <a onclick=gbar.qs(this); class=gb1 href="../../../groups.google.com/grphpfef7.html?hl=en">Groups</a> <a onclick=gbar.qs(this); class=gb1 href="http://www.google.com/webhp?hl=en">Search</a> <a class=gb1 style="text-decoration:none" href="http://www.google.com/intl/en/options/"><u>More</u> &raquo;</a></nobr></div><div id=guser width=100%><nobr><span id=gbn class=gbi></span><span id=gbf class=gbf></span><span id=gbe></span><a id=gb_70 href="https://www.google.com/accounts/ServiceLogin?passive=1209600&amp;continue=http://support.google.com/urchin45/bin/answer.py?hl%3Den%26answer%3D28182%26ctx%3Dcb%26src%3Dcb%26cbid%3Dvyv01vmeikgo%26cbrank%3D3&amp;followup=http://support.google.com/urchin45/bin/answer.py?hl%3Den%26answer%3D28182%26ctx%3Dcb%26src%3Dcb%26cbid%3Dvyv01vmeikgo%26cbrank%3D3&amp;hl=en" class=gb4>Sign in</a></nobr></div><div class=gbh style=left:0></div><div class=gbh style=right:0></div>
+<div id="hc_error"></div>
+<div class="header-wrapper">
+<div class="header-logo ">
+<a class="logo-container" href="http://support.google.com/urchin45">
+<img src="http://www.google.com/images/logos/google_logo_41.png"
+alt="Google"
+class="logo" /></a>
+<div class="searchbox">
+<form name="search-form"
+id="search-form"
+title="Search Help"
+method="get"
+action="http://support.google.com/urchin45/bin/search.py"
+onsubmit="track('Search Help',
+document.getElementById('query').value);return false;">
+<input autocomplete="off"
+class="search-box"
+type="text"
+name="query"
+id="query"
+maxlength="2048"
+placeholder="Search Urchin Version 4 &amp; 5 help"
+title="Search"
+x-webkit-speech
+spellcheck="false" /><button type="submit"
+name="btnG"
+class="search-button"
+alt="Search Help">
+<img src="http://www.google.com/help/hc/images/hc_magnifying_glass.png">
+</button>
+<input type="hidden" name="ctx" value="en:searchbox" />
+</form>
+</div>
+</div>
+<div class="header-bar ">
+<h1>
+<a href="http://support.google.com/urchin45" onclick="track('Header', 'HC Title ');">
+<span>
+Urchin Version 4 &amp; 5 Help
+</span>
+<div class="">
+</div>
+</a>
+</h1>
+<div class="clear"></div>
+</div>
+</div>
+<div class="main-content-container">
+<table class="layout" border="0" cellpadding="0" cellspacing="0"><tr>
+<td class="left_column">
+<ul class="leftnav">
+<li class="">
+<a href="../index.html"
+onclick='track("Left Nav", "Help topics");'>Help topics</a>
+</li>
+<li class="leftnav_topics ">
+<a href="http://support.google.com/urchin45/bin/topic.py?topic=7353"
+onclick='track("Left Nav", "topic=7353");'>Urchin 5</a>
+</li>
+<li class="leftnav_topics nav_link_on">
+<a href="http://support.google.com/urchin45/bin/topic.py?topic=7363"
+onclick='track("Left Nav", "topic=7363");'>Urchin 4</a>
+</li>
+<li class="LeftNav_Urchin67 first">
+<a href="https://secure.urchin.com/helpwiki/en/Help_Center"  onclick="track('LeftNav', 'Urchin67');">Urchin 6/7</a>
+</li>
+</td>
+<td class="content">
+<div class="inner_content ">
+<p class="breadcrumbs" >
+<a href="../index.html" onclick="track('Breadcrumbs', 'Help Home');">Help articles</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?topic=7363" onclick="track('Breadcrumbs', '7363');">Urchin 4</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?topic=7368" onclick="track('Breadcrumbs', '7368');">Advanced Topics</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?topic=7409" onclick="track('Breadcrumbs', '7409');">Integration</a><span class="br-seperator"> &rsaquo; </span>Importing, Exporting, and Scripting the Configuration&nbsp;
+</p>
+<div id="hcError" style="display:none"></div>
+<script type="text/javascript">
+var p13nFeed = new googlehelp.Feed.P13n();
+</script>
+<div class="clear"></div>
+<div class="p13n_box2 top has-bg"
+id="p13n_box"
+style="background-image:url(http://www.google.com/help/hc/images/alert18.gif);background-repeat:no-repeat;display:auto;">
+<a href="javascript:setCookies_default('p13n_box_50_urchin67', 1, '','30');
+hideLayer('p13n_box');
+track('P13n Box - urchin67', 'Hide');"
+class="hide_link">
+Hide
+</a>
+<h2>Support for Urchin 4/5 is not currently available</h2>
+<p>Please check out <a href="http://www.google.com/urchin/features.html">the latest Urchin version and features</a>.</p>
+<div id="p13n_box_content"></div>
+</div>
+<script type="text/javascript">
+var promoDisplayDict = {
+'type': "promo",
+'func': function(){
+document.getElementById("p13n_box").style.display = 'block';
+}
+};
+p13nFeed.setDisplayFunc(4,
+promoDisplayDict);
+</script>
+<a name="content"></a>
+<div id="page-content">
+<div id="zippy-dropdown-container"
+class="zippy-dropdown-container-hide"></div>
+<div class="answer_heading">
+<h2 class="answer-title">
+Importing, Exporting, and Scripting the Configuration
+</h2>
+<div class="clear"></div>
+</div>
+<div class="article_content article-content-28182" id="article-content-div">
+<p><B>Overview</b>
+<P>
+Urchin 4 provides utilities and functionality to allow the
+administrator to script all
+operations. Only the report viewing requires the web-based interface
+to be
+operational. All configuration and log processing can be scripted
+using the following
+utilities and techniques. For first time users, it is helpful to run
+the web-based
+administrative interface first, in order to get familiar with the
+terminology and
+capabilities of the system.
+<P>
+Urchin 4 includes four utilities for modifying the configuration
+database without using
+the web-based administrative interface. Located in the util directory
+of the
+distribution, the four utilities are:
+<P>
+<PRE>
+	uconf-export [-f file]
+	uconf-import [-r|-o] [-f file]
+	uconf-driver [-f file] [-d directory]
+	uconf-schedule [-r]
+</pre>
+<P>
+Each of these utilities is called from a command prompt. A summary of
+usage:
+<p>
+<ol>
+<li>The
+<u>uconf-export</u> utility will
+export the entire configuration into a file or to stdout, if no file
+is specified. The
+format of the exported data is an XML type format defined later in
+this document.
+Each record in the exported data corresponds to a configuration record
+in the
+configuration database.
+<li>The <u>uconf-import</u> utility can import the same
+XML type
+formatted data into the configuration database. This can be used to
+import or edit
+single records or to replace the entire configuration with the
+contents of a file similar
+to that found in Urchin 3. The "-r" option instructs the uconf-import
+utility to
+remove the entire configuration before importing. The "-o" option
+instructs the
+uconf-import utility to overwrite existing duplicate records with the
+information
+provided.
+<li>The <u>uconf-driver</u> utility performs specific actions to
+individual records. All
+parameters can be passed on one line as arguments to the script, or a
+file with
+multiple commands (one per line) can be used. The "-d" option can
+specify a
+different location of the configuration database than the default
+relative path.
+<li>The
+<u>uconf-schedule</u> utility invokes global scheduling changes for
+all
+configured profiles,
+including the ability to run all profiles immediately. When invoked
+with the "-r"
+option, <u>uconf-schedule</u> will schedule all profiles to run
+immediately
+via the Urchin
+Scheduler without any further prompting. The Urchin Scheduler
+<u>urchind</u> must be
+running for this utility to either execute jobs immediately or
+schedule them for future
+execution.
+</li>
+</ol>
+<P>
+In addition to using the global scheduling utility, the operation of
+Urchin log
+processing can be triggered by calling the Urchin engine directly,
+specifying the name
+of the profile on the command line. Located in the "bin" directory of
+the distribution,
+the Urchin engine can be run as follows:
+<P>
+<PRE>
+   urchin [-H] -p profilename
+</pre>
+<P>
+The name of the profile should be called within quotes if it contains
+any white space.
+The "-H" option tells the Urchin engine to log all output into the
+history record which
+is accessible through the Urchin admin GUI interface. Otherwise all
+output is written
+to stdout.
+<P>
+Note that you can use the uconf-export and uconf-import utilities to
+easily make a
+backup of or restore your Urchin configuration. This provides a very
+quick method of
+recovering an Urchin installation after a disk failure or other system
+problem.
+Examples of this functionality:
+<P>
+<UL>
+<LI>Save configuration for safekeeping:
+<PRE>uconf-export > /path/to/saved-configurations/urchin-
+config.save</pre>
+<LI>Restore Urchin configuration from a known good backup:
+<PRE>uconf-import -r -f /path/to/saved-configurations/urchin-
+config</pre>
+</ul>
+<P>
+<B>Intended Usage</b>
+<P>
+The uconf-export and uconf-import utilities are intended to replicate
+the
+functionality of the Urchin 3 text-based configuration and to provide
+a simple
+method for importing and exporting data from the Urchin configuration
+database to
+and from static configuration files. These utilities also allow you to
+specify the names
+of profiles, log sources, filters, users, etc. in access lists rather
+than the more cryptic
+record number lists that are used by the uconf-driver utility. The
+uconf-import utility
+can be used to add new records or modify existing records, but it
+cannot remove old
+records (unless the database is completely reset with the "-r"
+option).
+<P>
+The uconf-driver utility is very powerful and can be used for very
+specific scripting
+operations that may change only a few parameters in a database record,
+as well as
+performing complete record additions, modifications and deletions from
+the
+database. It can also be used for querying the configuration database
+for several
+parameters. This utility is more ideally suited for use in an
+environment where
+scripting all administrative functions of Urchin is desired, such as
+in automated
+provisioning systems or very large hosting environments where use of
+the Urchin
+administrative GUI is impractical.
+<P>
+It should be noted that both the uconf-import and uconf-driver
+utilities allow
+arbitrary name/value pairs to be entered into the database. This
+allows for both
+forward and backward compatibility within Urchin, and may also be
+useful for storing
+site-specific data such as a user id or other identifier. However,
+supporting this
+functionality also has the side effect that neither utility does any
+checking to ensure
+that only valid Urchin name/value pairs are entered into the database.
+It is the
+responsibility of the administrator to ensure that data is entered
+properly.
+<P>
+<B>uconf-export</b>
+<P>
+When called from the command line, the uconf-export utility will
+export the entire
+configuration into a human-readable, text format. The output is
+written to stdout
+unless a file is specified using the "-f" option. The format of the
+exported data is a
+multi-line format. Each group of lines corresponds to one record in
+the configuration
+database. The group of lines is indicated by begin and end tags in
+the form:
+<P>
+<PRE>
+  &lt;table name="record-name"&gt;
+  ...
+  &lt;/table&gt;
+</pre>
+<P>
+where "table" is one of the possible table names within the
+configuration database
+(i.e. Profile, Logfile, Filter, etc.) and "record-name" is the name of
+the record.
+Between the begin and end tags, a list of configuration parameters
+that define the
+specifics about that record are listed as name/value pairs, one per
+line. Any line that
+begins with a "#" should be treated as a comment and not part of the
+configuration
+data.
+<P>
+The <u>uconf-export</u> utility can be used as a snapshot and backup
+of the
+configuration
+data, or it can be used in conjunction with the uconf-import utility
+to modify the
+existing configuration. For a complete list of the different tables
+and configuration
+directives for each, please see the reference tables at the end of
+this document.
+<P>
+<B>uconf-import</b>
+<P>
+When called from the command line, the uconf-import utility will read
+the contents of
+the file specified by the command line "-f" option or stdin, if no
+file is specified. The
+contents of the file should contain one or more configuration records
+in the same
+format that is created with the uconf-export utility. Each record
+should begin with
+the appropriate begin tag and end with the appropriate end tag. Each
+record should
+contain all of the desired configuration directives as name/value
+pairs on separate
+lines between the begin and end tags. Leading and trailing white
+spaces are ignored.
+The following example illustrates a very basic entry for a user:
+<P>
+<PRE>
+&lt;User Name="bob"&gt;   
+   ct_fullname=Bob Johnson
+   ct_password=USCC|2347474681
+   ct_name=bob
+&lt;/User&gt;
+</pre>
+<P>
+In this example, the record is for the User table and the name of
+the record, which
+is the username, is bob. Additional parameters are provided on the
+next three lines
+each beginning with a configuration directive, an equals sign and then
+the value of
+the directive. Note: plaintext passwords will be automatically
+encrypted on insertion
+unless they are already encrypted as indicated by the "USCC"
+designation. This allows
+you to add new users or edit existing users without being able to
+export the original
+passwords.
+<P>
+By default, the uconf-import utility will not overwrite or delete any
+existing records.
+To simply add new records, create them in a file and use the utility
+with only the "-f"
+option. The "-r" option instructs the utility to remove all existing
+records from the
+configuration database before importing, including the global
+configuration that
+contains licensing information, machine settings and the admin
+password. This
+option should be used with caution! You can use the export utility
+and then import
+the entire configuration with the -r option to replace all records.
+<u>Important!</u> When
+using the -r option with uconf-import, it is required that the first
+three records in
+the imported configuration be as follows. It is also highly
+recommended that you
+include the (admin) User record to ensure that you retain the correct
+password and
+preferences for the main administrator account:
+<P>
+<PRE>
+&lt;Global Name="Access Settings"&gt;
+...
+&lt;Machine Name="Process Settings"&gt;
+...
+&lt;Affiliation Name="(NONE)"&gt;
+...
+&lt;User Name="(admin)"&gt;
+... 
+</pre>
+<P>
+Using uconf-import with the -o option allows for the addition of new
+records and
+editing of existing records. This option will not delete any
+previously existing
+records, but it will overwrite any records with the data found in the
+specified file.
+When editing a record, you must specify all of the desired
+configuration directives for
+that record, not just the ones you are changing. The uconf-import
+utility completely
+replaces entire records and will not incrementally change parameters
+within a record.
+For a complete list of the different tables and configuration
+directives for each, please
+see the reference tables at the end of this document. An easy way to
+get familiar with
+using the import functionality is to first use the admin interface to
+create some
+records for Profiles, Log Sources, Users, etc., and then use the
+uconf-export utility to
+create examples of what the configuration should look like.
+<P>
+<B>uconf-driver</b>
+<P>
+When called from the command line, the uconf-driver will read the
+contents of the file
+specified with the -f option or stdin, if no file is specified. The
+uconf-driver will
+also read the argument list allowing a single command to be passed via
+the argument
+list. Each line of the file specified or stdin should represent one
+command. The
+format of the command is a series of name/value pairs that define the
+command to
+be taken. In particular, the ?action? variable specifies the specific
+command to take.
+The nine possible actions are:
+<P>
+<FONT FACE="courier">
+action=ntotalrecords
+<BR>
+action=nrecords table=table
+<BR>
+action=list table=table [start=i] [n=j]
+<BR>
+action=get &lt;id&gt;
+<BR>
+action=add table=table name=name [cx_xxx=value cx_xxx=value ?]
+<BR>
+action=edit <id> [cx_xxx=value cx_xxx=value ?]
+<BR>
+action=delete &lt;id&gt;
+<BR>
+action=get_parameter &lt;id&gt; parameter=cx_directive
+<BR>
+action=set_parameter <id> cx_directive=value
+<P>
+</font>
+where &lt;id&gt; is one of:
+<P>
+<FONT FACE="courier">
+recnum=r
+<BR>
+table=table entry=i
+<BR>
+table=table name=name
+</font>
+<P>
+A single action can be accomplished via the argument list or a series
+of actions can
+be specified in a file. The table variable specifies one of the Table
+Names listed in the
+Table Name Definitions in the next section. The name variable
+specifies the exact
+name of the record. Specific configuration directives begin with
+"ct_", "cr_", or "cs_".
+A complete list of directives for each table is specified in the next
+section.
+<P>
+Upon completion of a command, the uconf-driver will print out one of
+the following
+based on the action parameter that was specified:
+<P>
+<TABLE BORDER=1>
+<TR>
+<TD>
+Command
+</td>
+<TD>
+Output
+</td>
+<TD>
+Description
+</td>
+</tr>
+<TR>
+<TD>
+(all)
+</td>
+<TD>
+[usage msg]
+</td>
+<TD>
+command line not in recognized format
+</td>
+</tr>
+<TR>
+<TD>
+(all)
+</td>
+<TD>
+[no msg]
+</td>
+<TD>
+command didn?t perform any action, perhaps due to an out of range
+entry, incorrect
+table name, etc.
+</td>
+</tr>
+<TR>
+<TD>
+(all)
+</td>
+<TD>
+-l
+</td>
+<TD>
+command line parameters invalid for request type
+</td>
+</tr><TR>
+<TD>
+add
+</td>
+<TD>
+[recnum]
+</td>
+<TD>
+record number of record that was created
+</td>
+</tr><TR>
+<TD>
+delete
+</td>
+<TD>
+[recnum]
+</td>
+<TD>
+record number of record that was deleted
+</td>
+</tr><TR>
+<TD>
+edit
+</td>
+<TD>
+[recnum]
+</td>
+<TD>
+record number of record that was edited
+</td>
+</tr><TR>
+<TD>
+get
+</td>
+<TD>
+[record]
+</td>
+<TD>
+complete set of name/value directives for specified record
+</td>
+</tr>
+<TR>
+<TD>
+get_paramenter
+</td>
+<TD>
+[param]
+</td>
+<TD>
+value of requested directive
+</td>
+</tr>
+<TR>
+<TD>
+list
+</td>
+<TD>
+[records]
+</td>
+<TD>
+complete list of all name/value directives for all records in the
+specified table
+</td>
+</tr>
+<TR>
+<TD>
+nrecords
+</td>
+<TD>
+[count]
+</td>
+<TD>
+count of records in the specified table
+</td>
+</tr>
+<TR>
+<TD>
+ntotalsrecords
+</td>
+<TD>
+[count]
+</td>
+<TD>
+count of all records in all tables
+</td>
+</tr>
+<TR>
+<TD>
+set_parameter
+</td>
+<TD>
+0
+</td>
+<TD>
+always prints 0 on success
+</td>
+</tr>
+</table>
+<P>
+Several of the commands require you to identify (&lt;id&gt;) the
+record that is to be
+retrieved or modified. This identification can be accomplished in
+three ways. If the
+internal record number is known, then the ?recnum? variable can be
+used. This
+number is not necessarily sequential within a table. If it desired to
+loop through all of
+the records in a particular table, then the ?entry? variable can be
+used in conjunction
+with the table name. The first entry is 1. And finally, the exact
+name of the record
+can be specified using the ?name? variable. Be sure to use quotes if
+the name may
+contain white space.
+<P>
+The "ntotalrecords" command outputs the total number of records in all
+tables in the
+configuration database. The "nrecords" command outputs the number of
+records in a
+single table, specified using the table variable.
+<P>
+The "list" command will retrieve multiple records from a particular
+table. Each record
+is printed on a separate line. Optionally, the ?start? variable
+specifies which entry to
+begin grabbing, and the ?n? variable specifies how many. For example,
+if a particular
+table has 44 records and you want to grab records 20-29, set start to
+20 and n to 10.
+<P>
+To grab a single record, the "get" command takes the provided
+identifier, and prints
+all information associated with the particular record on a single
+line. As mentioned
+above, the identifier can be provided in three ways.
+<P>
+The ?add?, ?edit? and ?delete? functions provide comprehensive editing
+ability of
+records. The "add" command requires both the table and name of the
+record to add.
+A directive list should also be passed along with these variables.
+The "edit" command
+is similar to the add command, except the record directives are
+replaced with the new
+list of directives. This function clears all previous directives and
+adds all new
+directives specified in the command. The delete function deletes the
+record from the
+table. These functions will print the ?recnum? value on success and a
+?1 on failure.
+<P>
+The "get_parameter" and "set_parameter" commands allow you to set and
+retrieve an
+individual directive from a record. In addition to the identifier,
+the get_parameter
+command requires the use of the parameter variable, which specifies
+the specific
+directive to look for. The set_parameter command can be used by
+passing the
+directive and its value as a name=value pair. Here is an example with
+two commands
+that add a user and then sets the default language for the Urchin
+reports to English:
+<P>
+<PRE>
+	action=add table=user name=?bob? ct_fullname=?bob J? 
+ct_password=?1234?
+	action=set_parameter table=user name=?bob? cs_language=en 
+</pre>
+<P>
+These two commands could be passed one at a time as arguments on the
+command
+line or in a file. The password will automatically be encrypted. Be
+sure to use quotes
+around strings that may contain white space.
+<P>
+Note that the uconf-driver is a lower-level utility that does not map
+any of the
+directives for you. In using the driver to script some operations,
+please be aware that
+many of the tables contain directives that refer to other records, or
+lists of records.
+These directives are: ct_ulist, ct_glist, ct_llist, ct_flist, and
+ct_rlist, which refer to the
+user, group, logfile, filter, and profile tables respectively. These
+lists are represented
+as exclamation point delimited list of recnums:
+<P>
+<PRE>
+	ct_flist="!13!36!56!"
+</pre>
+<P>
+where each entry represents the recnum value of a record and is
+surrounded with
+exclamation points. Important! Be sure to keep the cross-references
+intact. For
+example, a Filter record has a ct_rlist which details all of the
+profiles that the filter
+applies to; and a Profile record has a ct_flist which details all of
+the filters that apply
+to this profile.
+Important! The uconf-driver uses this exclamation point delimited
+lists of record
+numbers, whereas the uconf-export and uconf-import utilities use
+comma-delimited
+lists of names. Be sure to use the appropriate list specification
+depending on which
+utility you are using.
+<P>
+The uconf-import and uconf-export utilities translate and verify these
+lists for you,
+making their use a little easier than the uconf-driver.
+<P>
+<B>Urchin Database Table Reference</b>
+<P>
+The following tables provide exact details on the table names,
+directives, and
+meanings for each table. The first table outlines each of the table
+names and what it
+is used for. Then, for each table, a comprehensive list of directives
+is provided.
+Please note that each record does not need to contain every directive
+applicable to
+that record type, as some directives may not be applicable to that
+record. Urchin will
+use the default values if there is no explicit definition for a
+directive. Where
+applicable, default values are printed in bold typeface.
+<P>
+Table Name Definitions
+<P>
+<TABLE BORDER=1>
+<TR>
+<TD>
+Table Name
+</td>
+<TD>
+Meaning/Purpose
+</td>
+</tr>
+<TR>
+<TD>
+Global
+</td>
+<TD>
+General settings including licensing and remote access
+</td>
+</tr>
+<TR>
+<TD>
+Machine
+</td>
+<TD>
+Process settings including DNS and memory usage
+</td>
+</tr><TR>
+<TD>
+FIlter
+</td>
+<TD>
+Specifies log and profile runtime filters
+</td>
+</tr><TR>
+<TD>
+Logfile
+</td>
+<TD>
+Specifies the location and format of a log source
+</td>
+</tr><TR>
+<TD>
+Profile
+</td>
+<TD>
+Meaning/Purpose
+</td>
+</tr><TR>
+<TD>
+Table Name
+</td>
+<TD>
+Report settings for a particular website
+</td>
+</tr><TR>
+<TD>
+Task
+</td>
+<TD>
+Runtime schedule for a particular profile
+</td>
+</tr><TR>
+<TD>
+Affiliation
+</td>
+<TD>
+Definition for enterprise-level control of groups and users
+</td>
+</tr><TR>
+<TD>
+Group
+</td>
+<TD>
+Definition for controlling a group of users access
+</td>
+</tr>
+<TR>
+<TD>
+User
+</td>
+<TD>
+An individual user with login and password
+</td>
+</tr>
+</table>
+<P>
+Global Directives
+<P>
+<TABLE BORDER=1>
+<TR>
+<TD>
+Directive
+</td>
+<TD>
+Meaning/Purpose
+</td>
+</tr>
+<TR>
+<TD>
+cr_dcmode
+</td>
+<TD>
+datacenter mode (on|<B>off</b>)
+</td>
+</tr>
+<TR>
+<TD>
+cr_remoteaccess
+</td>
+<TD>
+allow remote access (<B>on</b>|off)
+</td>
+</tr><TR>
+<TD>
+cr_remoteadmin
+</td>
+<TD>
+remote administration available (<B>on</b>|off)
+</td>
+</tr><TR>
+<TD>
+ct_license
+</td>
+<TD>
+license code used by Urchin Licensing
+</td>
+</tr><TR>
+<TD>
+ct_name
+</td>
+<TD>
+[internal use only]
+</td>
+</tr><TR>
+<TD>
+ct_port
+</td>
+<TD>
+port that apache runs on (default is 9999)
+</td>
+</tr><TR>
+<TD>
+ct_serial
+</td>
+<TD>
+serial code used by Urchin Licensing
+</td>
+</tr><TR>
+<TD>
+ct_schedulers
+</td>
+<TD>
+[internal use only]
+</td>
+</tr><TR>
+<TD>
+cr_setupwizard
+</td>
+<TD>
+run setup wizard first time (<B>on</b>|off)
+</td>
+</tr>
+<TR>
+<TD>
+ct_var
+</td>
+<TD>
+VAR code used by Urchin licensing
+</td>
+</tr>
+</table>
+<P>
+Machine Directives
+<P>
+<TABLE BORDER=1>
+<TR>
+<TD>
+Directive
+</td>
+<TD>
+Meaning/Purpose
+</td>
+</tr>
+<TR>
+<TD>
+cr_processdns
+</td>
+<TD>
+turn dns processing on and off (on|<B>of</b>f)
+</td>
+</tr>
+<TR>
+<TD>
+cr_priority
+</td>
+<TD>
+run priority of urchin (low|<B>normal</b>|high)
+</td>
+</tr><TR>
+<TD>
+cs_preset
+</td>
+<TD>
+[internal use only]
+</td>
+</tr><TR>
+<TD>
+cs_dnslops
+</td>
+<TD>
+number of dns loops (default is 5)
+</td>
+</tr><TR>
+<TD>
+cs_dnstarget
+</td>
+<TD>
+percent target for dns (default is 80)
+</td>
+</tr><TR>
+<TD>
+cs_limitdbtable
+</td>
+<TD>
+# of records to limit per table storage (default is 10000)
+</td>
+</tr><TR>
+<TD>
+ct_dbuffsize
+</td>
+<TD>
+data buffer size in MB (default is 13)
+</td>
+</tr><TR>
+<TD>
+ct_pbuffsize
+</td>
+<TD>
+path buffer size in MB (default is 1)
+</td>
+</tr><TR>
+<TD>
+ct_name
+</td>
+<TD>
+[internal use only}
+</td>
+</tr>
+<TR>
+<TD>
+ct_resolverip
+</td>
+<TD>
+resolver ip (default is 127.0.0.1)
+</td>
+</tr>
+<TR>
+<TD>
+ct_sbuffsize
+</td>
+<TD>
+session buffer size in MB (default is 3)
+</td>
+</tr><TR>
+<TD>
+ct_tbuffsize
+</td>
+<TD>
+text buffer size in MB (default is 1)
+</td>
+</tr><TR>
+<TD>
+ct_vbuffsize
+</td>
+<TD>
+visitor buffer size in MB (default is 2)
+</td>
+</tr>
+</table>
+<P>
+Filter Directives
+<P>
+<TABLE BORDER=1>
+<TR>
+<TD>
+cr_action
+</td>
+<TD>
+[internal use only]
+</td>
+</tr>
+<TR>
+<TD>
+cr_filtertype
+</td>
+<TD>
+type of filter (<B>include</b>|exclude|dynamicurl)
+</td>
+</tr><TR>
+<TD>
+cs_filterfield
+</td>
+<TD>
+field in log file to apply filter to (1-18) *
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+1 = Date (IIS)
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+2 = Time (IIS)
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+3 = Date and Time (Apache)
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+4 = IP Address
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+5 = Username
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+6 = Request (Apache)
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+7 = Method (IIS)
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+8 = URI Stem (IIS)
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+9 = URI Query (IIS)
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+10 = Status
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+11 = Bytes
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+12 = Hosts
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+13 = User-Agent
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+14 = Cookie
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+15 = Referrer
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+16 = Custom
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+17 = Custom
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+18 = Custom
+</td>
+</tr><TR>
+<TD>
+cs_llist
+</td>
+<TD>
+exclamation-point delimited list of log source recnums to which this
+filter is applied
+(uconf-driver)
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+comma delimited list of log source names to which this filter is
+applied (uconf-
+import)
+</td>
+</tr><TR>
+<TD>
+cs_rlist
+</td>
+<TD>
+exclamation-point delimited list of profile recnums to which this
+filter is applied
+(uconf-driver)
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+comma delimited list of profile names to which this filter is applied
+(uconf-import)
+</td>
+</tr><TR>
+<TD>
+ct_affiliation
+</td>
+<TD>
+optional affiliation
+</td>
+</tr><TR>
+<TD>
+ct_filter
+</td>
+<TD>
+filter expression (supports regular expressions)
+</td>
+</tr><TR>
+<TD>
+ct_name
+</td>
+<TD>
+descriptive name for filter
+</td>
+</tr>
+</table>
+<P>
+Logfile Directives
+<P>
+<TABLE BORDER=1>
+<TR>
+<TD>
+Directive
+</td>
+<TD>
+Meaning/Purpose
+</td>
+</tr>
+<TR>
+<TD>
+cr_action
+</td>
+<TD>
+[internal use only]
+</td>
+</tr><TR>
+<TD>
+cr_decodeurl
+</td>
+<TD>
+decode log url (on|off)
+</td>
+</tr><TR>
+<TD>
+cr_logdestiny
+</td>
+<TD>
+disposition of log after processing (<B>1=don?t touch</b>,
+2=archive/compress,
+3=delete)
+</td>
+</tr><TR>
+<TD>
+cr_protocol
+</td>
+<TD>
+remote log transfer protocol (ftp|http)
+</td>
+</tr><TR>
+<TD>
+cr_type
+</td>
+<TD>
+location of log (<B>local</b>|remote)
+</td>
+</tr><TR>
+<TD>
+cs_flist
+</td>
+<TD>
+exclamation-point delimited list of filter recnums which are applied
+to this log source
+(uconf-driver)
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+comma delimited list of filter names which are applied to this log
+source (uconf-
+import)
+</td>
+</tr><TR>
+<TD>
+cs_lf[1-20]
+</td>
+<TD>
+[internal use only]
+</td>
+</tr><TR>
+<TD>
+cs_logencoding
+</td>
+<TD>
+logfile encoding type (<B>1=English</b>, 2=Japanese)
+</td>
+</tr><TR>
+<TD>
+cs_logformat
+</td>
+<TD>
+logging format for logfile (custom|ncsa|w3c) (default is <B>w3c</b>
+for Windows,
+<B>ncsa</b> for all others)
+</td>
+</tr><TR>
+<TD>
+cs_rlist
+</td>
+<TD>
+exclamation-point delimited list of profile recnums using this log
+source (uconf-
+driver)
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+comma delimited list of profile names using this log source (uconf-
+import)
+</td>
+</tr><TR>
+<TD>
+ct_affiliation
+</td>
+<TD>
+optional affiliation
+</td>
+</tr><TR>
+<TD>
+ct_loglocation
+</td>
+<TD>
+local log pathname/location (e.g. /logs/access.log)
+</td>
+</tr><TR>
+<TD>
+ct_logmap
+</td>
+<TD>
+pipe delimited list of custom log fields mapped to Urchin?s internal
+notion of fields
+</td>
+</tr><TR>
+<TD>
+ct_name
+</td>
+<TD>
+identifier for log source
+</td>
+</tr><TR>
+<TD>
+ct_password
+</td>
+<TD>
+password for remote log access
+</td>
+</tr><TR>
+<TD>
+ct_port
+</td>
+<TD>
+port number (e.g. 21 for ftp, 80 for http)
+</td>
+</tr><TR>
+<TD>
+ct_querytoken
+</td>
+<TD>
+change the query token (? by default)
+</td>
+</tr><TR>
+<TD>
+ct_remotelocation
+</td>
+<TD>
+remote log pathname/location
+</td>
+</tr><TR>
+<TD>
+ct_separator
+</td>
+<TD>
+single character field separator character (\s, \t are escaped
+characters for space and
+tab)
+</td>
+</tr><TR>
+<TD>
+ct_server
+</td>
+<TD>
+server name or IP address
+</td>
+</tr>
+<TR>
+<TD>
+ct_username
+</td>
+<TD>
+username (default is "anonymous")
+</td>
+</tr>
+</table>
+<P>
+Profile Directives
+<P>
+<TABLE BORDER=1>
+<TR>
+<TD>
+Directive
+</td>
+<TD>
+Meaning/Purpose
+</td>
+</tr>
+<TR>
+<TD>
+cr_logtracking
+</td>
+<TD>
+turn log tracking (<B>on</b>|off)
+</td>
+</tr><TR>
+<TD>
+cr_processdns
+</td>
+<TD>
+Process DNS (on|off) (requires that dns be enabled in the machine
+table)
+</td>
+</tr><TR>
+<TD>
+cr_processpath
+</td>
+<TD>
+turn visitor tracking (<B>on</b>|off)
+</td>
+</tr><TR>
+<TD>
+cr_sessionpageview
+</td>
+<TD>
+session requires a pageview (<B>on</b>|off)
+</td>
+</tr><TR>
+<TD>
+cs_flist
+</td>
+<TD>
+exclamation-point delimited list of filter recnums applied to this
+profile (uconf-driver)
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+comma delimited list of filter names applied to this profile
+(uconf-import)
+</td>
+</tr><TR>
+<TD>
+cs_glist
+</td>
+<TD>
+exclamation-point delimited. list of group recnums granted access to
+this profile
+(uconf-driver)
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+comma delimited. list of group names granted access to this profile
+(uconf-import)
+</td>
+</tr>
+<TR>
+<TD>
+cs_llist
+</td>
+<TD>
+exclamation-point delimited. list of log source recnums associated
+with this profile
+(uconf-driver)
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+comma delimited. list of log source names associated with this profile
+(uconf-import)
+</td>
+</tr>
+<TR>
+<TD>
+cs_pathlevel
+</td>
+<TD>
+depth of path reporting (default is 3)
+</td>
+</tr><TR>
+<TD>
+cs_processlevel
+</td>
+<TD>
+number of level of path to report (default is 4)
+</td>
+</tr><TR>
+<TD>
+cs_referrallevel
+</td>
+<TD>
+referral level to report (default is 3)
+</td>
+</tr><TR>
+<TD>
+cs_sidfield
+</td>
+<TD>
+session id field (1-18) same list as filter.
+</td>
+</tr><TR>
+<TD>
+cs_taskid
+</td>
+<TD>
+recnum for associated task in Task table (uconf-driver only)
+</td>
+</tr><TR>
+<TD>
+cs_timeoffset
+</td>
+<TD>
+Time offset (in seconds) for data in log (default is 0=GMT)
+</td>
+</tr><TR>
+<TD>
+cs_ulist
+</td>
+<TD>
+exclamation-point delimited list of user recnums granted access to
+this profile
+(uconf-driver)
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+comma delimited list of user names granted access to this profile
+(uconf-import)
+</td>
+</tr><TR>
+<TD>
+cs_vmethod
+</td>
+<TD>
+visitor tracking (<B>0=IP-UserAgent</b>, 1=Session ID, 2=UTM, 3=IP-
+Only)
+</td>
+</tr><TR>
+<TD>
+cs_visitortimeout
+</td>
+<TD>
+session timeout in seconds (default is 3600)
+</td>
+</tr><TR>
+<TD>
+ct_affiliation
+</td>
+<TD>
+optional affiliation
+</td>
+</tr><TR>
+<TD>
+ct_defaultpage
+</td>
+<TD>
+default page for site (e.g. index.html)
+</td>
+</tr><TR>
+<TD>
+ct_lasthit
+</td>
+<TD>
+[internal use only]
+</td>
+</tr><TR>
+<TD>
+ct_name
+</td>
+<TD>
+identifier for profile
+</td>
+</tr><TR>
+<TD>
+ct_reportdomains
+</td>
+<TD>
+comma delimited list of site domains
+</td>
+</tr><TR>
+<TD>
+ct_sidpre
+</td>
+<TD>
+precursor to session id pattern being matched
+</td>
+</tr><TR>
+<TD>
+ct_sidpost
+</td>
+<TD>
+terminator to session id pattern being matched
+</td>
+</tr><TR>
+<TD>
+ct_website
+</td>
+<TD>
+website URL
+</td>
+</tr>
+</table>
+<P>
+Task Directives
+<P>
+<TABLE BORDER=1>
+<TR>
+<TD>
+Directive
+</td>
+<TD>
+Meaning/Purpose
+</tr>
+<TR>
+<TD>
+cd_btime
+</td>
+<TD>
+[internal use only]
+</td>
+</tr>
+<TR>
+<TD>
+cd_etime
+</td>
+<TD>
+[internal use only]
+</td>
+</tr>
+<TR>
+<TD>
+cd_lastrun
+</td>
+<TD>
+[internal use only]
+</td>
+</tr><TR>
+<TD>
+cr_dow
+</td>
+<TD>
+day of week to run task [0-6]
+</td>
+</tr><TR>
+<TD>
+cr_enabled
+</td>
+<TD>
+[internal use only]
+</td>
+</tr><TR>
+<TD>
+cr_frequency
+</td>
+<TD>
+task frequency
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+0=never
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+4=hourly
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+5=daily
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+6=weekly
+</td>
+</tr><TR>
+<TD>
+</td>
+<TD>
+7=monthly
+</td>
+</tr><TR>
+<TD>
+cr_runnow
+</td>
+<TD>
+[internal use only]
+</td>
+</tr><TR>
+<TD>
+cs_dom
+</td>
+<TD>
+day of month to run task [1-31]
+</td>
+</tr><TR>
+<TD>
+cs_hour
+</td>
+<TD>
+hour of day to run task [0-23]
+</td>
+</tr><TR>
+<TD>
+cs_minute
+</td>
+<TD>
+minute of hour to run task [0-59]
+</td>
+</tr><TR>
+<TD>
+cs_rid
+</td>
+<TD>
+recnum for associated profile in Profile table (uconf-driver only)
+</td>
+</tr><TR><TD>
+ct_affiliation
+</td>
+<TD>
+optional affiliation
+</td>
+</tr><TR>
+<TD>
+ct_application
+</td>
+<TD>
+[internal use only]
+</td>
+</tr><TR>
+<TD>
+ct_completed
+</td>
+<TD>
+[internal use only]
+</td>
+</tr><TR>
+<TD>
+ct_day
+</td>
+<TD>
+day of month to run task [1-31]
+</td>
+</tr><TR>
+<TD>
+ct_lockid
+</td>
+<TD>
+[internal use only]
+</td>
+</tr><TR>
+<TD>
+ct_pid
+</td>
+<TD>
+[internal use only]
+</td>
+</tr><TR>
+<TD>
+ct_name
+</td>
+<TD>
+task identifier name
+</td>
+</tr>
+<TR>
+<TD>
+ct_runstatus
+</td>
+<TD>
+[internal use only]
+</td>
+</tr>
+<TR>
+<TD>
+ct_status
+</td>
+<TD>
+[internal use only]
+</td>
+</tr>
+<TR>
+<TD>
+ct_year
+</td>
+<TD>
+year for task to run [CCYY]
+</td>
+</tr>
+</table>
+<P>
+User Directives
+<P>
+<TABLE BORDER=1>
+<TR>
+<TD>
+ct_affiliation
+</td>
+<TD>
+affiliation for user
+</td>
+</tr>
+<TR>
+<TD>
+cs_adminlevel
+</td>
+<TD>
+admin level (1=admin, 2=affiliate admin, <B>3=user</b>)
+</td>
+</tr>
+<TR>
+<TD>
+ct_fullname
+</td>
+<TD>
+full name of user
+</td>
+</tr>
+<TR>
+<TD>
+cs_glist
+</td>
+<TD>
+exclamation-delimited list of group recnums the user belongs to
+(<FONT 
+FACE="courier">uconf-driver</font>)
+</td>
+</tr>
+<TR>
+<TD>
+</td>
+<TD>
+comma delimited list of group names the user belongs to (<FONT 
+FACE="courier">uconf-import</font>
+</td>
+</tr>
+<TR>
+<TD>
+cs_language
+</td>
+<TD>
+two-letter report language code for user
+</td>
+</tr>
+<TR>
+<TD>
+</td>
+<TD>
+ch=Chinese
+</td>
+</tr>
+<TR>
+<TD>
+</td>
+<TD>
+<B>en=English</b>
+</td>
+</tr>
+<TR>
+<TD>
+</td>
+<TD>
+fr=French
+</td>
+</tr>
+<TR>
+<TD>
+</td>
+<TD>
+ge=German
+</td>
+</tr>
+<TR>
+<TD>
+</td>
+<TD>
+it=Italian
+</td>
+</tr>
+<TR>
+<TD>
+</td>
+<TD>
+ja=Japanese
+</td>
+</tr>
+<TR>
+<TD>
+</td>
+<TD>
+ko=Korean
+</td>
+</tr>
+<TR>
+<TD>
+</td>
+<TD>
+po=Portuguese
+</td>
+</tr>
+<TR>
+<TD>
+</td>
+<TD>
+sp=Spanish
+</td>
+</tr>
+<TR>
+<TD>
+</td>
+<TD>
+sw=Swedish
+</td>
+</tr>
+<TR>
+<TD>
+cs_rlist
+</td>
+<TD>
+exclamation-point delimited list of profile recnums the user has
+access to (<FONT 
+FACE="courier">uconf-import</font>)
+</td>
+</tr>
+<TR>
+<TD>
+</td>
+<TD>
+comma-delimited list of profile name the user has access to (<FONT 
+FACE="courier">uconf-import</font>)
+</td>
+</tr>
+<TR>
+<TD>
+cr_leveltype
+</td>
+<TD>
+affiliation admin privilege level
+</td>
+</tr>
+<TR>
+<TD>
+</td>
+<TD>
+<B>0=manage users/groups/tasks</b>
+</td>
+</tr>
+<TR>
+<TD>
+</td>
+<TD>
+1=manage users/groups/tasks/filters
+</td>
+</tr>
+<TR>
+<TD>
+</td>
+<TD>
+2=manage users/groups/tasks/filters/log sources/profiles
+</td>
+</tr>
+<TR>
+<TD>
+ct_name
+</td>
+<TD>
+identifier for user
+</td>
+</tr>
+<TR>
+<TD>
+ct_password
+</td>
+<TD>
+user password
+</td>
+</tr>
+</table>
+<P>
+Group Directives
+<P>
+<TABLE BORDER=1>
+<TR>
+<TD>
+cs_rlist
+</td>
+<TD>
+exlamation-point delimited list of profile recnums the group has
+access to (<FONT 
+FACE="courier">uconf-driver</font>)
+</td>
+</tr>
+<TR>
+<TD>
+</td>
+<TD>
+comma-delimited list of profile names the group has access to (<FONT 
+FACE="courier">uconf-import</font>)
+</td>
+</tr>
+<TR>
+<TD>
+cs_ulist
+</td>
+<TD>
+exlamation-point delimited list of user recnums assigned to the group
+(<FONT 
+FACE="courier">uconf-driver</font>)
+</td>
+</tr>
+<TR>
+<TD>
+</td>
+<TD>
+comma-delimited list of user names assigned to the group (<FONT 
+FACE="courier">uconf-import</font>)
+</td>
+</tr>
+<TR>
+<TD>
+ct_affiliation
+</td>
+<TD>
+optional affiliation
+</td>
+</tr>
+<TR>
+<TD>
+ct_groupdesc
+</td>
+<TD>
+description of the group
+</td>
+</tr>
+<TR>
+<TD>
+ct_name
+</td>
+<TD>
+identifier for the group
+</td>
+</tr>
+</table>
+<P>
+<B>Special Usage Notes</b>
+<UL>
+<LI>If a Profile is added but no corresponding Task is added,
+scheduling of the
+Profile cannot be managed within the Urchin admin GUI interface.
+<LI>When defining a Custom Log format, the <FONT 
+FACE="courier">ct_logmap
+</font> directive must be used to specify the mapping of the logfile
+fields in the
+custom log to Urchin's own internal representation of these fields.
+Please use the
+following table for constructing a logmap entry (<FONT 
+FACE="courier">cs_logmap</font> directive):
+</ul>
+<P>
+Urchin Internal Log Format Representation
+<P>
+<TABLE BORDER=1>
+<TR>
+<TD>
+1
+</td>
+<TD>
+W3C date format : CCYY-MM-DD
+</td>
+</tr>
+<TR>
+<TD>
+2
+</td>
+<TD>
+W3C time format HH:MM:SS
+</td>
+</tr>
+<TR>
+<TD>
+3
+</td>
+<TD>
+NCSA time/date format [DD/Mon/CCYY:HH:MM-HH:MM]
+</td>
+</tr>
+<TR>
+<TD>
+4
+</td>
+<TD>
+Visitor IP address (IP only - no hostnames allowed)
+</td>
+</tr>
+<TR>
+<TD>
+5
+</td>
+<TD>
+Username
+</td>
+</tr>
+<TR>
+<TD>
+6
+</td>
+<TD>
+NCSA-style request (method&lt;space&gt;requested-page&lt;space&gt;
+</td>
+</tr>
+<TR>
+<TD>
+7
+</td>
+<TD>
+W3C method (e.g. GET or POST)
+</td>
+</tr>
+<TR>
+<TD>
+8
+</td>
+<TD>
+W3C URI stem
+</td>
+</tr>
+<TR>
+<TD>
+9
+</td>
+<TD>
+W3C URI query
+</td>
+</tr>
+<TR>
+<TD>
+10
+</td>
+<TD>
+status code
+</td>
+</tr>
+<TR>
+<TD>
+11
+</td>
+<TD>
+bytes transferred
+</td>
+</tr>
+<TR>
+<TD>
+12
+</td>
+<TD>
+visitor hostname (may be an IP address or a hostname)
+</td>
+</tr>
+<TR>
+<TD>
+13
+</td>
+<TD>
+User Agent string (browser and platform)
+</td>
+</tr>
+<TR>
+<TD>
+14
+</td>
+<TD>
+cookie list
+</td>
+</tr>
+<TR>
+<TD>
+15
+</td>
+<TD>
+referral
+</td>
+</tr>
+<TR>
+<TD>
+16
+</td>
+<TD>
+[custom field #1]
+</td>
+</tr>
+<TR>
+<TD>
+17
+</td>
+<TD>
+[custom field #2]
+</td>
+</tr>
+<TR>
+<TD>
+18
+</td>
+<TD>
+[custom field #3]
+</td>
+</tr>
+<TR>
+<TD>
+19
+</td>
+<TD>
+virtual hostname of server
+</td>
+</tr>
+</table>
+<P>
+For instance if your webserver produces logfiles with the following
+fields separated by
+spaces:
+<P>
+<FONT FACE="courier">username IP NCSA_date NCSA_request referral
+status
+bytes</font>
+<P>
+the corresponding cs_logmap directive would look like:
+<P>
+<FONT FACE="courier">cs_logmap=?5|4|3|6|15|10|11?</font>
+<P>
+<B>Examples Using <FONT FACE="courier">uconf-driver</font> and <FONT 
+FACE="courier">uconf-import</font> Utilities</b>
+<P>
+This section illustrates a number of ways that the uconf-driver
+utility can be used to
+perform different administrative tasks within Urchin. Note that Urchin
+defaults will be
+used for parameters that aren?t explicitly specified. In the examples
+below, line
+breaks
+are added for readability.
+<p>
+<U>Add a user</u> (note that the profile record number, not the name,
+is used
+when
+specifying a profile access list)
+<P>
+<ul>
+<FONT FACE="courier">
+uconf-driver action=add table=user name=jpublic
+cs_language=fr<br>
+ct_fullname="John Q. Public" cr_leveltype=3 <br>
+ct_password=change%me cs_rlist=!23!
+</font>
+</ul>
+<P>
+<U>Add a filter to remove hits with the localhost ip (127.0.0.1)</u>
+<P>
+<ul>
+<FONT FACE="courier">
+uconf-driver action=add table=filter name=localhost-ip
+cr_filtertype=exclude
+cs_filterfield=4 ct_filter=127.\0.\0.\1
+</font>
+</ul>
+<P>
+<U>Extract all profile information for a specific profile</u>
+<ul>
+<P>
+<FONT FACE="courier">uconf-driver action=get table=profile
+name=www.urchin.com
+</font>
+</ul>
+<P>
+<U>Extract a single parameter for a specific profile</u>
+<P>
+<ul>
+<FONT FACE="courier">uconf-driver action=get_parameter table=profile
+name=www.urchin.com parameter=ct_defaultpage
+</font>
+</ul>
+<P>
+<U>Delete a user</u>
+<P>
+<ul>
+<FONT FACE="courier">
+uconf-driver action=delete table=user name=myuser
+</font>
+</ul>
+<P>
+<B>Examples of pseudo-code scripts to perform tasks</b>
+<P>
+This section gives examples in pseudo-code, which could be easily
+translated into a
+shell
+script or Perl script depending on the needs of the application.
+<P>
+<U>Apply a German language setting to all users</u>
+<P>
+<ul>
+<FONT FACE="courier">
+$user_count = `uconf-driver action=nrecords table=user`;<br>
+for ($i = 1 ; $i <= $user_count ; $i ++) {<br>
+<ul>uconf-driver action=set_parameter table=user entry=$i
+ct_language=ge;
+</ul>
+}<br>
+</font>
+</ul>
+<P>
+<U>Add a new profile/task/logsource/user</u>
+<P>
+Note that in this example, <FONT FACE="courier">uconf-import</font>
+takes care
+of
+building the proper mappings so that the new profile, task, log source
+and user will
+all
+be properly cross referenced ? e.g. the log source is associated with
+the profile and
+vice-
+versa, the user will be in the profile?s list of authorized users and
+vice-versa, etc. It
+should also be noted that the Task is associated to the Profile
+because they share the
+same Name tag.
+<P>
+<B>Step 1</b>: Some automated provisioning application creates the
+following text
+file
+(/path/to/text-file):
+<ul>
+<P>
+<FONT FACE="courier">
+&lt;Profile Name="www.newdomain.com"&gt;
+<BR>
+ct_name=www.urchin.com
+<BR>
+ct_affiliation=(NONE)
+<BR>
+ct_website=http://www.newdomain.com
+<BR>
+ct_reportdomains=www.newdomain.com,newdomain.com
+<BR>
+cs_llist=newdomain.com-access-log
+<BR>
+ct_defaultpage=index.html
+<BR>
+cs_vmethod=0
+<BR>
+cs_ulist=newuser
+<BR>
+&lt;/Profile&gt;
+<P>
+&lt;Task Name="www.newdomain.com"&gt;
+<BR>
+ct_name=www.newdomain.com
+<BR>
+ct_affiliation=(NONE)
+<BR>
+cr_frequency=0
+<BR>
+cr_runnow=0
+<BR>
+cr_enabled=off
+<BR>
+&lt;/Task&gt;
+<P>
+&lt;Logfile Name="newdomain.com-access-log"&gt;
+<BR>
+ct_name=newdomain.com-access-log
+<BR>
+ct_affiliation=(NONE)
+<BR>
+ct_loglocation=/path/to/logs/newdomain.com-access.log
+<BR>
+cs_logformat=ncsa
+<BR>
+cr_type=local
+<BR>
+cs_rlist=www.newdomain.com
+<BR>
+&lt;/Logfile&gt;
+<P>
+&lt;User Name="newuser"&gt;
+<BR>
+ct_affiliation=(NONE)
+<BR>
+ct_fullname="New User"
+<BR>
+ct_name=newuser
+<BR>
+ct_password=change$me
+<BR>
+cs_rlist=www.newdomain.com
+<BR>
+</User>
+</ul>
+<P>
+</font>
+<B>Step 2</b>: Call the uconf-import utility to import the new profile
+and user into
+Urchin:
+<P>
+<ul>
+<FONT FACE="courier">
+uconf-import -f /path/to/text-file
+</font>
+</ul>
+<p>
+<u>Sample script to add a Profile/Task/LogSource/User using
+uconf-driver</u>
+<p>
+<pre>
+#!/bin/sh
+#
+# Proof-of-concept Bourne shell script for adding a Profile,
+# Task, Log Source and User record set to the Urchin configuration.
+# The Profile will be set to run at 01:05am daily.
+
+# Define the pertinent information here. Obviously, this should 
+really be
+# stuff that's parsed from the command line.
+domain=mysite.com
+logfile=/path/to/webserverlogs/mysite-access.log
+username=userjoe
+password=joepasswd
+language=en
+
+cd /path/to/urchin/util
+
+# Add Profile
+p_recnum=`./uconf-driver action=add table=profile name=$domain
+ct_name=$domain ct_website=http://www.$domain
+ct_reportdomains=$domain,www.$domain`
+
+# Add Task
+t_recnum=`./uconf-driver action=add table=task name=$domain
+ct_name=$domain cr_frequency=5 cr_enabled=on cs_hour=1 cs_minute=5
+cs_rid=$p_recnum`
+
+# Set proper cross reference from Profile to Task
+recnum=`./uconf-driver action=set_parameter recnum=$p_recnum
+cs_taskid=$t_recnum`
+
+if [ "$recnum" != "$p_recnum" ]; then
+        echo "Failed to associate profile with log source"
+fi
+
+# Add Log Source
+l_recnum=`./uconf-driver action=add table=logfile name=$domain
+cr_action=2 ct_name=$domain cr_type=local ct_loglocation=$logfile
+cs_logformat=ncsa cs_rlist=!$p_recnum!`
+
+# Set proper cross reference from Profile to Log Source
+recnum=`./uconf-driver action=set_parameter recnum=$p_recnum
+cs_llist=!$l_recnum!`
+if [ "$recnum" != "$p_recnum" ]; then
+        echo "Failed to associate profile with log source"
+fi
+
+# Add level-3 admin for this Profile
+u_recnum=`./uconf-driver action=add table=user name=$username
+ct_name=$username ct_password=$password ct_fullname="$domain Admin"
+cs_language=$language cs_adminlevel=3 cs_rlist=!$p_recnum!`
+
+# Set proper cross reference from Profile to User
+recnum=`./uconf-driver action=set_parameter recnum=$p_recnum
+cs_ulist=!$u_recnum!`
+
+if [ "$recnum" != "$p_recnum" ]; then
+        echo "Failed to associate user with profile"
+fi
+exit
+</pre></p>
+<script type="text/javascript">
+if(document.getElementById('kb_other') != null)
+showLayer('kb_other');
+if(document.getElementById('kb_other_win') != null)
+showLayer('kb_other_win');
+if(document.getElementById('z_other') != null)
+toggleZippy('z_other');
+if(document.getElementById('z_other_win') != null)
+toggleZippy('z_other_win');
+if(document.getElementById('kb_win'))
+showLayer('kb_win');
+if(document.getElementById('z_win'))
+toggleZippy('z_win');
+if(document.getElementById('kb_win98'))
+showLayer('kb_win98');
+if(document.getElementById('z_win98'))
+toggleZippy('z_win98');
+if(document.getElementById('kb_DE'))
+showLayer('kb_DE');
+if(document.getElementById('z_DE'))
+toggleZippy('z_DE');
+if(document.getElementById('kb_non_US'))
+showLayer('kb_non_US');
+if(document.getElementById('z_non_US'))
+toggleZippy('z_non_US');
+</script>
+</div>
+<div class="clear"></div>
+<a href="#" name="helpful" ></a>
+<div class="answer-features">
+<div class="button plus-one">
+<div id="plusone"></div>
+<script type="text/javascript">
+gapi.plusone.render('plusone', {size: 'small', count: 'true',
+href: 'http:\x2F\x2Fsupport.google.com\x2Furchin45\x2Fbin\x2Fanswer.py?hl=en\x26answer=28182\x26ctx=plusone'});
+</script>
+</div>
+</div>
+<script type="text/javascript">
+function setSurveyCookie(){
+setCookies_default("survey_50", 1, "", 30);
+}
+</script>
+<p class="survey-invite-green ">
+<a href="requestdefc.html?contact_type=survey" id="surveyLink" target="_blank" onclick="setSurveyCookie();track('Survey Link', 'Click new');"><strong>Tell us how we're doing -</strong> Answer five short questions about your help center experience</a>
+</p>
+</div>
+<div class="clear"></div>
+</div>
+</td>
+<td class="right_column">
+<div class="module">
+<h2>Related</h2>
+<ul class="no_bullets right-nav-cb">
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28790&amp;ctx=cb&amp;src=cb&amp;cbid=-1bbdqz3ypgc1i&amp;cbrank=0"
+onclick="track('Recommended Articles Module', 'cb 28790');">
+uconf-import: Text-based Configuration Import Utility
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7360&amp;parent=7353&amp;ctx=topic" onclick="track('Breadcrumbs', '7360');">Advanced Topics</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7400&amp;parent=7360&amp;ctx=topic" onclick="track('Breadcrumbs', '7400');">Utilities</a>
+</span>
+</li>
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28384&amp;ctx=cb&amp;src=cb&amp;cbid=6t6wkpzp9aol&amp;cbrank=1"
+onclick="track('Recommended Articles Module', 'cb 28384');">
+Advanced Filters
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7356&amp;parent=7353&amp;ctx=topic" onclick="track('Breadcrumbs', '7356');">Urchin Administration</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7380&amp;parent=7356&amp;ctx=topic" onclick="track('Breadcrumbs', '7380');">Filtering</a>
+</span>
+</li>
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28333&amp;ctx=cb&amp;src=cb&amp;cbid=-3zp1ar88j1wf&amp;cbrank=2"
+onclick="track('Recommended Articles Module', 'cb 28333');">
+Welcome to Urchin!
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7364&amp;parent=7363&amp;ctx=topic" onclick="track('Breadcrumbs', '7364');">Getting Started</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7427&amp;parent=7364&amp;ctx=topic" onclick="track('Breadcrumbs', '7427');">Installation</a>
+</span>
+</li>
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28128&amp;ctx=cb&amp;src=cb&amp;cbid=-1fhjls0xk9m8n&amp;cbrank=3"
+onclick="track('Recommended Articles Module', 'cb 28128');">
+DynamicURL Filters
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7366&amp;parent=7363&amp;ctx=topic" onclick="track('Breadcrumbs', '7366');">Urchin Administration</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7420&amp;parent=7366&amp;ctx=topic" onclick="track('Breadcrumbs', '7420');">Filtering</a>
+</span>
+</li>
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28119&amp;ctx=cb&amp;src=cb&amp;cbid=1aouc4zpgamcy&amp;cbrank=4"
+onclick="track('Recommended Articles Module', 'cb 28119');">
+Date Range
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7367&amp;parent=7363&amp;ctx=topic" onclick="track('Breadcrumbs', '7367');">Reporting Interface</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7416&amp;parent=7367&amp;ctx=topic" onclick="track('Breadcrumbs', '7416');">About the Reporting Interface</a>
+</span>
+</li>
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28377&amp;ctx=cb&amp;src=cb&amp;cbid=n9pw1cfukvf1&amp;cbrank=5"
+onclick="track('Recommended Articles Module', 'cb 28377');">
+Activating SSL on the Urchin Webserver
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7360&amp;parent=7353&amp;ctx=topic" onclick="track('Breadcrumbs', '7360');">Advanced Topics</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7399&amp;parent=7360&amp;ctx=topic" onclick="track('Breadcrumbs', '7399');">Security Features</a>
+</span>
+</li>
+</ul>
+</div>
+</td>
+</tr></table>
+</div>
+<div class="nocontent footer-nav-streamlined" role="contentinfo">
+<ul class="first-row">
+<li>
+<a href="http://www.urchin.com/"
+onclick="track('Footer', 'Product home')">
+Urchin Version 4 &amp; 5
+</a>
+</li>
+<li>
+<a href="request.html"
+onclick="track('Footer', 'Contacting us')">
+Contacting Us
+</a>
+</li>
+<li>
+<a href="http://www.google.com/support/?hl=en"
+onclick="track('Footer', 'Help with other products')">
+Help for other Google products
+</a>
+</li>
+</ul>
+<ul class="second-row">
+<li class='footer-copyright' dir='ltr'>
+&copy;2012 Google
+</li>
+<li >
+<a href="http://www.google.com/intl/en/"
+onclick="track('Footer', 'GoogleHome');
+">Google Home</a>
+</li>
+<li >
+<a href="http://www.google.com/intl/en/privacy.html"
+onclick="track('Footer', 'PrivacyPolicy');
+"><span class="important">New!</span> Privacy Policy</a>
+</li>
+<li >
+<a href="http://www.google.com/accounts/TOS?hl=en&amp;loc=DE"
+onclick="track('Footer', 'Terms');
+">Terms of Service</a>
+</li>
+</ul>
+</div>
+</div>
+<script type="text/javascript"></script>
+<script type="text/javascript">
+googlehelp.Links.initLinks(
+['', 'NO-GMAIL', 'NO-PLUS', browser, browserGroup,
+os, osGroup, country], internal);
+if (googlehelp.initEls) {
+googlehelp.initEls(['', 'NO-GMAIL', 'NO-PLUS', browser, browserGroup,
+os, osGroup, country, countryGroup],
+userSettings, userSettingsDropdownText);
+}
+if (convertLinksToButtons) {
+convertLinksToButtons();
+}
+</script>
+<script src='http://www.google-analytics.com/ga.js'
+type='text/javascript'></script>
+<script type="text/javascript">
+var analytics_async = 0;
+</script>
+<script
+src="resource/urchin_util8e0e.js?v=8"
+type="text/javascript"></script>
+<script type="text/javascript">
+var cookiePathArray = [];
+</script>
+<script type="text/javascript">
+urchinTracker('\x2Furchin45\x2Fbin\x2Fanswer.py?hl=en\x26answer=28182\x26ctx=cb\x26src=cb\x26cbid=vyv01vmeikgo\x26cbrank=3');
+</script>
+<script
+src="resource/js_validate_static8fa7.js?v=18"
+type="text/javascript"></script>
+<script type="text/javascript">
+track('P13n Box - urchin67',
+'Impression');
+track('LeftNav',
+'Urchin67 - Impression');
+track('Survey Link',
+'Impression');
+setCookies_default('p13n_box_impr_50_urchin67',
+'1',
+'',
+'30');
+</script>
+<script type="text/javascript">
+initPageTimer('http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28182&amp;ctx=cb&amp;src=cb&amp;cbid=vyv01vmeikgo&amp;cbrank=3\x2F\x2Fsupport.google.com\x2Furchin45\x2Fapi\x2Fmetrics?hl=en',false);
+</script>
+<script type="text/javascript">
+new googlehelp.Lightbox(
+'\x26laquo\x3B Previous',
+'Next \x26raquo\x3B');
+</script>
+<script src="http://www.google.com/sidewiki/static/sidebar_element/sidebar-element-compiled.js"></script>
+<script defer="defer">
+var sidebarElement = new google.elements.sidewiki.SidebarElement(
+window.location.href,false);
+sidebarElement.bindToElement("sidewiki-open-ui-button");
+</script>
+</body>
+
+<!-- Mirrored from support.google.com/urchin45/bin/answer.py?hl=en&answer=28182&ctx=cb&src=cb&cbid=vyv01vmeikgo&cbrank=3 by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:34:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

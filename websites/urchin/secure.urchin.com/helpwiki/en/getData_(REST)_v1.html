@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/getData_(REST)_v1.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>getData (REST) v1</strong> <ul><li><p class="line891"><a href="https://secure.urchin.com/helpwiki/en/Data_API.html">API Table of Contents</a> </li><li><p class="line891"><a href="https://secure.urchin.com/helpwiki/en/Report_service_(REST)_v1.1.html">ReportService (REST)</a> </li></ul><p class="line862">Method: <strong>getData</strong> <p class="line874">This method retrieves data for the specified dimensions/metrics from the following static tables: <ul><li>vistor </li><li>transaction </li><li>total </li></ul><p class="line874">REST URL: <p class="line867"><pre>http://server.com/api/urchin/v1/ReportService/data?login=$login&amp;password=$password&amp;ids=$PROFILE_ID&amp;start-index=$start-index&amp;max-results=$max-results&amp;start-date=$start-date&amp;end-date=$end-date&amp;dimensions=$dimensions&amp;metrics=$metrics&amp;sort=$sort&amp;table=$table&amp;filters=$filters
+</pre><p class="line874">Request arguments: <ul><li><p class="line891"><strong>login</strong> - User name login </li><li><p class="line891"><strong>password</strong> - User password </li><li><p class="line891"><strong>ids</strong> - Comma-separated list of data source profile IDs. Currently only one ID is supported. In case of several IDs are specified than only first one is taken into account. </li><li><p class="line891"><strong>start-index</strong> (optional field) - 1-based starting index. Default value is 1. (The 1-based index is external for compatibility with Google Analytics. Internally it is 0-based). </li><li><p class="line891"><strong>max-results</strong> - Maximum number of results to return. This parameter is optional. The default value is 500. </li><li><p class="line891"><strong>start-date</strong> - First date from which to collect data in the form YYYY-MM-DD. This parameter is required. </li><li><p class="line891"><strong>end-date</strong> - Last date from which to collect data in the form YYYY-MM-DD. This parameter is required. </li><li><p class="line891"><strong>dimensions</strong> - A comma separated list of dimensions to organize the data by. This parameter is required. For additional information, see <a href="https://secure.urchin.com/helpwiki/en/Dimensions_v1.html">Dimensions v1</a>. </li><li><p class="line891"><strong>metrics</strong> - A comma separated list of metrics to aggregate and include in the report. This parameter is optional and may also be set to an empty string (e.g., "metrics=&amp;start-date..."). If absent or blank, the server does not return any metrics.  If the user specifies same metric twice, only the first one is returned (WSDL schema limitation). For additional information, see <a href="https://secure.urchin.com/helpwiki/en/Metrics_and_Units_v1.html">Metrics and Units v1</a>. </li><li><p class="line891"><strong>sort</strong> (optional field) - An optional parameter specifying which dimensions and metrics to sort by, in which directions and in which order. This parameter is optional, and may also be set to an empty string (e.g., sort=&amp;start-date="2008-10-10"). If absent or blank, the server sorts by first listed dimension in ascending order. In v1.0 sort supports only one column. To specify descending order, the sort field must include the "-" sign, e.g. sort="-u:browser". </li><li><p class="line891"><strong>filters</strong> (no included in Beta) (optional field) - An optional parameter specifying to filter response data according to expression. A filter can only be applied to a field that is present in the request query. See <a href="https://secure.urchin.com/helpwiki/en/Filters_(REST)_v1.html">Filters (REST) v1</a>. </li><li><p class="line891"><strong>table</strong> (optional field) - ID of data storage to extract data from. This parameter is optional. A list of all available tables can be found in <a href="https://secure.urchin.com/helpwiki/en/Tables_v1.html">Tables v1</a>. </li></ul><p class="line874">REST Response: <ul><li><p class="line891"><strong>Record[]</strong> - Response is 2-dimensional array of data, each column corresponds to dimension or metric values. Since dimensions are extensible, they can't have a direct name binding. Instead they are returned as an unbounded array of dimensions with names in attribute. </li></ul><p class="line867"><strong>Java and .Net C# samples</strong> <p class="line874">The following samples are available for this method: <ul><li><p class="line891"><a href="https://secure.urchin.com/helpwiki/en/Samples_for_Java_(REST)_v1.html">Samples for Java (REST) v1</a> </li><li><p class="line891"><a href="https://secure.urchin.com/helpwiki/en/Samples_for_.NET_(REST)_v1.html">Samples for .NET (REST) v1</a> </li></ul></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/getData_(REST)_v1.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en"
+class="">
+
+<!-- Mirrored from support.google.com/urchin45/bin/answer.py?hl=en&topic=7376&answer=28694 by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:34:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<script type="text/javascript">serverResponseTimeDelta=window.external&&window.external.pageT?window.external.pageT:-1;pageStartTime=new Date().getTime();</script>
+<title>UTM Quick-Install (IIS) - Urchin Version 4 &amp; 5 Help</title>
+<meta charset="utf-8">
+<meta http-equiv="X-FRAME-Options" content="SameOrigin" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="The following is intended as a quick run-through on installing the 
+UTM for websites running on a Microsoft IIS server on any Windows 
+platform.  For more detailed information on the UTM, please see 
+" />
+<link rel="canonical" href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28694" />
+<link rel="shortcut icon" href="http://www.google.com/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="resource/all799c.css?v=400_" />
+<style type="text/css">#gbar,#guser{font-size:13px;padding-right:8px;padding-top:4px !important;}#gbar{padding-left:8px;height:22px}#guser{padding-bottom:7px !important;text-align:right}.gbh,.gbd{border-top:1px solid #c9d7f1;font-size:1px}.gbh{height:0;position:absolute;top:24px;width:100%}@media all{.gb1{height:22px;margin-right:.5em;vertical-align:top}#gbar{float:left}}a.gb1,a.gb4{text-decoration:underline !important}a.gb1,a.gb4{color:#00c !important}.gbi .gb4{color:#dd8e27 !important}.gbf .gb4{color:#900 !important}</style>
+<script type="text/javascript">
+var internal = 0;
+var hc_protocol = "http://";
+var hc_host = "support.google.com";
+var hc_url_root = "/urchin45";
+var hc_page_info = "answer=28694";
+var track = function() {};
+var hc_urchin_enabled = true;
+var country = 'DE';
+var countryGroup = 'EMEA';
+var global_error_general = 'Sorry, we weren\x27t able to submit your information. Please try again.';
+var search_form_id = 'search-form';
+var hc_urchin = "UA-18001-2";
+var global_hc_bookmark = new Array("add","remove","toggle");
+global_hc_bookmark.add = new Array();
+global_hc_bookmark.remove = new Array();
+global_hc_bookmark.toggle = new Array();
+global_hc_bookmark["add"].url = "";
+global_hc_bookmark["add"].token = "";
+global_hc_bookmark["remove"].url = "";
+global_hc_bookmark["remove"].token = "";
+global_hc_bookmark["toggle"].url = "";
+global_hc_bookmark["toggle"].token = "";
+var hiddenZippyLists = '{"experiments": {"answerId": "28694", "zippiesString": "These instructions are optimized for your current system\x27s configuration. To view these instructions for another configuration, select the configuration:&nbsp;", "defaultValue": "", "hidePicker": "1", "validItems": {"0": "e0", "1": "e1", "2": "e2", "3": "e3", "4": "e4", "5": "e5"}}, "country": {"answerId": "28694", "zippiesString": "These instructions are optimized for your current system\x27s configuration. To view these instructions for another configuration, select the configuration:&nbsp;", "defaultValue": "DE", "hidePicker": "0", "validItems": {"AF": "Afghanistan", "AL": "Albania", "DZ": "Algeria", "AS": "American Samoa", "AO": "Angola", "AI": "Anguilla", "AQ": "Antarctica", "AD": "Andorra", "AR": "Argentina", "AM": "Armenia", "AW": "Aruba", "AT": "Austria", "AU": "Australia", "AZ": "Azerbaijan", "BS": "Bahamas", "BH": "Bahrain", "BD": "Bangladesh", "BB": "Barbados", "AG": "Barbuda", "BY": "Belarus", "BZ": "Belize", "BE": "Belgium", "BN": "Benin", "BM": "Bermuda", "BT": "Bhutan", "BO": "Bolivia", "BW": "Botswana", "BA": "Bosnia and Herzegovina", "BR": "Brazil", "VG": "British Virgin Islands", "BN": "Brunei", "BN": "Brunei Darussalam", "BG": "Bulgaria", "BF": "Burkina Faso", "BI": "Burundi", "CM": "Cameroon", "KH": "Cambodia", "CA": "Canada", "CV": "Cape Verde Islands", "KY": "Cayman Islands", "CF": "Central African Republic", "TD": "Chad", "CL": "Chile", "CN": "China", "CX": "Christmas Island", "CC": "Cocos Islands", "CO": "Colombia", "CK": "Cook Islands", "KM": "Comoros", "CG": "Congo", "CR": "Costa Rica", "CI": "Cote d\x27Ivoire", "HR": "Croatia", "CU": "Cuba", "CY": "Cyprus", "CZ": "Czech Republic", "DK": "Denmark", "DJ": "Djibouti", "DM": "Dominica", "DO": "Dominican Republic", "EC": "Ecuador", "EG": "Egypt", "SV": "El Salvador", "GQ": "Equitorial Guinea", "ER": "Eritrea", "EE": "Estonia", "ET": "Ethiopia", "FK": "Falkland Islands", "FO": "Faroe Islands", "FJ": "Fiji", "FI": "Finland", "FR": "France", "GF": "French Guiana", "PF": "French Polynesia", "TF": "French Southern Territories", "GA": "Gabon", "GM": "Gambia", "GE": "Georgia", "DE": "Germany", "GH": "Ghana", "GI": "Gibraltar", "GR": "Greece", "GL": "Greenland", "GD": "Grenada", "CP": "Guadeloupe", "GU": "Guam", "GT": "Guatemala", "GF": "Guiana", "GN": "Guinea", "GW": "Guinea-Bissau", "GY": "Guyana", "HT": "Haiti", "HN": "Honduras", "HK": "Hong Kong", "HU": "Hungary", "IS": "Iceland", "IN": "India", "ID": "Indonesia", "IR": "Iran", "IQ": "Iraq", "IE": "Ireland", "IL": "Israel", "IT": "Italy", "JM": "Jamaica", "JP": "Japan", "JO": "Jordan", "KZ": "Kazakhstan", "KI": "Kiribati", "KE": "Kenya", "KW": "Kuwait", "KG": "Kyrgyzstan", "LA": "Laos", "LV": "Latvia", "LB": "Lebanon", "LS": "Lesotho", "LR": "Liberia", "LY": "Libyan Arab Jamahiriya", "LI": "Liechtenstein", "LT": "Lithuania", "LU": "Luxembourg", "MO": "Macau", "MK": "Macedonia", "MG": "Madagascar", "MY": "Malaysia", "MT": "Malta", "MW": "Malawi", "MV": "Maldives", "ML": "Mali", "MP": "Mariana Islands", "MH": "Marshall Islands", "MQ": "Martinique", "MR": "Mauritania", "MU": "Mauritius", "YT": "Mayotte Island", "MX": "Mexico", "MD": "Moldova", "FM": "Micronesia", "MC": "Monaco", "MN": "Mongolia", "MS": "Montserrat", "MA": "Morocco", "MZ": "Mozambique", "MM": "Myanmar", "NA": "Namibia", "NR": "Nauru", "NP": "Nepal", "NL": "Netherlands", "AN": "Netherlands Antilles", "KN": "Nevis", "NC": "New Caledonia", "NI": "Nicaragua", "NE": "Niger", "NG": "Nigeria", "NU": "Niue", "KR": "North Korea", "NO": "Norway", "NZ": "New Zealand", "OM": "Oman", "PW": "Palau", "PK": "Pakistan", "PS": "Palestine", "PA": "Panama", "PG": "Papua New Guinea", "PY": "Paraguay", "PE": "Peru", "PH": "Philippines", "PN": "Pitcairn Islands", "PL": "Poland", "PT": "Portugal", "PR": "Puerto Rico", "QA": "Qatar", "RE": "Reunion Island", "RO": "Romania", "RU": "Russia", "RW": "Rwanda", "WS": "Samoa", "ST": "Sao Tome and Principe", "SM": "San Marino", "SA": "Saudi Arabia", "SN": "Senegal", "CS": "Serbia and Montenegro", "SC": "Seychelles", "SL": "Sierra Leone", "SG": "Singapore", "SK": "Slovakia", "SI": "Slovenia", "ES": "Spain", "SO": "Somalia", "SB": "Solomon Islands", "ZA": "South Africa", "KP": "South Korea", "LK": "Sri Lanka", "SR": "Suriname", "SD": "Sudan", "SS": "South Sudan", "SH": "St. Helena", "KN": "St. Kitts and Nevis", "LC": "St. Lucia", "PM": "St. Pierreet Miquelon", "VC": "St. Vincent and the Grenadines", "SZ": "Swaziland", "SE": "Sweden", "CH": "Switzerland", "SY": "Syrian Arab Republic", "TW": "Taiwan", "TJ": "Tajikistan", "TZ": "Tanzania", "TH": "Thailand", "TB": "Tibet", "TL": "Timor", "TG": "Togo", "TK": "Tokelau", "TO": "Tonga", "TT": "Trinidad and Tobago", "TN": "Tunisia", "TR": "Turkey", "TM": "Turkmenistan", "TC": "Turks and Caicos Islands", "TV": "Tuvalu", "UK": "Ukraine", "UG": "Uganda", "UE": "United Arab Emirates", "GB": "United Kingdom", "US": "USA", "VI": "U.S. Virgin Islands", "UY": "Uruguay", "UZ": "Uzbekistan", "VU": "Vanuatu", "VA": "The Vatican", "VE": "Venezuela", "VN": "Vietnam", "EH": "Western Sahara", "YE": "Yemen", "CD": "Zaire", "ZM": "Zambia", "ZW": "Zimbabwe", "other": "Other"}}}';
+var lang_dismiss_str = "Dismiss";
+var localizedMonths = [
+'January',
+'February',
+'March',
+'April',
+'May',
+'June',
+'July',
+'August',
+'September',
+'October',
+'November',
+'December'
+];
+</script>
+<script
+src="http://support.google.com/urchin45/bin/resource/js_variables.js?v=9&amp;hl=en"
+type="text/javascript"></script>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load('search', 1);
+function init() {
+google.search.CustomSearchControl.attachAutoCompletion(
+'+qptype:1',
+document.getElementById('query'),
+search_form_id);
+}
+google.setOnLoadCallback(init);
+</script>
+<script
+src="resource/js_minified22af.js?v=142"
+type="text/javascript"></script>
+<script src="https://plusone.google.com/js/plusone.js">
+{lang: 'en', parsetags: 'explicit'}
+</script>
+</head>
+<body onload="
+setCookies_default('WebUserLocale',
+'en','formLoad'); registerSearchForm(search_form_id, 'query');makeRequest('/urchin45/bin/stats?r='+serverResponseTimeDelta+'&l='+(new Date().getTime()-pageStartTime)); 
+"
+dir="ltr"
+class=" answer_page  streamlined-header-1 ltr lang_en show_modules show_leftnav other  win98 win topic_7376 ">
+<a href="#content" class="skiplink">Skip to content</a>
+<div class="wrapper" id="baseDiv">
+<div id=gbar><nobr><a class=gb1 href="https://mail.google.com/mail/">Mail</a> <a class=gb1 href="https://www.google.com/calendar">Calendar</a> <a class=gb1 href="https://docs.google.com/">Documents</a> <a onclick=gbar.qs(this); class=gb1 href="http://picasaweb.google.com/home?hl=en">Photos</a> <a class=gb1 href="https://sites.google.com/">Sites</a> <a onclick=gbar.qs(this); class=gb1 href="../../../groups.google.com/grphpfef7.html?hl=en">Groups</a> <a onclick=gbar.qs(this); class=gb1 href="http://www.google.com/webhp?hl=en">Search</a> <a class=gb1 style="text-decoration:none" href="http://www.google.com/intl/en/options/"><u>More</u> &raquo;</a></nobr></div><div id=guser width=100%><nobr><span id=gbn class=gbi></span><span id=gbf class=gbf></span><span id=gbe></span><a id=gb_70 href="https://www.google.com/accounts/ServiceLogin?passive=1209600&amp;continue=http://support.google.com/urchin45/bin/answer.py?hl%3Den%26topic%3D7376%26answer%3D28694&amp;followup=http://support.google.com/urchin45/bin/answer.py?hl%3Den%26topic%3D7376%26answer%3D28694&amp;hl=en" class=gb4>Sign in</a></nobr></div><div class=gbh style=left:0></div><div class=gbh style=right:0></div>
+<div id="hc_error"></div>
+<div class="header-wrapper">
+<div class="header-logo ">
+<a class="logo-container" href="http://support.google.com/urchin45">
+<img src="http://www.google.com/images/logos/google_logo_41.png"
+alt="Google"
+class="logo" /></a>
+<div class="searchbox">
+<form name="search-form"
+id="search-form"
+title="Search Help"
+method="get"
+action="http://support.google.com/urchin45/bin/search.py"
+onsubmit="track('Search Help',
+document.getElementById('query').value);return false;">
+<input autocomplete="off"
+class="search-box"
+type="text"
+name="query"
+id="query"
+maxlength="2048"
+placeholder="Search Urchin Version 4 &amp; 5 help"
+title="Search"
+x-webkit-speech
+spellcheck="false" /><button type="submit"
+name="btnG"
+class="search-button"
+alt="Search Help">
+<img src="http://www.google.com/help/hc/images/hc_magnifying_glass.png">
+</button>
+<input type="hidden" name="ctx" value="en:searchbox" />
+</form>
+</div>
+</div>
+<div class="header-bar ">
+<h1>
+<a href="http://support.google.com/urchin45" onclick="track('Header', 'HC Title ');">
+<span>
+Urchin Version 4 &amp; 5 Help
+</span>
+<div class="">
+</div>
+</a>
+</h1>
+<div class="clear"></div>
+</div>
+</div>
+<div class="main-content-container">
+<table class="layout" border="0" cellpadding="0" cellspacing="0"><tr>
+<td class="left_column">
+<ul class="leftnav">
+<li class="">
+<a href="../index.html"
+onclick='track("Left Nav", "Help topics");'>Help topics</a>
+</li>
+<li class="leftnav_topics nav_link_on">
+<a href="http://support.google.com/urchin45/bin/topic.py?topic=7353"
+onclick='track("Left Nav", "topic=7353");'>Urchin 5</a>
+</li>
+<li class="leftnav_topics ">
+<a href="http://support.google.com/urchin45/bin/topic.py?topic=7363"
+onclick='track("Left Nav", "topic=7363");'>Urchin 4</a>
+</li>
+<li class="LeftNav_Urchin67 first">
+<a href="https://secure.urchin.com/helpwiki/en/Help_Center"  onclick="track('LeftNav', 'Urchin67');">Urchin 6/7</a>
+</li>
+</td>
+<td class="content">
+<div class="inner_content ">
+<p class="breadcrumbs" >
+<a href="../index.html" onclick="track('Breadcrumbs', 'Help Home');">Help articles</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?topic=7353" onclick="track('Breadcrumbs', '7353');">Urchin 5</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?topic=7355" onclick="track('Breadcrumbs', '7355');">Visitor Tracking</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?topic=7376" onclick="track('Breadcrumbs', '7376');">UTM Installation</a><span class="br-seperator"> &rsaquo; </span>UTM Quick-Install (IIS)&nbsp;
+</p>
+<div id="hcError" style="display:none"></div>
+<script type="text/javascript">
+var p13nFeed = new googlehelp.Feed.P13n();
+</script>
+<div class="clear"></div>
+<div class="p13n_box2 top has-bg"
+id="p13n_box"
+style="background-image:url(http://www.google.com/help/hc/images/alert18.gif);background-repeat:no-repeat;display:auto;">
+<a href="javascript:setCookies_default('p13n_box_50_urchin67', 1, '','30');
+hideLayer('p13n_box');
+track('P13n Box - urchin67', 'Hide');"
+class="hide_link">
+Hide
+</a>
+<h2>Support for Urchin 4/5 is not currently available</h2>
+<p>Please check out <a href="http://www.google.com/urchin/features.html">the latest Urchin version and features</a>.</p>
+<div id="p13n_box_content"></div>
+</div>
+<script type="text/javascript">
+var promoDisplayDict = {
+'type': "promo",
+'func': function(){
+document.getElementById("p13n_box").style.display = 'block';
+}
+};
+p13nFeed.setDisplayFunc(4,
+promoDisplayDict);
+</script>
+<a name="content"></a>
+<div id="page-content">
+<div id="zippy-dropdown-container"
+class="zippy-dropdown-container-hide"></div>
+<div class="answer_heading">
+<h2 class="answer-title">
+UTM Quick-Install (IIS)
+</h2>
+<div class="clear"></div>
+</div>
+<div class="article_content article-content-28694" id="article-content-div">
+<p>The following is intended as a quick run-through on installing the
+UTM for websites running on a Microsoft IIS server on any Windows
+platform. For more detailed information on the UTM, please see
+the article entitled "Urchin Traffic Monitor (UTM)" found in this
+section.
+<p>
+<b>Step 1: Copy UTM files to website document root.</b> The
+files, __utm.js and __utm.gif are located in the "utils\utm"
+folder in the Urchin distribution. Copy these two files to the
+main folder of your website content. <u>IMPORTANT</u>: the filenames
+start
+with two underscore characters.
+<p>
+<b>Step 2: Reference UTM in your HTML.</b> Enter the following
+line in all of your HTML pages. While it can go anywhere in the
+pages, we recommend putting it in the &lt;head&gt; section. If
+you use a common include or template, you can enter it there.
+<u>IMPORTANT</u>: the
+filename starts with two underscores.
+<PRE>
+&lt;script src="/__utm.js" type="text/javascript"&gt;&lt;/script&gt;
+</pre>
+<p>
+If you are using a package like "HTML Tidy", you may want to include
+the Javascript line in the HEAD area of your page to make it more
+palatable, for instance:
+<nobr>
+<pre nowrap>
+&lt;html>
+&lt;head&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"&gt;
+  &lt;script src="/__utm.js" type="text/javascript"&gt;&lt;/script&gt;
+  ...
+&lt;/head&gt;
+</pre>
+</nobr>
+<p>
+<b>Step 3: Enable cookies in your IIS logging.</b> Open the IIS
+Manager and bring up the Properties window for your website. Make
+sure the logging is enabled and set to the W3C Extended format.
+Click the Properties button next to the format and under the
+Extended Properties Tab, check the box next to Cookie.
+<p>
+<b>Step 4: Set Urchin Profile to use UTM.</b> In the Urchin
+Administration interface, edit the profile in question and click on
+the Reporting tab. Set the Visitor Tracking Method to UTM. Set
+the UTM Domain to the address of your website without the www. When
+done click the Update button. Then
+click on the Profile Settings tab and choose UTM-Enable All for the
+Default Report Set, then click Update again.
+<p>
+That's it! Your website will now begin logging UTM data into your
+normal log file which will be identified the next time you run Urchin.
+<p>
+<b>Is it working?</b>
+To see if the UTM is successfully making entries to your log file,
+examine the log after you have installed the
+UTM and clicked on a few pages of the site. You should see an entry
+similar to the following at the end of the
+log file:
+<P>
+<PRE>
+... "GET /__utm.gif?..." 200 ..."__utma=..."
+</pre>
+<P>
+If you don't see the __utma entries, be sure to
+check that cookies was enabled in the logging properly. If the
+status code is not 200 then check to make sure the files were
+properly copied to your document root.
+</p>
+<script type="text/javascript">
+if(document.getElementById('kb_other') != null)
+showLayer('kb_other');
+if(document.getElementById('kb_other_win') != null)
+showLayer('kb_other_win');
+if(document.getElementById('z_other') != null)
+toggleZippy('z_other');
+if(document.getElementById('z_other_win') != null)
+toggleZippy('z_other_win');
+if(document.getElementById('kb_win'))
+showLayer('kb_win');
+if(document.getElementById('z_win'))
+toggleZippy('z_win');
+if(document.getElementById('kb_win98'))
+showLayer('kb_win98');
+if(document.getElementById('z_win98'))
+toggleZippy('z_win98');
+if(document.getElementById('kb_DE'))
+showLayer('kb_DE');
+if(document.getElementById('z_DE'))
+toggleZippy('z_DE');
+if(document.getElementById('kb_non_US'))
+showLayer('kb_non_US');
+if(document.getElementById('z_non_US'))
+toggleZippy('z_non_US');
+</script>
+</div>
+<div class="clear"></div>
+<a href="#" name="helpful" ></a>
+<div class="answer-features">
+<div class="button plus-one">
+<div id="plusone"></div>
+<script type="text/javascript">
+gapi.plusone.render('plusone', {size: 'small', count: 'true',
+href: 'http:\x2F\x2Fsupport.google.com\x2Furchin45\x2Fbin\x2Fanswer.py?hl=en\x26answer=28694\x26ctx=plusone'});
+</script>
+</div>
+</div>
+<script type="text/javascript">
+function setSurveyCookie(){
+setCookies_default("survey_50", 1, "", 30);
+}
+</script>
+<p class="survey-invite-green ">
+<a href="requestdefc.html?contact_type=survey" id="surveyLink" target="_blank" onclick="setSurveyCookie();track('Survey Link', 'Click new');"><strong>Tell us how we're doing -</strong> Answer five short questions about your help center experience</a>
+</p>
+</div>
+<div class="clear"></div>
+</div>
+</td>
+<td class="right_column">
+<div class="module">
+<h2>Related</h2>
+<ul class="no_bullets right-nav-cb">
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28307&amp;ctx=cb&amp;src=cb&amp;cbid=-9oy4sqfpgaik&amp;cbrank=0"
+onclick="track('Recommended Articles Module', 'cb 28307');">
+Urchin Tracking Module (UTM)
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7365&amp;parent=7363&amp;ctx=topic" onclick="track('Breadcrumbs', '7365');">Visitor Tracking</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7425&amp;parent=7365&amp;ctx=topic" onclick="track('Breadcrumbs', '7425');">Visitor Identification Methods</a>
+</span>
+</li>
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28128&amp;ctx=cb&amp;src=cb&amp;cbid=-zggqeats402p&amp;cbrank=1"
+onclick="track('Recommended Articles Module', 'cb 28128');">
+DynamicURL Filters
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7366&amp;parent=7363&amp;ctx=topic" onclick="track('Breadcrumbs', '7366');">Urchin Administration</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7420&amp;parent=7366&amp;ctx=topic" onclick="track('Breadcrumbs', '7420');">Filtering</a>
+</span>
+</li>
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28203&amp;ctx=cb&amp;src=cb&amp;cbid=-hskoxacdwkx&amp;cbrank=2"
+onclick="track('Recommended Articles Module', 'cb 28203');">
+Log Management
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7366&amp;parent=7363&amp;ctx=topic" onclick="track('Breadcrumbs', '7366');">Urchin Administration</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7419&amp;parent=7366&amp;ctx=topic" onclick="track('Breadcrumbs', '7419');">Log Files</a>
+</span>
+</li>
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28357&amp;ctx=cb&amp;src=cb&amp;cbid=nww3z886pnvw&amp;cbrank=3"
+onclick="track('Recommended Articles Module', 'cb 28357');">
+Why does setting affiliations when not in datacenter mode make entries invisible?
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7370&amp;parent=7363&amp;ctx=topic" onclick="track('Breadcrumbs', '7370');">FAQ Categories</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7403&amp;parent=7370&amp;ctx=topic" onclick="track('Breadcrumbs', '7403');">Configuring Urchin</a>
+</span>
+</li>
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28126&amp;ctx=cb&amp;src=cb&amp;cbid=-1jfhc1fkryj5p&amp;cbrank=4"
+onclick="track('Recommended Articles Module', 'cb 28126');">
+Disabling Automatic Urchin Database Backups / Archives
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7368&amp;parent=7363&amp;ctx=topic" onclick="track('Breadcrumbs', '7368');">Advanced Topics</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7412&amp;parent=7368&amp;ctx=topic" onclick="track('Breadcrumbs', '7412');">Performance &amp; Tuning</a>
+</span>
+</li>
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28182&amp;ctx=cb&amp;src=cb&amp;cbid=ddky8s95gaoh&amp;cbrank=5"
+onclick="track('Recommended Articles Module', 'cb 28182');">
+Importing, Exporting, and Scripting the Configuration
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7368&amp;parent=7363&amp;ctx=topic" onclick="track('Breadcrumbs', '7368');">Advanced Topics</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7409&amp;parent=7368&amp;ctx=topic" onclick="track('Breadcrumbs', '7409');">Integration</a>
+</span>
+</li>
+</ul>
+</div>
+</td>
+</tr></table>
+</div>
+<div class="nocontent footer-nav-streamlined" role="contentinfo">
+<ul class="first-row">
+<li>
+<a href="http://www.urchin.com/"
+onclick="track('Footer', 'Product home')">
+Urchin Version 4 &amp; 5
+</a>
+</li>
+<li>
+<a href="request.html"
+onclick="track('Footer', 'Contacting us')">
+Contacting Us
+</a>
+</li>
+<li>
+<a href="http://www.google.com/support/?hl=en"
+onclick="track('Footer', 'Help with other products')">
+Help for other Google products
+</a>
+</li>
+</ul>
+<ul class="second-row">
+<li class='footer-copyright' dir='ltr'>
+&copy;2012 Google
+</li>
+<li >
+<a href="http://www.google.com/intl/en/"
+onclick="track('Footer', 'GoogleHome');
+">Google Home</a>
+</li>
+<li >
+<a href="http://www.google.com/intl/en/privacy.html"
+onclick="track('Footer', 'PrivacyPolicy');
+"><span class="important">New!</span> Privacy Policy</a>
+</li>
+<li >
+<a href="http://www.google.com/accounts/TOS?hl=en&amp;loc=DE"
+onclick="track('Footer', 'Terms');
+">Terms of Service</a>
+</li>
+</ul>
+</div>
+</div>
+<script type="text/javascript"></script>
+<script type="text/javascript">
+googlehelp.Links.initLinks(
+['', 'NO-GMAIL', 'NO-PLUS', browser, browserGroup,
+os, osGroup, country], internal);
+if (googlehelp.initEls) {
+googlehelp.initEls(['', 'NO-GMAIL', 'NO-PLUS', browser, browserGroup,
+os, osGroup, country, countryGroup],
+userSettings, userSettingsDropdownText);
+}
+if (convertLinksToButtons) {
+convertLinksToButtons();
+}
+</script>
+<script src='http://www.google-analytics.com/ga.js'
+type='text/javascript'></script>
+<script type="text/javascript">
+var analytics_async = 0;
+</script>
+<script
+src="resource/urchin_util8e0e.js?v=8"
+type="text/javascript"></script>
+<script type="text/javascript">
+var cookiePathArray = [];
+</script>
+<script type="text/javascript">
+urchinTracker('\x2Furchin45\x2Fbin\x2Fanswer.py?hl=en\x26topic=7376\x26answer=28694');
+</script>
+<script
+src="resource/js_validate_static8fa7.js?v=18"
+type="text/javascript"></script>
+<script type="text/javascript">
+track('P13n Box - urchin67',
+'Impression');
+track('LeftNav',
+'Urchin67 - Impression');
+track('Survey Link',
+'Impression');
+setCookies_default('p13n_box_impr_50_urchin67',
+'1',
+'',
+'30');
+</script>
+<script type="text/javascript">
+initPageTimer('http://support.google.com/urchin45/bin/answer.py?hl=en&amp;topic=7376&amp;answer=28694\x2F\x2Fsupport.google.com\x2Furchin45\x2Fapi\x2Fmetrics?hl=en',false);
+</script>
+<script type="text/javascript">
+new googlehelp.Lightbox(
+'\x26laquo\x3B Previous',
+'Next \x26raquo\x3B');
+</script>
+<script src="http://www.google.com/sidewiki/static/sidebar_element/sidebar-element-compiled.js"></script>
+<script defer="defer">
+var sidebarElement = new google.elements.sidewiki.SidebarElement(
+window.location.href,false);
+sidebarElement.bindToElement("sidewiki-open-ui-button");
+</script>
+</body>
+
+<!-- Mirrored from support.google.com/urchin45/bin/answer.py?hl=en&topic=7376&answer=28694 by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:34:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

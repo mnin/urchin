@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from bcrypt.sourceforge.net/index.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:41 GMT -->
+<head>
+<title>Bcrypt - Blowfish File Encryption</title>
+</head>
+<body bgcolor="#D0D0D0">
+<center>
+<h1><b>bcrypt</b></h1>
+</center>
+<i>There are two kinds of cryptography in this world: cryptography
+that will stop your kid sister from reading your files, and
+cryptography that will stop major governments from reading your
+files. This book is about the latter.<br>
+<center> -- Preface to Applied Cryptography by Bruce Schneier</i></center>
+
+<hr />
+<b>Description</b> 
+
+
+<p>Bcrypt is a cross platform file encryption utility. Encrypted
+files are portable across all supported operating systems and
+processors. Passphrases must be between 8 and 56 characters and are
+hashed internally to a 448 bit key. However, all characters
+supplied are significant. The stronger your passphrase, the more
+secure your data.</p>
+
+<p>In addition to encrypting your data, bcrypt will by default
+overwrite the original input file with random garbage three times
+before deleting it in order to thwart data recovery attempts by
+persons who may gain access to your computer. If you're not quite
+ready for this level of paranoia yet, see the installation
+instructions below for how to disable this feature. If you don't
+think this is paranoid enough.. see below.</p>
+
+<p>Bcrypt uses the blowfish encryption algorithm published by Bruce
+Schneier in 1993. More information on the algorithm can be found at
+<a href="http://www.counterpane.com/blowfish.html">Counterpane</a>.
+Specifically, bcrypt uses Paul Kocher's implementation of the
+algorithm. The source distributed with bcrypt has been slightly
+altered from the original. Original source code can be obtained
+from <a
+href="http://www.counterpane.com/bfsh-koc.zip">http://www.counterpane.com/bfsh-koc.zip</a>.</p>
+
+<hr />
+<b>Supported Platforms</b> 
+<p>Bcrypt has been successfully tested on the following platforms:</p>
+
+<b>x86:</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;    FreeBSD, OpenBSD, Linux, Cygwin, Win32<br>
+<b>Sparc R220:</b><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;   Solaris 2.7, 2.8<br>
+<b> Sparc Ultra60:</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;    Linux 2.4<br>
+<b> Alpha:</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;    Linux 2.4<br>
+<b> PPC G4:</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;    MacOS X 10.1 SERVER<br>
+<b> PPC RS/6000:</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;    Linux 2.4<br>
+<b> MIPS: </b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;    Linux 2.0.34 (Cobalt)<br>
+<b> HPPA 1.1 </b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;    HP-UX 11.0<br>
+
+<p>No other operating systems
+have been tested, but most should work with minimal modifications.
+If you get bcrypt to compile without errors on any other platform
+or architecture, I'd like to know about it. If patches are
+necessary to get bcrypt work on your OS, I will try to incorporate
+them into the main distribution.</p>
+
+<p>If you have a machine not listed above that is incapable of
+compiling bcrypt and are willing to give me access to the machine,
+I will make an attempt to port it to your OS.</p>
+
+<hr />
+<b>News</b> (Updated September 11, 2002)
+<p>Bcrypt 1.1 fixes a few minor bugs and adds support for many new operating
+systems. If you previously used 1.0 on an unsupported platform, you may not
+be able to decrypt any encrypted files you have. Alpha systems are known to
+have this problem. 32 bit systems should not have this problem. 64 bit 
+systems probably do. If your system exhibits this problem, you should decrypt 
+your files with 1.0 and reencrypt them with 1.1.</p>
+
+<p>1.1 is immensely faster than 1.0. Additionally, it uses about 50% as much 
+memory with compression turned off, or 66% with compression on.</p>
+
+<hr />
+<b>System Requirements</b> 
+
+<p><b>Source code release: </b><br />
+zlib - <a
+href="http://www.gzip.org/zlib/">http://www.gzip.org/zlib/</a> 
+<br />
+
+<b>Win32 binary release: </b><br />
+zlib.dll - <a
+href="http://prdownloads.sourceforge.net/gnuwin32/zlib-1.1.4-bin.zip?download">
+zlib-1.1.4-bin.zip</a> <br />
+</p>
+
+<hr />
+<b>Download</b> <br />
+<table>
+<tr>
+<td>Source Code:</td>
+<td><a href="http://bcrypt.sourceforge.net/bcrypt-1.1.tar.gz">bcrypt-1.1.tar.gz</a></td>
+<td>GPG signature</td>
+<td><a 
+href="http://bcrypt.sourceforge.net/bcrypt-1.1.tar.gz.asc">bcrypt-1.1.tar.gz.asc</a></td>
+
+</tr>
+
+<tr>
+<td>Win32 Binary:</td>
+<td><a href="http://bcrypt.sourceforge.net/bcrypt-1.1.zip">bcrypt-1.1.zip</a></td>
+<td>GPG signature</td>
+<td><a 
+href="http://bcrypt.sourceforge.net/bcrypt-1.1.zip.asc">bcrypt-1.1.zip.asc</a></td>
+</tr>
+</table>
+<hr />
+<b>Compatibility testing</b>
+<p>The following files are copies of the LICENSE file that have been encrypted 
+with the passphrase 'eggheads'. If you can decrypt both, then your 
+installation should be compatible with any other supported systems.</p>
+<a
+href="http://bcrypt.sourceforge.net/bigendian.bfe">bigendian.bfe</a><br />
+
+<a
+href="http://bcrypt.sourceforge.net/littleendian.bfe">littleendian.bfe</a>
+<hr />
+<b>Installation</b> 
+
+<p>If you're so inclined, edit config.h and change the defaults to
+whatever you think is appropriate for your needs. If you choose not
+to have bcrypt remove input files after processing, or set
+SECUREDELETE to 0, you are likely to have data on your hard drive
+that can be recovered even after deletion. All of these options can
+be set on the command line as well.</p>
+
+<p>When you're satisfied with the default settings, simply
+type:<br />
+ &nbsp;&nbsp; <b>make</b><br />
+then su and type:<br />
+ &nbsp;&nbsp; <b>make install</b><br />
+ It would be wise to test the installation on a few unimportant
+files before encrypting anything you value, removing the only copy
+and overwriting it 127 times with garbage.</p>
+
+<hr />
+<b>Usage</b> 
+
+<p>bcrypt [-orc][-sN] file ...</p>
+
+<p>Encrypted files will be saved with an extension of .bfe. Any
+files ending in .bfe will be assumed to be encrypted with bcrypt
+and will attempt to decrypt them. Any other input files will be
+encrypted. If more than one type of file is given, bcrypt will
+process all files which are the same as the first filetype
+given.</p>
+
+<p>By default, bcrypt will compress input files before encryption,
+remove input files after they are processed (assuming they are
+processed successfully) and overwrite input files with random data
+to prevent data recovery.</p>
+
+<p>Passphrases may be between 8 and 56 characters. Regardless of
+the passphrase size, the key is hashed internally to 448 bits - the
+largest keysize supported by the blowfish algorithm. However, it is
+still wise to use a strong passphrase.</p>
+
+<p><b>Options</b></p>
+
+<table>
+<tr>
+<td>-o</td>
+<td>print output to standard out. Implies -r.</td>
+</tr>
+
+<tr>
+<td>-c</td>
+<td>DO NOT compress files before encryption.</td>
+</tr>
+
+<tr>
+
+<td>-r</td>
+<td>DO NOT remove input files after processing</td>
+</tr>
+
+<tr>
+<td>-sN</td>
+<td>How many times to overwrite input files with random data before
+processing. The default number of overwrites is 3. Use -s0 to
+disable this feature. No effect if -r is supplied.</td>
+</tr>
+</table>
+
+<b>Note</b> 
+
+<p>The options o,c and r each have the opposite effects if the
+appropriate settings are altered from the default in config.h.</p>
+
+<p>Encrypted files should be compatible between most systems.
+Binary compatibility has been tested for all systems listed above.</p>
+
+<hr />
+<b>Support, Help, Bugs, What the hell is this?!</b> 
+
+<p>Bcrypt has a mailing list for support. You can subscribe at <a
+href="https://lists.sourceforge.net/lists/listinfo/bcrypt-users">
+https://lists.sourceforge.net/lists/listinfo/bcrypt-users</a>. </p>
+
+<hr />
+<b>Authors</b>
+<p>
+<a 
+href="mailto:jshelley@cahaus.com">johnny shelley</a> 
+- core code and unix ports.<br>
+<a
+href="mailto:pstolarc@theperlguru.com">Philip Stolarczyk</a>
+ - native Win32 support and testing.
+</p>
+<hr />
+<b>License</b> 
+
+<p> Copyright (c) 2002 Johnny Shelley <jshelley@cahaus.com> All rights
+reserved.</p>
+
+<p>Redistribution and use in source and binary forms, with or
+without modification, are permitted provided that the following
+conditions are met:</p>
+
+<p>1. Redistributions of source code must retain the above
+copyright notice, this list of conditions and the following
+disclaimer.</p>
+
+<p>2. Redistributions in binary form must reproduce the above
+copyright notice, this list of conditions and the following
+disclaimer in the documentation and/or other materials provided
+with the distribution.</p>
+
+<p>3. Neither the name of the author nor any contributors may be
+used to endorse or promote products derived from this software
+without specific prior written permission.</p>
+
+<p>THIS SOFTWARE IS PROVIDED BY COPYRIGHT HOLDERS AND CONTRIBUTORS
+``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT
+NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+DAMAGE.</p>
+<hr />
+<A href="http://sourceforge.net/"> 
+<IMG src="http://sourceforge.net/sflogo.php?group_id=62194&amp;type=3" width="125" height="37" border="0" alt="SourceForge Logo"></A> 
+</body>
+
+<!-- Mirrored from bcrypt.sourceforge.net/index.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:41 GMT -->
+</html>

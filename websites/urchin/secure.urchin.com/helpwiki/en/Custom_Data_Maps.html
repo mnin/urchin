@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Custom_Data_Maps.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Custom Data Maps</strong> <p class="line874">Data maps describe set of tables, used as storage for data calculated from log files. Predefined tables are as follows: <ul><li>T - totals; </li><li>TR - transactions; </li><li>H - histogram; </li><li>V - visitors; </li><li>1-n - predefined aggregate tables described in the data map file. </li></ul><p class="line862">The default set of tables is stored in the &lt;Urchin&gt;/lib/reporting/profiletypes/Default/datamap.dm2 file.  It uses the following format for tables: <ul><li>Each table entry uses one row and should contain the following fields: TABLE AFIELD BFIELD CFIELD DFIELD EFIELD REQUIREMENTS SPECIAL IFIELDS PPFIELDS; </li><li>Columns should not contain spaces; </li><li>Columns are separated by one or more spaces; </li><li>If the value is empty it should be replaced by the '-' sign; </li><li class="gap">TABLE - unique identifier of table, maximal value is 200; </li><li><p class="line862">AFIELD-EFIELD - string fields from &lt;Urchin&gt;/lib/reporting/logformats/fieldlist.txt; </li><li>REQUIREMENTS describes which fields (A-E) must be present in hit for latter to get into table, kind of primary key constraint. </li></ul><p class="line874">e.g. given that A is required in table T1, A refers to "IP-address" (cfield=4), and hit doesn't contain IP-address, as a result whole hit will be bypassed and won't get into T1. however, if another table T2 refers to "IP-address", but REQUIREMENT contains no A, hit will get to T2. <ul><li>SPECIAL - used to link records from aggregates table to records from internal tables (sessions, visitors, transaction, transaction items, paths), kind of foreign key. E.g. table #1 from default datamap file links source, medium and campaign to session (with "source" as primary key), table #2 links source, medum, term and content to session (with "source" as primary key), table #12 links request stem and page title to paths. It is not recommended to make any changes in tables with special flags or somehow use flags in custom tables, since it may lead to clobbering of foreign keys. <ul><li>S1-S11 - session link </li><li>P1 - path link </li><li>PARAM - special parameter </li><li>T1-T2 - transaction link </li><li>I0 - I1 - item link </li><li>IPATH - initial path </li><li>GTHRU - goal click thru </li><li>GPATH - reverse goal path </li><li>CTHRU - click thru </li></ul></li><li class="gap">IFIELDS - metrics. Tables store preprocessed set of metrics to optimize data extraction speed. i.e. when engine processes logs, it makes all required calculations for each unique combination of dimensions (or cfields) to avoid this phase during extraction. E.g. given cfields: IP-address, ifields: visits. during processing new table is created to store precalculated visits for each IP-address. report, that is built on top of table, extracts the data right away almost without any extra calculation effort. Valid values for IFIELDS column are described below;  </li><li class="gap">PPFIELDS - post processing fields (from range of ifields), the data for the post processed fields is determined from the session record and its associated path, transaction, and item records. Using ppfields in a custom report is not recommended. </li></ul><p class="line874">To create custom data map entry, follow the above instructions to create a new row.  To avoid breaking the data map, make sure that each new table entry uses a unique number. <p class="line874">Example of row in data map file: <div><table><tbody><tr>  <td><p class="line891"><strong>TABLE</strong> </td>
+  <td><p class="line862"> <strong>AFIELD</strong> </td>
+  <td><p class="line862"> <strong>BFIELD</strong> </td>
+  <td><p class="line862"> <strong>CFIELD</strong> </td>
+  <td><p class="line862"> <strong>DFIELD</strong> </td>
+  <td><p class="line862"> <strong>EFIELD</strong> </td>
+  <td><p class="line862"> <strong>REQUIREMENTS</strong> </td>
+  <td><p class="line862"> <strong>SPECIAL</strong> </td>
+  <td><p class="line862"> <strong>IFIELDS</strong> </td>
+  <td><p class="line862"> <strong>PPFIELDS</strong></td>
+</tr>
+<tr>  <td><p class="line862">1 </td>
+  <td><p class="line862"> 139 </td>
+  <td><p class="line862"> 138 </td>
+  <td><p class="line862"> 137</td>
+  <td><p class="line862"> -</td>
+  <td><p class="line862"> -</td>
+  <td><p class="line862"> A</td>
+  <td><p class="line862"> S1 </td>
+  <td><p class="line862">5,11,15,19,24,25,26,27,28,29,30,31 </td>
+  <td><p class="line862"> -</td>
+</tr>
+<tr>  <td><p class="line862">Table number </td>
+  <td><p class="line862"> Field A from the record to be used </td>
+  <td><p class="line862"> Field B from the record to be used </td>
+  <td><p class="line862">Field C from the record to be used </td>
+  <td><p class="line862">Field D is not used </td>
+  <td><p class="line862"> Field E is not used </td>
+  <td><p class="line862"> Only A field must contain data </td>
+  <td><p class="line862"> Session link 1 </td>
+  <td><p class="line862"> Calculated fields </td>
+  <td><p class="line862">No post processing fields</td>
+</tr>
+</tbody></table></div><p class="line874">Calculated fields used for IFIELDS column: <ol type="1"><li>Hits </li><li>Validhits </li><li>Errorhits </li><li>Bytes </li><li>Pages </li><li>Nonpages </li><li>Entrancepages </li><li>Exitpages </li><li>Bouncepages </li><li>Pagetime </li><li>Visits </li><li>Visitors </li><li>Newvisitors </li><li>Priorvisitors </li><li>Transactions </li><li>Customers </li><li>Newcustomers </li><li>Priorcustomers </li><li>Revenue </li><li>Tax </li><li>Shipping </li><li>Items </li><li>Itemrevenue </li><li>Responses </li><li>Impressions </li><li>Clicks </li><li>Cost </li><li>Goals1 </li><li>Goals2 </li><li>Goals3 </li><li>Goals4 </li><li>Goalstarts1 </li><li>Goalstarts2 </li><li>Goalstarts3 </li><li>Goalstarts4 </li><li>Score  </li></ol></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Custom_Data_Maps.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

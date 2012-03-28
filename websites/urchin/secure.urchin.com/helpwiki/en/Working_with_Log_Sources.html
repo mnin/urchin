@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Working_with_Log_Sources.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Working with Log Sources</strong> <p class="line867"><strong>Overview</strong> <p class="line874">You will generally add a Log Source in the course of creating a Profile. A Log Source is Urchin's way of identifying the characteristics of an access log (sometimes called a transfer log) for one of your websites. Access logs contain all the hits, or requests for web documents, that are made to your website. Some of the log file characteristics that are associated with a Log Source are the path to the log file, the format of the log file (e.g. W3C or NCSA), whether the log is local or on a remote system, and whether a filter should be applied to the log file during processing. <p class="line874">An important concept to understand is that Log Sources exist independently of Profiles. Every Profile must have at least one Log Source associated with it to obtain reporting. However, several Profiles could conceivably use the same Log Source. For example, you may want to create multiple Profiles using the same Log Source, but give each Profile a different filter to produce varying report results. So there is not necessarily a 1:1 ratio between Log Sources and Profiles. <p class="line867"><strong>Configuring Log Sources</strong> <p class="line874">To get started adding a Log Source to the system, log-in to the Urchin administrative system as the administrator and click on the Configuration button at left. Next, click the Log Manager button. To create a new Log Source, click the Add button at the top right of the screen. You will be taken to the Add Log Source Wizard. This is a simple series of steps designed to help you get the Log Source set up quickly and easily. Each screen in the Wizard has explicit help information to explain the configuration information displayed on that screen. <p class="line874">In the Log Settings screen you will note that you have to choose a Log Format. This setting tells Urchin how the data in your log file is arranged. It is important that you select the correct format for your log or Urchin will not be able to produce meaningful report data. Urchin understands a default set of log formats that you can choose from via a dropdown menu. They are: <ul><li>Auto: Urchin uses this format to automatically detect NCSA, W3C, Netscape, and ELF2 log formats. Instead of explicitly selecting one of these, you may choose Auto and Urchin will correctly deduce how to read the data if your log format is in this list. </li><li>NCSA: Apache modified Extended/Combined format (see Logging - Apache and IIS for a description of this format) </li><li>W3C: Microsoft IIS servers typically use this format, although other webservers can also be configured to produce W3C logs. </li><li>Netscape: Netscape and iPlanet servers use this format by default. </li><li>ELF2: E-Commerce Log Format </li><li>Google: use this format for logs containing Google cost-per-click spending data. Note that the Google log format can not be auto detected. </li><li>Overture: use this format for logs containing Overture cost-per-click spending data. Note that the Overture log format can not be auto detected. </li><li>Custom: Although not initially listed in the dropdown menu, you can create your own custom log formats, which will automatically appear in the dropdown menu when properly configured. </li></ul><p class="line874">If you don't believe your webserver currently produces logs in one of the recognized default formats, then either you can reconfigure your webserver to log in one of these formats, or you can create a custom log format that conforms to how your webserver currently logs. If you want to reconfigure your webserver logging, you should choose the W3C or NCSA style logging. <p class="line867"><strong>Load Balancing and Parallel Log Processing</strong> <p class="line874">On websites with heavy traffic, using one webserver may not be sufficient. By using load balancing, traffic may be spread among multiple webservers working in parallel. The set of parallel webservers used is called a cluster. In this way logging for each website activity is logged in any of the available parallel logs. The Profile Setup Wizard provides a Parallel Log Processing option. When Parallel Log Processing is enabled, Urchin opens all of the log files at once and reads them in a rotating fashion, one section at a time, each section corresponding to 15 minutes of log activity. Enabling Parallel Log Processing significantly increases performance on load balanced sites. </div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Working_with_Log_Sources.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

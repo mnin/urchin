@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Urchin_Setup_Requirements.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Urchin 6 Setup Requirements</strong> <ul><li style="list-style-type:none"><p class="line891"><em>This article authored by</em> <a href="https://secure.urchin.com/helpwiki/en/EpikOne.html">EpikOne</a><em>, an Urchin Software Authorized Consultant </em> </li></ul><p class="line874">This article lists the operational issues that should be anticipated prior to installing and running Urchin. Some of the information is required to operate Urchin successfully. Other items are important for using Urchin most effectively once the software is installed. <p class="line867"><strong>Basic Urchin Installation Considerations</strong> <ul><li>On Windows you must install while logged in as the Administrator. </li><li>On UNIX-type systems you may install as any user, but if you do not install as the superuser, you will be restricted in what areas of the file system you may install. </li><li>Urchin comes bundled with an Apache web server binary for configuration and report delivery. Your systems administrators should be aware that this new web service will be running after Urchin is installed. </li><li>You should install Urchin 6 in a disk location that has plenty of room (e.g. several hundred megabytes at least) to allow for the growth of the Urchin databases over time. See the Performance and Management Issues section for additional considerations. </li><li><p class="line862">If you are upgrading from Urchin 5, you will need to import your databases into Urchin 6 using the utilities <em>uconf2sql</em> and <em>convert-u5data</em>. There is no direct upgrade of Urchin 5 to Urchin 6 simply by running the Urchin 6 installer. See Upgrades in the Getting Started section of the Documentation Center. </li><li>Upgrading from Urchin 5 to Urchin 6 requires relicensing your product. </li></ul><p class="line867"><strong>Basic Urchin Processing Considerations</strong> <ul><li>Access to web server logs - you must know the path to the log files for a given site, and you must have permission to access these files. If the logs are on a remote system, then you will also need an account name and password to use when retrieving the logs (FTP/HTTP/HTTPS/UNC). </li><li>Properly configured log format - although Urchin can process custom log formats, you will simplify the management requirements if you configure your web server as appropriate to log in a standard format. It is recommended that you use either Extended Combined Log Format (e.g. NCSA or Apache logs), or W3C Extended Log Format (e.g. IIS logs). For IIS sites, logging of Process Accounting should be turned off. See the Advanced Configuration section for additional considerations. </li><li>Unique user account for Urchin processes - On UNIX-type systems it is desirable to enhance security by having Urchin programs run as a special user id that is used exclusively for Urchin and has only limited privileges. Setting up such an account will require that you have elevated or superuser privileges on the system in question. </li><li>Scheduling - you will need to choose a run schedule for Urchin processing to deliver reports in a timely fashion as well as account for the time needed to process if you have large data sets. </li></ul><p class="line867"><strong>Advanced Urchin Processing Considerations</strong> <ul><li>If you desire Unique Visitor tracking then you will have to perform the following basic steps: <ul><li>Install the UTM sensor code in the web pages on your site </li><li>Activate cookie logging in the log format for your web server </li><li>Set the tracking methodology in the Urchin Profile for the website to be UTM </li></ul></li><li>If you choose not to use Unique Visitor tracking then you should consider what level of granularity you desire for visitor or session reporting, and select the appropriate alternative Visitor Tracking Method for each site. The only other tracking method available in Urchin 6 is IP/User-Agent. </li></ul><p class="line867"><strong>Performance and Management Issues</strong> <ul><li>Log rotation - if you do not have some external mechanism for archiving or removing web server logs after they have been processed by Urchin, you can configure Urchin to perform this task in the Advanced Settings for each Log Source. </li><li>Retaining past Urchin databases for historical reporting - once the databases for a given month are created they are available from then on for historical analysis. Users should consider how far back they need to keep historical data so they can plan for purging unnecessary data to save disk space. Urchin can be configured to compress databases that are older than a certain date. </li><li>Memory requirements - Urchin has configuration controls to limit the amount of RAM it utilizes when processing logs. The default is set to 128Mb, which may be too conservative for sites with logs greater than 10Mb in size. Plan to have sufficient system RAM so that you may increase Urchin memory usage as needed and tune the software's memory settings for maximum processing performance. </li><li>Location of Urchin data storage - utilizing the etc/urchin.conf file, Urchin can be configured so that the report databases are stored in a file system area outside the Urchin distribution. This allows you to allocate dedicated sufficient file system space for database growth where it's most convenient. </li></ul><p class="line867"><strong>Remote Access and Integration Issues</strong> <ul><li>Using SSL for Urchin administration and reporting - the apache web server that is bundled with Urchin is compiled with support for SSL. The configuration does not have SSL activated by default, however this can be turned on as desired by the user. </li><li>Firewall configuration - if your network topology includes firewalls, proxy servers, and other elements that will be in between the Urchin processing server and users trying to view reports or systems that hold logs that need to be retrieved, then those devices will have to be configured so that they don't interfere with Urchin's remote access. This typically can be done without subverting the security that such a topology is intended to provide. </li></ul></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Urchin_Setup_Requirements.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Custom_Log_Formats.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Custom Log Formats</strong> <p class="line867"><strong>Introduction</strong> <p class="line874">Urchin can process virtually any log file format. By providing Urchin with the necessary information about the log format, Urchin will read and parse the raw data according to your configuration. This article describes a step by step method for creating custom log formats. Once a custom format is created it can be selected in the Administration Interface as the format for any log file.  <p class="line874">It should be noted that certain log data is required in order to create certain reports. You will need to be sure your log contains the minimally required fields for Urchin to process it. If you are unsure see the Log Files - Logging - Other Webservers document in the Urchin Administration section of the Documentation Center. <p class="line867"><strong>Creating Custom Formats</strong> <p class="line874">A custom log format is created by creating a format specification file in the <pre>   urchin install dir]/lib/custom/logformats/
+</pre><p class="line874">folder. A sample file is provided called 'custom.lf'. Multiple custom files can be created. Each one needs the '.lf' extension for Urchin to recognize it. The default built-in log formats such as apache, w3c, netscape, etc. are located in <pre>   urchin install dir]/lib/reporting/logformats/
+</pre><p class="line874">In each of the above directories, there is an available fields list in the fieldlist.txt file. The custom folder holds the custom fields list and the reporting folder holds the standard fields list. Custom log formats can refer to fields in either list by using the field id numbers. Once a custom format is created, it is available for selection in the Admininstration Interface. Here are the basic steps for creating a custom format: <p class="line867"><strong>Step 1: Copy the example.</strong> In the 'lib/custom/logformats' folder of the Urchin distribution, make a copy of the 'custom.lf' file. The new filename should not use spaces, and it needs the '.lf' extension. <p class="line867"><strong>Step 2: Set the primary positions.</strong> Edit the file created in the above step. The file contains a lot of useful information about each variable. The first step is to set the <tt class="backtick">PrimaryPositions</tt> variable. This comma separated list identifies each field (by id number) in the log format and its relative position. Use the fieldlist.txt files in the two directories mentioned above to determine which field ids to use. If you have custom date and time formats that are different from Apache and IIS formats, use fields 16 and 17 respectively. If the date and time are together in one field, just use field 16. <p class="line867"><strong>Step 3: Check the fields separator.</strong> Check the <tt class="backtick">FieldSeparator1</tt> variable, and set this to the separator between your fields. Use \s for a space and a \t for a tab. <p class="line867"><strong>Step 4: Is the HTTP status field available?</strong> If the HTTP status field is available, then leave the <tt class="backtick">StatusRequired</tt> variable set to YES. This will separate valid and error hits appropriately. If there is not status in the log, then set this to NO, so that all hits will be considered valid. <p class="line867"><strong>Step 5: Are you using a custom Date/Time format?</strong> If so, then edit the <tt class="backtick">CustomDateFormat</tt> for field 16 and the <tt class="backtick">CustomTimeFormat</tt> for field 17. The format is specified using the % variables defined in <a href="https://secure.urchin.com/helpwiki/en/Time_Formats.html">Custom Date/Time Formats</a>. <p class="line867"><strong>Step 6: Check the other variables.</strong> Most of the other variables will be OK for most custom log formats, but check the comments provided in the file on each variable to see if it applies to your situation. <p class="line867"><strong>Step 7: Do you have custom calculated fields?</strong> In addition to the format, you can specify custom calculated fields in the specification file. An example with comments is provided at the bottom of the file. The custom calculated field works the same way as the Advanced Filter in the filtering section except that custom calculated fields are processed first. Please see the article on custom calculated fields form more information. <p class="line874">Save the file and you ready to assign it as the format for a log file in the Administrative Interface. It will automatically show up as one of the format options in the pull down menu for log formats.  </div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Custom_Log_Formats.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

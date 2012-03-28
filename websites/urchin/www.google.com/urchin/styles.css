@@ -1,0 +1,94 @@
+/* Common stylesheet */
+
+@import url("http://www.google.com/urchin/common_styles.css");
+
+/* Site specific styles */
+
+ol.spaced li, ul.spaced li {
+  padding-bottom:18px;
+}
+
+img.ss {
+  border:1px solid #000;
+}
+
+ol#main li {
+  padding-bottom:15px;
+}
+
+ol#main ol {
+  list-style-type:lower-alpha;
+  margin-left:20px;
+  padding-top:4px;
+  padding-left:0px;
+}
+ol#main ol.sub li {
+  padding:0px;
+}
+
+.screenshot{
+  margin-left:7px;
+  width:200px;
+  height:136px;
+  border:1px solid #CCC;
+}
+
+.features_table{
+  width:600px;
+  border: 1px solid #CCC;
+}
+
+.features_table td{
+  border-bottom:1px solid #CCC;
+}
+
+.features_img{
+  margin:0 20px 0 0;
+  border:1px solid #CCC;
+}
+
+#features_ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+#features_ul li{
+  margin:0;
+  padding:0;
+  margin-bottom:10px;
+}
+
+.float_r{
+  float:right;
+}
+
+.float_l{
+  float:left;
+}
+
+.clear_l{
+  clear:left;
+}
+
+.clear_r{
+  clear:right;
+}
+
+.clear{
+  clear:both;
+}
+
+.eula_list li{
+  margin-top:20px;
+}
+
+.eula_list ol li {
+  margin-top:0px;
+}
+
+.eula_list ul li {
+  margin-top:0px;
+  list-style:none;
+}
+

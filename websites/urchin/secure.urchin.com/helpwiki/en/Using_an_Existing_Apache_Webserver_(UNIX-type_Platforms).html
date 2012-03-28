@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Using_an_Existing_Apache_Webserver_(UNIX-type_Platforms).html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Using an Existing Apache Webserver (UNIX-type Platforms)</strong> <p class="line874">By default, Urchin administration and reporting are done using a standalone Apache server that is bundled with the Urchin product. In the vast majority of Urchin installations, this is the preferred method for delivering Urchin admin and reporting interfaces. However, in rare instances it may be necessary to utilize an existing Apache installation. This may be due to site requirements that a localized version of Apache be used throughout the organization, or that all web services be controlled via a single Apache configuration. The information below describes two different models that can be employed to meet these requirements. <p class="line867"><strong>DISCLAIMER:</strong> Please note that these modifications to the Urchin installation are <strong>unsupported</strong>. <p class="line867"><strong>Option 1:</strong> Utilitizing an existing site-specific Apache httpd binary to run Urchin services as a separate instance <p class="line867"><strong>Side effects</strong> <ul><li>Urchin upgrades that depend on features added and/or configuration changes to the bundled Apache may not work properly if the existing Apache binary doesn't support these changes/features.  </li></ul><p class="line867"><strong>Configuration changes</strong> <ul><li>Ensure that your httpd includes support for the following modules: <ul><li style="list-style-type:none">mod_access mod_cgi mod_dir mod_mime </li></ul></li><li>Install Urchin in the normal fashion, choosing the desired port for Urchin's admin and reporting interfaces to run on. </li><li>Once Urchin is installed, do the following: </li></ul><p class="line867"><pre>                  cd /path/to/urchin/bin ./urchinctl stop
+                  mv urchinwebd urchinwebd.orig
+                  ln -s /path/to/your/httpd urchinwebd
+                  ./urchinctl start
+</pre><ul><li style="list-style-type:none">This will start up a separate instance of Apache that uses your Apache binary, but runs independently from your standard web services.  </li></ul><p class="line867"><strong>Option 2:</strong> Running Urchin services from an existing Apache configuration <p class="line867"><strong>Side effects</strong> <ul><li>The entire Urchin distribution must be owned by the same UID that httpd runs as. </li><li>The admin GUI cannot be used to change the port Urchin runs on. </li><li>The bin/wrapper tool cannot be used to start Urchin services since it will attempt to run the Urchin-specific httpd. Use the bin/urchindctl.sh script exclusively to start/stop only the Urchin scheduler (urchind) </li></ul><p class="line867"><strong>Configuration changes</strong> <ul><li>Add the following lines to your existing httpd.conf file. You will need to supply the IP address for your server, the port number for the Urchin to use, as well as the path to the location where you've installed Urchin. </li></ul><p class="line867"><pre>            ## Support for Urchin administration and reporting services
+            Listen [port#]
+            &lt;VirtualHost [server-ip]:[port#]&gt;
+            ErrorLog /path/to/urchin-distribution/var/error.log
+            DocumentRoot /path/to/urchin-distribution/htdocs/
+            &lt;Directory /path/to/urchin-distribution/htdocs/&gt;
+                  AddHandler cgi-script .cgi
+                  Options ExecCGI
+                  DirectoryIndex session.cgi
+                  AllowOverride None
+                  Order allow,deny
+                  Allow from all
+            &lt;/Directory&gt;
+            &lt;/VirtualHost&gt; 
+</pre><ul><li style="list-style-type:none">Once these configuration changes have been made, perform the following tasks: </li><li class="gap">Change the ownership of the Urchin distribution to the UID that your Apache webserver runs as: </li></ul><p class="line867"><pre>                  chown -R apache-user /path/to/urchin/bin
+</pre><ul><li>Ensure that the Apache bundled with Urchin is stopped: </li></ul><p class="line867"><pre>                  cd /path/to/urchin/bin
+                  ./urchinctl -w stop
+</pre><ul><li>Restart your Apache server to enable Urchin reporting and administration  </li></ul></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Using_an_Existing_Apache_Webserver_(UNIX-type_Platforms).html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

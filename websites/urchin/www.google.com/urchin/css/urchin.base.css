@@ -1,0 +1,139 @@
+@import url(http://www.google.com/css/modules/buttons/g-button-sparrow.css);
+.header{
+  border-bottom:1px solid #ccc;
+}
+
+.header img{
+  outline:5px solid #fff;
+  border-right:10px solid #fff;;
+  position:relative;
+  top:5px;
+}
+
+h1{
+  font-weight:bold !important;
+  font-size:1.2em !important;
+  padding-top:5px;
+}
+
+h3{
+  color:#369;
+  margin-top:20px;
+}
+
+#output ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.uu-clear{
+  clear:left;
+}
+
+#benefit-list{
+  float:left;
+  margin-right:12%;
+}
+.uu-cta{
+  float:left;
+}
+
+.uu-cta img{
+  border:1px solid #ccc;
+}
+
+.g-button{
+  width:288px;
+  margin-bottom:10px;
+}
+
+#features-content img{
+  border:1px solid #ccc;
+}
+
+#features-content th,
+#features-content td{
+  border:1px solid #ccc;
+  border-collapse:collapse;
+  padding:5px 15px;
+}
+
+#cta-features{
+  float:right;
+  margin-left:30px;
+}
+
+#features-content h2{
+  margin-top:15px;
+  margin-bottom:5px;
+}
+
+#dl-urchin-form{
+  display:none;
+}
+
+ul#faq-nav{
+  border-bottom:1px solid #ccc;
+  list-style-position:inside;
+  margin-left:0;
+  padding-bottom:20px;
+  margin-bottom:20px;
+}
+
+#pricing li,
+#pricing p{
+  list-style:none;
+  margin:0;
+  padding:0;
+
+}
+
+#pricing ul,
+#pricing h2{
+  margin:20px 0 0;
+}
+/*
+#ucp-intro img{
+  float:left;
+  padding:0 20px 20px 0;
+  width:75px;
+  height:75px;
+  display:block;
+}
+
+#ucp-intro{
+  padding:10px;
+  display:block;
+  min-height:75px;
+  background-color:#efefef;
+  border:1px solid #ccc;
+}
+*/
+#ucp-intro img{
+  float:left;
+  padding:0 20px 20px 0;
+}
+
+#ucp-intro p{
+  position:relative;
+  top:15px;
+}
+
+#ucp-intro{
+  min-height:75px;
+  width:90%;
+}
+
+.shutdown-message {
+  background-color: #ffebe8;
+  border: 1px solid #c00;
+  padding: 5px;
+  text-align: center;
+}
+
+.farewell-message {
+  width: 50%;
+  margin-right: 20px;
+  float: left;
+}

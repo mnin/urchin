@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Urchin_6.5_and_6.501_Changelists.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Urchin Software from Google: Changelists - v. 6.5 and v. 6.501</strong> <p class="line874">Software Versions: Urchin 6.501 (Mar 26, 2009), Urchin 6.500 (Dec 15, 2008) <p class="line867"><span class="u"><strong>Urchin 6.501 (Mar 26, 2009)</strong></span> <p class="line874">Urchin 6.501 is a minor release fixing the following four issues in the Urchin 6.500 release. (Scroll down to see the Urchin 6.500 changelist.) <ul><li>Downloading CPC data in v6.500 frequently took a long time. <ul><li style="list-style-type:none"><p class="line862">o v6.501 fixes a performance issue that affected accounts with a very large CPC history. v6.501 can download up to 256 MB of GZIPPED historical CPC data and process it much more quickly. Due to Google AdWords limitations, however, downloads over this threshold are not supported. </li></ul></li><li>Proxy Settings <ul><li style="list-style-type:none">o Fixed v6.500 proxy issue when downloading CPC data. All traffic is now being redirected through proxy (with or without authentication). <p class="line862">o For new proxy setup instructions, see <strong>Downloading CPC Data via proxy (6.501+)</strong> in <a href="https://secure.urchin.com/helpwiki/en/CPC_Data_Import_Utilities.html">CPC Data Import Utilities</a>. </li></ul></li><li>64-bit Visitor ID overflow issue <ul><li style="list-style-type:none">o We continue to recommend that you use "urchin.js", not "ga.js". However, for ga.js users, v6.501 addresses the issue of the utma cookie containing a 64-bit value that is used during visitor_id generation. The Urchin parser has been modified to handle both 32 and 64 bit values in the utma cookie. </li></ul></li><li>uconf-manager <ul><li style="list-style-type:none">o The v6.501 uconf-manager can perform 'add', 'delete' and 'update' operations on the uprofiles table. </li></ul></li></ul><p class="line867"><span class="u"><strong>Urchin 6.5 (Dec 15, 2008)</strong></span> <p class="line867"><strong>Features Added</strong> <p class="line862">A new Cost Per Click (CPC) Data Import Manager allows you to create 'CPC Sources' that enables automatic extraction of CPC Campaign Data from Google AdWords. The CPC Sources can be linked to existing profiles like Log Sources and Filters. This enables automatic inclusion of the CPC Data into Urchin reports. For more details, please read <a href="https://secure.urchin.com/helpwiki/en/CPC_Sources.html">CPC Sources</a> and <a href="https://secure.urchin.com/helpwiki/en/CPC_Data_Import_Utilities.html">CPC Data Import Utilities</a>. <p class="line867"><strong>Fixes and Enhancements</strong> <p class="line874">The following is a brief summary of major fixes in the Urchin 6.500 release. <ul><li><p class="line891"><strong>Reporting</strong> <ul><li>Urchin now recognizes "Chrome" as a browser and “Android” as a platform. </li></ul></li><li><p class="line891"><strong>Profile Settings</strong> <ul><li>Global Settings for DB Tables are now applied correctly. </li><li>Reporting data is deleted correctly from a file system on Windows when "Delete All Data" is clicked or profile is deleted. </li></ul></li><li><p class="line891"><strong>Scheduler and History</strong> <ul><li>Previously, a profile scheduled weekly ran several times in a week. This has been fixed. </li><li>Geo-DB Download History has been moved to the separate screen (similar to Profile Task History). </li></ul></li><li><p class="line891"><strong>Users &amp; Groups</strong> <ul><li>The "Override Dashboard" option on the "Group Management" screen was not working correctly. This has been fixed. </li></ul></li><li><p class="line891"><strong>Installer</strong> <ul><li>Previously, a 404 error occurred if a different port was specified during Windows upgrade. This has been fixed. </li></ul></li><li><p class="line891"><strong>Utilities</strong> <ul><li><p class="line862">The functionality of the uconf-manager utility has been extended. Now, in addition to the 'uusers' table functionality, uconf-manager also operates on several other Urchin tables. Please refer to <a href="https://secure.urchin.com/helpwiki/en/uconf-management%253A_Urchin_Configuration_Manager_Utility.html">uconf-management: Urchin Configuration Manager Utility</a> for more information. </li><li>Previously, there were issues with running the Urchin Profile Scheduler in console mode on Windows. This has been fixed. </li></ul></li><li><p class="line891"><strong>Miscellaneous</strong> <ul><li>Urchin 6.5 includes an updated GeoDB file (Geographic Mapping for IP adresses). </li><li>Various localization issues have been fixed. </li><li>Urchin Embedded Help and various online Urchin Help Center Articles have been updated. </li></ul></ul></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Urchin_6.5_and_6.501_Changelists.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

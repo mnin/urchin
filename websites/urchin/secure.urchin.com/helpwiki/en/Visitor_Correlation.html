@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Visitor_Correlation.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Visitor Correlation</strong> <p class="line867"><strong>Overview</strong> <p class="line874">Visitor correlation is the process of identifying visitor behavior even if the sessions come from different log files or independent web or E-commerce servers. Urchin uses data from the various log sources to analyze relationships between sessions and transactions and then correlates this information to provide a clear picture of how visitor activity relates to purchases, thereby providing valuable return on investment reporting. For example, referrals from search engines and specific keywords can be correlated with the amount purchased from your E-commerce site to tell you which referrals and search terms are yielding the most revenue. Typically you will have one log for your public facing website, and another log from your secure transaction website. In order to correlate disparate data sources together, Urchin must use the same visitor identification method for each site. <p class="line867"><strong>Types of Visitor Correlation</strong> <p class="line874">Urchin is capable of correlating visitors based on several methods.  Your choice of visitor tracking method will directly affect the accuracy of the information Urchin has at its disposal to correlate the E-commerce transactions with other website activity. Please choose the method that is suitable for the level of detail you desire. <p class="line874">The following data is required in the E-commerce log file for each of the visitor methods: <ul><li>UTM: cookies </li><li>IP+User-Agent: remote host or IP address and user-agent (i.e. browser type) </li></ul><p class="line862">These items need to be considered when you examine your E-commerce logging format. Please review <a href="https://secure.urchin.com/helpwiki/en/ELF2_Log_Format.html">ELF2 Log Format</a> and <a href="https://secure.urchin.com/helpwiki/en/Custom_E-commerce_Logs.html">Custom E-commerce Logs</a> for detail on how to ensure the proper data is in your logs. <p class="line867"><strong>Configuraton</strong> <p class="line874">This section presents a general overview of e-commerce visitor correlation configuration issues. <p class="line867"><strong>Non-UTM Sites</strong> <p class="line874">If you do not have the UTM sensor installed on your sites, then your visitor correlation configuration will depend on what e-commerce format you are using. <ul><li>ELF2: Use IP+User-Agent as your visitor tracking method. In such a case Urchin will automatically correlate the various sessions as long as all logs contain the IP and User-Agent fields. Simply choose IP+User-Agent for the Visitor Tracking Method in the Profile's Reporting screen. </li></ul><p class="line867"><strong>UTM-Enabled Sites</strong> <p class="line874">For UTM-enabled sites, the same version of the UTM sensor must be installed on all the pages you want to track. In the Profile Settings screen, set Visitor Tracking Method to Urchin Traffic Monitor. Leave UTM Domain blank under normal conditions. The UTM will automatically detect the domain for the site. The UTM Domain feature is only used when you have overlapping domains that need to be tracked separately. </div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Visitor_Correlation.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

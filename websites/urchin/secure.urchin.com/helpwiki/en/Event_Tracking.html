@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Event_Tracking.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867">
+<h3 id="head-481c9c8df1fe5689d70512eb78a20dfbb7d92f94">! This page is under construction !</h3>
+<p class="line867">
+<h1 id="head-1a4c07c8ae7e1b10bd796c19a5fdf7279bedc5db">Event Tracking</h1>
+<p class="line874">With Event Tracking, it is possible to record user interactions with website elements, for example elements in a Flash website, an embedded video player, embedded AJAX page elements, Page gadgets, File downloads, etc.  You track interactions by attaching the method call (available in urchin.js tracking code) to the particular UI element you want to track. Event Tracking reports are grouped under the 'Content Optimization\Event Tracking' reporting section:    <ul><li>Hosts and Pages (Host|Page vs Events, Unique Events, Value, Avg.value) </li><li>Categories (Category|Action|Label vs Events, Unique Events ("visits with category"), Value, Avg.value) </li><li>Actions (Action|Label|Category vs Events, Unique Events ("visits with category/action"), Value, Avg.value) </li><li>Labels (Label|Action|Category vs Events, Unique Events ("visits with category/action/label"), Value, Avg.value) </li><li>Trending (Total Events, Visits with Events) </li></ul><p class="line867">
+<h2 id="head-e44df8a0f5f5a550a2b3dbd7bc0163a0c041711e">Event Tracking design</h2>
+<p class="line867">
+<h3 id="head-46131548470f537f80b9fcfc0a83b39030b8cadd">"Unique Events" metric</h3>
+<p class="line874">The 'Unique Events' metric, which should be read as "Visits with ...", shows the number of visits in which each unique combination of _category/action/label_ occurs. It is calculated per-session, for each level in the event hierarchy. For example the following sessions with events will generate the following stats: <p class="line867"><pre>Visit 1
+videos/play/Movie1
+videos/play/Movie2
+trailers/play/Movie1
+ads/click/Ad1
+ads/click/Ad1
+
+Visit 2
+videos/play/Movie1
+ads/click/Ad1
+ads/click/Ad2
+
+Visit 3
+&lt;no events&gt;
+
+2 unique events total (2 visits with events)
+
+Categories
+2 unique events in 'videos' category
+1 unique event in 'trailers' category
+2 unique events in 'ads' category
+
+Actions
+3 unique events for 'play' action (2 visits with 'play' action in 'videos' category and 1 visit in 'trailers' category) 
+2 unique events for 'click' action
+
+Labels
+3 unique events with 'Movie1' label (2 visits with 'videos/play' action and 1 visit with 'trailers/play' action)
+1 unique event with 'Movie2' label
+2 unique events with 'Ad1' label
+1 unique event with 'Ad2' label
+</pre><p class="line867">
+<h2 id="head-85704673c362dd8b3855e2135b44195dedf5897b">Setting Up Event Tracking</h2>
+<p class="line862">Ensure your website is configured for tracking with <strong>an updated urchin.js tracking code</strong> <a class="http" href="http://code.google.com/p/urchin-web-analytics-software/source/browse/trunk/urchin.js">http://code.google.com/p/urchin-web-analytics-software/source/browse/trunk/urchin.js</a>. (Link to be updated) <p class="line874">Refer to the Install Guide ("Using Urchin with UTM Tracking" section) for details.  <p class="line862">Call the <tt>__utmTrackEvent()</tt> method in the source code for every element(object) of the website to be tracked with Event Tracking.    <tt>__utmTrackEvent()</tt> method specification:   <tt>__utmTrackEvent(cat,&nbsp;action,&nbsp;label,&nbsp;value,&nbsp;page)</tt>, where      <ul><li>cat(category, required) - name for the group of objects to be tracked (e.g.: Video, Audio, etc.)    </li><li>action (required) - action is attached to an object and represent the action performed on the object (e.g.: Play, Stop, etc.)    </li><li><p class="line862">label (optional) - additional info about the event (e.g.: video's title, result of the action(change view -&gt; satelite), etc)    </li><li>value (optional) - numeric value of the action </li><li>page (optional) - use to override the page to which the event is attributed (current page by default). For example, to group the events under some virtual page hierarchy.    </li></ul><p class="line874">_Example:_ <p class="line862">Part of the script for tracking <tt class="backtick">Video</tt> "Play" event: <p class="line867"><pre>&lt;a href="javascript:document.movie1.Play();" onClick="__utmTrackEvent('Video','Play','My Video Title');"&gt;Play&lt;/a&gt;
+</pre></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Event_Tracking.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

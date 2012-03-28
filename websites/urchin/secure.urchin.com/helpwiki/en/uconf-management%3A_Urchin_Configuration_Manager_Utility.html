@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/uconf-management%253A_Urchin_Configuration_Manager_Utility.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>uconf-manager: Urchin Configuration Manager Utility</strong> <p class="line867"><strong>Overview</strong> <p class="line874">The Urchin Configuration Manager Utility (uconf-manager) allows you to add, edit and delete records in the following tables: uaccounts, ucosts, ufilters, ugoals, ugroups, ugroups_uusers, ulogs, ulogs_ufilters, uprofiles, uprofiles_ucosts, uprofiles_ufilters, uprofiles_ugroups, uprofiles_ulogs, uprofiles_uusers, and uusers. You can use it to perform actions that can't be accomplished via the Urchin Administration Interface. Examples include: <ul><li>Urchin admin password reset </li><li>Automated user creation </li><li>Moving a user to a different account </li><li>Automated cost source creation </li></ul><p class="line867"><span class="u">Note</span>: The Urchin Configuration Manager Utility version 6.402 allows you to add, edit and delete user records only. <p class="line867"><strong>Usage</strong> <p class="line874">This utility is bundled with the Urchin (6.402+) installation and can be found in the /util directory. <p class="line867"><pre>uconf-manager.exe -h      :   Prints the help information.
+uconf-manager.exe -v      :   Prints the version information.
+uconf-manager.exe [app_params] [db_params]
+</pre><p class="line874">where app_params are: <p class="line867"><pre>table=&lt;table_name&gt;    Name of the table to operate on. Currently ONLY the following tables
+                      are supported:
+                      uaccounts, ucosts, ufilters,
+                      ugoals, ugroups, ugroups_uusers, ulogs, ulogs_ufilters, uprofiles,
+                      uprofiles_ucosts, uprofiles_ufilters,
+                      uprofiles_ugroups, uprofiles_ulogs, uprofiles_uusers, uusers
+action=&lt;action_name&gt;  Operation type. 'add', 'delete' or 'update'.
+print=&lt;print_level&gt;   Print level. 'quite', 'error', 'status' or 'all'.
+key1=&lt;column_name1&gt;   [Optional]. Column name (key1) that will be used in WHERE clause
+                      of 'update' query.
+key2=&lt;column_name2&gt;   [Optional]. Column name (key2) that will be used in WHERE clause
+                      of 'update' query.
+</pre><p class="line874">and db_params are column name/value pairs: <p class="line867"><pre>&lt;col1&gt;=&lt;value1&gt; &lt;col2&gt;=&lt;value2&gt; ...
+</pre><p class="line874">For example: <p class="line867"><pre>ucus_name="user11" ucus_password="passwd" uius_level=1
+</pre><p class="line867"><strong>Examples</strong> <p class="line874">1. Create an admin user with the credentials "testuser" and "testpassword": <p class="line867"><pre>command: ./uconf-manager table=uusers action=add ucus_name="testuser" ucus_password="testpassword" uius_level=1 usac_id=1 print=status
+output : Successful : Operation 'add' performed on table 'uusers'.
+</pre><p class="line874">2. Update user with the login "testuser"; set the full name to "Test User" and make the account id=3: <p class="line867"><pre>command: ./uconf-manager table=uusers action=update ucus_name="testuser" ucus_ful_name="Test User" usac_id=3 key1=ucus_name print=status
+output : Successful : Operation 'update' performed on table 'uusers'.
+</pre><p class="line874">3. Remove user with the login "testuser": <p class="line867"><pre>command: ./uconf-manager table=uusers action=delete ucus_name="testuser" print=status
+output : Successful : Operation 'delete' performed on table 'uusers'.
+</pre><p class="line874">4. Create a CPC source with the name "cpc_name": <p class="line867"><pre>command: ./uconf-manager table=ucosts action=add ucco_name="cpc_name" ucco_adwords_loginName="cpc@gmail.com" ucco_adwords_loginPassword="test_password" ucco_adwords_devToken="dev_token" ucco_adwords_appToken="app_token"
+ucco_adwords_clientEmail="client_email@gmail.com" print=status
+output : Successful : Operation 'add' performed on table 'ucosts'
+         Insert record id : 17.
+</pre><p class="line867"><strong>Additional information about UUSERS table fields (Urchin 6.402+)</strong> <p class="line874">The following fields from the UUSERS table can be updated using uconf-manager: <ul><li>usac_id* - Account id. Account must exist before creating the user. Default account "(NONE)" id=1; </li><li>ucus_name* - User login name - must be unique and not empty; </li><li>ucus_full_name - User full name; </li><li>ucus_password* - User password (preferably at least 8 characters long); </li><li>ucus_language - User language. Possible values: en-US, de-DE, es-ES, fr-FR, it-IT, ja-JP, ko-KR, nl-NL, pt-BR, zh-CH, zh-TW (and more if custom languages are configured). Default value - en-US; </li><li>ucus_region - User regional setting. Possible values: us, au, de, br, cn, fr, it, jp, kr, nl, es, tw, uk. Default value: us; </li><li>uius_level* - User level. Possible values: 1 - Super admin, 4 - User, 8 - User-No Update, 16 - Account admin. (Caution: uconf-manager does't validate the value of this field) </li></ul><p class="line874">Fields marked with * are required to add a new user. <p class="line867"><strong>Additional information about UCOSTS table fields (Urchin 6.500+)</strong> <p class="line874">The following fields from the UCOSTS table can be updated using uconf-manager: <ul><li>usac_id* - Account id. Account must exist before creating the user. Default account "(NONE)" id=1; </li><li>ucco_name* - CPC Source name - must be unique and not empty; </li><li>uico_schedule_time - The CPC report download Time. Possible values: -1 (Global Defaults) and hour value: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23. Default value: -1; </li><li>uico_schedule_download_interval - The CPC report download Interval </li><li>ubco_active - This option enables and disables the future downloads of the reports for this CPC source. Possible values: 1 – enabled; 0 – disabled. Default value: 1; </li><li>ucco_connection_string - Urchin encrypts and saves all CPC related connection values in this column. User should only modify this column by providing individual connection fields, which are: <ul><li>ucco_adwords_loginName * - This is the email address of the advertiser or the MCC (My Client Center) login id (mandatory); </li><li>ucco_adwords_loginPassword * - This is the password for the Adwords Account being accessed (mandatory); </li><li><p class="line862">ucco_adwords_devToken - This is the unique string that identifies an authorized developer of the AdWords API (optional). If user doesn't provides the developer token, then urchin uses the default token; </li><li><p class="line862">ucco_adwords_appToken - This is the application token that will be used when accessing the AdWords API. If user has provided the developer token, then it is required to provide the application token as well; </li><li>ucco_adwords_clientEmail and ucco_adwords_customerId - If user is using MCC login in stead of advertiser's email, then either of these two fields (but not both) are required. </li></ul></li></ul><p class="line874">Fields marked with * are required to add a new user. <p class="line867"><strong>Additional information about UPROFILES_UCOSTS table fields (Urchin 6.500+)</strong> <p class="line874">The following fields from the UPROFILES_UCOSTS table can be updated using uconf-manager: <ul><li>uspr_id* –Profile id. Profile must exist before assigning the CPC source - must be not empty; </li><li>usco_id* – CPC source id. CPC source must exist before assigning into the Profile - must be not empty. </li></ul><p class="line874">Fields marked with * are required to add a new user. <p class="line867"><strong>Note:</strong> Field descriptions of other tables (uaccounts, ufilters, ugoals, ugroups, ugroups_uusers, ulogs, ulogs_ufilters, uprofiles, uprofiles_ufilters, uprofiles_ugroups, uprofiles_ulogs and uprofiles_uusers) will be available in a "Urchin configuration DB schema" article which is currently in development. </div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/uconf-management%253A_Urchin_Configuration_Manager_Utility.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

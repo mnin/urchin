@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/How_the_Urchin_Traffic_Monitor_(UTM)_Works.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>How the Urchin Traffic Monitor (UTM) Works</strong> <p class="line867"><strong>Overview</strong> <p class="line874">The patent-pending Urchin Traffic Monitor (UTM), originally available in Urchin 4, was specifically designed to provide the most accurate measurements of unique website visitors. For businesses looking to get a deeper understanding of their online visitor behavior, the UTM is an extremely valuable technology that combines the best of client and server side information while letting you control the data. Easy to install, this technology allows business owners to exactly identify unique visitors, click paths, and return loyalty metrics including first time visitors, returning visitors, and frequency of use. More recent versions of the UTM provide enhanced campaign tracking capability. <p class="line874">There are two components to the Urchin Traffic Monitor System: the UTM Sensor, which is a code snippet installed into the content of the website; and the UTM Engine, which is part of the log processing Urchin Engine. The UTM Sensor enables client-side data collection, which is then funneled back to Urchin for each pageview. The client-side information is combined with the existing server-side data by the UTM Engine to provide a more accurate and complete picture of website activity. <p class="line862">The UTM Sensor is a small amount of JavaScript code that accomplishes two important functions. First, the Sensor negates the effects of caching by forcing at least one hit to progress to the Google webservers for each pageview. Secondly, the UTM Sensor uniquely identifies each visitor by using client-side "1st party" cookies to keep track of first time and returning visitors. This cookie identifier is a communication tag only viewable to the web server in the same way as session ids. It is not a third party cookie, which sends information outside the system, violating many privacy policies. <p class="line874">The UTM System works as follows. The web server provides two basic functions: content delivery and logging. The content of the website includes the UTM Sensor which is delivered to the user's browser. The UTM Sensor sets unique identifiers and sends an additional request back to the same web server. The UTM Engine, which is part of the Urchin log processing engine, uses the data from this request to provide an accurate and more complete picture of visitor behavior. <p class="line867"><strong>UTM Sensor</strong> <p class="line874">The UTM Sensor increases the accuracy and completeness of logfile data by negating the effects of caching and proxying. For example, when the user goes back to a previously viewed page, the content of the page is delivered from the cached memory of the browser. The same model applies if the caching is provided by a service provider. The web server has no knowledge of this pageview. However, the UTM Sensor activates an additional unique hit that forces at least one small record back to the webserver. This information is logged in the logfiles, which now has knowledge of the originating pageview. <p class="line867"><img alt="on-demand-collection" src="https://secure.urchin.com/helpwiki/images/on-demand-collection.jpg" title="on-demand-collection" /> <p class="line874">The second important function of the UTM Sensor is to uniquely identify both sessions and unique visitors. Through a patent-pending combination of browser cookies, the Sensor detects and initializes the unique visitor and session identifiers allowing exact monitoring of new and returning visitors regardless of service provider proxy behavior. Most service providers take advantage of proxying by recycling IP addresses and clustering users behind firewalls. This can cause problems with normal logfile tracking, which typically utilizes the IP address as an identifier of the user. <p class="line874">The UTM Sensor is able to pierce the veil of the proxy by utilizing the cookie identifiers instead of the IP addresses. For example, when a first time unique visitor accesses the website through a firewall with one IP address, the delivered pageview contains the UTM Sensor, which sets the identifier on the visitor's browser. <p class="line874">On the return visit by the same visitor, the unique id is passed to the web server along with each request. So even if the user is now assigned a second IP address, the UTM technology properly identifies the visitor with the original id. In addition to negating the effects of complex proxying techniques, this also tracks visitors who travel and may use their laptops from several locations and through several providers. </div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/How_the_Urchin_Traffic_Monitor_(UTM)_Works.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

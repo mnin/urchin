@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Setting_Up_Conversion_Goals.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong> Setting Up Conversion Goals </strong>  <ul><li style="list-style-type:none">A goal is a website page which a visitor reaches once she or he has made a purchase or completed another desired action, such as a registration or download. Before Urchin can calculate goal conversion metrics, you must define one or more goals. A goal is defined with the following information: </li><li class="gap">URL for the goal page <ul><li style="list-style-type:none">Specify a page that can only be reached by achieving a goal. In the case of a registration goal, for example, the goal page should be the Thank You page. If your goal page can be reached by visitors who have not completed the goal, your conversion rates will be inflated. </li></ul></li><li>a name for the goal <ul><li style="list-style-type:none">Specify a name that you will recognize when viewing reports. Examples of names you might use include "email sign-up" and "article ABC download". </li></ul></li><li>the defined funnel <ul><li style="list-style-type:none">You may specify up to ten pages in a defined funnel. These pages represent the path that you expect visitors to take on their way to converting to the goal. Defining these pages allows you to see how frequently visitors abandon goals and where they go. For an e-commerce goal, these pages might be the Begin Checkout page, shipping address info page, and credit card information page. </li></ul></li><li>a goal value, if the goal is not an e-commerce transaction </li></ul><p class="line862">(For e-commerce goals, leave the Goal Value field blank, as described below, and set up your purchase receipt page as described in <a href="https://secure.urchin.com/helpwiki/en/How_do_I_track_e-commerce_transactions%253F.html">How do I track e-commerce transactions?</a>.) <ul><li style="list-style-type:none">For non-e-commerce goals, Urchin uses your assigned goal value to calculate ROI, Average Score, and other metrics. A good way to value a goal is to evaluate how often the visitors who reach the goal become customers. If, for example, your sales team can close 10% of people who request to be contacted, and your average transaction is $500, you might assign $50 (i.e. 10% of $500) to your "Contact Me" goal. In contrast, if only 1% of mailing list signups result in a sale, you might only assign $5 to your "email sign-up" goal. <p class="line891"><strong>To set up your goals:</strong> </li><li class="gap"><p class="line862">Login to your Urchin 6 account and click <strong>Configuration</strong>, at the upper right of your screen. <img alt="Home_Configuration_Pref" src="https://secure.urchin.com/helpwiki/images/Home_Configuration_Pref.gif" title="Home_Configuration_Pref" /> </li><li class="gap">Click Urchin Profiles, then Profiles. </li></ul><p class="line867"><img alt="Click_Profiles" src="https://secure.urchin.com/helpwiki/images/Click_Profiles.gif" title="Click_Profiles" /> <ol type="1"><li>Click the Edit button to edit your website profile. </li></ol><p class="line867"><img alt="Edit_Profile" src="https://secure.urchin.com/helpwiki/images/Edit_Profile.gif" title="Edit_Profile" /> <ol type="1"><li>Click the Goals tab. </li></ol><p class="line867"><img alt="Goals_Tab" src="https://secure.urchin.com/helpwiki/images/Goals_Tab.gif" title="Goals_Tab" /> <ol type="1"><li>Edit a goal by clicking on one of the four goal tabs at the top of the screen. Then, click the magic wand at top right to activate the Goal Setting Wizard. </li></ol><p class="line867"><img alt="Select_Goal" src="https://secure.urchin.com/helpwiki/images/Select_Goal.gif" title="Select_Goal" /> <ol type="1"><li>In the Wizard, select a step number or "Goal" from the tabs at the top of the screen. Use the web browser embedded in the Wizard to navigate to a page that you would like to set as a funnel step or goal. To select the page as step 1, click Add this Page as Step 1. Repeat for each step in your funnel. Click Set this page as Conversion Goal to set the page as the goal and close the Wizard. <ul><li style="list-style-type:none"><p class="line862">Once you have closed the Wizard, the pages you have selected will appear in the Steps and Goal Web Address fields, as shown below. You can also enter and edit page URLs directly on the Goals screen. <img alt="Set_Goals" src="https://secure.urchin.com/helpwiki/images/Set_Goals.gif" title="Set_Goals" /> </li></ul></li></ol><p class="line874">To define an E-commerce goal, set your receipt page as the goal and leave the Goal Value (Revenue) field blank. </div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Setting_Up_Conversion_Goals.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

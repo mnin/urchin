@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Advanced_Segmentation.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867">
+<h3 id="head-0404a141d19f93a69278007c0cf97d1b26a308f1">Advanced Segmentation</h3>
+<p class="line867"><strong>Advanced Segments</strong> <p class="line874">Advanced Segments is a new feature that allows you to filter reporting data similar to using GA Advanced Segmentation. The feature is accessible on the Urchin Reporting UI from the toolbar.  <p class="line867"><img alt="advanced_segments_opened" src="https://secure.urchin.com/helpwiki/images/advanced_segments_opened.png" title="advanced_segments_opened" /> <p class="line867"><strong>Note:</strong> Advanced Segments are applicable for the reports where the Analytic Options/Cross Segment Performance option is available. <p class="line874">Each advanced segment is a combination of filters joined by "AND" condition. Metrics support numeric comparison operators "equals to", "less than", "less than or equal to", "greater than" and "greater than or equal to". Dimensions support regular expressions with operations "matches" and "does not match".  <p class="line867"><pre>Example: "referral" matches "yahoo" AND "pageviews" greater than "1"
+</pre><p class="line862">The Advanced segments editor is available on the My Customizations -&gt; Advanced Segments page.  <p class="line867"><img alt="advanced_segments_navigation" src="https://secure.urchin.com/helpwiki/images/advanced_segments_navigation.png" title="advanced_segments_navigation" /> <p class="line867"><strong>Advanced Segmentation</strong> <p class="line874">Advanced Segmentation provides the functionality to manage advanced segments and apply them to reporting data. There are altogether four different types of advanced segmentation: <ul><li>visit segmentation - advanced filters can be applied to dimensions and metrics that are linked with visits </li><li>path segmentation - advanced filters can be applied to dimensions and metrics that are linked with paths - supported only through the Data API v2.0 </li><li>transaction segmentation - advanced filters can be applied to dimensions and metrics that are linked with transactions - supported only through the Data API v2.0 </li><li>transaction item segmentation - not supported  </li></ul><p class="line862">The Manage Urchin Advanced Segments page can be found under the My Customizations -&gt; Advanced Segments link. This page displays a list of segments that have been configured and provides controls for creating, editing and removing the Advanced Segments. <p class="line867"><strong>Creating New Segments</strong> <p class="line862">To create and configure a new segment, click the <em>Create new custom segment</em> button on the Manage Urchin Visit Segments page.  <p class="line867"><img alt="advanced_segments_create" src="https://secure.urchin.com/helpwiki/images/advanced_segments_create.png" title="advanced_segments_create" /> <p class="line874">Provide a Segment Name, select Dimension or Metric, select Condition and provide required Value. <p class="line867"><img alt="Adv_seg_create_new_seg_settings" src="https://secure.urchin.com/helpwiki/images/Adv_seg_create_new_seg_settings.png" title="Adv_seg_create_new_seg_settings" /> <p class="line862">Click <em>Add 'and' statement</em> to add a new Dimension or Metric to the segment. Click Save to complete the New Segment creation. Once the segment is created, it can be edited, deleted or applied to other profiles (according to User access permissions). <p class="line867"><strong>Note:</strong> For detailed information about Urchin variables and corresponding dimension and metric names please refer to <a href="https://secure.urchin.com/helpwiki/en/Advanced_Segments_mapping.html">Advanced Segments mapping</a> document. <p class="line867"><strong>Editing Segments</strong> <p class="line862">To edit a segment, click the <em>edit</em> link in the Actions area for the corresponding segment.  <p class="line867"><img alt="Adv_seg_edit" src="https://secure.urchin.com/helpwiki/images/Adv_seg_edit.png" title="Adv_seg_edit" /> <p class="line874">While editing, the user may change the segment's Name, Dimension or Metric, Condition and Value and to add additional Dimension or Metric query strings to the segment. <p class="line867"><img alt="Adv_seg_create_new_seg_settings_delete" src="https://secure.urchin.com/helpwiki/images/Adv_seg_create_new_seg_settings_delete.png" title="Adv_seg_create_new_seg_settings_delete" /> <p class="line862">Unwanted Dimension or Metric query strings may be removed from a segment definition by clicking the <em>delete</em>  button. <p class="line867"><strong>Deleting Segments</strong> <p class="line862">To delete an existing segment, click the <em>delete</em> link in the Actions area for the corresponding segment.      <p class="line867"><strong>Applying Segments to the Profiles</strong> <p class="line862">A default set of advanced segments is visible to all users and all their profiles. New advanced segments can be shared across profiles of the user. To make a segment visible to all profiles of the current user, click the <em>apply to all profiles</em> link at the Actions section near the corresponding segment. <p class="line874">In order to limit visibility of the segment to the current profile only, simply 'Edit' and 'Save' it - the re-saved segment will be visible for the current profile of the current user. <p class="line867"><strong>Known limitations:</strong> <ul><li>Current implementation of the Advanced Segmentation does not support segmentation of paths, transactions and transaction items. Only metrics are segmented. Applying the segmentation to the reports in corresponding sections will result in "(no data)" for dimensions. </li><li>Data Over Time, To-date Lifetime Value, Visitor History Drilldown and Cross segmentation do not take into account the Advanced Segments.  </li></ul></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Advanced_Segmentation.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

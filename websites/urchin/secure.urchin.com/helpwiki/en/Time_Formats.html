@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Time_Formats.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line862">This article authored by <a href="https://secure.urchin.com/helpwiki/en/%2522Friedrich_Software_Resources%2522.html">"Friedrich Software Resources"</a>, an Urchin Software Authorized Consultant. <p class="line867"><strong>Custom Date/Time Formats</strong> <p class="line874">Introduction <p class="line874">Urchin can process virtually any date or time format contained in a log file. The only requirement is to provide Urchin with the necessary date or time format which matches the pattern of the date contained in the log file. This article describes the variables used to specify the date or time format. These formats are specified inside a custom log format file. Please see the "Custom Log Formats" article above in this section. <p class="line874">How Date/Time Parsing Works <p class="line874">Urchin determines the date/time by comparing a specified format against the date/time field(s) in the log file. <p class="line874">For example, an IIS log contains the date in the following form: 2002-11-12 Urchin is able to determine the year, month, and day be using the following format: %Y-%m-%d <p class="line874">Creating A Date/Time Format <p class="line874">To create a custom date/time format, first look at the order and pattern of the date/time data contained in your log file. Then, select from the following Date/Time variables listed below to make up the format. Time zones around the world are expressed as positive and negative offsets of UTC (coordinated universal time). <p class="line874">For example, if your log file contains the time as "07:01:47", then you need to create a pattern to match this. The first thing to note is that the pattern is hours:minutes:seconds. Looking at the variable list below, you will note that %H is the variable for hours, %M is the variable for minutes, and %S is the varialble for seconds. Putting these together yields a format of "%H:%M:%S". If you have a literal '%' character in the date or time format field, you can specify the literal % as %%. <p class="line874">The most common variables are: %Y, %m, %d, %H, %M, and %S. <p class="line874">Date/Time Variable Definitions <ul><li>%A = national representation of the full weekday name. </li><li>%a = national representation of the abbreviated weekday name. </li><li>%B = national representation of the full month name. </li><li>%b = national representation of the abbreviated month name. </li><li>%d = the day of the month as a decimal number (01-31). </li><li>%e = the day of month as a decimal number (1-31); single digits are preceded by a blank. </li><li>%H = the hour (24-hour clock) as a decimal number (00-23). </li><li>%I = the hour (12-hour clock) as a decimal number (01-12). </li><li>%j = the day of the year as a decimal number (001-366). </li><li>%k = the hour (24-hour clock) as a decimal number (0-23); single digits are preceded by a blank. </li><li>%l = the hour (12-hour clock) as a decimal number (1-12); single digits are preceded by a blank. </li><li>%M = the minute as a decimal number (00-59). </li><li>%m = the month as a decimal number (01-12). </li><li>%p = national representation of either "ante meridiem" or "post meridiem" as appropriate. </li><li>%S = the second as a decimal number (00-60). </li><li>%s = the number of seconds since the Epoch, UTC (see mktime(3)). </li><li>%w = the weekday (Sunday as the first day of the week) as a decimal number (0-6). </li><li>%Y = the year with century as a decimal number. </li><li>%y = the year without century as a decimal number (00-99). </li><li>%z = the time zone offset from UTC; a leading plus sign stands for east of UTC, a minus sign for west of UTC, hours and minutes follow with two digits each and no delimiter between them (common form for RFC 822 date headers). </li><li>%% = `%'.  </li></ul></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Time_Formats.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

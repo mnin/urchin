@@ -1,0 +1,8 @@
+https://secure.urchin.com/helpwiki/en/Help_Center.html -O /home/m/mnin/websites/urchin +* -%v -r 5 -s0 -%c10
+File generated automatically on Wed, 28 Mar 2012 16:29:45, do NOT edit
+
+To update a mirror, just launch httrack without any parameters
+The existing cache will be used (and modified)
+To have other options, retype all parameters and launch HTTrack
+To continue an interrupted mirror, just launch httrack without any parameters
+

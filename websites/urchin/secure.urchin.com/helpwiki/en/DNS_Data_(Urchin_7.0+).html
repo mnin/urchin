@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/DNS_Data_(Urchin_7.0+).html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867">
+<h1 id="head-11225032efc523922beffee81915d760963344e0">Customizable Geo/DNS Data (Urchin 7.0+)</h1>
+<p class="line874">Beginning with Urchin 7.0, geo information has been divided into the following databases: <ul><li>Domains database (Domains report); </li><li>Organizations database (Network Location report); </li><li>Several geo databases (Geo Location/Geo Map Overlay/Connection Speed). </li></ul><p class="line874">Urchin ships with several geo databases, each providing different levels of geo information: <ul><li>World (contains detailed Country/Region/City information for the World) </li><li>World Lightweight (contains only Country-level information for the World) </li><li>US (contains detailed information for the US and country level information for other countries) </li><li>Europe (contains detailed information for major EU markets (DE,GB,FR,ES,IT,NL) and country level information for other countries) </li><li>Japan (contains detailed information for Japan and country level information for other countries) </li></ul><p class="line874">GeoDB settings can be defined globally or at the profile level. <p class="line867">
+<h2 id="head-871bc346df2efa2fb22d5f2c2c1bc155e56f298c">Global GeoDB settings</h2>
+<p class="line862">To change GeoDB settings per Urchin instance, go to Configuration &gt; Settings &gt; Global Settings &gt; DB Settings tab -&gt;Geo Detail section. Network Locations, Domains and Geo Locations/Connection Speed are enabled by default; World geo database is selected by default. <p class="line867"><img alt="geo_global_settings" src="https://secure.urchin.com/helpwiki/images/geo_global_settings.png" title="geo_global_settings" /> <p class="line867"><strong>Note:</strong> Only Super Admin users can change Global GeoDB settings. <p class="line867">
+<h2 id="head-79b746ad2d099fef0977277a0d1454dd8d7f25c8">Profile GeoDB settings</h2>
+<p class="line862">To change GeoDB settings for a profile, go to Configuration -&gt; Urchin Profiles -&gt; Profile Settings -&gt; Reporting tab -&gt; Geo Detail section. <p class="line867"><img alt="geo_profile_settings" src="https://secure.urchin.com/helpwiki/images/geo_profile_settings.png" title="geo_profile_settings" /> <p class="line867">
+<h2 id="head-27754266fb33f8e3d67e0f541ae2117c459d16fc">Custom DNS Entries</h2>
+<p class="line874">Beginning with Urchin 7.0, it's possible to define custom DNS entries. <p class="line874">The custom DNS entries can be defined in the domain.local file, located in the data/geodata directory or another custom file. Entries from the domain.local will be imported automatically on the next scheduled geo-update; the entries from custom file have to be manually imported via geo-update utility. The format of the entries should be one entry per line, beginning with the IP or network address, followed by a space or tab, and then the domain for that address. Spaces are not allowed in the domain name. Allowed forms include the following: <ul><li>192.168.10.100 somehost.somedomain.net (Explicit hostname IP) </li><li>192.168.10.16/24 somedomain.net (IP address with network prefix) </li><li>192.168.10.0/24 somedomain.net (subnet with network prefix) </li></ul><p class="line874">While processing log files, Urchin will check for specific IPs first and then look for encompassing network ranges. Custom DNS entries are processed before the DNS entries from geo-database. <p class="line867">
+<h2 id="head-708891bf44b920f99cf01bde001c6df894c726eb">geo-update: DNS Database Update Utility</h2>
+<p class="line874">Use the geo-update utility to check for updates to Urchin's internal DNS database files and download the updates if they are available. The utility can also be used to import custom entries into the DNS databases by using the domain.local file or another specified text file. <p class="line874">geo-update options: <pre>-F     Forces download of geo databases
+-f     Path to geo database ZIP packages on local filesystem [optional]
+-h     Prints help information and exits
+-g     &lt;filename&gt; Update a specific geo database
+-l     Lists geo databases available on server
+-V     Prints geo-database version number and exits
+-v     Prints version number and exits
+-I     Import domain data only. If this option is provided, geo-update utility performs custom DNS import only, without updating the geo databases.
+-i     &lt;filename&gt;  Import domain data from specified file
+-I     Import domain data only. If this flag is provided, geo-update utility should perform custom DNS import ONLY, without updating the geo databases.
+-i     &lt;filename&gt; Specify the file to import domain data from. If the filename is specified, it will be used for import, otherwise the URCHIN_HOME/data/geodata/domain.local file will be used, if it presents.
+</pre></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/DNS_Data_(Urchin_7.0+).html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

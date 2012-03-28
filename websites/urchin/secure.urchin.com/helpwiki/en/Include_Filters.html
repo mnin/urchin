@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Include_Filters.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Exclude/Include Filters</strong> <p class="line867"><strong>Introduction</strong> <p class="line874">Exclude and Include Filters, set up in the admin interface and applied to a log source or profile, are used to eliminate unwanted hits when processing a log file. The filters use POSIX regular expressions when matching against data in the fields of a hit. If you are unfamiliar with regular expressions, please read the Regular Expression Overview document in this section before proceeding. <p class="line867"><strong>How Urchin Uses Exclude/Include Filters</strong> <p class="line862">These filters are applied after the Search &amp; Replace, Lookup Table and Advanced filters. Urchin applies the Exclude/Include filters in succession. If the filter being applied is an Exclude Filter and the pattern matches, the hit is thrown away and Urchin continues with the next hit. If the pattern does not match, Urchin applies the next filter to the hit. This means that you can create either a single Exclude Filter with multiple patterns separated by '|' or you can create multiple Exclude Filters with a single pattern each. <p class="line874">Include Filters are applied with the reverse logic. When an Include Filter is applied, the hit is thrown away if the pattern does not match the data. If multiple Include Filters are applied, the hit must match every applied Include Filter in order for the hit to be saved. To include multiple patterns for a specific field, create a single include filter that contains all of the individual expressions separated by '|'. <p class="line867"><strong>Using Exclude/Include Filters</strong> <p class="line867"><img alt="Exclude_Include_Filters1" src="https://secure.urchin.com/helpwiki/images/Exclude_Include_Filters1.jpg" title="Exclude_Include_Filters1" /> <p class="line874">In the figure above, the exclude filter requires a filter expression and a filter field. During processing, the filter expression is compared with data in the filter field and the hit is thrown away if the filter matches. See the Filter Fields article for a complete list of fields that are available. The above example illustrates how to filter out image hits by filtering out all mime types that match gif, jpg, png, jpeg, and ico. This list can be customized to match any mime type. <p class="line867"><img alt="Exclude_Include_Filters2" src="https://secure.urchin.com/helpwiki/images/Exclude_Include_Filters2.jpg" title="Exclude_Include_Filters2" /> <p class="line874">In the figure above, the include filter requires a filter expression and a filter field. During processing, the filter expression is compared with data in the filter field and the hit is thrown away if the filter does not match. See the 'What information do the filter fields represent?' article for a complete list of fields that are available. This example shows how to filter in only hits by requiring the mydir sub-folder of the request. <p class="line867"><strong>Controls</strong> <p class="line874">The 'Case Sensitive' control allows you to specify whether the filter should be applied with or without case sensitivity. </div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Include_Filters.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

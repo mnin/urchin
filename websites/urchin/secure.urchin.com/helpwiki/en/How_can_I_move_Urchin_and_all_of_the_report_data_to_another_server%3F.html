@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/How_can_I_move_Urchin_and_all_of_the_report_data_to_another_server%253F.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>How can I move Urchin 6.x and all of the report data to another server?</strong> <p class="line874">Moving Urchin 6.x from one server to another requires the following basic steps: <ol type="1"><li>Prepare Urchin DB </li><li>Install Urchin 6.x on the new server </li><li>Move Urchin reporting databases for the profiles </li><li>Move custom files and templates </li><li>Apply Urchin custom settings </li><li>Check new file permissions </li><li>Reactivate Urchin license </li></ol><p class="line874">NOTE: The following detailed instructions can be applied to cross-platform moves as well. The Urchin reporting database files can be moved to any operating system supported by Urchin. Considerations when moving data and files from one platform type to another include command line syntax (such as adding './'  for Unix systems). Other considerations include directory syntax changes such as 'Standard\Windows\folders\' vs. '/standard/unix/directories/.' <p class="line867"><strong>1. Prepare Urchin DB</strong> <p class="line874">This step can be skipped, if you are going to use the same DB server for your new Urchin installation. Otherwise Urchin DB should be prepared before making fresh installation at the new server: <p class="line867"><strong>a.</strong>      Create empty Urchin DB with proper permissions for Urchin user. <p class="line874">Example of SQL commands for MySQL back-end DB creation: <p class="line867"><pre>   mysql&gt; create database urchin character set utf8;
+   mysql&gt; GRANT ALL ON urchin.* to 'urchin'@'localhost' IDENTIFIED BY 'urchinpassword';
+</pre><p class="line874">Example of PSQL commands for PostreSQL back-end DB creation: <p class="line867"><pre>   postgres=# CREATE DATABASE urchin WITH ENCODING 'UTF8';
+   postgres=# CREATE USER urchin WITH PASSWORD 'urchin password';
+   postgres=# GRANT ALL ON DATABASE urchin TO urchin;
+   postgres=# \connect urchin;
+   postgres=# CREATE LANGUAGE 'PLPGSQL';
+</pre><p class="line867"><strong>b.</strong>      Copy Urchin DB data from old server by making SQL dump of the old DB and importing it to the new DB. This will automatically copy most of the needed Urchin configurations including Profiles, Log sources, Users, Accounts, Groups, Scheduler and other settings. <p class="line874">Example of SQL commands for MySQL back-end DB below: <ul><li style="list-style-type:none">Source DB: </li></ul><p class="line867"><pre>   mysqldump –h {oldDBhostname} –u {username} –p {urchinDBname} &gt; urchin.sql
+</pre><ul><li style="list-style-type:none">Destination DB: </li></ul><p class="line867"><pre>   mysql –h {newDBhostname} –u {username} –p {urchinDBname} &lt; urchin.sql
+</pre><p class="line874">Example of PSQL commands for PostreSQL back-end DB below: <ul><li style="list-style-type:none">Source DB: </li></ul><p class="line867"><pre>   pg_dump -h {oldDBhostname} -p {oldDBport} -U {username} {urchinDBname} &gt; urchin.sql
+</pre><ul><li style="list-style-type:none">Destination DB: </li></ul><p class="line867"><pre>   psql –h {newDBhostname} –p {newDBport} -U {username} {urchinDBname} &lt; urchin.sql
+</pre><p class="line867"><strong>2. Install Urchin 6 on the new server</strong> <p class="line874">Create a fresh installation of Urchin 6 on the new server using the previously prepared DB. <p class="line874">(Be sure to uncheck "Delete and recreate Urchin specific database tables if they exist" option for Windows installations or answer NO to “Would you like to initialize the configuration database during install?”for Unix installations!). <p class="line874">Detailed instructions on installing Urchin can be found here (skip DB configuration steps and start from "Installing Urchin" chapter): <ul><li><p class="line891"><a href="https://secure.urchin.com/helpwiki/en/Urchin_Installation_Guide_(FreeBSD_and_Linux).html">Urchin Installation Guide (FreeBSD and Linux)</a> </li><li><p class="line891"><a href="https://secure.urchin.com/helpwiki/en/Urchin_Installation_Guide_(Windows).html">Urchin Installation Guide (Windows)</a> </li></ul><p class="line874">Stop urchin deamons or services before proceeding to the next steps: <p class="line867"><pre>~/urchin/bin/urchinctl -stop
+</pre><p class="line867"><strong>3. Move Urchin reporting databases for the profiles</strong> <p class="line874">By default, all Urchin reporting data is stored in a subdirectory of the main Urchin directory: ~/urchin/data/ This directory should be archived to maintain the subdirectory structure, then moved to the new server after installing Urchin there. It should be restored in the same directory location on the new server whenever possible: ~/urchin/data. <p class="line874">NOTE: If the old Urchin installation used custom history and reports directories, the custom directories should be copied (instead of ~/urchin/data/reports and ~/urchin/data/history) <p class="line867"><strong>4. Move custom files and templates</strong> <p class="line874">Customizations made to Urchin, including custom log formats and report sets, are not kept in Urchin's "data" directory. Rather, these customizations are kept in a separate location under the "lib" directory of the Urchin distribution. When Urchin is installed on your new server, any customizations that have been made to the old Urchin system will need to be copied to your new Urchin installation. These files are usually kept in ~/urchin/lib/custom/. <p class="line874">To do this, go to the old Urchin server and navigate to the "lib" directory of the Urchin distribution. Next, create an archive of the entire "custom" directory (and all subdirectories) using an archive utility like tar or ZIP. Copy this archive over to your new Urchin server and unpack it in the "lib" directory of your Urchin distribution. <p class="line867"><strong>5. Apply Urchin custom settings</strong> <p class="line874">If default settings have been changed for the old Urchin 6.x installation in: <p class="line867"><pre>/etc/session.conf
+/etc/urchin.conf
+/var/urchinwebd.conf
+</pre><p class="line874">then don’t forget to apply the same settings in your fresh installation by editing corresponding files. <p class="line867"><strong>6. Check new file permissions</strong> <p class="line874">After all files have been moved to the new server, you should perform a thorough check to ensure that all files have the required permissions and that all files are owned by the same user (UNIX systems only). <p class="line874">To fix Urchin permissions, run the following command from the ~/urchin/util/ directory: <p class="line867"><pre>        inspector -r
+</pre><p class="line874">To check for file ownership (UNIX only) run the following command from the ~/urchin/   directory: <p class="line867"><pre>        chown -R urchin_user:urchin_group ./
+</pre><p class="line867"><strong>7. Reactivate of Urchin license</strong> <p class="line874">Start urchin deamons or services. <p class="line867"><pre>~/urchin/bin/urchinctl start
+</pre><p class="line874">After completing the Urchin installation, open the Urchin web interface. <p class="line874">The system should display the “License Urchin” screen with “Reactivate License” link: <p class="line874">Since Urchin has been installed using the existing previously prepared DB, the system key has changed and the license should be reactivated. <p class="line874">NOTE: Please ask your Urchin reseller to reset the license before reactivating. </div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/How_can_I_move_Urchin_and_all_of_the_report_data_to_another_server%253F.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

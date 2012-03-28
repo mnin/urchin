@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Urchin_Installation_Guide_(Windows).html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Urchin 6 Installation Guide (Windows)</strong> <ul><li style="list-style-type:none"><p class="line891"><em>This article authored by</em> <a href="https://secure.urchin.com/helpwiki/en/EpikOne.html">EpikOne</a><em>, an Urchin Software Authorized Consultant </em> </li></ul><p class="line867"><strong>Before You Start - Important Note for Urchin 6.500 Users</strong> <p class="line874">Urchin 6.501 fixed several issues in the CPC scheduler. If you are upgrading from Urchin 6.500 to Urchin 6.602, the processed CPC data might be incorrect or incomplete, resulting in incorrect results in the Urchin reports. In order to get correct data from Google Adwords, we recommend that you either (a) install Urchin 6.602 in a new location or (b)if you wish to install on an existing 6.500 instance, delete the old CPC data. In this latter case, delete all contents of the following directories: <p class="line867"><pre>&lt;path_to_urchin_6500_installation&gt;\data\cpc\...
+&lt;path_to_urchin_6500_installation&gt;\data\history\cpc\...
+</pre><p class="line874">No action is required if you are upgrading from Urchin 6.600, 6.501 or from Urchin 6.402 and prior. <p class="line867"><strong>Overview of Installation Steps</strong> <ul><li>Install the desired database server on the Urchin system or add Urchin's database to an existing server. The currently supported database engines are: <ul><li>MySQL 5.0.3 or later (Note: Beginning with Urchin 6.6, MySQL 4.x.x is no longer supported) </li><li>PostgreSQL 8.2.5 or later </li></ul></li><li>Create the Urchin database and user in on the database server and grant access permissions </li><li>Unpack the Urchin distribution in a temporary folder </li><li>Run the MSI installer </li><li>License the Urchin installation </li></ul><p class="line867"><strong>Option 1: Using existing MySQL database with Urchin</strong> <ul><li><p class="line862">If you don't already have a MySQL server set up on your system, you can obtain a distribution from <a class="http" href="http://dev.mysql.com/downloads/">http://dev.mysql.com/downloads/</a>. The Windows Essentials package contains all necessary components needed for Urchin usage. </li><li>Install the MySQL server per the instructions on the MySQL site. </li><li>Make sure that you know the MySQL database administrator login (e.g. root) and password. </li><li>Choose the database name, local MySQL user and password you will use with Urchin. Save this information, as you'll need it later during the Urchin installation. The example below creates a database named urchin and a MySQL user name urchin with password urchinpassword (but you should obviously choose your own password!) </li><li><p class="line862">Start the MySQL Command Line Client using Start -&gt; Programs -&gt; MySQL -&gt; MySQL Server -&gt; MySQL Command Line Client. </li><li>In the MySQL Command Line Client window, create the Urchin database, user and permissions with the following commands: </li></ul><p class="line867"><pre>mysql&gt; create database urchin character set utf8;
+mysql&gt; GRANT ALL ON urchin.* to 'urchin'@'localhost' IDENTIFIED BY
+'urchinpassword';
+</pre><p class="line867"><strong>Option 2: Using existing PostgreSQL database with Urchin</strong> <ul><li><p class="line862">If you don't already have a PostgreSQL server set up on your system, you can obtain a distribution from <a class="http" href="http://www.postgresql.org/">http://www.postgresql.org</a> . </li><li>Install the PostgreSQL server per the instructions on the PostgreSQL site. </li><li>Make sure you know the PostgreSQL database administrator login (e.g. postgres) and password. </li><li>Choose the database name, local PostgreSQL user and password you will use with Urchin. Save this information, as you'll need it later during the Urchin installation. The example below creates a database named urchin and a PostgreSQL user name urchin with password urchinpass (but you should obviously choose your own password!) </li><li><p class="line862">Start the PostgreSQL Command Line Client using Start -&gt; Programs -&gt; PostgreSQL 8.2 -&gt; psql to 'postgres' </li><li>In the PostgreSQL Command Line Client window, create the Urchin database, user and permissions with the following commands: </li></ul><p class="line867"><pre>postgres=# CREATE DATABASE urchin WITH ENCODING 'UTF8';
+postgres=# CREATE USER urchin WITH PASSWORD 'urchinpass';
+postgres=# GRANT ALL ON DATABASE urchin TO urchin;
+postgres=# \connect urchin;
+postgres=# CREATE LANGUAGE 'PLPGSQL';
+</pre><p class="line867"><strong>Option 3: Using bundled PostgreSQL server with Urchin</strong> <ul><li>Urchin 6.602 installer comes with bundled PostgreSQL server as an option during Urchin installation. </li><li><p class="line862">In order to use this option Urchin installer should be invoked under user with administrator privileges. Installer will prompt to provide port number and password for the user "postgres". <strong>Note:</strong> If the user "postgres" already exists in the system, then existing password needs to be provided. If user "postgres" doesn't exist in the system, it will be created with provided password. </li><li>The following limitations apply to the bundled PostgreSQL server: <ul><li>It should not be installed in upgrade mode. </li><li>Administrator privileges are required for installation. </li></ul></li></ul><p class="line867"><strong>Installing Urchin</strong> <ul><li>Unpack the Urchin distribution ZIP archive into a temporary folder. </li><li><p class="line862">If you would like to install a bundled PostgreSQL server, make sure that you don't already have a PostgreSQL server on the system. To install, select the option "Install PostgreSQL" and provide PostgreSQL server details such as the port number and user "postgres" password. <strong>Note:</strong> Please refer to <a class="http" href="http://www.postgresql.org/">http://www.postgresql.org</a> if you have any problems installing the bundled PostgreSQL server. </li><li>If you would like to use an existing database, make sure that you have the Urchin database name, user and password for either MySQL or PostgreSQL that you selected above. </li><li>Urchin 6 only allows one instance of Urchin 6 on a single machine (Windows only). If there is an existing version of Urchin installed on the machine, only an upgrade will be permitted. (downgrading is not permitted). </li><li>To perform a 'New' installation, remove any existing version of Urchin 6 from the target machine. To remove Urchin, follow these steps: <ul><li><p class="line862">Start -&gt; Programs -&gt; Urchin 6 -&gt; Disable Urchin Services </li><li><p class="line862">Start -&gt; Settings -&gt; Control Panel -&gt; Add/Remove Programs </li><li>Click on "Urchin Software from Google" and choose Remove </li><li>Once Urchin has been removed, rename the urchin installation folder (e.g. C:\Program Files\Urchin6 folder to Urchin6-OLD). </li></ul></li><li>Urchin 6.602 can only be used for upgrading certain earlier versions of Urchin 6. The following versions may be upgraded: <ul><li>Urchin 6.6 - Service Pack 1      : Version 6.601 </li><li>Urchin 6.6 - English Release       : Version 6.600 </li><li>Urchin 6.5 - Service Pack 2            :   Version 6.501 </li><li>Urchin 6.5                             :   Version 6.500 (See important note above) </li><li>Urchin 6 - Service Pack 1         :   Version 6.402 </li><li>Urchin 6 - International Release :   Version 6.401 </li><li>Urchin 6 - English Release         :   Version 6.400 </li></ul></li><li>For upgrades, stopping/uninstalling the existing Urchin 6 instance is not required. The Urchin 6.602 installer first checks for and uninstalls any existing installation of Urchin 6. Then it installs the Urchin 6.602 files and configurations. </li><li>To begin Urchin 6.602 installation,  double-click the urchin6602_windows_installer.msi file and follow the interactive prompts. </li><li><p class="line891"><strong>Note:</strong> If you had a previous version of Urchin 6 installed and wish to preserve your configuration, be sure that the "Recreate EXISTING Urchin specific database tables (if exist)" option is unchecked. In this case, Urchin will keep the existing configuration intact, but may create 'additional tables' or 'columns in existing tables'. </li><li>You should now have a running version of Urchin on your system. To finish the setup, point your favorite web browser at this URL: </li></ul><p class="line867"><pre>http://yourserver:&lt;port&gt;
+</pre><p class="line862">where &lt;port&gt; is the network port you chose during the installation (default is 9999). <ul><li>If you wish to restore your profile reporting data from an older version of Urchin 6, copy the history and reports folders from C:\Program Files\Urchin6-OLD\data to C:\Program Files\Urchin6 </li><li>Click on the Obtain Demo License link and follow the licensing steps to enable Urchin and perform the initial setup steps. </li></ul><p class="line867"><strong>Configuring Tracking</strong> <p class="line874">Once Urchin is installed, there may be additional steps required to set up tracking on your  website depending on your use case. <p class="line867"><strong>Case 1: Using Urchin with IP+User-Agent Tracking</strong> <p class="line874">No additional configuration is necessary. When adding profiles to Urchin, be sure to specify IP+User-Agent as the Visitor Tracking Method. <p class="line867"><strong>Case 2: Using Urchin with UTM Tracking</strong> <p class="line874">To use Urchin with UTM tracking, it is necessary to install a small piece of javascript tracking code on each of your website's pages. Here are the steps: <ul><li><p class="line862">Copy the urchin.js and <tt class="backtick">__</tt>utm.gif files from the util\utm directory of the Urchin  distribution to the document root of your website (e.g. the top level directory of your content) </li><li>On each page of your website, place the following tracking code right after the any META tags in the HEAD section: </li></ul><p class="line867"><pre>&lt;script src="/urchin.js" type="text/javascript"&gt;
+&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+  _userv=0;
+  urchinTracker();
+&lt;/script&gt;
+</pre><ul><li>When adding profiles to Urchin, be sure to specify Urchin Traffic Monitor (UTM) as the Visitor Tracking Method </li></ul><p class="line867"><strong>Case 3: Using Urchin concurrently with Google Analytics</strong> <p class="line874">Please note that the new tracking features in the Google Analytics "ga.js" tracking code are not backward compatible with Urchin 6.  If you wish to track your website with both Google Analytics and Urchin Software, we recommend using the urchin.js-based tracking code for best results. If you choose to use urchin.js, you will not be able to use the new ga.js tracking features. <p class="line874">To use Urchin with a website that is already being tracked with Google Analytics, you just need to make a slight modification to the existing tracking code for Google Analytics. Here are the steps: <ul><li><p class="line862">Copy only the <tt class="backtick">__</tt>utm.gif file from the util\utm directory of the Urchin distribution to the document root of your website (e.g. the top level directory of your content). </li><li><p class="line862">Add the line <tt>_userv=2;</tt> as shown below to the existing tracking code on your website pages. Be sure not to modify any other parts of the existing tracking code! </li></ul><p class="line867"><pre>&lt;script src="http://www.google-analytics.com/urchin.js"
+type="text/javascript"&gt;
+&lt;script type="text/javascript"&gt;
+  _userv=2;
+  _uacct="UA-XXXXXXX-Y";
+  urchinTracker();
+&lt;/script&gt;
+</pre><ul><li>When adding profiles to Urchin, be sure to specify Urchin Traffic Monitor (UTM) as the Visitor Tracking Method </li></ul><p class="line867"><strong>Additional Installation Steps for Windows Vista and Server 2008</strong> <p class="line874">In addition to the already supported version of Windows (2000, XP and Server 2003), Urchin 6.6+ also supports Windows Vista and Server 2008. Certain security features in these newer Windows versions can affect Urchin execution. Explanation follows below. <p class="line867"><strong>UAC - Issue</strong> <p class="line862">Windows 2008 contains a new security feature called User Access Control (UAC); for details, please refer to <a class="http" href="http://technet.microsoft.com/en-us/library/cc709691.aspx">http://technet.microsoft.com/en-us/library/cc709691.aspx</a>. <p class="line874">The known issues when UAC is enabled are: <ol type="1"><li><p class="line862">  . If UAC is enabled, the application can’t correctly write to the “Program files” folder. Find more details here: <a class="http" href="http://msdn.microsoft.com/en-us/library/aa905330.aspx">http://msdn.microsoft.com/en-us/library/aa905330.aspx</a> </li><li><p class="line862">  . Urchin’s executables can’t be run from a command prompt by default. You must either use the command prompt as administrator or set the properties of the executable as follows: Right click and select Properties-&gt; Compatibility -&gt; “Run this program as administrator” -&gt; OK. Please note that Urchin Windows services operate as expected without any additional effort required. </li></ol><p class="line867"><strong>UAC - Solution</strong> <ol type="1"><li>Disable UAC and set up Urchin wherever you want. Run Urchin using the binaries or Windows services. </li><li>IF UAC is enabled, DO NOT install Urchin in the Program files folder. Install it in, for example, your Users directory. Modify the properties to run binaries in admin mode (as described in 2, above) or use Windows services without any changes. </li></ol></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Urchin_Installation_Guide_(Windows).html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Working_with_Profiles.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Working with Profiles</strong> <p class="line867"><strong>Overview</strong> <p class="line874">A profile is a set of reports for one website. It is necessary to configure at least one profile per site. In many circumstances, you'll want to set up more than one profile per site, but generally speaking, there is a 1:1 ratio of profiles to sites. <p class="line874">More technically speaking, a profile is a set of rules governing the processing of log files and the creation of reports for one website or parts thereof. <p class="line874">Profiles are the primary organizational tools of the Urchin system, so it's important to understand how they work. <p class="line867"><strong>Licensing Information</strong> <p class="line874">The 'regular' license for Urchin Software includes 1000 reporting profiles and 3000 log sources per instance. Profiles can share a Log Source (useful when one Profile is the "master", and one or more others have Filters applied). <p class="line874">The 'demo' license for Urchin Software includes 5 reporting profiles, 5 log sources and only allows 1 log source per profile. <p class="line874">Every website must have at least one Profile associated with it to obtain reporting. Usually one is sufficient, but there is no limit to how many can be created for specialized analysis of a single web property. <p class="line867"><strong>How to Use Profiles</strong> <p class="line874">To create a Profile, login to the Urchin administration interface as an Urchin admin and click on the Configuration link on the top right area of the screen. You will be taken to the Add Profile Wizard. This is a simple series of steps is designed to help you get the Profile set up in basic form quickly and easily. Each screen in the Wizard has explicit help information. <p class="line867"><strong>Recommendations</strong> <ul><li>In order to obtain the optimum reporting quality from Urchin, it is important to enable the Urchin Traffic Monitor (UTM), particularly if unique visitor information is desired. There are three basic steps required to use the UTM: <ol type="1"><li>Under the Settings tab of any Profile, select "Urchin Traffic Monitor (UTM)" as the Visitor Tracking Method. </li><li>Install the UTM sensor on each page that you want tracked with the highest accuracy. (If you do not use the UTM, pages will still be tracked, however, some actions such as reloads and use of the Back button will not be reported.) </li><li>Modify your webserver's logging behavior to activate cookies. </li></ol></li><li class="gap">If you intend to set up one or more Filters in conjunction with your profile, it is advisable to have more than one profile for that website or part thereof. We recommend having one profile that is the "master" -- it contains everything. If you wish, for example, to filter out spiders or robots, it's a good idea to put these filters in a second profile. This will allow you to compare the results of the filtered data profile to the master profile. </li></ul></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Working_with_Profiles.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

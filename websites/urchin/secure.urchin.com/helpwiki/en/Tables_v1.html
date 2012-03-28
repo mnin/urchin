@@ -1,0 +1,289 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Tables_v1.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Tables v1</strong> <p class="line867"><a href="https://secure.urchin.com/helpwiki/en/Data_API.html">API Table of Contents</a> <div><table><tbody><tr>  <td><p class="line891"><strong>Table ID</strong> </td>
+  <td><p class="line891"><strong>Dimension for query</strong> </td>
+  <td><p class="line891"><strong>Metrics for query</strong> </td>
+  <td><p class="line891"><strong>Description</strong> </td>
+</tr>
+<tr>  <td><p class="line862">1 </td>
+  <td><p class="line862">utm_source, utm_medium, utm_campaign, utm_term, request_stem </td>
+  <td><p class="line862"> pages, visits, transactions, revenue, responses, impressions, clicks, cost, goals1, goals2, goals3, goals4 </td>
+  <td><p class="line862">Marketing Campaign results </td>
+</tr>
+<tr>  <td><p class="line862">2 </td>
+  <td><p class="line862">   utm_source, utm_medium, utm_term, utm_content </td>
+  <td><p class="line862">pages, visits, transactions, revenue, responses, impressions, clicks, cost, goals1, goals2, goals3, goals4 </td>
+  <td><p class="line862">Marketing Keyword Conversion and Ad Version information </td>
+</tr>
+<tr>  <td><p class="line862">3 </td>
+  <td><p class="line862">  geo_country, geo_region, geo_city, geo_latitude, geo_longitude </td>
+  <td><p class="line862">pages, visits, transactions, revenue, goals1, goals2, goals3, goals4 </td>
+  <td><p class="line862">Visitor Geo Location information such as Country, Region, City, Latitude and Longitude </td>
+</tr>
+<tr>  <td><p class="line862"> 4 </td>
+  <td><p class="line862"> geo_organization </td>
+  <td><p class="line862">pages, visits, transactions, revenue, goals1, goals2, goals3, goals4 </td>
+  <td><p class="line862">Visitor Organization information. </td>
+</tr>
+<tr>  <td><p class="line862">5 </td>
+  <td><p class="line862">  domain_complete, domain_primary </td>
+  <td><p class="line862">pages, visits, transactions, revenue, goals1, goals2, goals3, goals4 </td>
+  <td><p class="line862">metrics by ISP domain  determined by user IP address </td>
+</tr>
+<tr>  <td><p class="line862">6 </td>
+  <td><p class="line862">  utm_language </td>
+  <td><p class="line862">pages, visits, transactions, revenue, goals1, goals2, goals3, goals4 </td>
+  <td><p class="line862">metrics by browser language code setting. </td>
+</tr>
+<tr>  <td><p class="line862">7 </td>
+  <td><p class="line862">  browser_base, browser_version, platform_base, platform_version, geo_connection_speed </td>
+  <td><p class="line862">visits </td>
+  <td><p class="line862">Browser, Platform and Visitor Connection Speed information. </td>
+</tr>
+<tr>  <td><p class="line862">8 </td>
+  <td><p class="line862">  utm_screen_resolution, utm_screen_colors, utm_java_enabled, utm_js_version, utm_flash_version </td>
+  <td><p class="line862">visits </td>
+  <td><p class="line862">Screen resolution and color depth, Javascript and Flash version for visitor. </td>
+</tr>
+<tr>  <td><p class="line862">9 </td>
+  <td><p class="line862">  username </td>
+  <td><p class="line862">pages, visits, transactions, revenue, goals1, goals2, goals3, goals4 </td>
+  <td><p class="line862">        metrics by username (if any) </td>
+</tr>
+<tr>  <td><p class="line862">10 </td>
+  <td><p class="line862"> user_defined_variable </td>
+  <td><p class="line862">pages, visits, transactions, revenue, goals1, goals2, goals3, goals4 </td>
+  <td><p class="line862">metrics by arbitrary segment variable value </td>
+</tr>
+<tr>  <td><p class="line862">11 </td>
+  <td><p class="line862"> visitor_type </td>
+  <td><p class="line862">pages, visits, transactions, revenue, goals1, goals2, goals3, goals4 </td>
+  <td><p class="line862"> New and Returning visitors. </td>
+</tr>
+<tr>  <td><p class="line862">12 </td>
+  <td><p class="line862"> request_stem, utm_page_title </td>
+  <td><p class="line862">pages, entrancepages, exitpages, bouncepages, pagetime, visits, score </td>
+  <td><p class="line862">Pages &amp; Files </td>
+</tr>
+<tr>  <td><p class="line862">13 </td>
+  <td><p class="line862"> request_stem, request_query </td>
+  <td><p class="line862">pages </td>
+  <td><p class="line862">    Pages &amp; Files </td>
+</tr>
+<tr>  <td><p class="line862">14 </td>
+  <td><p class="line862"> clickthru_page_from, clickthru_page_to </td>
+  <td><p class="line862">pages, transactions, revenue, goals1, goals2, goals3, goals4 </td>
+  <td><p class="line862">Goals &amp; Funnel Process information </td>
+</tr>
+<tr>  <td><p class="line862">15 </td>
+  <td><p class="line862"> initial_path_page1, initial_path_page2, initial_path_page3 </td>
+  <td><p class="line862">visits, transactions, revenue, goals1, goals2, goals3, goals4 </td>
+  <td><p class="line862">Goals &amp; Funnel Process information </td>
+</tr>
+<tr>  <td><p class="line862">16 </td>
+  <td><p class="line862"> goal_clickthru_entrance_page, goal_clickthru_exit_page </td>
+  <td><p class="line862">visits </td>
+  <td><p class="line862"> Defined Funnel Navigation information </td>
+</tr>
+<tr>  <td><p class="line862">17 </td>
+  <td><p class="line862"> rev_goal_path, rev_goal_path_page1, rev_goal_path_page2, rev_goal_path_page3 </td>
+  <td><p class="line862">goals1, goals2, goals3, goals4 </td>
+  <td><p class="line862">Reverse Goal Path information </td>
+</tr>
+<tr>  <td><p class="line862">18 </td>
+  <td><p class="line862"> utm_campaign_goal </td>
+  <td><p class="line862">goals1, goals2, goals3, goals4 </td>
+  <td><p class="line862">Goal Tracking information </td>
+</tr>
+<tr>  <td><p class="line862">19 </td>
+  <td><p class="line862"> utm_term, utm_campaign_hour </td>
+  <td><p class="line862">transactions, revenue, responses, goals1, goals2, goals3, goals4 </td>
+  <td><p class="line862">Goal Conversion information </td>
+</tr>
+<tr>  <td><p class="line862">20 </td>
+  <td><p class="line862"> ecommerce_bill_country, ecommerce_bill_region, ecommerce_bill_city </td>
+  <td><p class="line862">transactions, revenue </td>
+  <td><p class="line862">Billing information for e-commerce transactions </td>
+</tr>
+<tr>  <td><p class="line862">21 </td>
+  <td><p class="line862"> ecommerce_affiliation </td>
+  <td><p class="line862">transactions, revenue </td>
+  <td><p class="line862">affiliate marketing information for e-commerce transactions </td>
+</tr>
+<tr>  <td><p class="line862">22 </td>
+  <td><p class="line862"> ecommerce_product_name, ecommerce_product_code, ecommerce_variation </td>
+  <td><p class="line862">transactions, items, itemrevenue </td>
+  <td><p class="line862">Product information for e-commerce transactions </td>
+</tr>
+<tr>  <td><p class="line862">23 </td>
+  <td><p class="line862"> ecommerce_product_name, ecommerce_bill_country, ecommerce_bill_region, ecommerce_bill_city </td>
+  <td><p class="line862">transactions, items, itemrevenue </td>
+  <td><p class="line862">Product City,Region,Country Correlation information for e-commerce transactions </td>
+</tr>
+<tr>  <td><p class="line862">24 </td>
+  <td><p class="line862"> ecommerce_product_name, utm_source, utm_medium, utm_term </td>
+  <td><p class="line862">transactions, items, itemrevenue </td>
+  <td><p class="line862">Product Keyword, Source, Medium Correlation and Referring Sources informations for e-commerce transactions. </td>
+</tr>
+<tr>  <td><p class="line862">25 </td>
+  <td><p class="line862"> utm_request_hostname </td>
+  <td><p class="line862">pages </td>
+  <td><p class="line862">Host names of the compaign hit. </td>
+</tr>
+<tr>  <td><p class="line862">26 </td>
+  <td><p class="line862"> domain_complete, domain_primary, client_ipaddress </td>
+  <td><p class="line862">hits, bytes </td>
+  <td><p class="line862">ISP domain information determined by user IP address; number of hits and  bytes transferred. </td>
+</tr>
+<tr>  <td><p class="line862">27 </td>
+  <td><p class="line862"> browser_base, browser_version, platform_base, platform_version, geo_connection_speed </td>
+  <td><p class="line862">hits, bytes </td>
+  <td><p class="line862"> Browser, Platform, Visitor Connection Speed, hits and bytes transferred. </td>
+</tr>
+<tr>  <td><p class="line862">28 </td>
+  <td><p class="line862"> username </td>
+  <td><p class="line862">validhits, bytes </td>
+  <td><p class="line862">visitors by username (if any), number of  successful hits and bytes transferred. </td>
+</tr>
+<tr>  <td><p class="line862">29 </td>
+  <td><p class="line862"> request_origfilepath, request_origmime </td>
+  <td><p class="line862">validhits, bytes </td>
+  <td><p class="line862"> Pages &amp; Files; number of successful hits, and number of bytes transferred. </td>
+</tr>
+<tr>  <td><p class="line862">30 </td>
+  <td><p class="line862"> request_download </td>
+  <td><p class="line862">validhits, bytes </td>
+  <td><p class="line862">list of download requests </td>
+</tr>
+<tr>  <td><p class="line862">31 </td>
+  <td><p class="line862"> request_form </td>
+  <td><p class="line862">validhits </td>
+  <td><p class="line862">list of requested "posted form". </td>
+</tr>
+<tr>  <td><p class="line862">32 </td>
+  <td><p class="line862"> sc_status </td>
+  <td><p class="line862">hits </td>
+  <td><p class="line862">return status codes from server </td>
+</tr>
+<tr>  <td><p class="line862">33 </td>
+  <td><p class="line862"> sc_status, request_origfilepath, referral_host, referral_stem, username </td>
+  <td><p class="line862">errorhits </td>
+  <td><p class="line862">Referral Errors information. </td>
+</tr>
+<tr>  <td><p class="line862">34 </td>
+  <td><p class="line862"> robot_agent, cs_useragent </td>
+  <td><p class="line862">validhits, errorhits, bytes </td>
+  <td><p class="line862">robot information. </td>
+</tr>
+<tr>  <td><p class="line862">35 </td>
+  <td><p class="line862"> robot_agent, cs_useragent, request_origfilepath </td>
+  <td><p class="line862">hits </td>
+  <td><p class="line862">robot Content information </td>
+</tr>
+<tr>  <td><p class="line862">36 </td>
+  <td><p class="line862"> log_source_name </td>
+  <td><p class="line862">hits, bytes </td>
+  <td><p class="line862">list of log source assigned to profile and their information </td>
+</tr>
+<tr>  <td><p class="line862">37 </td>
+  <td><p class="line862"> utm_campaign, cpc_account, cpc_campaign, cpc_adgroup, cpc_keyword </td>
+  <td><p class="line862"> pages, visits, transactions, revenue, responses, impressions, clicks, cost, goals1, goals2, goals3, goals4 </td>
+  <td><p class="line862"> Advertiser information for UTM campaign </td>
+</tr>
+<tr>  <td><p class="line862">38 </td>
+  <td><p class="line862"> utm_term, cpc_account, cpc_campaign, cpc_adgroup, cpc_keyword </td>
+  <td><p class="line862"> pages, visits, transactions, revenue, responses, impressions, clicks, cost, goals1, goals2, goals3, goals4 </td>
+  <td><p class="line862"> Advertiser information for UTM term (keyword) </td>
+</tr>
+<tr>  <td><p class="line862">39 </td>
+  <td><p class="line862"> utm_source, utm_medium, utm_campaign, utm_term,utm_content </td>
+  <td><p class="line862"> pages, visits, transactions, revenue, responses, impressions, clicks, cost, goals1, goals2, goals3, goals4 </td>
+  <td><p class="line862"> ROI reports information </td>
+</tr>
+<tr>  <td><p class="line862">256 </td>
+  <td><p class="line862"> visitor_id </td>
+  <td><p class="line862">pages, visits, visitors, transactions, revenue, goals1, goals2, goals3, goals4 </td>
+  <td><p class="line862">metrics by visitor id </td>
+</tr>
+<tr>  <td><p class="line862">257 </td>
+  <td><p class="line862"> transaction_id </td>
+  <td><p class="line862">transactions, revenue, tax, shipping, items </td>
+  <td><p class="line862">metrics by transaction id </td>
+</tr>
+<tr>  <td><p class="line862">258 </td>
+  <td><p class="line862">        totals, month, day, hour </td>
+  <td><p class="line862">hits, validhits, errorhits, bytes, pages, nonpages, entrancepages, exitpages, bouncepages, pagetime, visits, visitors, newvisitors, priorvisitors, transactions, customers, newcustomers, priorcustomers, revenue, tax, shipping, items, itemrevenue, responses, impressions, clicks, cost, goals1, goals2, goals3, goals4, goalstarts1, goalstarts2, goalstarts3, avgsessiontime </td>
+  <td><p class="line862">aggregates by period (for example monthly, daily, hourly totals). </td>
+</tr>
+</tbody></table></div></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Tables_v1.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from ezxml.sourceforge.net/ by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:42 GMT -->
+<head><title>ezXML</title></head>
+  <body>
+    <h1>ezXML - XML Parsing C Library</h1>
+    <h3>version 0.8.6</h3>
+    <p>
+      ezXML is a C library for parsing XML documents inspired by
+      <a href="http://www.php.net/SimpleXML">simpleXML</a> for
+      PHP. As the name implies, it's easy to use. It's ideal for parsing XML
+      configuration files or REST web service responses. It's also fast and
+      lightweight (less than 20k compiled). The latest version is available
+      here:
+      <a href="http://prdownloads.sourceforge.net/ezxml/ezxml-0.8.6.tar.gz?download"
+	 >ezxml-0.8.6.tar.gz</a>
+    </p>
+
+    <b>Example Usage</b>
+    <p>
+      Given the following example XML document:
+    </p>
+    <code>
+      &lt;?xml version="1.0"?&gt;<br />
+      &lt;formula1&gt;<br />
+      &nbsp;&nbsp;&lt;team name="McLaren"&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;driver&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;name&gt;Kimi
+      Raikkonen&lt;/name&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;points&gt;112&lt;/points&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;/driver&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;driver&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;name&gt;Juan Pablo
+      Montoya&lt;/name&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;points&gt;60&lt;/points&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;/driver&gt;<br />
+      &nbsp;&nbsp;&lt;/team&gt;<br />
+      &lt;/formula1&gt;
+    </code>
+    <p>
+      This code snippet prints out a list of drivers, which team they drive for,
+      and how many championship points they have:
+    </p>
+    <code>
+      ezxml_t f1 = ezxml_parse_file("formula1.xml"), team, driver;<br />
+      const char *teamname;<br />
+      &nbsp;<br />
+      for (team = ezxml_child(f1, "team"); team; team = team->next) {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;teamname = ezxml_attr(team, "name");<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;for (driver = ezxml_child(team, "driver"); driver;
+      driver = driver->next) {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("%s, %s: %s\n",
+      ezxml_child(driver, "name")->txt, teamname,<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;ezxml_child(driver, "points")->txt);<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+      }<br />
+      ezxml_free(f1);
+    </code>
+    <p>
+      Alternately, the following would print out the name of the second driver
+      of the first team:
+    </p>
+    <code>
+      ezxml_t f1 = ezxml_parse_file("formula1.xml");<br />
+      &nbsp;<br />
+      printf("%s\n", ezxml_get(f1, "team", 0, "driver", 1, "name", -1)->txt);
+      <br />ezxml_free(f1);
+    </code>
+    <p>
+      The -1 indicates the end of the argument list. That's pretty much all
+      there is to it. Complete API documentation can be found in ezxml.h.
+    </p>
+
+    <b>Known Limitations</b>
+    <ul>
+      <li>
+	ezXML is not a validating parser.
+	<br />&nbsp;
+      </li>
+      <li>
+	Loads the entire XML document into memory at once and does not allow for
+	documents to be passed in a chunk at a time. Large XML files can still
+	be handled though through <code>ezxml_parse_file()</code> and 
+	<code>ezxml_parse_fd()</code>, which use mmap to map the file to a
+	virtual address space and rely on the virtual memory system to page in
+	data as needed.
+	<br />&nbsp;
+      </li>
+      <li>
+	Does not currently recognize all possible well-formedness errors. It
+	should correctly handle all well-formed XML documents and will either
+	ignore or halt XML processing on well-formedness errors. More
+	well-formedness checking will be added in subsiquent releases.
+	<br />&nbsp;
+      </li>
+      <li>
+	In making the character content of tags easy to access, there is no
+	way provided to keep track of the location of sub tags relative to the
+	character data. Example:
+	<p>
+	  <code>&lt;doc&gt;line one&lt;br/&gt;<br />line two&lt;/doc&gt;</code>
+	</p>
+	<p>
+	  The character content of the doc tag is reported as
+	  <code>"line one\nline two"</code>, and <code>&lt;br/&gt;</code> is
+	  reported as a sub tag, but the location of <code>&lt;br/&gt;</code>
+	  within the character data is not. The function
+	  <code>ezxml_toxml()</code> will convert an ezXML structure back to XML
+	  with sub tag locations intact.
+	</p>
+      </li>
+    </ul>
+    
+    <b>Licensing</b>
+    <p>
+      ezXML was written by Aaron Voisine and is distributed under the terms of
+      the <a href="http://ezxml.sourceforge.net/license.txt">MIT license</a>.&nbsp;&nbsp;
+<a href="http://sourceforge.net/donate/index.php?group_id=122291"><img align="center" src="http://images.sourceforge.net/images/project-support.jpg" width="88" height="32" border="0" alt="Support This Project" /> </a>
+    </p>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-7884597402659300";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text_image";
+google_ad_channel ="1678066015";
+google_page_url = document.location;
+google_color_border = "FFFFFF";
+google_color_link = "0000FF";
+google_color_bg = "FFFFFF";
+google_color_text = "000000";
+google_color_url = "008000";
+//--></script>
+<iframe src="#" style="width:728px;height:0px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0">
+</iframe>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<p>
+<table border="0" width="75%">
+<tr>
+<td valign="top">
+    <a href="http://sf.net/projects/ezxml"><img src="http://sourceforge.net/sflogo.php?group_id=122291&amp;type=5" border="0" alt="SourceForge.net Logo" /></a>
+</td>
+
+<td>
+<iframe src="http://rcm.amazon.com/e/cm?t=replaylink-20&amp;o=1&amp;p=8&amp;l=as1&amp;asins=0596007647&amp;fc1=000000&amp;IS2=1&amp;lt1=_blank&amp;lc1=0000ff&amp;bc1=000000&amp;bg1=ffffff&amp;f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+</td>
+<td>
+<iframe src="http://rcm.amazon.com/e/cm?t=replaylink-20&amp;o=1&amp;p=8&amp;l=as1&amp;asins=0596004206&amp;fc1=000000&amp;IS2=1&amp;lt1=_blank&amp;lc1=0000ff&amp;bc1=000000&amp;bg1=ffffff&amp;f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+</td>
+<td>
+<iframe src="http://rcm.amazon.com/e/cm?t=replaylink-20&amp;o=1&amp;p=8&amp;l=as1&amp;asins=0764570773&amp;fc1=000000&amp;IS2=1&amp;lt1=_blank&amp;lc1=0000ff&amp;bc1=000000&amp;bg1=ffffff&amp;f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+</p>
+</td>
+</tr>
+</table>
+  </body>
+
+<!-- Mirrored from ezxml.sourceforge.net/ by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:42 GMT -->
+</html>

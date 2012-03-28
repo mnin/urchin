@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/My_site_has_multiple_domain_names._How_do_I_set_up_tracking%253F.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>My site has multiple domain names. How do I set up tracking?</strong> <p class="line874">If your site uses a secure shopping cart located on a different root domain (eg., www.mystore.com and www.securecart.com), or employs multiple domain aliases to point to the same content, you will need to make certain changes to ensure that your sites and the UTM are compatible. <ul><li style="list-style-type:none">Please note that there is a difference between multiple subdomains and multiple root domains. www.example.com and securecart.example.com are examples of multiple subdomains, while www.example.com and www.sample.com represent multiple root domains. If your site has multiple subdomains, please see: How do I track all of the subdomains for my site in one profile? How do I track all of the subdomains for my site in separate profiles? for configuration information. </li></ul><p class="line867"><strong>Multiple Domain Names: Secure Stores</strong> <p class="line862">If your site uses multiple root domain names (eg., www.mystore.com, www.securecart.com), please read <a href="https://secure.urchin.com/helpwiki/en/My_shopping_cart_has_a_different_domain_name_than_my_store_site._How_do_I_set_up_e-commerce_tracking%253F.html">My shopping cart has a different domain name than my store site. How do I set up e-commerce tracking?</a> <p class="line867"><strong>Multiple Domain Names: Domain Aliases</strong> <p class="line874">If your site employs multiple domain aliases, it is recommended that you redirect traffic from the aliases to the primary site. This will ensure that the UTM visitor tracking is getting set under the primary domain and that all visitors are tracked consistently. <p class="line874">The following instructions provides an example of how to redirect aliased domains to the primary domain in Apache and IIS servers. <p class="line867"><strong>Redirecting Aliases in Apache</strong> <ul><li style="list-style-type:none"><p class="line862">If you are using an Apache webserver, the configuration can be easily modified to redirect all traffic originating under one of the aliases to the primary site. One way to do this is to create two VirtualHost entries. The first will be the primary domain which will include your normal configuration; the second VirtualHost will be for all the aliases and will redirect to the primary: </li></ul><p class="line867"><pre>        #---primary virtualhost
+        Servername www.mysite.com
+        Serveralias mysite.com
+        ...
+        #---second virtualhost
+        Servername mysite.org
+        Serveralias www.mysite.org mysite.net www.mysite.net
+        RewriteEngine on
+        RewriteRule ^(.*) http://www.mysite.com$1 [R=301]
+</pre><ul><li style="list-style-type:none"><p class="line862">The second VirtualHost uses a rewrite rule with a 301 (Moved Permanently) redirect code to forward all traffic to the original site. At this point, as far as the UTM is concerned, the site appears to be a one domain site and is ready for normal UTM installation. </li></ul><p class="line867"><strong>Redirecting Aliases in IIS</strong> <ul><li style="list-style-type:none">If you are using a Microsoft IIS webserver, the configuration can be easily modified to redirect all traffic originating under one of the aliases to the primary site. One way to do this is to create two websites in the IIS configuration. The first will be the primary domain (www.mysite.com) which will include your normal configuration; the second will be for all other aliases (mysite.net, mysite.org, etc) and will redirect to the primary. In the IIS Manager, right click on one of the websites and bring up the properties dialog. On the "Web Site" tab, click the "Advanced..." button. This brings up the window where additional domains can be assigned to the website using the "Host Header" field. Set the primary domain in the primary website, and use the second website to house all of the aliases. Once the second website housing all of the aliases is configured and enabled, create a blank homepage with the following redirect code: </li></ul><p class="line867"><pre>        &lt;META HTTP-EQUIV=Refresh CONTENT="0; URL=http://www.mysite.com/"&gt;
+</pre><ul><li style="list-style-type:none">This will instruct the visitor's browser to immediately redirect to the primary URL. At this point, the primary website appears to be a simple one-domain configuration, and normal UTM installation can proceed with default settings. </li></ul></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/My_site_has_multiple_domain_names._How_do_I_set_up_tracking%253F.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

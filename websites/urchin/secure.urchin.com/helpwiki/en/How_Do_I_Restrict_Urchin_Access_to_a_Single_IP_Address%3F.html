@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/How_Do_I_Restrict_Urchin_Access_to_a_Single_IP_Address%253F.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>How Do I Restrict Urchin Access to a Single IP Address?</strong> <p class="line867"><strong>Overview</strong> <p class="line874">On a system that has multiple network interfaces or has several IP addresses bound to a single network interface, the default behavior is for the Urchin web interface to bind to all configured IP addresses. However, may be desirable to configure Urchin to restrict administration and reporting to a single IP address. <p class="line867"><strong>Procedure</strong> <p class="line874">Restricting Urchin admin/reporting requires a simple change to the configuration file that the Urchin Apache webserver uses. Please follow these steps: <p class="line867"><strong>For UNIX-type systems:</strong> <ul><li>Open a command shell as the user that Urchin runs as </li><li>"cd" to the directory where Urchin is installed </li><li>Stop the Urchin webserver with the command: "bin/urchinctl -w stop" </li><li>Using a text editor, open the "urchinwebd.conf.template" file in the "var" directory of the Urchin distribution </li><li><p class="line862">Above the &lt;Directory /&gt; line, insert the line </li></ul><p class="line867"><pre>       Listen XXX.XXX.XXX.XXX:port
+</pre><ul><li style="list-style-type:none">where "XXX.XXX.XXX.XXX" and "port" are the IP address and port number to which you want Urchin restricted. </li></ul><ul><li>Restart the Urchin webserver with the command:  </li></ul><p class="line867"><pre>bin/urchinctl -w start
+</pre><p class="line867"><strong>For Windows systems:</strong> <ul><li><p class="line862">Stop the Urchin Services: "Start-&gt;Programs-&gt;Urchin 6-&gt;Disable Urchin Services" </li><li>Open Windows Explorer and navigate to "C:\Program Files\Urchin6\var" </li><li>Using a text editor, open the "urchinwebd.conf.template" file </li><li><p class="line862">Above the &lt;Directory /&gt; line, insert the line </li></ul><p class="line867"><pre>       Listen XXX.XXX.XXX.XXX:port
+</pre><ul><li style="list-style-type:none">where "XXX.XXX.XXX.XXX" and "port" are the IP address and port number to which you want Urchin restricted.  </li></ul><ul><li><p class="line862">Restart the Urchin Services: "Start-&gt;Programs-&gt;Urchin 6-&gt;Enable Urchin Services" </li></ul><p class="line867"><strong>Important Note:</strong> Due to the use of socket pooling in IIS 5 and later, it may be necessary to disable the default behavior of IIS to share sockets on for all websites bound to a particular port, regardless of what actual IP address has been configured. This will be typical in environments where virtual hosts are used, and you wish to set up Urchin reporting on port 80 for a specific virtual host. <p class="line867"><strong>Considerations</strong> <ul><li>This technique only works to restrict Urchin admin/reporting to a specific IP-address. You cannot restrict access to name-based virtual hosts. </li><li>Upgrades to Urchin will overwrite the "urchinwebd.conf.template" file after saving a backup copy. You will need to re-apply any edits you've made to that file after an upgrade.  </li></ul></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/How_Do_I_Restrict_Urchin_Access_to_a_Single_IP_Address%253F.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

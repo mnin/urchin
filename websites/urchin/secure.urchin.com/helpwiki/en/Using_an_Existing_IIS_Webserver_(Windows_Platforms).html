@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Using_an_Existing_IIS_Webserver_(Windows_Platforms).html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong> Using an Existing IIS Webserver (Windows Platforms) </strong> <p class="line874">By default, Urchin administration and reporting are done using a standalone Apache server that is bundled with the Urchin product. In the vast majority of Urchin installations, this is the preferred method for delivering Urchin admin and reporting interfaces. However, in rare instances it may be necessary to utilize an existing IIS webserver. This may be due to site requirements that disallow the use of a third party webserver product on the server, or the need to set up Urchin reporting as a virtual host on an existing IIS server. <p class="line867"><strong>DISCLAIMER: These modifications to the Urchin installation are unsupported.</strong> <p class="line867"><strong>Procedure</strong> <p class="line867"><strong>Note:</strong> this procedure assumes that Urchin has been installed in the default location of C:\Program Files\Urchin. If you have installed Urchin elsewhere, please be sure to substitute the proper location in the example below. <p class="line874">Step 1: Create a new user for the Urchin web interface <ul><li><p class="line862">Go to "Administrative Tools" -&gt; "Computer Management" </li><li>On the left hand side of the Computer Management screen, click "Local Users and Groups" </li><li>Right-click on the Users folder and select "New User..." </li><li>Enter "IUSR_URCHIN" in the "User name:" field </li><li>Uncheck the "User must change password at next logon" box </li><li>Check the "User cannot change password" box </li><li>Click "Create" and then "Close" </li><li>Double click on the"Users" folder on the left </li><li>Right-click on the IUSR_URCHIN on the right and select "Properties..." </li><li>Under the "Member of" tab, remove all existing entries, and then click the "Add.." button and choose "Guests" in the popup window, and click "Add" again, then click "OK" </li><li>Click "Apply" and "Close" to save your changes </li></ul><p class="line874">Step 2: Install Urchin (if not already done) <p class="line874">Step 3: Disable the Urchin Apache web server <ol type="1"><li><p class="line862">Go to "Administrative Tools" -&gt; "Services" </li><li>Under "Services" find the "Urchin Webserver" record </li><li>Right click on "Urchin Webserver" and select "Stop" </li><li>Right click on "Urchin Webserver" and select "Properties", then change the Startup type" to "Disabled" </li><li>Click "OK" </li></ol><p class="line862">Step 4: Add a new web site to IIS. Go to "Administrative Tools" -&gt; "Internet Information Services (IIS) Manager" <ol type="1"><li>Right-click on "Web Sites" </li><li>In the "Description:" field type "Urchin" and click Next </li><li>Select the IP address and port number (typically 9999) and click Next </li><li>In the "Path:" field browse to the location where Urchin is installed (typically C:\Program Files\Urchin\htdocs) and click Next </li><li>Add a check mark in "Execute:" and click Next and then Finish </li><li>Right-click on the new Urchin web site and go to "Properties" <ol type="1"><li>Under the "Web Site" tab, un-check "Enable Logging" </li><li>Click on the "Home Directory" tab and check "Script source access" </li><li>Click on the "Documents" tab and Remove both Default entries, then click Add and enter "session.cgi" in the popup window, then click OK. </li><li>Click on the "Directory Security" tab, and then click Edit in the "Authentication and Access control" area. Ensure that the "Anonymous access" box is checked, then click Edit... to change the "Account used for anonymous access". In the pop-up window, select "IUSR_URCHIN" for the Username. Click OK and then OK again to get back to the Properties window. </li><li>Click OK to save your changes and exit the Properties window </li></ol></li></ol><p class="line874">Step 5: Set up directory permissions 1. Right click on "Start" and select "Explore" <ol type="1"><li>Navigate to the location where Urchin is installed (typically C:\Program Files\Urchin) </li><li>Right click on the "Urchin" folder and select "Properties" </li><li>Click on the "Security" tab </li><li>Click "Advanced" button. Un-check "Allow inheritable permissions from parent to propagate to this object" and then click "Remove" in the pop-up window. </li><li>Click "Add" and select the Administrator user and then click "Add" </li><li>Click "Add" and select IUSR_URCHIN and then click "Add" </li><li>In the "Name:" field ensure that only the Administrator and IUSR_URCHIN entries are there </li><li><p class="line862">Grant write permissions to the &lt;urchin_home&gt;\var folder  </li><li><p class="line862">Return to Preferences=&gt;Security and ensure that the following permissions are allowed for IUSR_URCHIN user: <ul><li><p class="line862">Read &amp; Execute </li><li>List Folder Contents </li><li>Read </li><li style="list-style-type:none">Note: Leave the default full permissions for SYSTEM </li></ul></li><li>Click OK to save the permissions. </li><li> Click into the "Urchin" folder in the Windows Explorer window. </li><li> Right click on the "data" folder and select "Properties" </li><li> Click on the "Security" tab. </li><li> Click Advanced. Un-check "Allow inheritable permissions from parent to propagate to this object" and then click "Remove" in the pop-up window. </li><li> Click "Add" and select the Administrator user and then click "Add" </li><li> Click "Add" and select IUSR_URCHIN and then click "Add" </li><li> In the "Name:" field ensure that only the Administrator and IUSR_URCHIN entries are there </li><li><p class="line862">Return to Preferences=&gt;Security and ensure that the following permissions are allowed for both the Administrator and IUSR_URCHIN users: <ul><li>Full Control </li><li>Modify </li><li><p class="line862">Read &amp; Execute </li><li>List Folder Contents </li><li>Read </li><li>Write </li></ul></li><li> Click "OK" </li></ol><p class="line874">Step 6: IIS 6 only. Go to the "Web Service Extentions Manager" <ol type="1"><li>Click on 'Add new web service extention..' </li><li>Enter "Urchin CGI" in the "Extention Name:" </li><li>Click 'Add' </li><li>Browse to and highlight report.cgi and session.cgi (By default, only *.dll files are shown so you will need to change the filter to display "All files") <ul><li>Default location: C:\Program Files\Urchin\htdocs </li></ul></li><li>Check "Set Extention Status to Allow" </li><li>Click "OK" </li><li>Go to the main IIS entry for your server: "Hostname" </li><li>Right click and select "Properties" </li><li>Click on "Mime Types" </li><li> Click "New" </li><li> Enter ".cgi" in the "Extention:" field. </li><li> Enter "application/octet-stream" in the "Mime Type" field. </li><li> Click "OK" </li><li> Click "OK" </li></ol><p class="line874">Your IIS webserver should now be set up to call the Urchin web interface if you connect to it using the URL ofhttp://my.server.com:port, whereportis what you set Urchin to use when you installed it (default is 9999). <p class="line867"><strong>Using an Existing IIS Webserver for Urchin Data API web services (Urchin 6.6+)</strong> <p class="line862">The Urchin Data API web services (Urchin 6.6+) are bundled with an IIS module that can be deployed and configured to handle requests to the Urchin Data API. To configure the Data API under IIS Webserver, please refer to <a href="https://secure.urchin.com/helpwiki/en/Can_I_integrate_the_Urchin_Data_API_with_IIS%253F.html">Can I integrate the Urchin Data API with IIS?</a>. </div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Using_an_Existing_IIS_Webserver_(Windows_Platforms).html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

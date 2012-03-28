@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/CPC_Data_Import_Utilities.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>CPC Data Import Utilities (Urchin 6.5+)</strong> <p class="line874">Urchin 6.5 includes new utilities for working with CPC data. <p class="line867"><strong>urchincpc</strong> - The Urchin CPC Data Importing tool extracts CPC data through the Google Ad<tt class="backtick"></tt>Words and Yahoo! Search Marketing API for further processing and reporting. <ul><li><p class="line891"><strong>Note:</strong> Archived CPC data downloaded from Ad<tt class="backtick"></tt>Words may not exceed 250MB (Urchin 6.501+). </li></ul><p class="line867"><strong>urchincpcd</strong> - The Urchin CPC Source Scheduler (or simply CPC Scheduler) is used to schedule CPC download tasks based on a user defined schedule (similar to the Profile Scheduler). <p class="line874">The CPC Scheduler (urchincpcd) runs on a local host along with the Urchin Master Scheduler (urchind). The Master Scheduler is required to be up and running in order for CPC Sources to be scheduled. The CPC Scheduler periodically checks the queue for CPC data download tasks and controls their execution. <p class="line874">The CPC Importing Tool (urchincpc) is automatically started if there are any scheduled tasks. The CPC Scheduler spawns worker processes internally, however, you can call them directly via the command line to start executing any tasks that are available in queue. <p class="line874">Downloaded CPC data is stored locally at /path/to/urchin/data/cpc/ and is automatically picked up by the Urchin engine during processing of the linked profiles. <p class="line874">The Urchin CPC Scheduler is managed by the urchinctl utility. To exclusively address the CPC Source Scheduler, use the "-c" option. For example, <p class="line867"><pre>urchinctl -c start/stop/restart
+</pre><p class="line874">will start/stop/restart only the CPC Scheduler. <p class="line867"><img alt="CPC_Data_Import" src="https://secure.urchin.com/helpwiki/images/CPC_Data_Import.jpg" title="CPC_Data_Import" /> <p class="line862">To schedule an immediate download of CPC data, go to Configuration-&gt;CPC Source Manager-&gt; Download or Edit -&gt; Schedule tab for a particular CPC Source and click the Download Now button. Note that CPC Scheduler must be up and running to process the request. <p class="line867"><strong>Usage:  CPC Scheduler - urchincpcd</strong> <p class="line874">The CPC Scheduler is available in bin folder of your Urchin 6.5+ installation. The following options are available via the command line: <ul><li><p class="line891"><strong>-d</strong> enables debug mode. More debug information is logged into output, on Windows works with -console only, e.g. <ul><li style="list-style-type:none"><pre>           urchincpcd.exe -console -d
+    </pre></li></ul></li><li><p class="line891"><strong>-h</strong> prints help information and exits </li><li><p class="line891"><strong>-v</strong> prints version number and exits </li></ul><p class="line874">For Windows, provide one of the following commands as a first argument: <ul><li><p class="line891"><strong>-install</strong>       to install the CPC scheduler Windows service </li><li><p class="line891"><strong>-remove</strong>     to remove the CPC Scheduler Windows service </li><li><p class="line891"><strong>-start</strong>        to start the CPC Scheduler Windows service </li><li><p class="line891"><strong>-stop</strong>         to stop the CPC Scheduler Windows service </li><li><p class="line891"><strong>-console</strong>     to start the CPC Scheduler in console mode </li></ul><p class="line867"><strong>Usage: CPC Importing Tool - urchincpc</strong> <p class="line874">The following options are available via the command line: <ul><li><p class="line891"><strong>-c [id]</strong>     download the specified cost source, "id" is the CPC source ID </li><li><p class="line891"><strong>-d</strong>           enables debug mode </li><li><p class="line891"><strong>-h</strong>           prints help information and exits </li><li><p class="line891"><strong>-v</strong>           prints version number and exits </li></ul><p class="line874">Please note that if the CPC Scheduler is started without parameters or with only the -d option, it starts processing any tasks that are available in the queue and exits once there are no tasks to process. <p class="line867"><strong>Downloading CPC Data via proxy (6.501+)</strong> <p class="line862">To enable CPC Data downloading via proxy, edit the urchin.conf file, uncomment the Web<tt class="backtick"></tt>Service<tt class="backtick"></tt>Proxy<tt class="backtick"></tt>Host, Web<tt class="backtick"></tt>Service<tt class="backtick"></tt>Proxy<tt class="backtick"></tt>Port, Web<tt class="backtick"></tt>Service<tt class="backtick"></tt>Proxy<tt class="backtick"></tt>Username, and Web<tt class="backtick"></tt>Service<tt class="backtick"></tt>Proxy<tt class="backtick"></tt>Password entries, and provide the desired values. <p class="line867"><pre> ######################################################
+# CPC Source Manager Settings
+#...
+# WebServiceProxyHost, WebServiceProxyHost: Host and port of the HTTP/HTTPS
+# proxy CPC Source Manager must use to access external CPC sources.
+# WebServiceProxyUsername, WebServiceProxyPassword: username and password for
+# proxy that enforces authorization.
+######################################################
+#WebServiceProxyHost: &lt;proxy host&gt;
+#WebServiceProxyPort: &lt;proxy port&gt;
+#WebServiceProxyUsername: &lt;username&gt;
+#WebServiceProxyPassword: &lt;password&gt;
+
+</pre><p class="line862">For WebServiceProxyHost, you can enter either an IP address or full domain name. </div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/CPC_Data_Import_Utilities.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

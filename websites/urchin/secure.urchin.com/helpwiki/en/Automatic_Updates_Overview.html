@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Automatic_Updates_Overview.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867">
+<h1 id="head-c35e8a70d61f6d0fbcf55e8f6aaf3924b51eb71f">Automatic Updates</h1>
+<p class="line867">
+<h3 id="head-e9e6d237ce0e1a32b2f7ba538f89d240638c2ff8">Overview</h3>
+<p class="line874">Urchin 7.000 (and later) supports automated updates for all Urchin components including the Urchin product, Help Articles and Geo database. <p class="line874">The main reasons for automated updates are: <ul><li><p class="line862">The AdWords Data API receives frequent updates; backwards compatibility is guaranteed only for limited period of time; </li><li>Urchin Embedded Help and Help Center documentation can now be updated independently from product releases. </li><li>Patches with critical bug fixes can be rolled out to Urchin users and seamlessly installed. </li></ul><p class="line867">
+<h3 id="head-e299cb5859f901e639ce1a930dd0bb25a3284d4a">How to Use the Automated Updates</h3>
+<p class="line862">By default, automated update is switched off. All auto updates settings can be configured on the tab "Global Settings-&gt;Auto Updates" and are available for super admin users only. <p class="line867"><img alt="Autoupdate_Help_Articles" src="https://secure.urchin.com/helpwiki/images/Autoupdate_Help_Articles.png" title="Autoupdate_Help_Articles" /> <p class="line874">To automatically upgrade the product from the web UI, set the updating interval. The Urchin scheduler checks for updates according to this interval. If updates are available, the user receives alerts in the Admin UI and is able to schedule a download of updates. Once the updates have been downloaded, the UI message is changed to "install now". <p class="line862">Clicking "install now" causes Urchin to automatically back itself up and upgrade to the latest version. If no updates are available,  the message <em>"Urchin is up to date: LAST_UPDATE_TIME"</em> is displayed. If any components require update, the message is changed to <em>"Updates available, <span class="u">view now</span>"</em>. "View now" is a link to the Autoupdates Scheduler Configuration tab. <p class="line867"><strong>Note:</strong> A Super Admin user is allowed to cancel the upgrade process. Upon "cancel", the downloaded packages are removed from the system and Urchin restores to its pre-upgrade state. <p class="line874">Every auto update activity that has been performed via the Auto Update Scheduler is displayed on the Auto Update History page. A summary of the updates is listed, which provides valuable information on each update. The Status field can be clicked to view the runtime detail for a previously run task. <p class="line867">
+<h3 id="head-420b70c5165f4eca4691ad7054f9d9d23b217fdd">Autoupdate Scheduler Configuration</h3>
+<p class="line874">The Autoupdate Scheduler Configuration is responsible for the actual scheduling and execution of Urchin component updates. From the Autoupdates Scheduler, you can add upgrade tasks to the list of Urchin events for repeated execution at nearly any interval desired. <p class="line874">The following upgrade frequencies are available: <ul><li>never </li><li>daily </li><li>monthly </li></ul><p class="line867">
+<h3 id="head-bfa668002f470d7c6dcda4dc27d03b7f7a84491d">Unattended upgrade</h3>
+<p class="line874">Automated updates can be configured in unattended mode for the following Urchin components: <ul><li>Help Articles </li><li>GEO database </li></ul><p class="line874">To enable silent upgrade, you must select the check box for the corresponding Urchin component. <p class="line867">
+<h3 id="head-6b0c2eebdfe42541add681b965579ddbadf6377b">Urchin Auto Update Recovery mode</h3>
+<p class="line874">In the event of an unhandled error during the upgrade (e.g. power outage), Urchin performs a rollback operation and restores itself to its pre-upgraded state. <p class="line867">
+<h3 id="head-ff4f4b7c05209cfd31d6f8e5095874c46c09fd63">Downloading Urchin updates via proxy</h3>
+<p class="line862">The automated update needs an internet connection to check for and download new updates. If your network topology includes a proxy server, you need to enable update downloading via proxy.   To enable it, navigate to the section "HTTP Proxy Settings" on the tab Settings-&gt;Global Settings-&gt;Auto Updates and provide values for the following settings: <ul><li>Proxy Server - Server name or IP Address running proxy server </li><li>Proxy Port - Port number of running proxy server </li><li>Proxy Username </li><li>Proxy Password </li></ul></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Automatic_Updates_Overview.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

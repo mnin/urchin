@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en"
+class="">
+
+<!-- Mirrored from support.google.com/urchin45/bin/answer.py?hl=en&answer=28466&ctx=cb&src=cb&cbid=-18o8ho0w95bxy&cbrank=3 by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:34:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<script type="text/javascript">serverResponseTimeDelta=window.external&&window.external.pageT?window.external.pageT:-1;pageStartTime=new Date().getTime();</script>
+<title>Filter Fields - Urchin Version 4 &amp; 5 Help</title>
+<meta charset="utf-8">
+<meta http-equiv="X-FRAME-Options" content="SameOrigin" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Overview
+When a hit or line in a log file is read during processing,
+the hit is broken down into
+&#39;Raw Fields&#39;.  Fields are generally separated by spaces,
+tabs, or commas.   Once the Raw Fields
+are re" />
+<link rel="canonical" href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28466" />
+<link rel="shortcut icon" href="http://www.google.com/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="resource/all799c.css?v=400_" />
+<style type="text/css">#gbar,#guser{font-size:13px;padding-right:8px;padding-top:4px !important;}#gbar{padding-left:8px;height:22px}#guser{padding-bottom:7px !important;text-align:right}.gbh,.gbd{border-top:1px solid #c9d7f1;font-size:1px}.gbh{height:0;position:absolute;top:24px;width:100%}@media all{.gb1{height:22px;margin-right:.5em;vertical-align:top}#gbar{float:left}}a.gb1,a.gb4{text-decoration:underline !important}a.gb1,a.gb4{color:#00c !important}.gbi .gb4{color:#dd8e27 !important}.gbf .gb4{color:#900 !important}</style>
+<script type="text/javascript">
+var internal = 0;
+var hc_protocol = "http://";
+var hc_host = "support.google.com";
+var hc_url_root = "/urchin45";
+var hc_page_info = "answer=28466";
+var track = function() {};
+var hc_urchin_enabled = true;
+var country = 'DE';
+var countryGroup = 'EMEA';
+var global_error_general = 'Sorry, we weren\x27t able to submit your information. Please try again.';
+var search_form_id = 'search-form';
+var hc_urchin = "UA-18001-2";
+var global_hc_bookmark = new Array("add","remove","toggle");
+global_hc_bookmark.add = new Array();
+global_hc_bookmark.remove = new Array();
+global_hc_bookmark.toggle = new Array();
+global_hc_bookmark["add"].url = "";
+global_hc_bookmark["add"].token = "";
+global_hc_bookmark["remove"].url = "";
+global_hc_bookmark["remove"].token = "";
+global_hc_bookmark["toggle"].url = "";
+global_hc_bookmark["toggle"].token = "";
+var hiddenZippyLists = '{"experiments": {"answerId": "28466", "zippiesString": "These instructions are optimized for your current system\x27s configuration. To view these instructions for another configuration, select the configuration:&nbsp;", "defaultValue": "", "hidePicker": "1", "validItems": {"0": "e0", "1": "e1", "2": "e2", "3": "e3", "4": "e4", "5": "e5"}}, "country": {"answerId": "28466", "zippiesString": "These instructions are optimized for your current system\x27s configuration. To view these instructions for another configuration, select the configuration:&nbsp;", "defaultValue": "DE", "hidePicker": "0", "validItems": {"AF": "Afghanistan", "AL": "Albania", "DZ": "Algeria", "AS": "American Samoa", "AO": "Angola", "AI": "Anguilla", "AQ": "Antarctica", "AD": "Andorra", "AR": "Argentina", "AM": "Armenia", "AW": "Aruba", "AT": "Austria", "AU": "Australia", "AZ": "Azerbaijan", "BS": "Bahamas", "BH": "Bahrain", "BD": "Bangladesh", "BB": "Barbados", "AG": "Barbuda", "BY": "Belarus", "BZ": "Belize", "BE": "Belgium", "BN": "Benin", "BM": "Bermuda", "BT": "Bhutan", "BO": "Bolivia", "BW": "Botswana", "BA": "Bosnia and Herzegovina", "BR": "Brazil", "VG": "British Virgin Islands", "BN": "Brunei", "BN": "Brunei Darussalam", "BG": "Bulgaria", "BF": "Burkina Faso", "BI": "Burundi", "CM": "Cameroon", "KH": "Cambodia", "CA": "Canada", "CV": "Cape Verde Islands", "KY": "Cayman Islands", "CF": "Central African Republic", "TD": "Chad", "CL": "Chile", "CN": "China", "CX": "Christmas Island", "CC": "Cocos Islands", "CO": "Colombia", "CK": "Cook Islands", "KM": "Comoros", "CG": "Congo", "CR": "Costa Rica", "CI": "Cote d\x27Ivoire", "HR": "Croatia", "CU": "Cuba", "CY": "Cyprus", "CZ": "Czech Republic", "DK": "Denmark", "DJ": "Djibouti", "DM": "Dominica", "DO": "Dominican Republic", "EC": "Ecuador", "EG": "Egypt", "SV": "El Salvador", "GQ": "Equitorial Guinea", "ER": "Eritrea", "EE": "Estonia", "ET": "Ethiopia", "FK": "Falkland Islands", "FO": "Faroe Islands", "FJ": "Fiji", "FI": "Finland", "FR": "France", "GF": "French Guiana", "PF": "French Polynesia", "TF": "French Southern Territories", "GA": "Gabon", "GM": "Gambia", "GE": "Georgia", "DE": "Germany", "GH": "Ghana", "GI": "Gibraltar", "GR": "Greece", "GL": "Greenland", "GD": "Grenada", "CP": "Guadeloupe", "GU": "Guam", "GT": "Guatemala", "GF": "Guiana", "GN": "Guinea", "GW": "Guinea-Bissau", "GY": "Guyana", "HT": "Haiti", "HN": "Honduras", "HK": "Hong Kong", "HU": "Hungary", "IS": "Iceland", "IN": "India", "ID": "Indonesia", "IR": "Iran", "IQ": "Iraq", "IE": "Ireland", "IL": "Israel", "IT": "Italy", "JM": "Jamaica", "JP": "Japan", "JO": "Jordan", "KZ": "Kazakhstan", "KI": "Kiribati", "KE": "Kenya", "KW": "Kuwait", "KG": "Kyrgyzstan", "LA": "Laos", "LV": "Latvia", "LB": "Lebanon", "LS": "Lesotho", "LR": "Liberia", "LY": "Libyan Arab Jamahiriya", "LI": "Liechtenstein", "LT": "Lithuania", "LU": "Luxembourg", "MO": "Macau", "MK": "Macedonia", "MG": "Madagascar", "MY": "Malaysia", "MT": "Malta", "MW": "Malawi", "MV": "Maldives", "ML": "Mali", "MP": "Mariana Islands", "MH": "Marshall Islands", "MQ": "Martinique", "MR": "Mauritania", "MU": "Mauritius", "YT": "Mayotte Island", "MX": "Mexico", "MD": "Moldova", "FM": "Micronesia", "MC": "Monaco", "MN": "Mongolia", "MS": "Montserrat", "MA": "Morocco", "MZ": "Mozambique", "MM": "Myanmar", "NA": "Namibia", "NR": "Nauru", "NP": "Nepal", "NL": "Netherlands", "AN": "Netherlands Antilles", "KN": "Nevis", "NC": "New Caledonia", "NI": "Nicaragua", "NE": "Niger", "NG": "Nigeria", "NU": "Niue", "KR": "North Korea", "NO": "Norway", "NZ": "New Zealand", "OM": "Oman", "PW": "Palau", "PK": "Pakistan", "PS": "Palestine", "PA": "Panama", "PG": "Papua New Guinea", "PY": "Paraguay", "PE": "Peru", "PH": "Philippines", "PN": "Pitcairn Islands", "PL": "Poland", "PT": "Portugal", "PR": "Puerto Rico", "QA": "Qatar", "RE": "Reunion Island", "RO": "Romania", "RU": "Russia", "RW": "Rwanda", "WS": "Samoa", "ST": "Sao Tome and Principe", "SM": "San Marino", "SA": "Saudi Arabia", "SN": "Senegal", "CS": "Serbia and Montenegro", "SC": "Seychelles", "SL": "Sierra Leone", "SG": "Singapore", "SK": "Slovakia", "SI": "Slovenia", "ES": "Spain", "SO": "Somalia", "SB": "Solomon Islands", "ZA": "South Africa", "KP": "South Korea", "LK": "Sri Lanka", "SR": "Suriname", "SD": "Sudan", "SS": "South Sudan", "SH": "St. Helena", "KN": "St. Kitts and Nevis", "LC": "St. Lucia", "PM": "St. Pierreet Miquelon", "VC": "St. Vincent and the Grenadines", "SZ": "Swaziland", "SE": "Sweden", "CH": "Switzerland", "SY": "Syrian Arab Republic", "TW": "Taiwan", "TJ": "Tajikistan", "TZ": "Tanzania", "TH": "Thailand", "TB": "Tibet", "TL": "Timor", "TG": "Togo", "TK": "Tokelau", "TO": "Tonga", "TT": "Trinidad and Tobago", "TN": "Tunisia", "TR": "Turkey", "TM": "Turkmenistan", "TC": "Turks and Caicos Islands", "TV": "Tuvalu", "UK": "Ukraine", "UG": "Uganda", "UE": "United Arab Emirates", "GB": "United Kingdom", "US": "USA", "VI": "U.S. Virgin Islands", "UY": "Uruguay", "UZ": "Uzbekistan", "VU": "Vanuatu", "VA": "The Vatican", "VE": "Venezuela", "VN": "Vietnam", "EH": "Western Sahara", "YE": "Yemen", "CD": "Zaire", "ZM": "Zambia", "ZW": "Zimbabwe", "other": "Other"}}}';
+var lang_dismiss_str = "Dismiss";
+var localizedMonths = [
+'January',
+'February',
+'March',
+'April',
+'May',
+'June',
+'July',
+'August',
+'September',
+'October',
+'November',
+'December'
+];
+</script>
+<script
+src="http://support.google.com/urchin45/bin/resource/js_variables.js?v=9&amp;hl=en"
+type="text/javascript"></script>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load('search', 1);
+function init() {
+google.search.CustomSearchControl.attachAutoCompletion(
+'+qptype:1',
+document.getElementById('query'),
+search_form_id);
+}
+google.setOnLoadCallback(init);
+</script>
+<script
+src="resource/js_minified22af.js?v=142"
+type="text/javascript"></script>
+<script src="https://plusone.google.com/js/plusone.js">
+{lang: 'en', parsetags: 'explicit'}
+</script>
+</head>
+<body onload="
+setCookies_default('WebUserLocale',
+'en','formLoad'); registerSearchForm(search_form_id, 'query');makeRequest('/urchin45/bin/stats?r='+serverResponseTimeDelta+'&l='+(new Date().getTime()-pageStartTime)); 
+"
+dir="ltr"
+class=" answer_page  streamlined-header-1 ltr lang_en show_modules show_leftnav other  win98 win ">
+<a href="#content" class="skiplink">Skip to content</a>
+<div class="wrapper" id="baseDiv">
+<div id=gbar><nobr><a class=gb1 href="https://mail.google.com/mail/">Mail</a> <a class=gb1 href="https://www.google.com/calendar">Calendar</a> <a class=gb1 href="https://docs.google.com/">Documents</a> <a onclick=gbar.qs(this); class=gb1 href="http://picasaweb.google.com/home?hl=en">Photos</a> <a class=gb1 href="https://sites.google.com/">Sites</a> <a onclick=gbar.qs(this); class=gb1 href="../../../groups.google.com/grphpfef7.html?hl=en">Groups</a> <a onclick=gbar.qs(this); class=gb1 href="http://www.google.com/webhp?hl=en">Search</a> <a class=gb1 style="text-decoration:none" href="http://www.google.com/intl/en/options/"><u>More</u> &raquo;</a></nobr></div><div id=guser width=100%><nobr><span id=gbn class=gbi></span><span id=gbf class=gbf></span><span id=gbe></span><a id=gb_70 href="https://www.google.com/accounts/ServiceLogin?passive=1209600&amp;continue=http://support.google.com/urchin45/bin/answer.py?hl%3Den%26answer%3D28466%26ctx%3Dcb%26src%3Dcb%26cbid%3D-18o8ho0w95bxy%26cbrank%3D3&amp;followup=http://support.google.com/urchin45/bin/answer.py?hl%3Den%26answer%3D28466%26ctx%3Dcb%26src%3Dcb%26cbid%3D-18o8ho0w95bxy%26cbrank%3D3&amp;hl=en" class=gb4>Sign in</a></nobr></div><div class=gbh style=left:0></div><div class=gbh style=right:0></div>
+<div id="hc_error"></div>
+<div class="header-wrapper">
+<div class="header-logo ">
+<a class="logo-container" href="http://support.google.com/urchin45">
+<img src="http://www.google.com/images/logos/google_logo_41.png"
+alt="Google"
+class="logo" /></a>
+<div class="searchbox">
+<form name="search-form"
+id="search-form"
+title="Search Help"
+method="get"
+action="http://support.google.com/urchin45/bin/search.py"
+onsubmit="track('Search Help',
+document.getElementById('query').value);return false;">
+<input autocomplete="off"
+class="search-box"
+type="text"
+name="query"
+id="query"
+maxlength="2048"
+placeholder="Search Urchin Version 4 &amp; 5 help"
+title="Search"
+x-webkit-speech
+spellcheck="false" /><button type="submit"
+name="btnG"
+class="search-button"
+alt="Search Help">
+<img src="http://www.google.com/help/hc/images/hc_magnifying_glass.png">
+</button>
+<input type="hidden" name="ctx" value="en:searchbox" />
+</form>
+</div>
+</div>
+<div class="header-bar ">
+<h1>
+<a href="http://support.google.com/urchin45" onclick="track('Header', 'HC Title ');">
+<span>
+Urchin Version 4 &amp; 5 Help
+</span>
+<div class="">
+</div>
+</a>
+</h1>
+<div class="clear"></div>
+</div>
+</div>
+<div class="main-content-container">
+<table class="layout" border="0" cellpadding="0" cellspacing="0"><tr>
+<td class="left_column">
+<ul class="leftnav">
+<li class="">
+<a href="../index.html"
+onclick='track("Left Nav", "Help topics");'>Help topics</a>
+</li>
+<li class="leftnav_topics nav_link_on">
+<a href="http://support.google.com/urchin45/bin/topic.py?topic=7353"
+onclick='track("Left Nav", "topic=7353");'>Urchin 5</a>
+</li>
+<li class="leftnav_topics ">
+<a href="http://support.google.com/urchin45/bin/topic.py?topic=7363"
+onclick='track("Left Nav", "topic=7363");'>Urchin 4</a>
+</li>
+<li class="LeftNav_Urchin67 first">
+<a href="https://secure.urchin.com/helpwiki/en/Help_Center"  onclick="track('LeftNav', 'Urchin67');">Urchin 6/7</a>
+</li>
+</td>
+<td class="content">
+<div class="inner_content ">
+<p class="breadcrumbs" >
+<a href="../index.html" onclick="track('Breadcrumbs', 'Help Home');">Help articles</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?topic=7353" onclick="track('Breadcrumbs', '7353');">Urchin 5</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?topic=7356" onclick="track('Breadcrumbs', '7356');">Urchin Administration</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?topic=7380" onclick="track('Breadcrumbs', '7380');">Filtering</a><span class="br-seperator"> &rsaquo; </span>Filter Fields&nbsp;
+</p>
+<div id="hcError" style="display:none"></div>
+<script type="text/javascript">
+var p13nFeed = new googlehelp.Feed.P13n();
+</script>
+<div class="clear"></div>
+<div class="p13n_box2 top has-bg"
+id="p13n_box"
+style="background-image:url(http://www.google.com/help/hc/images/alert18.gif);background-repeat:no-repeat;display:auto;">
+<a href="javascript:setCookies_default('p13n_box_50_urchin67', 1, '','30');
+hideLayer('p13n_box');
+track('P13n Box - urchin67', 'Hide');"
+class="hide_link">
+Hide
+</a>
+<h2>Support for Urchin 4/5 is not currently available</h2>
+<p>Please check out <a href="http://www.google.com/urchin/features.html">the latest Urchin version and features</a>.</p>
+<div id="p13n_box_content"></div>
+</div>
+<script type="text/javascript">
+var promoDisplayDict = {
+'type': "promo",
+'func': function(){
+document.getElementById("p13n_box").style.display = 'block';
+}
+};
+p13nFeed.setDisplayFunc(4,
+promoDisplayDict);
+</script>
+<a name="content"></a>
+<div id="page-content">
+<div id="zippy-dropdown-container"
+class="zippy-dropdown-container-hide"></div>
+<div class="answer_heading">
+<h2 class="answer-title">
+Filter Fields
+</h2>
+<div class="clear"></div>
+</div>
+<div class="article_content article-content-28466" id="article-content-div">
+<p><b>Overview</b>
+<p>
+When a hit or line in a log file is read during processing,
+the hit is broken down into
+'Raw Fields'. Fields are generally separated by spaces,
+tabs, or commas. Once the Raw Fields
+are read, Urchin automatically calculates the 'Auto Fields',
+using the values in the
+'Raw Fields'. Most
+reports use data in these Auto Fields for updating.
+<p>
+Filters can be applied to either Raw or Auto Fields. The
+following two tables provides
+insight into the purpose of each Field. The first table
+lists the Fields used for
+standard reports. A dash in the Fields Used column means
+that the report in question
+summarizes
+numbers generated in other reports and therefore is not tied
+specifically to the data
+in particular fields. The second table lists all available
+Fields and their purpose.
+<p>
+<b>Report Field List</b>
+<p>
+<table><tr><th>Report Name</th><th>Fields Used</th></tr>
+<tr><td><b>Traffic</b></td><td></td></tr>
+<tr><td>Sessions Graph</td><td>-</td></tr>
+<tr><td>Pageviews Graph </td><td>-</td></tr>
+<tr><td>Hits Graph</td><td>-</td></tr>
+<tr><td>Bytes Graph</td><td>-</td></tr>
+<tr><td>Summary</td><td>-</td></tr>
+<tr><td><b>Visitors & Sessions</b></td><td></td></tr>
+<tr><td>Visitors by Day</td><td>-</td></tr>
+<tr><td>Sessions by Day</td><td>-</td></tr>
+<tr><td>Unique Visitors</td><td>-</td></tr>
+<tr><td>Unique Sessions</td><td>-</td></tr>
+<tr><td>Visitor Loyalty</td><td>utm_session_number</td></tr>
+<tr><td>Session Frequency </td><td>-</td></tr>
+<tr><td>Summary</td><td>-</td></tr>
+<tr><td><b>Pages & Files</b></td><td></td></tr>
+<tr><td>Requested Pages</td><td>request_stem</td></tr>
+<tr><td>Downloads</td><td>request_stem</td></tr>
+<tr><td>All Files</td><td>request_origfilepath</td></tr>
+<tr><td>Directory by Pages
+Drilldown</td><td>request_stem</td></tr>
+<tr><td>Directory by Files
+Drilldown</td><td>request_origfilepath</td></tr>
+<tr><td>Directory by Bytes
+Drilldown</td><td>request_stem</td></tr>
+<tr><td>File Types by Hits</td><td>request_origmime</td></tr>
+<tr><td>File Types by Bytes</td><td>request_origmime</td></tr>
+<tr><td>Page Query
+Terms</td><td>request_stem|request_query</td></tr>
+<tr><td>Posted Forms</td><td>request_stem</td></tr>
+<tr><td>Status and
+Errors</td><td>sc_status|request_errordetail</td></tr>
+<tr><td><b>Navigation</b></td><td></td></tr>
+<tr><td>Entrance Pages</td><td>request_stem</td></tr>
+<tr><td>Exit Pages</td><td>request_stem</td></tr>
+<tr><td>Click Paths</td><td>request_stem</td></tr>
+<tr><td>Click To and From</td><td>request_stem</td></tr>
+<tr><td>Length of Pageview</td><td>request_stem</td></tr>
+<tr><td>Depth of Session</td><td>-</td></tr></td></tr>
+<tr><td>Length of Session</td><td>-</td></tr></td></tr>
+<tr><td>Click To and From Report</td><td>request_stem</td></tr>
+<tr><td><b>Referrals</b></td><td></td></tr>
+<tr><td>Referrals</td><td>referral_domainandstem</td></tr>
+<tr><td>Referral
+Drilldown</td><td>referral_domainandstem</td></tr>
+<tr><td>Search
+Terms</td><td>referral_domain|referral_keywords</td></tr>
+<tr><td>Search
+Engines</td><td>referral_domain|referral_keywords</td></tr>
+<tr><td>Referral
+Errors</td><td>referral_errordetail|referral_domainandstem</td></tr>
+<tr><td><b>Domains & Users</b></td><td></td></tr>
+<tr><td>Domains</td><td>domain_primary|domain_complete</td></tr>
+<tr><td>Domain
+Drilldown</td><td>domain_primary|domain_complete</td></tr>
+<tr><td>Countries</td><td>domain_primary|domain_complete</td></tr>
+<tr><td>IP Addresses</td><td>c_ip</td></tr>
+<tr><td>IP Drilldown</td><td>c_ip</td></tr>
+<tr><td>Usernames by
+Hits</td><td>cs_username</td></tr></td></tr>
+<tr><td>Usernames by Bytes</td><td>cs_username</td></tr>
+<tr><td>Usernames by Sessions</td><td>cs_username</td></tr>
+<tr><td><b>Browsers & Robots</b></td><td></td></tr>
+<tr><td>Browsers by Sessions
+Drilldown</td><td>useragent_complete</td></tr>
+<tr><td>Browsers by Hits
+Drilldown</td><td>useragent_complete</td></tr>
+<tr><td>Browsers by Bytes
+Drilldown</td><td>useragent_complete</td></tr>
+<tr><td>Platforms by Sessions
+Drilldown</td><td>useragent_complete</td></tr>
+<tr><td>Platforms by Hits
+Drilldown</td><td>useragent_complete</td></tr>
+<tr><td>Platforms by Bytes
+Drilldown</td><td>useragent_complete</td></tr>
+<tr><td>Combos by
+Sessions</td><td>useragent_complete</td></tr>
+<tr><td>Robots by Hits Drilldown</td><td>browser_base </td></tr>
+<tr><td>Robots by Bytes Drilldown</td><td>browser_base
+</td></tr>
+<tr><td><b>Client Parameters</b></td><td></td></tr>
+<tr><td>Screen
+Resolution</td><td>utm_screen_resolution</td></tr>
+<tr><td>Screen Colors</td><td>utm_screen_colors</td></tr>
+<tr><td>Languages</td><td>utm_language</td></tr>
+<tr><td>Java Enabled</td><td>utm_java_enabled</td></tr>
+<tr><td>Timezone Offset</td><td>utm_timezone_offset</td></tr>
+<tr><td>Javascript Version</td><td>utm_js_version</td></tr>
+<tr><td><b>E-Commerce</b></td><td></td></tr>
+<tr><td>Revenue</td><td>-</td></tr>
+<tr><td>Number of Transactions</td><td>-</td></tr>
+<tr><td>Products by
+Revenue</td><td>elf_productname|elf_productcode</td></tr>
+<tr><td>Products by
+Quantity</td><td>elf_productname|elf_productcode</td></tr>
+<tr><td>Products by Revenue
+Drilldown</td><td>elf_productname|elf_productcode</td></tr>
+<tr><td>Products by Quantity
+Drilldown</td><td>elf_productname|elf_productcode</td></tr>
+<tr><td>E-Commerce Summary</td><td>-</td></tr>
+<tr><td><b>Revenue Source</b></td><td></td></tr>
+<tr><td>Revenue by Region Drilldown</td><td>elf_region</td></tr>
+<tr><td>Revenue by City</td><td>elf_region</td></tr>
+<tr><td>Revenue by
+Referrals</td><td>referral_domainandstem</td></tr>
+<tr><td>Revenue by Search
+Terms</td><td>referral_domain|referral_keywords</td></tr>
+<tr><td>Revenue by Search Engines
+Drilldown</td><td>referral_domain|referral_keywords</td></tr>
+<tr><td>Revenue by Domains
+Drilldown</td><td>domain_primary|domain_complete</td></tr>
+</table>
+<p>
+<b>Complete Field List</b>
+<p>
+<table><tr><th>id</th><th>Field</th><th>Type</th><th>Purpose</th></tr>
+<tr><td>1</td><td>iis_date</td><td>(RAW)</td><td>IIS raw
+date of hit field.</td></tr>
+<tr><td>2</td><td>iis_time</td><td>(RAW)</td><td>IIS raw
+time of hit field.</td></tr>
+<tr><td>3</td><td>apache_time</td><td>(RAW)</td><td>Apache
+raw date & time of hit
+field.</td></tr>
+<tr><td>4</td><td>c_ip</td><td>(RAW)</td><td>Client IP
+Address.</td></tr>
+<tr><td>5</td><td>cs_username</td><td>(RAW)</td><td>Client
+username (if any)</td></tr>
+<tr><td>6</td><td>selected>cs_request</td><td>(RAW)</td><td>Apache
+raw entire request
+field.</td></tr>
+<tr><td>7</td><td>cs_method</td><td>(RAW)</td><td>IIS raw
+request method
+field.</td></tr>
+<tr><td>8</td><td>cs_uristem</td><td>(RAW)</td><td>IIS raw
+request stem field.</td></tr>
+<tr><td>9</td><td>cs_uriquery</td><td>(RAW)</td><td>IIS raw
+request query
+field.</td></tr>
+<tr><td>10</td><td>sc_status</td><td>(RAW)</td><td>Return
+status code from
+server.</td></tr>
+<tr><td>11</td><td>sc_bytes</td><td>(RAW)</td><td>Number of
+bytes transferred for
+request.</td></tr>
+<tr><td>12</td><td>c_host</td><td>(RAW)</td><td>Client
+hostname (converts to c_ip if
+necessary).</td></tr>
+<tr><td>13</td><td>cs_useragent</td><td>(RAW)</td><td>Browser
+user-agent
+information.</td></tr>
+<tr><td>14</td><td>cs_cookie</td><td>(RAW)</td><td>Cookies
+sent by browser.</td></tr>
+<tr><td>15</td><td>cs_referer</td><td>(RAW)</td><td>Raw
+Referral information (could be
+internal).</td></tr>
+<tr><td>16</td><td>custom_date</td><td>(RAW)</td><td>Used
+for datestamp in Custom
+Logs.</td></tr>
+<tr><td>17</td><td>custom_time</td><td>(RAW)</td><td>Used
+for timestamp in Custom
+Logs.</td></tr>
+<tr><td>19</td><td>cs_host</td><td>(RAW)</td><td>Requested
+virtualhost by
+Client.</td></tr>
+<tr><td>20</td><td>s_port</td><td>(RAW)</td><td>Server port
+number.</td></tr>
+<tr><td>21</td><td>cs_version</td><td>(RAW)</td><td>IIS Raw
+HTTP version.</td></tr>
+<tr><td>22</td><td>s_sitename</td><td>(RAW)</td><td>IIS
+Server site name.</td></tr>
+<tr><td>23</td><td>s_computername</td><td>(RAW)</td><td>IIS
+Computer name.</td></tr>
+<tr><td>24</td><td>s_ip</td><td>(RAW)</td><td>IIS Server IP
+address.</td></tr>
+<tr><td>25</td><td>elf_orderid</td><td>(RAW)</td><td>E-commerce
+order id
+number.</td></tr>
+<tr><td>26</td><td>elf_store</td><td>(RAW)</td><td>E-commerce
+store name.</td></tr>
+<tr><td>27</td><td>elf_sessionid</td><td>(RAW)</td><td>E-commerce
+session id.</td></tr>
+<tr><td>28</td><td>elf_total</td><td>(RAW)</td><td>E-commerce
+transaction
+amount.</td></tr>
+<tr><td>29</td><td>elf_tax</td><td>(RAW)</td><td>E-commerce
+tax amount.</td></tr>
+<tr><td>30</td><td>elf_shipping</td><td>(RAW)</td><td>E-commerce
+shipping
+amount.</td></tr>
+<tr><td>31</td><td>elf_billcity</td><td>(RAW)</td><td>E-commerce
+customer
+city.</td></tr>
+<tr><td>32</td><td>elf_billstate</td><td>(RAW)</td><td>E-commerce
+customer
+state.</td></tr>
+<tr><td>33</td><td>elf_billzip</td><td>(RAW)</td><td>E-commerce
+customer zip
+code.</td></tr>
+<tr><td>34</td><td>elf_billcountry</td><td>(RAW)</td><td>E-commerce
+customer
+country.</td></tr>
+<tr><td>35</td><td>elf_productcode</td><td>(RAW)</td><td>E-commerce
+product
+code.</td></tr>
+<tr><td>36</td><td>elf_productname</td><td>(RAW)</td><td>E-commerce
+product
+name.</td></tr>
+<tr><td>37</td><td>elf_variation</td><td>(RAW)</td><td>E-commerce
+product
+variation.</td></tr>
+<tr><td>38</td><td>elf_price</td><td>(RAW)</td><td>E-commerce
+product price.</td></tr>
+<tr><td>39</td><td>elf_quantity</td><td>(RAW)</td><td>E-commerce
+product
+quantity.</td></tr>
+<tr><td>40</td><td>elf_upsold</td><td>(RAW)</td><td>E-commerce
+upsold
+variable.</td></tr>
+<tr><td>76</td><td>referral_protocol</td><td>(AUTO)</td><td>Referral
+protocol
+(http/https/etc.)</td></tr>
+<tr><td>77</td><td>referral_host</td><td>(AUTO)</td><td>Referral
+complete
+hostname.</td></tr>
+<tr><td>78</td><td>referral_domain</td><td>(AUTO)</td><td>Referral
+domain
+name.</td></tr>
+<tr><td>79</td><td>referral_port</td><td>(AUTO)</td><td>Referral
+port number (if
+any).</td></tr>
+<tr><td>80</td><td>referral_url</td><td>(AUTO)</td><td>Referral
+complete URL. (includes
+host)</td></tr>
+<tr><td>81</td><td>referral_uri</td><td>(AUTO)</td><td>Referral
+complete URI. (no host)
+</td></tr>
+<tr><td>82</td><td>referral_stem</td><td>(AUTO)</td><td>Referral
+URI stem without query
+info.</td></tr>
+<tr><td>83</td><td>referral_query</td><td>(AUTO)</td><td>Referral
+Query info by
+itself.</td></tr>
+<tr><td>84</td><td>referral_anchor</td><td>(AUTO)</td><td>Referral
+information after #
+tag.</td></tr>
+<tr><td>85</td><td>referral_directory</td><td>(AUTO)</td><td>Referral
+directory up to
+filename.</td></tr>
+<tr><td>86</td><td>referral_filename</td><td>(AUTO)</td><td>Referral
+filename without
+directory.</td></tr>
+<tr><td>87</td><td>referral_mime</td><td>(AUTO)</td><td>Referral
+mime type (file
+extension)</td></tr>
+<tr><td>88</td><td>referral_keywords</td><td>(AUTO)</td><td>Referral
+search engine
+keywords</td></tr>
+<tr><td>89</td><td>referral_domainandstem</td><td>(AUTO)</td><td>Referral
+domain and
+URI
+stem together.</td></tr>
+<tr><td>90</td><td>referral_errordetail</td><td>(AUTO)</td><td>Referral
+error detail
+information.</td></tr>
+<tr><td>91</td><td>request_method</td><td>(AUTO)</td><td>Request
+method
+(GET/POST/etc.).</td></tr>
+<tr><td>92</td><td>request_url</td><td>(AUTO)</td><td>Request
+complete URL (if
+provided).</td></tr>
+<tr><td>93</td><td>request_version</td><td>(AUTO)</td><td>Request
+protocol
+version.</td></tr>
+<tr><td>94</td><td>request_protocol</td><td>(AUTO)</td><td>Request
+protocol
+(HTTP/etc.).
+</td></tr>
+<tr><td>95</td><td>request_host</td><td>(AUTO)</td><td>Request
+hostname (if
+any).</td></tr>
+<tr><td>96</td><td>request_port</td><td>(AUTO)</td><td>Request
+port number (if
+any).</td></tr>
+<tr><td>97</td><td>request_uri</td><td>(AUTO)</td><td>Request
+URI with
+query.</td></tr>
+<tr><td>98</td><td>request_stem</td><td>(AUTO)</td><td>Request
+URI without
+query.</td></tr>
+<tr><td>99</td><td>request_query</td><td>(AUTO)</td><td>Request
+query information
+(e.g.,
+after ?)</td></tr>
+<tr><td>100</td><td>request_anchor</td><td>(AUTO)</td><td>Request
+information after #
+tag</td></tr>
+<tr><td>101</td><td>request_directory</td><td>(AUTO)</td><td>Request
+directory without
+filename.</td></tr>
+<tr><td>102</td><td>request_filename</td><td>(AUTO)</td><td>Request
+filename without
+directory.</td></tr>
+<tr><td>103</td><td>request_mime</td><td>(AUTO)</td><td>Request
+mime type (file
+extension).</td></tr>
+<tr><td>104</td><td>request_origfilepath</td><td>(AUTO)</td><td>Request
+original uri
+stem if UTM.</td></tr>
+<tr><td>105</td><td>request_origmime</td><td>(AUTO)</td><td>Request
+original mime type
+if UTM. </td></tr>
+<tr><td>106</td><td>request_errordetail</td><td>(AUTO)</td><td>Request
+detail for error
+hits.</td></tr>
+<tr><td>107</td><td>useragent_complete</td><td>(AUTO)</td><td>Complete
+user-
+agent.</td></tr>
+<tr><td>108</td><td>browser_base</td><td>(AUTO)</td><td>Browser
+name (e.g.,
+Netscape).</td></tr>
+<tr><td>109</td><td>browser_version</td><td>(AUTO)</td><td>Browser
+version.</td></tr>
+<tr><td>110</td><td>platform_base</td><td>(AUTO)</td><td>Platform
+(e.g.,
+Windows).</td></tr>
+<tr><td>111</td><td>platform_version</td><td>(AUTO)</td><td>Platform
+version.</td></tr>
+<tr><td>112</td><td>domain_primary</td><td>(AUTO)</td><td>First
+level domain. (e.g.
+com).</td></tr>
+<tr><td>113</td><td>domain_complete</td><td>(AUTO)</td><td>Complete
+domain. (e.g.
+urchin.com).</td></tr>
+<tr><td>114</td><td>sid</td><td>(AUTO)</td><td>Session id
+(if any).</td></tr>
+<tr><td>115</td><td>utm_cookiea</td><td>(AUTO)</td><td>UTM-2
+cookie-a</td></tr>
+<tr><td>116</td><td>utm_cookieb</td><td>(AUTO)</td><td>UTM-2
+cookie-b</td></tr>
+<tr><td>117</td><td>utm_cookiec</td><td>(AUTO)</td><td>UTM-2
+cookie-c</td></tr>
+<tr><td>119</td><td>utm_cookie1</td><td>(AUTO)</td><td>UTM-1
+cookie-1</td></tr>
+<tr><td>120</td><td>utm_cookie2</td><td>(AUTO)</td><td>UTM-2
+cookie-2</td></tr>
+<tr><td>121</td><td>utm_cookie3</td><td>(AUTO)</td><td>UTM-3
+cookie-3</td></tr>
+<tr><td>122</td><td>utm_unique_id</td><td>(AUTO)</td><td>UTM
+unique visitor
+id.</td></tr>
+<tr><td>124</td><td>utm_page</td><td>(AUTO)</td><td>UTM page
+variable (used for
+request_
+variables).</td></tr>
+<tr><td>125</td><td>utm_referral</td><td>(AUTO)</td><td>UTM
+Referral (used for
+referral_
+variables).</td></tr>
+<tr><td>126</td><td>utm_screen_resolution</td><td>(AUTO)</td><td>Screen
+resolution
+(e.g., 800x600).</td></tr>
+<tr><td>127</td><td>utm_screen_available</td><td>(AUTO)</td><td>Available
+screen
+resolution in pixels.</td></tr>
+<tr><td>128</td><td>utm_browser_size</td><td>(AUTO)</td><td>Browser
+size in
+pixels.</td></tr>
+<tr><td>129</td><td>utm_screen_colors</td><td>(AUTO)</td><td>Screen
+color bit
+depth.</td></tr>
+<tr><td>130</td><td>utm_language</td><td>(AUTO)</td><td>Browser
+language code
+setting.</td></tr>
+<tr><td>131</td><td>utm_java_enabled</td><td>(AUTO)</td><td>yes|no
+if java is
+enabled.</td></tr>
+<tr><td>132</td><td>utm_cookies_enabled</td><td>(AUTO)</td><td>yes|no
+if cookies are
+enabled.</td></tr>
+<tr><td>133</td><td>utm_timezone_offset</td><td>(AUTO)</td><td>+/-HHMM
+timezone offset
+value of browser.</td></tr>
+<tr><td>134</td><td>utm_js_version</td><td>(AUTO)</td><td>Javascript
+version
+info.</td></tr>
+<tr><td>135</td><td>utm_session_number</td><td>(AUTO)</td><td>Number
+of sessions for
+this visitor.</td></tr>
+<tr><td>145</td><td>elf_region</td><td>(AUTO)</td><td>E-Commerce
+region drilldown
+information.</td></tr>
+</table>
+</p>
+<script type="text/javascript">
+if(document.getElementById('kb_other') != null)
+showLayer('kb_other');
+if(document.getElementById('kb_other_win') != null)
+showLayer('kb_other_win');
+if(document.getElementById('z_other') != null)
+toggleZippy('z_other');
+if(document.getElementById('z_other_win') != null)
+toggleZippy('z_other_win');
+if(document.getElementById('kb_win'))
+showLayer('kb_win');
+if(document.getElementById('z_win'))
+toggleZippy('z_win');
+if(document.getElementById('kb_win98'))
+showLayer('kb_win98');
+if(document.getElementById('z_win98'))
+toggleZippy('z_win98');
+if(document.getElementById('kb_DE'))
+showLayer('kb_DE');
+if(document.getElementById('z_DE'))
+toggleZippy('z_DE');
+if(document.getElementById('kb_non_US'))
+showLayer('kb_non_US');
+if(document.getElementById('z_non_US'))
+toggleZippy('z_non_US');
+</script>
+</div>
+<div class="clear"></div>
+<a href="#" name="helpful" ></a>
+<div class="answer-features">
+<div class="button plus-one">
+<div id="plusone"></div>
+<script type="text/javascript">
+gapi.plusone.render('plusone', {size: 'small', count: 'true',
+href: 'http:\x2F\x2Fsupport.google.com\x2Furchin45\x2Fbin\x2Fanswer.py?hl=en\x26answer=28466\x26ctx=plusone'});
+</script>
+</div>
+</div>
+<script type="text/javascript">
+function setSurveyCookie(){
+setCookies_default("survey_50", 1, "", 30);
+}
+</script>
+<p class="survey-invite-green ">
+<a href="requestdefc.html?contact_type=survey" id="surveyLink" target="_blank" onclick="setSurveyCookie();track('Survey Link', 'Click new');"><strong>Tell us how we're doing -</strong> Answer five short questions about your help center experience</a>
+</p>
+</div>
+<div class="clear"></div>
+</div>
+</td>
+<td class="right_column">
+<div class="module">
+<h2>Related</h2>
+<ul class="no_bullets right-nav-cb">
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28472&amp;ctx=cb&amp;src=cb&amp;cbid=1gx4c61gcwq16&amp;cbrank=0"
+onclick="track('Recommended Articles Module', 'cb 28472');">
+Filtering Overview
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7356&amp;parent=7353&amp;ctx=topic" onclick="track('Breadcrumbs', '7356');">Urchin Administration</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7380&amp;parent=7356&amp;ctx=topic" onclick="track('Breadcrumbs', '7380');">Filtering</a>
+</span>
+</li>
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28424&amp;ctx=cb&amp;src=cb&amp;cbid=-s32hqojr8zxz&amp;cbrank=1"
+onclick="track('Recommended Articles Module', 'cb 28424');">
+Custom Log Formats
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7360&amp;parent=7353&amp;ctx=topic" onclick="track('Breadcrumbs', '7360');">Advanced Topics</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7388&amp;parent=7360&amp;ctx=topic" onclick="track('Breadcrumbs', '7388');">Customization</a>
+</span>
+</li>
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28549&amp;ctx=cb&amp;src=cb&amp;cbid=wx930scyj55a&amp;cbrank=2"
+onclick="track('Recommended Articles Module', 'cb 28549');">
+Integer Field List
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7361&amp;parent=7353&amp;ctx=topic" onclick="track('Breadcrumbs', '7361');">Reference</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7396&amp;parent=7361&amp;ctx=topic" onclick="track('Breadcrumbs', '7396');">Reference Material</a>
+</span>
+</li>
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28355&amp;ctx=cb&amp;src=cb&amp;cbid=-1u1t0r71i7sr4&amp;cbrank=3"
+onclick="track('Recommended Articles Module', 'cb 28355');">
+Why does Urchin report different report values than other software?
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7370&amp;parent=7363&amp;ctx=topic" onclick="track('Breadcrumbs', '7370');">FAQ Categories</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7405&amp;parent=7370&amp;ctx=topic" onclick="track('Breadcrumbs', '7405');">Reporting Issues</a>
+</span>
+</li>
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28307&amp;ctx=cb&amp;src=cb&amp;cbid=-95atih27scdq&amp;cbrank=4"
+onclick="track('Recommended Articles Module', 'cb 28307');">
+Urchin Tracking Module (UTM)
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7365&amp;parent=7363&amp;ctx=topic" onclick="track('Breadcrumbs', '7365');">Visitor Tracking</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7425&amp;parent=7365&amp;ctx=topic" onclick="track('Breadcrumbs', '7425');">Visitor Identification Methods</a>
+</span>
+</li>
+<li>
+<a href="http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28623&amp;ctx=cb&amp;src=cb&amp;cbid=hpspbon3aiev&amp;cbrank=5"
+onclick="track('Recommended Articles Module', 'cb 28623');">
+Regular Field List
+</a>
+<br />
+<span class="right-nav-cb-bc">
+<a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7361&amp;parent=7353&amp;ctx=topic" onclick="track('Breadcrumbs', '7361');">Reference</a><span class="br-seperator"> &rsaquo; </span><a href="http://support.google.com/urchin45/bin/topic.py?hl=en&amp;topic=7396&amp;parent=7361&amp;ctx=topic" onclick="track('Breadcrumbs', '7396');">Reference Material</a>
+</span>
+</li>
+</ul>
+</div>
+</td>
+</tr></table>
+</div>
+<div class="nocontent footer-nav-streamlined" role="contentinfo">
+<ul class="first-row">
+<li>
+<a href="http://www.urchin.com/"
+onclick="track('Footer', 'Product home')">
+Urchin Version 4 &amp; 5
+</a>
+</li>
+<li>
+<a href="request.html"
+onclick="track('Footer', 'Contacting us')">
+Contacting Us
+</a>
+</li>
+<li>
+<a href="http://www.google.com/support/?hl=en"
+onclick="track('Footer', 'Help with other products')">
+Help for other Google products
+</a>
+</li>
+</ul>
+<ul class="second-row">
+<li class='footer-copyright' dir='ltr'>
+&copy;2012 Google
+</li>
+<li >
+<a href="http://www.google.com/intl/en/"
+onclick="track('Footer', 'GoogleHome');
+">Google Home</a>
+</li>
+<li >
+<a href="http://www.google.com/intl/en/privacy.html"
+onclick="track('Footer', 'PrivacyPolicy');
+"><span class="important">New!</span> Privacy Policy</a>
+</li>
+<li >
+<a href="http://www.google.com/accounts/TOS?hl=en&amp;loc=DE"
+onclick="track('Footer', 'Terms');
+">Terms of Service</a>
+</li>
+</ul>
+</div>
+</div>
+<script type="text/javascript"></script>
+<script type="text/javascript">
+googlehelp.Links.initLinks(
+['', 'NO-GMAIL', 'NO-PLUS', browser, browserGroup,
+os, osGroup, country], internal);
+if (googlehelp.initEls) {
+googlehelp.initEls(['', 'NO-GMAIL', 'NO-PLUS', browser, browserGroup,
+os, osGroup, country, countryGroup],
+userSettings, userSettingsDropdownText);
+}
+if (convertLinksToButtons) {
+convertLinksToButtons();
+}
+</script>
+<script src='http://www.google-analytics.com/ga.js'
+type='text/javascript'></script>
+<script type="text/javascript">
+var analytics_async = 0;
+</script>
+<script
+src="resource/urchin_util8e0e.js?v=8"
+type="text/javascript"></script>
+<script type="text/javascript">
+var cookiePathArray = [];
+</script>
+<script type="text/javascript">
+urchinTracker('\x2Furchin45\x2Fbin\x2Fanswer.py?hl=en\x26answer=28466\x26ctx=cb\x26src=cb\x26cbid=-18o8ho0w95bxy\x26cbrank=3');
+</script>
+<script
+src="resource/js_validate_static8fa7.js?v=18"
+type="text/javascript"></script>
+<script type="text/javascript">
+track('P13n Box - urchin67',
+'Impression');
+track('LeftNav',
+'Urchin67 - Impression');
+track('Survey Link',
+'Impression');
+setCookies_default('p13n_box_impr_50_urchin67',
+'1',
+'',
+'30');
+</script>
+<script type="text/javascript">
+initPageTimer('http://support.google.com/urchin45/bin/answer.py?hl=en&amp;answer=28466&amp;ctx=cb&amp;src=cb&amp;cbid=-18o8ho0w95bxy&amp;cbrank=3\x2F\x2Fsupport.google.com\x2Furchin45\x2Fapi\x2Fmetrics?hl=en',false);
+</script>
+<script type="text/javascript">
+new googlehelp.Lightbox(
+'\x26laquo\x3B Previous',
+'Next \x26raquo\x3B');
+</script>
+<script src="http://www.google.com/sidewiki/static/sidebar_element/sidebar-element-compiled.js"></script>
+<script defer="defer">
+var sidebarElement = new google.elements.sidewiki.SidebarElement(
+window.location.href,false);
+sidebarElement.bindToElement("sidewiki-open-ui-button");
+</script>
+</body>
+
+<!-- Mirrored from support.google.com/urchin45/bin/answer.py?hl=en&answer=28466&ctx=cb&src=cb&cbid=-18o8ho0w95bxy&cbrank=3 by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:34:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

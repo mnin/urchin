@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Administration_Utilities_Overview.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Administration Utilities Overview</strong> <p class="line867"><strong>Overview</strong> <p class="line874">Urchin ships with a number of utility programs that are used for diagnostic and configuration purposes. These utilities are located in the util directory of the Urchin distribution. This document is intended as an introductory overview of these utilities. It is not a comprehensive guide to their usage. <p class="line874">All utilities support "-h" and "-v" command line arguments. Invoking a utility with the "-h" argument will give a summary of usage and the available options for that tool. Invoking with "-v" argument prints the Urchin version of the utility. <p class="line867"><strong>geo-update</strong> <p class="line874">This utility is used to check the updates to Urchin's internal DNS database and to download the updates if they are available. It allows to download the updates from Google download servers as well as from some local directory (new in urchin 6). <p class="line867"><strong>inspector</strong> <p class="line874">This utility performs basic checks on your installed Urchin distribution, ensuring that the overall structure of the distribution is intact, that all the binaries shipped with the product are the proper version, and that the underlying permissions are correct (on UNIX-type platforms). The utility also reports on the operational status of the Urchin Profile Schedulers (urchind), CPC Schedulers (urchincpcd, urchincpc) and the bundled Apache web server (urchinwebd). It also verifies the licensing information. <p class="line867"><strong>uconf-manager (Urchin 6.402+)</strong> <p class="line874">The Urchin Configuration Manager Utility (uconf-manager) allows you to add, edit and delete db records. <ul><li>Urchin 6.402: This utility was first introduced in Urchin 6.402 and was only operating on 'uusers' table in the configuration database. It can be used to reset the Urchin admin password, automate user creation, and move a user to a different account. </li><li>Urchin 6.500+: In urchin 6.5 and later versions, this utility support db operations on more tables (uaccounts, ucosts, ufilters, ugoals, ugroups, ugroups_uusers, ulogs, ulogs_ufilters, uprofiles, uprofiles_ucosts, uprofiles_ufilters, uprofiles_ugroups, uprofiles_ulogs, uprofiles_uusers, and uusers). This utility can be used to perform actions that can't be accomplished via the Urchin Administration Interface. </li></ul><p class="line867"><strong>uconf2sql</strong> <p class="line862">Urchin 5 and older versions store configuration information in propriety files, however, Urchin 6 stores this information in a relational database (MySql or PostgreSql). To allow smooth transition of configuration information, both Urchin 5 and Urchin 6 provide utilities for exporting and importing configuration information. Urchin 5 has a utility, named uconf-export, to export the configuration database into a file (in XML format) and Urchin 6 has a utility, named uconf2sql, to import the configuration data from this XML file in to Urchin 6 database. <p class="line867"><strong>convert-u5data</strong> <p class="line874">Like configuration database, the structure of reporting database (that stores reporting information) has also been changed in Urchin 6. This utility, convert-u5data, provides an option for importing the reporting database directly from Urchin 5 installation into the urchin 6 installation. <p class="line867"><strong>udb-sanitizer</strong> <p class="line874">The udb-sanitizer utility is used to perform management related operations on the reporting database. This includes reverting back to an archived database, deleting information about a specific date or range of dates (in case reprocessing is required). <p class="line867"><strong>urchinctl</strong> <p class="line874">(Note: this utility lives in the bin directory, not the util directory). This utility provides a means of starting and stopping the Urchin Scheduler and Urchin Webserver services. On UNIX-type systems, urchinctl is typically called from one of the system's boot-time scripts to automatically start up or shut down Urchin services. On windows platform it also provides options for installing and uninstalling the urchin services. <p class="line867"><strong>urchincpc (Urchin 6.5+)</strong> <p class="line862">(Note: this utility lives in the bin directory, not the util directory). The Urchin CPC Data Importing tool extracts CPC data through Google AdWords API for further processing and reporting. For more information, see <a href="https://secure.urchin.com/helpwiki/en/CPC_Data_Import_Utilities.html">CPC Data Import Utilities</a>. <p class="line867"><strong>urchincpcd (Urchin 6.5+)</strong> <p class="line862">(Note: this utility lives in the bin directory, not the util directory). The Urchin CPC Source Scheduler (or simply CPC Scheduler) is used to schedule CPC download tasks based on a user defined schedule (similar to the Profile Scheduler). For more information, see <a href="https://secure.urchin.com/helpwiki/en/CPC_Data_Import_Utilities.html">CPC Data Import Utilities</a>. <p class="line867"><strong>urchin_daemons</strong> <p class="line874">On UNIX-type machines Urchin runs a scheduler daemon (urchind) and an Apache webserver (urchinwebd). These programs should be started at boot time. The urchin_daemons script can be added to the system initialization scripts in the location appropriate for your UNIX-type OS, and it will cause the Urchin service daemons to be launched properly. On windows platforms, these binaries run as system services and can be started and stopped using windows service manager. <p class="line867"><strong>ugetlicense</strong> <p class="line874">The Urchin License Operation Utility, ugetlicense, allows you to perform operations on a serial number. These operations will be necessary if a current Urchin installation becomes unavailable and needs to be reinstalled or migrated to a different server, etc. <p class="line867"><strong> autoupdate (Urchin 7+) </strong> <p class="line874">The autoupdate utility is used to check for, download, and install available Urchin component updates. <p class="line874">Operations that autoupdate can perform are: <ul><li>automatic upgrades of Urchin components such as the Urchin product, Embedded Help, Help Center documentation and Geo database. </li><li>rollback of an upgrade process if there are errors. </li></ul></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Administration_Utilities_Overview.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Logging_-_Apache_and_IIS.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Logging - Apache and IIS</strong> <p class="line867"><strong>Overview</strong> <p class="line874">It is critical to set up your webserver logging in a format that allows Urchin to properly interpret the data and produce fully detailed reporting. This article explains the process for the most common webservers, Apache and Microsoft IIS. For maximum reporting depth, it is important to enable logging to include Referral and User Agent information. To enable unique visitor reporting when using the Urchin Tracking Module (UTM), it is additionally required to enable cookie logging. UTM-based tracking is the only way to get true unique visitor reporting. It's advisable, although not required, that you decide whether you want to use UTM prior to changing your webserver logging. If so, you should enable cookies in your logs now. It will not hurt if you enable cookies but do not install UTM on your website immediately. You may want to look over the section on Visitor Tracking to familiarize yourself with the UTM installation before proceeding. <p class="line867"><strong>Configuration</strong> <p class="line867"><strong>Apache</strong> <p class="line874">By default, Apache generally logs in what's called common log format, and also provides an option to log in a more detailed format known as NCSA extended/combined log format. For optimal reporting, Urchin requires a variation of the NCSA extended/combined format. To configure Apache to use the appropriate format do the following: <p class="line874">1. Make a backup copy of your httpd.conf file. Then use a text editor to open your original httpd.conf. <p class="line862">2. Locate the section containing lines that begin with the word LogFormat. <p class="line862">3. Insert a new LogFormat line using one of the forms shown below, depending on whether you will be using UTM or not. The LogFormat entry must be added to your configuration file as a single line without carriage returns or line breaks. Make sure you pay close attention to entering in all the characters correctly. <p class="line867"><strong>For websites that will not use UTM:</strong> <p class="line867"><tt>LogFormat&nbsp;"%h&nbsp;%v&nbsp;%u&nbsp;%t&nbsp;\"%r\"&nbsp;%&gt;s&nbsp;%b&nbsp;\"%{Referer}i\"&nbsp;\"%{User-Agent}i\""&nbsp;urchin</tt> <p class="line867"><strong>For UTM-enabled websites:</strong> <p class="line867"><tt>LogFormat&nbsp;"%h&nbsp;%v&nbsp;%u&nbsp;%t&nbsp;\"%r\"&nbsp;%&gt;s&nbsp;%b&nbsp;\"%{Referer}i\"&nbsp;\"%{User-Agent}i\"&nbsp;\"%{Cookie}i\""&nbsp;urchin</tt> <p class="line862">4. The word "urchin" at the end of the LogFormat line is a nickname that will be used elsewhere in your httpd.conf to apply this format to a log file. This string can be anything you choose. Using "urchin" will help identify that this entry was created to accommodate Urchin processing. <p class="line862">5. Examine the &lt;VirtualHost&gt; entry for which you wish to enable this new logging format. Deactivate any existing TransferLog or CustomLog entries within a &lt;VirtualHost&gt;&lt;/VirtualHost&gt; group by inserting a # in front (e.g. TransferLog becomes #TransferLog). Then insert the following new CustomLog entry, replacing the string path_to_log with the appropriate path to your log location: <p class="line867"><tt>CustomLog&nbsp;path_to_log/access.log&nbsp;urchin</tt> <p class="line862">If you chose some identifier other than "urchin" as the nickname for your LogFormat entry earlier, use that nickname in place of "urchin" in the CustomLog entry. <p class="line874">6. Save the edits to your httpd.conf file. <p class="line862">7. <strong>IMPORTANT!</strong> Check the syntax of your new httpd.conf by running the command: <p class="line867"><tt>apachectl&nbsp;configtest</tt> <p class="line874">This should produce the response syntax ok. If not, doublecheck your httpd.conf file and fix any errors. If you cannot get the correct response, do not continue with this procedure. Instead, make a backup copy of your edited file, then restore the original by overwriting this version with a copy of httpd.conf you saved at the start of this procedure. This will ensure that your webserver continues to work normally while you figure out what is wrong with your changes. <p class="line874">8. Once you have confirmed the syntax of your httpd.conf, restart Apache. The preferred method is by calling the apachectl script, which is typically installed with Apache. <p class="line867"><tt>apachectl&nbsp;restart</tt> <p class="line862">9. Check the logging. Open a browser and hit the site in question a few times. Then examine the last few lines of the log file specified in your CustomLog entry. You should see several recent hits have been written to the log. <p class="line874">For the Urchin modified extended/combined log format, a log line will look similar to this: <p class="line867"><tt class="backtick">64.40.51.27</tt> <tt class="backtick">www.urchin.com</tt> <tt class="backtick">-</tt> <tt class="backtick">[28/Aug/2002:15:11:01</tt> <tt class="backtick">-0700]</tt> <tt class="backtick">"GET</tt> <tt class="backtick">/images/urchin_header_logo.gif</tt> <tt class="backtick">HTTP/1.1"</tt> <tt class="backtick">200</tt> <tt class="backtick">3017</tt> <tt class="backtick">"http://www.urchin.com/"</tt> <tt class="backtick">"Mozilla/4.0</tt> <tt class="backtick">(compatible;</tt> <tt class="backtick">MSIE</tt> <tt class="backtick">6.0;</tt> <tt class="backtick">Windows</tt> <tt class="backtick">NT</tt> <tt class="backtick">5.0)"</tt> <p class="line874">If you have configured UTM on your site and have turned on cookie logging a log line will look similar to this: <p class="line867"><tt class="backtick">64.40.51.27</tt> <tt class="backtick">www.urchin.com</tt> <tt class="backtick">-</tt> <tt class="backtick">[28/Aug/2002:15:11:01</tt> <tt class="backtick">-0700]</tt> <tt class="backtick">"GET</tt> <tt class="backtick">/images/urchin_header_logo.gif</tt> <tt class="backtick">HTTP/1.1"</tt> <tt class="backtick">200</tt> <tt class="backtick">3017</tt> <tt class="backtick">"http://www.urchin.com/"</tt> <tt class="backtick">"Mozilla/4.0</tt> <tt class="backtick">compatible;</tt> <tt class="backtick">MSIE</tt> <tt class="backtick">6.0;</tt> <tt class="backtick">Windows</tt> <tt class="backtick">NT</tt> <tt class="backtick">5.0)"</tt> <tt class="backtick">"__utma=171060324.1378004559.1063331913.1063334677.1063521838.3;</tt> <tt class="backtick">__utmb=171060324;</tt> <tt class="backtick">__utmc=171060324"</tt> <p class="line874">10. Note the additional UTM cookie information at the end of the line. <p class="line867"><strong>Microsoft Internet Information Server (IIS)</strong> <p class="line874">Note: Microsoft IIS uses a W3C logging format. <p class="line874">Urchin can provide very basic reporting if your IIS log files have, at the very least, the following fields: <ul><li>Date </li><li>Time </li><li>C-IP </li><li>CS-URI-Stem </li><li>SC-Status </li><li>SC-Bytes </li></ul><p class="line874">These are required fields. Without them you will not get meaningful reporting. However, this minimal logging does not provide enough information for Referral and Browser reporting. Therefore it is advisable to set more detailed logging properties for your IIS server. <p class="line874">IIS logging properties are configured either separately for each domain on the server, or globally. For servers with more than a few domains, the global option is recommended. The following steps will ensure that the required log file fields are being recorded. If you elect to log additional fields, Urchin will just ignore them at processing time. However, logging unneeded fields will increase the size of your log files so it is best to only log the fields needed by Urchin. <p class="line862">1. Launch the IIS services management tool by going to Start-&gt;Programs-&gt;Administrative Tools-&gt;Computer Management. <p class="line874">2. Expand the Services and Applications tree, then select Internet Information Services, which should bring up a list of websites (except on Windows 2003 Server which will require that you further expand the Web Sites folder to get a listing of sites). <p class="line874">3. Right click on the entry for the site you want to modify and select Properties. <p class="line874">4. Select the Web Site tab and in the section at the bottom of this screen verify that the Enable Logging checkbox is checked. Then from the Active Log Format dropdown menu choose W3C Extended Log File Format. <p class="line874">5. Click on the Properties button next to the Active Log Format box. <p class="line874">6. Select the Extended Properties tab. <p class="line874">7. Check the boxes for the following fields: <ul><li>Date [ date] </li><li>Time [ time ] </li><li>Client IP Address [ c-ip ] </li><li>User Name [ cs-username ] </li><li>Method [ cs-method ] </li><li>URI Stem [ cs-uri-stem ] </li><li>URI Query [ cs-uri-query ] </li><li>Protocol Status [ sc-status ] </li><li>Bytes Sent [ sc-bytes ] </li><li>User Agent [ cs[User-Agent] ] </li><li>Referer [ cs[Referer] ] </li><li>Cookie [ cs[Cookie] ] (This field only required for UTM tracking) </li></ul><p class="line874">8. You should make sure the Process Accounting box is unchecked as it does not provide useful web access activity information. <p class="line874">9. Select Apply and OK on each window to save your settings. <p class="line874">10. It is not necessary to restart IIS. Your logs should immediately begin logging according to the new settings. </div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Logging_-_Apache_and_IIS.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

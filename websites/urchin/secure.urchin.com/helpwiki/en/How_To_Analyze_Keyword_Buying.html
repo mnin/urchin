@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/How_To_Analyze_Keyword_Buying.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>How To Analyze Keyword Buying</strong> <p class="line867"><strong>How does keyword buying analysis help me?</strong> <p class="line874">Which keywords should I invest in? How much should I bid for a keyword? How much do I make on keywords? At which times of the day should I maximize my search engine exposure? <p class="line874">You can answer these and other questions by analyzing your keyword buying with Urchin. This article provides a walkthrough of each step, from collecting the data to analyzing the reports. <p class="line874">What are the steps to analyze keyword buying? <ul><li>Define a Conversion Goal </li><li>Purchase Your Keywords <ul><li style="list-style-type:none">For each purchased keyword from a pay-per-click search engine (such as Google or Overture), you will need to set up a referral link to your site and embed UTM variables. This article describes the best way to use the UTM variables for keyword buying analysis, below. </li></ul></li><li>Track Campaign Data <ul><li style="list-style-type:none">You will need to install the UTM, enable cookie logging, and embed UTM variables in your referral links. </li></ul></li><li><p class="line862">Import Keyword Spending Data(only necessary for ROI reporting). See <a href="https://secure.urchin.com/helpwiki/en/Import_Cost_Data_from_Google.html">Import Cost Data from Google</a>. </li><li><p class="line862">Import E-commerce Data (only necessary for e-commerce ROI analysis reports) See the <a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a> section. </li><li>Optimize Your Keyword Buys <ul><li style="list-style-type:none">Information on how to use the keyword reports to optimize your keyword buying is provided in this article, below. </li></ul></li></ul><p class="line867"><strong>Which UTM variables should I use for keyword analysis?</strong> <ul><li style="list-style-type:none"><p class="line862">For paid search engine links, such as Google AdWords, use utm_source, utm_medium, and utm_campaign. If you are using broad matching, and you wish to see metrics for the broad matched keyword (rather than letting UTM detect the specific keyword), you may wish to use utm_term. The following link is an example of how you would use the UTM variables in a Google AdWords link. It indicates that the referral came from a paid Google search term and that the medium was cost-per-click. It also indicates that the visitor clicked on your adidas promotion link. The UTM automatically detects the keywords used to find your site. </li></ul><p class="line867"><pre>      http://www.mycompany.com/?utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=adidas
+</pre><ul><li style="list-style-type:none"><p class="line862">Use the Google Analytics <a class="http" href="http://www.google.com/support/analytics/bin/answer.py?hl=en&amp;answer=55578">URL builder tool </a> to create your links. Using this tool ensures that your links contain the correct syntax. </li></ul><p class="line867"><strong>What about un-sponsored links? (aka unpaid, free, or organic listings in search engines)</strong> <ul><li style="list-style-type:none">You only embed variables in sponsored links - links for which you paid on a search engine, or links over which you otherwise have control, such as links in an email that you send to customers. You don't have to worry about un-sponsored links because Urchin Campaign Tracking automatically determines which search engine the referral came from and which keywords the visitor used. </li></ul><p class="line867"><strong>Be consistent with UTM variables.</strong> <ul><li style="list-style-type:none">It is important that you use consistent names and spellings for all of your campaign variable values. For example, choose a code or name that indicates "cost-per-click" and use it consistently. To Urchin Campaign Tracking, utm_medium=cpc and utm_medium=cost_per_click are different mediums. <p class="line862">A master tracking code feature is available that significantly reduces the possibility of consistency errors. Read <a href="https://secure.urchin.com/helpwiki/en/How_To_Use_Master_Tracking_Codes.html">How To Use Master Tracking Codes</a>. </li></ul><p class="line867"><strong>Optimize your keyword buys.</strong> <ul><li style="list-style-type:none"><p class="line891"><strong>Which keywords should I buy?</strong> You should buy keywords that return the highest number of transactions and/or goals, or yield the highest revenue. Look at the Marketing Optimization: Search Engine Marketing reports. <strong>How much do I make on a keyword?</strong> In the Marketing Optimization: Search Engine Marketing: CPC Program Analysis report, look at RPC (Revenue Per Click) and ROI. In the  Marketing Optimization: Search Engine Marketing: Overall Keyword Conversion and CPC vs Organic Conversion reports, look at the $/Visits (per visit value) metric. <strong>At which times of the day should I maximize a keyword's exposure?</strong> Look at the Marketing Optimization: Search Engine Marketing: Day Parts Breakdown report.  Drill down on the keyword you are analyzing. The report will display the number of goals or transactions and a conversion rate by hour of the day. The timezone is controlled by your administrator using the Time Offset field on the Reporting tab of Configuration--&gt;Urchin Profiles--&gt;Profiles--&gt;Edit. By default, this is set to "Local Time". </li></ul></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/How_To_Analyze_Keyword_Buying.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

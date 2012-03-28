@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Urchin_Data_API_FAQ.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Urchin Data API FAQ</strong> <p class="line867"><strong>How do I extract data using the Urchin API?</strong> <p class="line874">First, choose whether you want to use REST or SOAP.  To make a REST request, you simply need a URL with valid query arguments. For example, to extract a list of profiles, you would make the following request: <pre>http://your_host:your_port/services/v1/adminservice/accounts/?login=URCHIN_LOGIN&amp;password=URCHIN_PWD
+</pre><p class="line862">To learn how to extract data using SOAP, refer to <a href="https://secure.urchin.com/helpwiki/en/Samples_for_Java_(SOAP)_v1.html">Samples for Java (SOAP) v1</a>. <p class="line867"><strong>How do I extract data from multiple profiles?</strong> <p class="line874">The Urchin API provides programmatic access to data from all profiles for the authenticated user. You'll need to invoke multiple requests using different profile ids as arguments. For example, you'd invoke the following two requests to extract the visitor ids from profiles 1 and 2:  <pre>http://your_host:your_port/services/v1/reportservice/data?login=URCHIN_LOGIN&amp;password=URCHIN_PWD&amp;ids=1&amp;start-date=2009-01-01&amp;end-date=2009-02-01&amp;dimensions=u:visitor_id
+http://your_host:your_port/services/v1/reportservice/data?login=URCHIN_LOGIN&amp;password=URCHIN_PWD&amp;ids=2&amp;start-date=2009-01-01&amp;end-date=2009-02-01&amp;dimensions=u:visitor_id
+</pre><p class="line867"><strong>Can I import data into Urchin using the API?</strong> <p class="line874">No. This version of the API does not provide a way to import data into Urchin.  <p class="line867"><strong>Why does Firefox return "Access to restricted URI denied (NS_ERROR_DOM_BAD_URI)"?</strong> <p class="line874">A browser "same origin policy" prevents access to methods and properties across pages on different sites. However there are several workarounds, such as using a webproxy, iframes and apach mod_rewrite. Search "cross-domain ajax" on Google for more information. <p class="line867"><strong>How do I configure a webproxy to get around the "same origin policy"?</strong> <p class="line874">Use a CGI, PHP, Python or other script that wraps cross-domain Ajax calls and makes the resulting data local to the requesting domain. Search "web proxy script" on Google for more information.  <p class="line867"><strong>Where can I find a list of all the available metrics and dimensions?</strong> <p class="line862">For information on metrics, see <a href="https://secure.urchin.com/helpwiki/en/Metrics_and_Units_v1.html">Metrics and Units v1</a>. For information on dimensions, see <a href="https://secure.urchin.com/helpwiki/en/Dimensions_v1.html">Dimensions v1</a>. <p class="line867"><strong>What is an Urchin table?</strong> <p class="line874">In Urchin, a table stores processed (and sometimes raw) data from access logs. All Urchin tables are listed and described in the lib/reporting/profiletypes/Default/datamap.dm2 file. You can only extract data from one table per API call. You cannot request a more broad combination of dimensions and metrics than what is represented in the datamap. <p class="line862">You can extend existing set of tables. For more information, see <a href="https://secure.urchin.com/helpwiki/en/Custom_Data_Maps.html">Custom Data Maps</a>. New tables automatically become available to API users and are discoverable via the getTableList method for SOAP, and getTableList method for REST.  <p class="line867"><strong>Can I integrate the Urchin Data API with IIS?</strong> <p class="line862">Yes. See <a href="https://secure.urchin.com/helpwiki/en/Can_I_integrate_the_Urchin_Data_API_with_IIS%253F.html">Can I integrate the Urchin Data API with IIS?</a>. <p class="line867"><strong>How do I integrate with Apache?</strong> <p class="line874">By default,  Urchin is bundled with working instance of the Data API under Apache web server.  The Apache module is provided in the dist/lib/api/v1 directory.  <p class="line874">SOAP services are discoverable via the following requests:  <pre>http://your_host:your_port/services/v1/reportservice?wsdl 
+</pre><p class="line874">and  <pre>http://your_host:your_port/services/v1/adminservice?wsdl
+</pre><p class="line874">REST methods are discoverable via the following requsts: <pre>http://your_host:your_port/services/v1/reportservice 
+</pre><p class="line874">and  <pre>http://your_host:your_port/services/v1/adminservice
+</pre><p class="line867"><strong>Can I encrypt my login and password before passing them to the REST services?</strong> <p class="line862">Yes. Use SSL-enabled Apache or IIS. For details, refer to <a href="https://secure.urchin.com/helpwiki/en/How_do_I_activate_SSL_on_the_Urchin_Webserver%253F.html">How do I activate SSL on the Urchin Webserver?</a>. <p class="line867"><strong>How do I enable the Data API over SSL?</strong> <p class="line862">Once SSL has been activated, the API will handle requests over SSL. For details on activating SSL, refer to <a href="https://secure.urchin.com/helpwiki/en/How_do_I_activate_SSL_on_the_Urchin_Webserver%253F.html">How do I activate SSL on the Urchin Webserver?</a>  <p class="line867"><strong>What are the main configuration files for the Data API?</strong> <p class="line874">The Data API depends on the following configuration files: <ul><li>etc/urchin.conf - general settings and connection to configuration database </li><li>etc/session.conf - authentication settings </li><li>var/urchinwebd.conf.template - apache module settings </li><li>lib/api/v1/axis2.xml - common library settings </li></ul><p class="line867"><strong>How do I disable the Urchin Data API?</strong> <p class="line862">The Data API is enabled by default.  To disable it, stop the Urchin webserver, go to var/urchinwebd.conf.template, comment out the line "Load<tt class="backtick"></tt>Module axis2_module lib/api/XXXApiVersionXXX/mod_axis2.so" and start or restart the Urchin webserver. <p class="line867"><strong>How do I switch to another version of the Urchin Data API?</strong> <p class="line862">By default, Urchin will switch on the most recent version of the Data API. To enable older version of the API, create new entry in etc/urchin.conf "Data<tt class="backtick"></tt>Api<tt class="backtick"></tt>Version: N" and restart the Urchin webserver. <p class="line867"><strong>Can I disable authentication?</strong> <p class="line874">Yes. The Data API inherits the Urchin session controller authentication settings from etc/session.conf. For details on how to bypass authentication, refer to <a href="https://secure.urchin.com/helpwiki/en/Using_External_Authentication_or_Authentication_Bypass.html">Using External Authentication or Authentication Bypass</a>. <p class="line867"><strong>Where are the API error logs stored?</strong> <p class="line862">By default API errors are stored in the var/api.log file. To change default settings and/or error level, see "Can I integrate with IIS?" in this FAQ and the following Help Center article. See <a href="https://secure.urchin.com/helpwiki/en/Error_Handling_v1.html">Error Handling v1</a>.  <p class="line867"><strong>How many requests can the API handle?</strong> <p class="line874">Environment: linux 2.6, 3 GHz CPU, 2 GB RAM <p class="line874">Average saturation point for the Data API methods are: <ul><li>dates period - 1 month </li><li>log size - 300 MB, method IP+User agent </li><li>concurrent users - 400 </li><li>hit rate - 80 hits/sec </li><li>response time - 15 milliseconds </li><li>throughput - 320 KB/s </li></ul><p class="line874">Average saturation point for getData() method (huge log with 10M visitors): <ul><li>dates period - 2 years </li><li>log size - 5 GB, method UTM </li><li>concurrent users - 30 </li><li>hit rate - 4 hits/sec </li><li>response time - 1 sec </li><li>throughput - 1.5 MB/s </li></ul><p class="line874">Performance is limited by the following two settings: <ul><li>maximum concurrent connections to the MySQL/Postgres database </li><li>maximum sockets on Apache/IIS </li></ul><p class="line874">To boost the performance, these limits have to be extended. <p class="line867"><strong>Can I provide unrestricted API access to my data?</strong> <p class="line874">Yes, at your own risk. If you intend to provide access to the world, we recommend that you use an SSL-enabled webserver with the most recent security updates. <p class="line867"><strong>Which authentication mechanism does the Data API use?</strong> <p class="line874">The Data API inherits the Urchin session controller authentication settings from etc/session.conf. <p class="line867"><strong>Does the authentication session expire?</strong> <p class="line874">No. The user is authenticated during each call; the Data API doesn't use sessions. <p class="line867"><strong>Why must I provide a login and password during each call?</strong> <p class="line874">Since the Data API doesn't use sessions, each call requires authentication. <p class="line867"><strong>How do I extract data from custom datamaps?</strong> <p class="line874">The Data API automatically exposes newly created custom datamaps. Use the getTables() method (in the report service) to retrieve a set of all the available datamaps and their dimensions/metrics. <p class="line874">Here is a sample scenario illustrating how to extract data from a custom datamap: <ol type="1"><li>Create a new profiletype lib/custom/profiletypes/mycustom1. </li><li>Copy the default.dm2 and default.rs2 files from lib/reporting/profiletypes/default to mycustom1. </li><li>Modify default.dm2 by adding a new datamap entry #40 with dimensions 140 and metrics 5,6,7. </li><li>Call the getTables() method - it will return old tables and new #40 with dimensions 140 and metrics 5,6,7. </li><li>Call getData() method with table_id=40 (or without a table_id if your combination of dimensions/metrics is unique across all tables). </li></ol></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Urchin_Data_API_FAQ.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

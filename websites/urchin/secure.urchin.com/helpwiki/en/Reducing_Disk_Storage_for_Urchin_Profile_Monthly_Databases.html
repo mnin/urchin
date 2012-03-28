@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Reducing_Disk_Storage_for_Urchin_Profile_Monthly_Databases.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Reducing Disk Storage for Urchin Profile Monthly Databases</strong> <p class="line867"><strong>Overview</strong> <p class="line874">Urchin reporting data is stored in independent monthly databases for each Profile configured within Urchin. These databases typically reside in the data/reports directory of the Urchin distribution. By default, Urchin will keep an unlimited number of these monthly Profile databases. For most small and medium sized sites, the storage requirements are modest. Because Urchin reporting does not require access to the raw webserver logs once they've been processed, there is no need to keep the webserver logs. The processed Urchin monthly databases will be approximately 5-10% of the size of the raw webserver logs that were processed to populate the Urchin databases, and in most cases this will represent a very minimal amount of disk space even if all Urchin databases are kept indefinitely. <p class="line874">For large sites, however, which produce hundreds or thousands of megabytes worth of webserver logs per day, or hosting providers who have a very large number of Profiles configured, it may be desirable to reduce Urchin's ongoing data storage requirement. This can be accomplished in one of the following ways: <ol type="1"><li>Set the profile to automatically delete the raw tracking data after processing the logs </li><li>Set the profile to archive historic data </li><li>Limit the number of months of historical reporting data that are retained  </li></ol><p class="line874">Instructions for each of these methods is provided at the end of this article. <p class="line867"><strong>Technical Overview of Urchin Database Storage</strong> <p class="line874">For each Urchin profile, Urchin maintains a set of database files stored monthly in directories named YYYYMM.  Each of these directories contains ~50 files that provide data for the reporting engine. The directory and database files are named after the month for which they store data. The complete list of databases is: <p class="line862">YYYYMM-uhed --&gt; header for the database <p class="line862">YYYYMM-usti --&gt; string index <p class="line862">YYYYMM-ustd --&gt; string data <p class="line862">YYYYMM-udai --&gt; aggregate tables index <p class="line862">YYYYMM-udXX --&gt; aggregate data tables (XX is replaced with the table number from the datamap) <p class="line862">YYYYMM-uvii --&gt; visitor index <p class="line862">YYYYMM-uvid --&gt; visitor data <p class="line862">YYYYMM-used --&gt; session data <p class="line862">YYYYMM-upad --&gt; path data <p class="line862">YYYYMM-utrd --&gt; transaction data (Ecommerce) <p class="line862">YYYYMM-uitd --&gt; item data (Ecommerce) <p class="line862">YYYYMM-ulti --&gt; log tracking index <p class="line862">YYYYMM-ultd --&gt; log tracking data <p class="line862">YYYYMM-utod --&gt; totals data <p class="line862">YYYYMM-uhid --&gt; histogram data <p class="line862">YYYYMM-umad --&gt; visitor matrix data <p class="line874">Each set of databases is complete for the month of data that it contains. Since there is no interdependency between the monthly database sets, archiving and pruning operations can be performed independently on each database set without affecting any other month. <p class="line874">Under normal operation, the entire set of monthly database file is retained for each month. However, four of these database files are used only by the Urchin log processing engine. These database files are: <p class="line874">YYYYMM-usti  <p class="line874">YYYYMM-udai  <p class="line874">YYYYMM-ulti <p class="line874">YYYYMM-ultd <p class="line874">The following database files are used by the Urchin log processing engine and for cross segmentation and visitor drilldown in the reporting.  Removing the contents will only affect those reporting features. <p class="line874">YYYYMM-uvii  <p class="line874">YYYYMM-uvid  <p class="line874">YYYYMM-used  <p class="line874">YYYYMM-upad  <p class="line874">YYYYMM-utrd  <p class="line874">YYYYMM-uitd  <p class="line874">These databases contain information about visitors, sessions, paths, transactions and products.  These files can account for a substantial percentage of the total storage space required for the month, on the order of 10-50%. Thus there can be a significant disk space advantage by setting the Keep Raw Tracking Data option to off in the Storage/DB screen of the Profile configuration. <p class="line874">It is recommended that only extremely high traffic sites for which keeping the raw tracking data represents a disk or CPU resource consumption issue disable the keeping of raw tracking data. <p class="line874">Other potential disk space savings can be obtained by compressing historic Urchin monthly databases into ZIP archives. The resulting archives are typically only 20-30% the size of the uncompressed database set. While the Urchin reporting engine cannot read the ZIP archives directly, it has the ability to extract the databases it needs from the ZIP archives on the fly. This is completely transparent to a person viewing Urchin reports, other than a slight delay while the databases are being unpacked. The reporting engine does not remove the databases it has unpacked; this allows quicker access to data while the person is viewing the Urchin reports. However, the original ZIP archive is left in place, so a periodic cleanup operation can simply remove the unpacked databases to regain the disk space once again. <p class="line874">The last avenue for reducing Urchin storage requirements is to establish a policy for the duration of historical reporting that Urchin is to provide. For instance, in environments where Urchin is provided as a reporting service with a hosting package, it is very common to provide Urchin historical for the period of one year. Due to the monthly organization of Urchin databases, it is very easy for automatic scripting mechanisms to automatically remove old monthly databases that have aged past a certain threshold. When a historical reporting length policy is implemented, Urchin's data storage requirement will typically stabilize or only increase slightly once the historical retention limit has been reached. <p class="line867"><strong>Methods for Reducing Data Storage - How To</strong> <p class="line867"><strong>Method 1: Delete the Raw Tracking Data after Log Processing</strong> <p class="line874">You can configure the profile to delete raw visitor and session information after processing. For large sites, this improves performance and reduces the amount of data stored. Note: Sessions that overlap days appear as two sessions (one for each day) instead of one session, when this configuration is selected. The difference in results will be negligible for most sites. <p class="line874">To configure the profile to delete raw visitor and session information after processing: <ol type="1"><li><p class="line862">In the Admin interface, click Configuration, then Urchin Profiles--&gt;Profiles. </li><li>Edit the desired profile. </li><li>In the Storage/DB tab, turn the Keep Raw Tracking Data field "off". </li><li>Click Update.  </li></ol><p class="line867"><strong>Method 2: Auto-Archive Historic Data</strong> <p class="line874">You can configure the profile to compress historic monthly data into an archive. The reports can view the archived data, but no additional hits may be processed for the archived months. <p class="line874">To configure the profile to archive historic data, <ol type="1"><li><p class="line862">In the Admin interface, click Configuration, then Urchin Profiles--&gt;Profiles. </li><li>Edit the desired profile. </li><li>In the Storage/DB tab, turn the Archive DB field "on". </li><li>Specify a number of months for the Archive DB After field. </li><li>Click Update.  </li></ol><p class="line867"><strong>Method 3: Limit Retention of Databases for Historical Reporting</strong> <p class="line874">For each Urchin Profile, simply remove any databases in the data/reports/profile-name directory that begin with a YYYYMM prefix that have aged past the threshold needed for historical reporting. For example, if you wish to retain a one-year reporting history and the current month is February 2004, you would remove any databases named 200301-*data.un* to delete the reporting data from January 2003 for that Urchin profile. This would be repeated for all databases older than January 2003. </div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Reducing_Disk_Storage_for_Urchin_Profile_Monthly_Databases.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

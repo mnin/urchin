@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/How_do_I_remove_our_own_internal_visitors_from_our_web_site_report%253F.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong> How do I remove our own internal visitors from our web site report? </strong>  <p class="line867"><strong>Overview</strong>  <p class="line874">It is very common to use IP address filters with Profiles, for the purposes of including only IP addresses from a particular IP address, excluding the IP addresses of internal monitoring systems, and so forth. This is easily done with Urchin. However, it is important to use the proper 'Filter Field' specification when setting up an IP address filter.  <p class="line867"><strong>Procedure</strong>  <p class="line874">The simplest way to configure the appropriate internal traffic filter is to follow these steps: <ul><li><p class="line862">Navigate to Configuration -&gt; Urchin Profiles -&gt; Filter Manager in the Urchin administration interface </li><li>Click the "Add" button to create a new filter </li><li><p class="line862">Choose "Filter out internal traffic" from the "=&gt; Select Example Filters" dropdown menu </li><li>Replace the example IP address in the "Filter Pattern" box with the IP address you wish to filter out. Don't forget to put a backslash ("\") character in before each dot in the IP address! </li><li>Click "Finish" and then click "More Options" on the next window </li><li>Select all the Profiles you want to apply the filter to in the "Available Profiles" box and then click the right arrow to transfer them to the "Applied To" box. </li><li>Click "Update" to apply the filter to the selected Profiles </li></ul><p class="line867"><strong>Other Considerations</strong> <p class="line862">Remember that Urchin filter patterns are POSIX regular expressions. Therefore, be sure to escape the '.' characters in your IP address specification to ensure that Urchin does not interpret them as metacharacters for the regular expression. For example, to filter on the IP address '172.16.1.1', you would specify the filter pattern as '172\.16\.1\.1'. As another example, to filter on the IP address range '192.168.<em>xxx.xxx<strong>, the filter field would be specified as '192\.168\.'. </em></strong> Here are some more examples:<strong> </strong> <p class="line874">Multiple IP addresses are separated by pipe symbols 192\.168\.12\.32$|10\.10\.1\.23$|63\.212\.171\.5$ Note the use of $ which indicates that no other numbers should follow the last printed number. So, to include both 63.212.171.5 as well as 63.212.171.53, your filter can be written as 63\.212\.171\.5. But, to match only 63\.212\.171\.5, your filter pattern should be written as 63\.212\.171\.5$ <p class="line874">A range of IP addresses can be expressed in a single string. 192.168.10.10 through 192.168.10.50 can be written as 192.168.10.[1-5][0-9]$ <p class="line862">Matching to the beginning of the line the filter pattern 63\.212\.171\.5 will also match 163\.212\.171\.5. To only include the IP that begins with a certain number, use the 'Match to the beginning of the string expression '<sup>' like so </sup>63\.212\.171\.5$ <p class="line867"><strong>Complete Regular Expression List</strong> <pre> *'''Wildcard'''        '''Meaning'''
+ *'''.'''       match any single character
+ *'''*'''       match zero or more of the previous item
+ *'''+'''       match one or more of the previous item
+ *'''?'''       match zero or one of the previous item
+ *'''()'''      remember contents of parenthesis as item
+ *'''[]'''      match one item in this list
+ *'''-'''       create a range in a list
+ *'''|'''       or
+ *'''^'''       match to the beginning of the field
+ *'''$'''       match to the end of the field
+ *'''\'''       escape any of the above
+</pre></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/How_do_I_remove_our_own_internal_visitors_from_our_web_site_report%253F.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

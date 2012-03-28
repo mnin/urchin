@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Urchin_Reporting_Database_Settings.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Urchin Reporting Database Settings</strong> <p class="line867"><strong>Overview</strong> <p class="line874">Urchin provides two options for managing the reporting database scalability and precision: <p class="line867"><strong>DB Table Limit</strong> <p class="line862">This option allows you to maintain large site data within reasonable limits. Use this option to limit the number of records in a single Urchin reporting db table. The default option is appropriate for most installations. If, for a month, the number of records in any table exceeds this limit, then the records beyond this limit are grouped into the last record (named  <em>’Other’</em>). So, larger the table size, the more precise the reporting data. If an Urchin report shows a high percentage of entries labeled Other, you should increase the DB Table Limit to increase precision. <p class="line867"><strong>Memory Usage Target</strong> <p class="line874">To limit the amount of memory that can be allocated during log processing, Urchin provides this option to specify the upper limit on the size of reporting db in memory. For larger sites, a larger memory footprint can increase performance as it will be doing less page swapping. Although the default setting is conservative, you should set a larger value if the system has sufficient physical memory available. <p class="line867"><strong>Memory Settings</strong> <p class="line874">Currently, Urchin supports following max values for reporting DB settings: <ul><li>32-bit version: <ul><li><p class="line862">DB Table Limit : &lt;= 500,000 records </li><li><p class="line862">Memory Usage Target : &lt;= 1024 MB </li></ul></li><li>64-bit version (Urchin 7.0+): <ul><li><p class="line862">DB Table Limit : &lt;= 10,000,000 records </li><li><p class="line862">Memory Usage Target : &lt;= 8192 MB </li></ul></li></ul><p class="line867"><strong>Urchin 32-bit: Experimental Settings</strong> <p class="line874">Beginning with version 6.5, Urchin may support extended value for these settings, which should only be used by experienced Urchin users. These extended values will not be visible on the administration interface and will have to be configured via the configuration database. For Urchin 6.5, following are the max values for extended reporting DB settings. <ul><li style="list-style-type:none"><p class="line862">DB Table Limit : &lt;= 2,000,000 records </li><li style="list-style-type:none"><p class="line862">Memory Usage Target : &lt;= 2GB </li></ul><p class="line867"><strong>Urchin 32-bit: Experimental Settings Guidelines</strong> <p class="line874">Since these extended setting are experimental and may lead to out of memory errors on some system, the following information and guidelines should be considered before using them. <ul><li>In general, each 32-bit application has 4 gigabyte (GB) of virtual address space, which is divided between user address space and kernel address space. User process can only allocate memory in the user address space. </li><li><p class="line891"><strong>Windows platform</strong>: 2 GB is available to the user application and the other 2 GB is available to the kernel. Although windows OS allows to extend user space up to 3GB via <a class="http" href="http://msdn.microsoft.com/en-us/library/bb613473(VS.85).aspx">4-gigabyte tuning</a>, yet Urchin processes don't assumes this highly unlikely scenario and are always compiled/linked for 2GB limits. Therefore, on windows OS, user should not set DB Table Limit more than 500,000 records and Memory Usage Target more than 1GB. <ul><li><p class="line862">For maximum <em>performance</em>,  set: <ul><li><p class="line862">Memory Usage Target : <strong>1024</strong> MB </li><li><p class="line862">DB Table Limits : <strong>500,000</strong> db table rows </li></ul></li><li><p class="line862">For maximum <em>precision</em>, set: <ul><li><p class="line862">Memory Usage Target : <strong>256</strong>  MB </li><li><p class="line862">DB Table Limits : <strong>1,000,000</strong> db table rows </li></ul></li></ul></li><li><p class="line891"><strong>Unix platform:</strong> 3 GB is available  to the user application and the remaining 1 GB to the kernel. Therefore,  on UNIX platform, user should not set DB Table Limit more than <strong>500,000</strong>  records and Memory Usage Target more than <strong>2GB</strong>. <ul><li>For maximum performance, set: <ul><li><p class="line862">Memory Usage Target : <strong>2048</strong>  MB </li><li><p class="line862">DB Table Limits : <strong>500,000</strong> db table rows </li></ul></li><li>For maximum precision, set: <ul><li><p class="line862">Memory Usage Target : <strong>1024</strong>  MB </li><li><p class="line862">DB Table Limits : <strong>2, 000,000</strong> db table  rows </li></ul></li></ul></li></ul><p class="line867"><strong>Urchin 32-bit: Configuring extended 'DB Table Limit</strong>' <p class="line874">Like regular 'DB Table Limit' value, these extended values can be configured for individual profiles as well as globally. The following query will set the DB Table Limit to 1,000,000 records for a profile with profile id '1'. <p class="line867"><pre>UPDATE uprofiles SET uipr_db_table_limit=1000000 WHERE uspr_id=1;
+</pre><p class="line874">The following query will set the global DB Table Limit to 1,000,000 records. It will get applied to all profiles whose value for uipr_db_table_limit field is 0. <p class="line867"><pre>UPDATE uglobals SET uigl_db_table_limit=1000000 WHERE ucgl_name='Global Settings';
+</pre><p class="line867"><strong>Urchin 32-bit: Configuring extended 'Memory Usage Target' </strong> <p class="line874">Memory Usage Target can only be set globally. It automatically is applied to profiles when the DB Memory Usage is set to 'Limit to Cache System' (or db field 'ubpr_limit_db_cache_size' set to 1). The following query will set the global Memory Usage Target to 2 GB. Note that db field consider the number in 'megabytes' (512 will actually be 512 MB). <p class="line867"><pre>UPDATE uglobals SET uigl_db_cache_size=2048 WHERE ucgl_name='Global Settings';
+</pre></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Urchin_Reporting_Database_Settings.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

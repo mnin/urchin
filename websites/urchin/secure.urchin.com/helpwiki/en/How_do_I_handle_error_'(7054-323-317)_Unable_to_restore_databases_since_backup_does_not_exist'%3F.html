@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/How_do_I_handle_error_'(7054-323-317)_Unable_to_restore_databases_since_backup_does_not_exist'%253F.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>How do I handle error '(7054-323-317) Unable to restore databases since backup does not exist'?</strong> <p class="line867"><strong>Description of Problem</strong> <p class="line874">When running an Urchin profile, you get the following messages: <p class="line874">(7050-323-317) Starting automatic rollback + <p class="line874">(7054-323 317) Unable to restore databases since backup does not exist. <p class="line867"><strong>Cause</strong> <p class="line874">This error may result if a previous run of this Urchin Profile was terminated abnormally. This could happen if the process/task of the 'log processing engine' was manually terminated by the system administrator (from the console CLI, etc.), or another unexpected problem occured which terminated an ongoing log processing, or perhaps due to a system reboot, and this process was not completed properly. <p class="line874">Ordinarily, Urchin is able to recover gracefully from an abnormal termination by rolling back to the last known good state of the Profile; however, if the profile processing was terminated on the first run of a profile (or the first run for a month), there will be no backup file to roll back to. At this point, Urchin issues the "Unable to restore databases" error. <p class="line874">On a more technical level, the Urchin log processing engine creates a lock.udb file in the reporting directory for the profile it is currently processing. It keeps this file locked while processing to ensure that only one instance of the log processing engine can run for the profile at any given time. At startup time, the log processing engine checks for the existence of the lock.udb file. If the file is present, the log processing engine checks for current locks. If none are found, then the previous run of the profile failed, so the log processing engine attempts to rollback the profile's databases to the last known good state before proceeding. As noted above, if the rollback archive does not exist, the rollback error messages are printed and the log processing terminates. <p class="line867"><strong>Remedy</strong> <p class="line874">Due to the fact that the previous run of Urchin terminated abnormally, the Urchin databases for the month being processed are in an unknown state and the data contained in them was not properly checkpointed. Therefore, the data for the entire month being processed will need to be removed. In most cases, the only Urchin data for the month will be that created during the failed processing run, so no good data exists anyway. <p class="line874">Please use the following procedure to reset the Urchin profile data and allow you to continue running the profile: <p class="line867"><span class="u">Windows Systems</span> <ol type="1"><li><p class="line862">Start a DOS Shell (Start -&gt; Run -&gt; "cmd") </li><li>Change directory to the folder where Urchin profile data is stored, usually <ul><li style="list-style-type:none">C:\Program Files\Urchin\data\reports\profilename </li></ul></li><li>View the contents of the lock.udb file with the command "TYPE lock.udb". There should be one or more lines consisting of YYYYMM date entries, e.g. 200408. </li><li>For each YYYYMM line the in lock.udb file, perform the following steps: <ul><li>Remove the corresponding monthly Urchin databases with the command "DEL YYYYMM-*data*" </li><li>Check to see if a backup archive exists for the corresponding month using the command "DIR YYYYMM*backup*.zip". The backup archives are named YYYYMM-backup-YYYYMMDDHHMMSS.zip, e.g. 200805-backup-20080331103340.zip. </li><li>If one or more backup file exists for that month, restore the data from the backup archive with latest timestamp using the command "..\..\..\util\unzip -o -u backupfile.zip", e.g. "..\..\..\util\unzip -o -u 200805-backup-20080331103340.zip" </li></ul></li><li>Remove the lock.udb file with the command "DEL lock.udb" </li><li>You can now run the profile again with the Run Now button </li></ol><p class="line867"><span class="u">UNIX-type Systems</span> <ol type="1"><li>Start a command shell either as "root" or the user that Urchin runs as </li><li>Change directory to the location where the Urchin profile data is kept - e.g. <ul><li style="list-style-type:none">"cd /usr/local/urchin/data/reports/profilename" </li></ul></li><li>View the contents of the lock.udb file with the command "cat lock.udb". There should be one or more lines consisting of YYYYMM date entries, e.g. 200803. </li><li>For each YYYYMM line the in lock.udb, perform the following steps: <ul><li>Remove the corresponding monthly Urchin databases with the command "rm YYYYMM-*data*" </li><li>Check to see if a backup archive exists for the corresponding month using the command <ul><li style="list-style-type:none">"ls YYYYMM*backup*.zip". The backup archives are named YYYYMM-backup-YYYYMMDDHHMMSS.zip, e.g. 200803-backup-20080331103340.zip. </li></ul></li><li>If one or more backup file exists for that month, restore the data from the backup archive with latest timestamp using the command "../../../util/unzip -o -u backupfile.zip", e.g. "../../../util/unzip -o -u 200803-backup-20080331103340.zip" </li></ul></li><li>Remove the lock.udb file with the command "rm lock.udb" </li><li>You can now run the profile again with the Run Now button </li></ol></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/How_do_I_handle_error_'(7054-323-317)_Unable_to_restore_databases_since_backup_does_not_exist'%253F.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

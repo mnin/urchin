@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Error_code_list_for_failed_FTP_and_HTTP_remote_webserver_log_transfers.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Error code list for failed FTP and HTTP remote webserver log transfers</strong> <p class="line867"><strong>Overview</strong> <p class="line874">An Urchin Log Source can be configured to collect a webserver log from a remote server via FTP or HTTP. Under normal circumstances, the transfer will be successful and no errors appear in the runtime log. However, if some error is encountered during the transfer (e.g. an invalid username/password, remote server unreachable, remote log unreadable, etc.), Urchin will log an error code in the runtime output, as viewable in the Task History for the Profile. This error code appears in parenthesis next to the "failed" message after the webserver log transfer is attempted, e.g. (-9) <p class="line874">The error codes are listed below along with a text message explaining the problem that was encountered. <p class="line867"><strong>Error Code List</strong> <p class="line874">CURLE_UNSUPPORTED_PROTOCOL (1) - The URL you passed to libcurl used a protocol that this libcurl does not support. The support might be a compile-time option that you didn't use, it can be a misspelled protocol string or just a protocol libcurl has no code for. <p class="line874">CURLE_FAILED_INIT (2) - Very early initialization code failed. This is likely to be an internal error or problem. <p class="line874">CURLE_URL_MALFORMAT (3) - The URL was not properly formatted. <p class="line874">CURLE_COULDNT_RESOLVE_PROXY (5) - Couldn't resolve proxy. The given proxy host could not be resolved. <p class="line874">CURLE_COULDNT_RESOLVE_HOST (6) - Couldn't resolve host. The given remote host was not resolved. <p class="line874">CURLE_COULDNT_CONNECT (7) - Failed to connect() to host or proxy. <p class="line874">CURLE_FTP_WEIRD_SERVER_REPLY (8) - After connecting to an FTP server, libcurl expects to get a certain reply back. This error code implies that it got a strange or bad reply. The given remote server is probably not an OK FTP server. <p class="line874">CURLE_REMOTE_ACCESS_DENIED (9) - We were denied access to the resource given in the URL. For FTP, this occurs while trying to change to the remote directory. <p class="line874">CURLE_FTP_WEIRD_PASS_REPLY (11) - After having sent the FTP password to the server, libcurl expects a proper reply. This error code indicates that an unexpected code was returned. <p class="line874">CURLE_FTP_WEIRD_PASV_REPLY (13) - libcurl failed to get a sensible result back from the server as a response to either a PASV or a EPSV command. The server is flawed. <p class="line874">CURLE_FTP_WEIRD_227_FORMAT (14) - FTP servers return a 227-line as a response to a PASV command. If libcurl fails to parse that line, this return code is passed back. <p class="line874">CURLE_FTP_CANT_GET_HOST (15) - An internal failure to lookup the host used for the new connection. <p class="line874">CURLE_FTP_COULDNT_SET_TYPE (17) - Received an error when trying to set the transfer mode to binary or ascii. <p class="line874">CURLE_PARTIAL_FILE (18) - A file transfer was shorter or larger than expected. This happens when the server first reports an expected transfer size, and then delivers data that doesn't match the previously given size. <p class="line874">CURLE_FTP_COULDNT_RETR_FILE (19) - This was either a weird reply to a 'RETR' command or a zero byte transfer complete. <p class="line874">CURLE_QUOTE_ERROR (21) - When sending custom "QUOTE" commands to the remote server, one of the commands returned an error code that was 400 or higher (for FTP) or otherwise indicated unsuccessful completion of the command. <p class="line862">CURLE_HTTP_RETURNED_ERROR (22) - This is returned if CURLOPT_FAILONERROR is set TRUE and the HTTP server returns an error code that is &gt;= 400. (This error code was formerly known as CURLE_HTTP_NOT_FOUND.) <p class="line874">CURLE_WRITE_ERROR (23) - An error occurred when writing received data to a local file, or an error was returned to libcurl from a write callback. <p class="line874">CURLE_UPLOAD_FAILED (25) - Failed starting the upload. For FTP, the server typically denied the STOR command. The error buffer usually contains the server's explanation to this. (This error code was formerly known as CURLE_FTP_COULDNT_STOR_FILE.) <p class="line874">CURLE_READ_ERROR (26) - There was a problem reading a local file or an error returned by the read callback. <p class="line874">CURLE_OUT_OF_MEMORY (27) - A memory allocation request failed. This is serious badness and things are severely screwed up if this ever occur. <p class="line874">CURLE_OPERATION_TIMEDOUT (28) - Operation timeout. The specified time-out period was reached according to the conditions. Note: The time-out period can be changed starting from Urchin 6.6.0.2. To specify the remote logs download timeout please open urchin.conf file and uncomment the following line: <ul><li style="list-style-type:none"><p class="line862">#DownloadTimeout: 30 </li></ul><p class="line874">CURLE_FTP_PORT_FAILED (30) - The FTP PORT command returned error. This mostly happen when you haven't specified a good enough address for libcurl to use. See CURLOPT_FTPPORT. <p class="line874">CURLE_FTP_COULDNT_USE_REST (31) - The FTP REST command returned error. This should never happen if the server is sane. <p class="line874">CURLE_RANGE_ERROR (33) - The server does not support or accept range requests. <p class="line874">CURLE_HTTP_POST_ERROR (34) - This is an odd error that mainly occurs due to internal confusion. <p class="line874">CURLE_SSL_CONNECT_ERROR (35) - A problem occurred somewhere in the SSL/TLS handshake. You really want the error buffer and read the message there as it pinpoints the problem slightly more. Could be certificates (file formats, paths, permissions), passwords, and others. <p class="line874">CURLE_FTP_BAD_DOWNLOAD_RESUME (36) - Attempting FTP resume beyond file size. <p class="line862">CURLE_FILE_COULDNT_READ_FILE (37) - A file given with FILE:// couldn't be opened. Most likely because the file path doesn't identify an existing file. Did you check file permissions? <p class="line874">CURLE_LDAP_CANNOT_BIND (38) - LDAP cannot bind. LDAP bind operation failed. <p class="line874">CURLE_LDAP_SEARCH_FAILED (39) - LDAP search failed. <p class="line874">CURLE_FUNCTION_NOT_FOUND (41) - Function not found. A required zlib function was not found. <p class="line874">CURLE_ABORTED_BY_CALLBACK (42) - Aborted by callback. A callback returned "abort" to libcurl. <p class="line874">CURLE_BAD_FUNCTION_ARGUMENT (43) - Internal error. A function was called with a bad parameter. <p class="line874">CURLE_INTERFACE_FAILED (45) - Interface error. A specified outgoing interface could not be used. Set which interface to use for outgoing connections' source IP address with CURLOPT_INTERFACE. (This error code was formerly known as CURLE_HTTP_PORT_FAILED.) <p class="line874">CURLE_TOO_MANY_REDIRECTS (47) - Too many redirects. When following redirects, libcurl hit the maximum amount. Set your limit with CURLOPT_MAXREDIRS. <p class="line874">CURLE_UNKNOWN_TELNET_OPTION (48) - An option set with CURLOPT_TELNETOPTIONS was not recognized/known. Refer to the appropriate documentation. <p class="line874">CURLE_TELNET_OPTION_SYNTAX (49) - A telnet option string was Illegally formatted. <p class="line874">CURLE_PEER_FAILED_VERIFICATION (51) - The remote server's SSL certificate or SSH md5 fingerprint was deemed not OK. <p class="line874">CURLE_GOT_NOTHING (52) - Nothing was returned from the server, and under the circumstances, getting nothing is considered an error. <p class="line874">CURLE_SSL_ENGINE_NOTFOUND (53) - The specified crypto engine wasn't found. <p class="line874">CURLE_SSL_ENGINE_SETFAILED (54) - Failed setting the selected SSL crypto engine as default! <p class="line874">CURLE_SEND_ERROR (55) - Failed sending network data. <p class="line874">CURLE_RECV_ERROR (56) - Failure with receiving network data. <p class="line874">CURLE_SSL_CERTPROBLEM (58) - problem with the local client certificate <p class="line874">CURLE_SSL_CIPHER (59) - Couldn't use specified cipher <p class="line874">CURLE_SSL_CACERT (60) - Peer certificate cannot be authenticated with known CA certificates <p class="line874">CURLE_BAD_CONTENT_ENCODING (61) - Unrecognized transfer encoding <p class="line874">CURLE_LDAP_INVALID_URL (62) - Invalid LDAP URL <p class="line874">CURLE_FILESIZE_EXCEEDED (63) - Maximum file size exceeded <p class="line874">CURLE_USE_SSL_FAILED (64) - Requested FTP SSL level failed <p class="line874">CURLE_SEND_FAIL_REWIND (65) - When doing a send operation curl had to rewind the data to retransmit, but the rewinding operation failed <p class="line874">CURLE_SSL_ENGINE_INITFAILED (66) - Initiating the SSL Engine failed <p class="line874">CURLE_LOGIN_DENIED (67) - The remote server denied curl to login (Added in 7.13.1) <p class="line874">CURLE_TFTP_NOTFOUND (68) - File not found on TFTP server <p class="line874">CURLE_TFTP_PERM (69) - Permission problem on TFTP server <p class="line874">CURLE_REMOTE_DISK_FULL (70) - Out of disk space on the server <p class="line874">CURLE_TFTP_ILLEGAL (71) - Illegal TFTP operation <p class="line874">CURLE_TFTP_UNKNOWNID (72) - Unknown TFTP transfer ID <p class="line874">CURLE_REMOTE_FILE_EXISTS (73) - File already exists and will not be overwritten <p class="line874">CURLE_TFTP_NOSUCHUSER (74) - This error should never be returned by a properly functioning TFTP server <p class="line874">CURLE_CONV_FAILED (75) - Character conversion failed <p class="line874">CURLE_CONV_REQD (76) - Caller must register conversion callbacks <p class="line874">CURLE_SSL_CACERT_BADFILE (77) - Problem with reading the SSL CA cert (path? access rights?) <p class="line874">CURLE_REMOTE_FILE_NOT_FOUND (78) - The resource referenced in the URL does not exist <p class="line874">CURLE_SSH (79) - An unspecified error occurred during the SSH session <p class="line874">CURLE_SSL_SHUTDOWN_FAILED (80) - Failed to shut down the SSL connection </div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Error_code_list_for_failed_FTP_and_HTTP_remote_webserver_log_transfers.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

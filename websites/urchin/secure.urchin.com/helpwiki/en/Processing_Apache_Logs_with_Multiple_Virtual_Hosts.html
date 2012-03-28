@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Processing_Apache_Logs_with_Multiple_Virtual_Hosts.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Processing Apache Logs with Multiple Virtual Hosts</strong> <p class="line867"><strong>Introduction</strong> <p class="line874">Organizations may have Apache web servers with multiple virtual hosts, where the logging for all the hosted websites is done to a single log file. While it is more efficient for Urchin to process individual logs for each virtual host, it is possible to configure Profiles for each virtual host that read the single combined log. <p class="line867"><strong>Procedure</strong> <p class="line867"><strong>Step 1:</strong> Make sure that your Apache webserver is configured to create the logs in the proper format for Urchin. In particular, you'll want to ensure that the following fields are being logged, in the order shown below. <ol type="1"><li>Remote Host [%h] </li><li>Requested Host [%v] </li><li>Username [%u] </li><li>Date and Time (NCSA) [%t] </li><li>Request (NCSA) [%r] </li><li><p class="line862">Status [%&gt;s] </li><li>Bytes [%b] </li><li>Referrer [%{Referer}i] </li><li>User-Agent [%{User-Agent}i] </li><li>Cookie (if you are logging cookies, e.g. for UTM) [%{Cookie}i] </li></ol><p class="line867"><strong>Step 2:</strong> Inside the Urchin Administration interface, navigate to Configuration -&gt; Urchin Profiles -&gt; Log Manager, and Add a Log Source that points to your single log file. Choose "auto" as the Log Format. <p class="line867"><strong>Step 3:</strong> Under Configuration -&gt; Urchin Profiles, create a new Profile for each virtual host. In the Add Profile wizard, choose "Add Existing Log Source" when you are adding the Log Source for each Profile, and select the Log Source you configured above. <p class="line867"><strong>Step 4:</strong> Now go to Filter Management and click on Add button to add a new filter. On the "Filter Wizard: Settings" screen, select "Include Pattern ONLY" as the Filter Type, "cs_host(RAW)" as the Filter Field, and put the virtual host name in the Filter Pattern field. Then assign this filter to corresponding profile. <p class="line867"><strong>Step 5:</strong> Repeat steps 3-4 for each virtual host. <p class="line867"><strong>Considerations</strong> <p class="line874">While this procedure is convenient for providing reporting for multiple virtual hosts, it requires that Urchin re-process the entire logfile for each virtual host. On a large logfile, this may have significant overhead and will impact Urchin's performance. It is highly recommended that you create a separate log file for each virtual host instead. <p class="line874">Although this procedure is targeted specifically written for Apache, the process should be similiar for other webserver log formats that log in the same NCSA-type fields. <p class="line874">It is not currently possible for Urchin to automatically detect new virtual hosts and automatically configure new Profiles for them. All Profiles must be set up explicitly.  </div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Processing_Apache_Logs_with_Multiple_Virtual_Hosts.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

@@ -1,0 +1,820 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html >
+
+<!-- Mirrored from groups.google.com/group/urchin-help/ by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link REL="SHORTCUT ICON" HREF="http://groups.google.com/groups/img/3/favicon.ico">
+  <title>
+  Urchin Software from Google - help forum |
+  Google Groups
+  </title>
+  <meta name="save" content="history">
+<noscript><style type="text/css"><!--
+  .noscripthide { display:none; } .noscriptinline { display:inline; } .noscriptblock { display:block; }
+--></style></noscript>
+<script language="javascript"><!--
+  document.write('<style type="text/css">.scripthide { display: none; } .scriptinline { display: inline; } .scriptblock { display: block; }</style>');
+//--></script>
+<script language="javascript1.2"><!--
+  if (document.getElementById)
+    document.write('<style type="text/css">.script12hide { display: none; } .script12inline { display: inline; } .script12block { display: block; } .lnav { position: absolute; } .lnavch { margin-left:23.0ex;}</style>');
+//--></script>
+<script language="javascript1.3"><!--
+  if (document.getElementById)
+    document.write('<style type="text/css">.script13hide { display: none; } .script13inline { display: inline; } .script13block { display: block; }</style>');
+//--></script>
+<style type="text/css"><!--
+  @import "http://groups.google.com/groups/style.css?ig=1&amp;stock=0&amp;av=1&amp;hl=en&amp;v=1-c0134b83_06379e76_6194fd03_4e846618_f724111c";
+  
+--></style>
+  <script language="javascript1.3" src="http://groups.google.com/groups/static/release/g2_common-bac53aa6a559343f0eb3483531063d90.js"></script>
+<script language="javascript"><!--
+
+// ----------------------------------
+// used for dynamic function generation on event handlers
+
+var loaddef = "";
+var resizedef = "";
+
+//-----------------------------------
+// Browser detection and support
+
+var agt = navigator.userAgent.toLowerCase();
+var is_opera = (agt.indexOf("opera") != -1);
+var is_ie = (agt.indexOf("msie") != -1) && document.all && !is_opera;
+var is_ie5 = (agt.indexOf("msie 5") != -1) && document.all;
+window.agt = agt;
+window.is_opera = is_opera;
+window.is_ie = is_ie;
+window.is_ie5 = is_ie5;
+
+// ----------------------------------
+// cross-browser functions
+
+var IE_all_cache = new Object();
+function IE_getElementById(id) {
+  if (IE_all_cache[id] == null) {
+    IE_all_cache[id] = document.all[id];
+  }
+  return IE_all_cache[id];
+}
+
+if (document.all) {
+  if (!document.getElementById) {
+    document.getElementById = IE_getElementById;
+  }
+}
+
+
+
+  //----------------------------------
+  // Timezone detection (sets cookie)
+
+  try {
+    document.cookie = 'GTZ=' + (new Date()).getTimezoneOffset() + ';path=/;expires=Mon, 01-Jan-2024 00:00:01 GMT';
+  } catch(e) {}
+
+
+// ---------------------------------
+// shelled functions for old javascript
+function tog() {}
+
+//--></script>
+<script language="javascript1.3"><!--
+
+// ----------------------------------
+// visibility functions
+
+function tog() {
+  // tog: toggle the visibility of html elements (arguments[1..]) from none to
+  // arguments[0].  Return what should be returned in a javascript onevent().
+  display = arguments[0];
+  for( var i=1; i<arguments.length; i++ ) {    
+    var x = document.getElementById(arguments[i]);
+    if (!x) continue;
+    if (x.style.display == "none" || x.style.display == "") {
+      x.style.display = display;
+    } else {
+      x.style.display = "none";
+    }
+  }
+
+  var e = is_ie ? window.event : this;
+  if (e) {
+    if (is_ie) {
+      e.cancelBubble = true;
+      e.returnValue = false;
+      return false;
+    } else {
+      return false;
+    }
+  }
+}
+
+
+_G2_initCurrentDomain('googlegroups.com',
+            false,
+            true);
+
+_G2_initCurrentGroup('urchin-help',
+            'r');
+
+
+
+
+//--></script>
+<script language="javascript"><!--
+function ad_resize() {}
+function if_resize() {}
+function fin_resize() {}
+function qs() {}
+//--></script>
+<script language="javascript1.2"><!--
+function if_resize(name, w, h) {
+  if (document.getElementById && document.getElementById(name)){
+    document.getElementById(name).style.height = h + "px";
+    document.getElementById(name).style.width = w + "px";
+  }
+}
+function ad_resize(w, h) {
+  if_resize("google_ads_frame",w,h);
+}
+function fin_resize(w, h) {
+  if_resize("google_finance_frame",w,h);
+}
+
+function qs(el) {
+  if (window.RegExp && window.encodeURIComponent) {
+    var qe=encodeURIComponent(document.gs.q.value);
+
+    if (qe == '') {
+      return 1;
+    }
+
+    if (el.href.indexOf("q=")!=-1) {
+      el.href=el.href.replace(new RegExp("q=[^&$]*"),"q="+qe);
+    } else {
+      el.href+="&q="+qe;
+    }
+  }
+  return 1;
+}
+
+//--></script>
+<script language="javascript1.2"><!--
+  function HideNewGroupsButterbar() {
+    document.getElementById('new_groups_butterbar').style.display = 'none';
+    
+    document.getElementById('new_groups_footer_bar').style.display = '';
+    
+    document.dismiss_new_groups_butterbar_form.submit();
+  }
+  function HideSwitchToNewGroupsDiv(new_groups_footer_link_el) {
+    document.getElementById(new_groups_footer_link_el).style.display = 'none';
+  }
+  function ShowSwitchToNewGroupsDiv(new_groups_footer_link_el) {
+    document.getElementById(new_groups_footer_link_el).style.display = '';
+  }
+  function HighlightNewGroupsSpan(span_ptr) {
+    span_ptr.style.opacity = "1.0";
+    span_ptr.style.filter = "alpha(opacity=100)";
+  }
+  function DeHighlightNewGroupsSpan(span_ptr) {
+    span_ptr.style.opacity = "0.667";
+    span_ptr.style.filter = "alpha(opacity=67)";
+  }
+  function SubmitNewGroupsStatusForm() {
+    document.new_groups_status_form.submit();
+  }
+//--></script>
+<style type="text/css"><!--
+  .butterbar { height:19px;  background: #4D90FE; padding: 10px 44px; line-height: 19px; position: relative; }
+  .new_groups_text { color: white; font-size: 13px; font-weight: bold; line-height: 19px; text-shadow: 0px 1px 0px rgba(0,0,0,0.3); }
+  a.new_groups_text { color: white; }
+  a:link.new_groups_text { text-decoration:underline; }
+  a:visited.new_groups_text { text-decoration:underline; }
+  a:hover.new_groups_text { text-decoration:underline; }
+  a:active.new_groups_text { text-decoration:underline; }
+  .close_button { height: 21px; width: 21px; overflow: hidden; background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAT0lEQVR42mNgGAVDF/z//z8BiN8DsQEWOQOoXAKphoI0/Uc3GMlAsByphhqgG4xNjJwgQDeEMgNxGEy5gTQxlOrep0lE0SpJUT/xj4IRAgBMbhb828ioRQAAAABJRU5ErkJggg==") -0px -0px no-repeat; opacity: 0.667; -moz-opacity: 0.667; right: 10px; top: 9px; cursor: pointer; border-image: initial; }
+  .close_butterbar { position: absolute; }
+  .new_groups_footer { background-color: #4D90FE; position: fixed; right: 2px; bottom: 0; z-index: 3; padding-top: 5px; padding-bottom: 5px; padding-right: 5px; padding-left: 5px; }
+  .new_groups_footer_text { padding-top: 2px; }
+  .new_groups_close_footer { height: 13px; padding-top: 2px; display: inline-block; }
+--></style>
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://groups.google.com/group/urchin-help/feed/rss_v2_0_msgs.xml">
+  <link rel="alternate" type="application/atom+xml" title="Atom" href="http://groups.google.com/group/urchin-help/feed/atom_v1_0_msgs.xml">
+</head>
+<body onresize=""
+      onload=""
+      
+        topmargin=0
+        leftmargin=0
+        marginheight=0
+        marginwidth=0
+      
+      bgcolor=white
+      
+      
+  >
+  <div class="ggaiabar">
+  <div align="right" id="guser" width="100%">
+  <nobr>
+  <a target="_blank" href="http://groups.google.com/support?hl=en">Help</a> |
+  <a target=_top href="https://www.google.com/accounts/ServiceLogin?passive=true&amp;hl=en&amp;service=groups2&amp;continue=http%3A%2F%2Fgroups.google.com%2Fgroup%2Furchin-help%2F&amp;cd=US&amp;ssip=g3">Sign in</a>
+</nobr>
+  </div>
+  </div>
+  <div class="clear"></div>
+  <div class="butterbar" id="new_groups_butterbar" style="">
+  <div width="100%">
+  <span class="new_groups_text">
+  The old Google Groups will be going away soon.
+  <form name="new_groups_status_form" method="post" action="http://groups.google.com/groups/new_groups_status" style="display: inline;">
+  <input type=hidden name="WebToken" value="">
+  <input type=hidden name="_done" value="https%3A%2F%2Fgroups.google.com%2Fd%2Fforum%2Furchin-help%3Ffromgroups">
+  <input type=hidden name="opt_in" value="1">
+  <a href="javascript: SubmitNewGroupsStatusForm()" class="new_groups_text">Switch to the new Google Groups</a>.
+  </form>
+  </span>
+  <span align="right">
+  <form name="dismiss_new_groups_butterbar_form" method="post" action="http://groups.google.com/groups/new_groups_status" style="display: inline;">
+  <input type=hidden name="WebToken" value="">
+  <input type=hidden name="dismiss_opt_in" value="1">
+  </form>
+  <span class="new_groups_text close_butterbar close_button" onmouseover="HighlightNewGroupsSpan(this)" onmouseout="DeHighlightNewGroupsSpan(this)" onclick="HideNewGroupsButterbar()"></span>
+  </span>
+  </div>
+  </div>
+  <div id="new_groups_footer_bar" class="new_groups_footer" style="display: none;">
+  <span class="new_groups_text">
+  <span id="new_groups_footer_bar_link" class="new_groups_footer_text" >
+  <a href="javascript: SubmitNewGroupsStatusForm()" class="new_groups_text">Switch to the new Groups</a>
+  </span>
+  <span class="close_button new_groups_close_footer new_groups_footer_text" onclick="HideSwitchToNewGroupsDiv('new_groups_footer_bar')" onmouseover="HighlightNewGroupsSpan(this)" onmouseout="DeHighlightNewGroupsSpan(this)">
+  </span>
+  </span>
+  </div>
+  <div class="gtopbar">
+  <table cellpadding=0 cellspacing=0 width=100% border=0>
+  <tr valign="top">
+  <td class="maincell">
+  <table cellpadding=0 cellspacing=0 border=0>
+  <tr valign="top">
+  <td width="140" style="overflow: hidden;">
+  <a href="http://groups.google.com/"><img src="http://groups.google.com/intl/en/images/logos/groups_logo_sm.gif" width="140" height="30" alt="Google Groups Home" border=0 style="position: relative; top: 2px; margin-right: 10px;"></a>
+  </td>
+  </tr>
+  </table>
+  </td>
+  </tr>
+  </table>
+  <div style="font-size: 91%;"><a href="http://groups.google.com/">« Groups Home</a></div>
+  </div>
+<script language="javascript"><!--
+// Make functions exist for older browsers
+function toggle_watch() {}
+function toggleStar() {}
+//--></script>
+  <script language="javascript1.3" src="http://groups.google.com/groups/static/release/g2_message_elements-5f4543cb6bbd6749abc8e79f27f88c37.js"></script>
+  <script language="javascript"><!--
+
+      
+      function google_ad_request_done(google_ads) {
+        /*
+         * Verify that there are actually ads to display.
+         */
+        var google_num_ads = google_ads.length;
+        if (google_num_ads <= 0) {
+          return;
+        }
+
+        var narrowAds = "<div class=\"box\">";
+  narrowAds += "<div class=\"sponsor-note\">Sponsored links</div>";
+  for(var i = 0; i < google_num_ads; i++){
+          narrowAds += '<div class="ad-item">' +
+  '<a href="' + google_ads[i].url + '" ' +
+            'onmouseout="window.status=\'\';return true" ' +
+            'onmouseover="window.status=\'go to ' +
+            google_ads[i].visible_url + '\';return true" ' +
+            'style="text-decoration:none">' +
+  '<span style="text-decoration:underline;" class="ad-subject">' +
+  google_ads[i].line1 + '<br></span>' +
+  '<span style="color:#000000">' + google_ads[i].line2 + '<br></span>' +
+  '<span style="color:#000000">' + google_ads[i].line3 + '<br></span>' +
+  '<span style="color:#008000">' + google_ads[i].visible_url +
+  '</span></a></div>';
+  }
+  var fill_ad_div = function() {
+  var ad_div = document.getElementById("google_ads_site");
+  if (ad_div) {
+  ad_div.innerHTML = narrowAds;
+  } else {
+  setTimeout(fill_ad_div, 10);
+  }
+  }
+  fill_ad_div();
+  }
+  function adsIframeHtml() {
+  if (window.location) {
+  if ("https:" === location.protocol)
+  return "<!DOCTYPE html><html/>";
+  }
+  return "<!DOCTYPE html><html><body><script type='text/javascript'>google_ad_request_done = parent.google_ad_request_done;google_ad_client = 'ca-google_groups'; google_max_num_ads = 3; google_ad_output = 'js'; google_ad_type = 'text'; google_language = 'en'; google_page_url = 'http://groups.google.com\x5Cx2Fgroup\x5Cx2Furchin-help\x5Cx2F'; google_encoding = 'utf8'; google_safe = 'high'; google_adtest = 'off';"
+  + "<\/script> <script language='JavaScript' src='http://pagead2.googlesyndication.com/pagead/show_ads.js'><\/script><\/body><\/html>";
+  }
+  //--></script>
+  <iframe width="0" height="0" frameborder="0" scrolling="no" src="javascript:parent.adsIframeHtml()"></iframe>
+<style type="text/css"><!--
+.sshdr {
+  padding: 0px 10px 0px 10px;
+}
+.sshdr table.sshdrt {
+  margin-top: -1px;
+  margin-bottom: -3px;
+}
+.sshdrtxt {
+  font-size : 114%;
+}
+.sshdrtxtsm {
+  font-size : 106%;
+}
+.ssabln,
+.ssabln:active,
+.ssabln:link,
+.ssabln:visited {
+  text-decoration: none;
+  color: #000
+}
+.ssabln:hover {
+  text-decoration: underline;
+}
+.ssabhln,
+.ssabhln:active,
+.ssabhln:link,
+.ssabhln:visited {
+  text-decoration: none;
+  color: #00c
+}
+.ssabhln:hover {
+  text-decoration: underline;
+}
+.ssibln,
+.ssibln:active,
+.ssibln:link,
+.ssibln:visited {
+  text-decoration: none;
+  color: #00c;
+}
+.ssibln:hover {
+  text-decoration: underline;
+}
+--></style>
+<style type="text/css"><!--
+.modtxtidt {
+  padding: 0px 10px 0px 40px;
+}
+.modtxtidt-20 {
+  padding: 0px 10px 0px 24px;
+}
+--></style>
+  <div style="border-top: 1px solid #7799dd; z-index: 1; position: relative;"></div>
+  <div style="background-color: #e8eef7; padding: 4px 10px 4px 10px; ">
+  <table class="grhdr " cellpadding="0" cellspacing="0" width="100%"><tbody>
+  <tr valign="middle">
+  <td class="padr10" width="42" height="42">
+  <div style="width:42px; height:42px; overflow: hidden;">
+  <div style="width:42px; height:42px; background:url(http://groups.google.com/group/urchin-help/icon?hl=en)"></div>
+  </div>
+  <td>
+  <div class="ghgrn">
+  <a class="ln" href="http://groups.google.com/group/urchin-help">Urchin Software from Google - help forum</a>
+  </div>
+  <td style="padding-left: 35px" align="right">
+  <script><!--
+                function sg() {
+                  document.gs3.q.value = document.gs2.q.value;
+                  document.gs3.submit();
+                }
+              //--></script>
+  <form name=gs2 method=GET action="http://groups.google.com/group/urchin-help/search">
+  <table cellpadding=0 cellspacing=0><tr><td>
+  <input type=hidden name="group" value="urchin-help"><input type=text name=q size=20 maxlength=2048 value="" style="width: 25ex">
+  </td>
+  <td class="padl5">
+  <input type=submit class="bt" style="width:100%" name="qt_g" value="Search this group">
+  </td>
+  <td class="padl5">
+  <input type=button class="bt" style="width:100%" name="qt_s" onclick="sg();" value="Search Groups">
+  </td>
+  </table>
+  </form>
+  <form class="hide" name=gs3 method=GET action="http://groups.google.com/groups/search">
+  <input type=hidden name="qt_s" value="1">
+  <input type=hidden name=q size=20 maxlength=2048 value="">
+  </form>
+  </td>
+  </tr>
+  </tbody></table>
+  </div>
+  <div style="border-top: 1px solid #7799dd"></div>
+  <div class="rf" style="width: 32ex;">
+  <div class="overflow-hide" style="position: absolute; margin-top: -1px; margin-left: -1px;z-index: 1;">
+  <div class="mrgl1 " style="width: 32ex; background-color: #e8eef7;">
+  <div class="padb10 padr10">
+  <div class="rnsecs">
+  <table></table>
+  <div class="selsec">
+  <a class="secln" href="http://groups.google.com/group/urchin-help">Home</a>
+  </div>
+  <table></table>
+  <div class="sec" >
+  <div style="">
+  <a class="seclnact" href="http://groups.google.com/group/urchin-help/topics">Discussions</a>
+  </div>
+  </div>
+  <table></table>
+  <table></table>
+  <table></table>
+  <table></table>
+  <div class="mrgt5 mrgl10" style="border-bottom: 1px solid #7799dd"></div>
+  <div class="padt10"></div>
+  <div class="sec">
+  <a class="seclnlt" href="http://groups.google.com/group/urchin-help/about">About this group</a>
+  </div>
+  <div class="sec">
+  <a class="seclnlt" href="http://groups.google.com/group/urchin-help/subscribe">
+  Join this group
+  </a>
+  </div>
+  </div>
+  <div id="google_ads_site" class="g3rtn-ad-site"></div>
+  <div class="padt5"></div>
+  <div class="rnimc">
+  <div><table cellpadding=0 cellspacing=0 width="100%"><tr><td><div style="background: url(http://groups.google.com/groups/roundedcorners?c=7799dd&amp;bc=e8eef7&amp;w=2&amp;h=2&amp;a=af) 0px 0px; width: 2px; height: 2px"></div><td bgcolor="#7799dd" width="100%" height="2"><img alt="" width=1 height=1><td><div style="background: url(http://groups.google.com/groups/roundedcorners?c=7799dd&amp;bc=e8eef7&amp;w=2&amp;h=2&amp;a=af) 2px 0px; width: 2px; height: 2px"></div></table></div>
+  <div class="padl10 padb2" style="background-color: #7799dd; color: #ffffff;">
+  <b>Group info</b>
+  </div>
+  <div class="padt4 padb4 padl10 padr10" style="background-color: #ffffff;">
+  <style type="text/css"><!--
+        #moduleGroupInfo td {
+          font-size: 91%;
+        }
+        --></style>
+<style type="text/css"><!--
+
+#moduleGroupInfo .moduleSMALL cat {
+  font-size: 0%;
+  padding-right:7px;
+}
+
+--></style>
+<div class="module" id="moduleGroupInfo">
+  <div class="moduleSMALL">
+<table class="modtab" cellpadding=0 cellspacing=0 border=0 width="100%" style="table-layout: fixed">
+  <tr>
+  <td class="overflow-hide" nowrap>
+  <b>Members:</b> 1265
+  </td>
+  </tr>
+  <tr>
+  <td class="overflow-hide" nowrap>
+  <b>Language:</b> English
+  </td>
+  </tr>
+  <tr>
+  <td class="overflow-hide">
+  <b>Group categories:</b>
+  <br>
+  <a href="http://groups.google.com/groups/dir?sel=topic%3D46479.46478">
+  <nobr>
+  Computers</nobr><nobr> &gt;
+  Internet</nobr></a><br>
+  </td>
+  </tr>
+  <tr>
+  <td class="overflow-hide" nowrap>
+  <b><a class="on" href="http://groups.google.com/group/urchin-help/about">More group info &raquo;</a></b>
+  </td>
+  </tr>
+</table>
+  </div>
+</div>
+<script language="javascript1.3"><!--
+
+(function () {
+  var module = document.getElementById('moduleGroupInfo');
+
+  module.getChildElement = function(child_id) {
+    return document.getElementById(this.id + '_' + child_id);
+  }
+
+  module.load = function() {
+  }
+
+  module.load();
+})();
+
+//--></script>
+  </div>
+  </div>
+  </div>
+</div>
+</div>
+</div>
+  <table class="wdth100  overflow-hide" cellpadding=0 cellspacing=0 style="table-layout: fixed;">
+  <col width="*" height="100%"><col style="width:32ex;"><tr valign="top"><td class=" overflow-hide" style="border-bottom: 1px solid #7799dd;; border-right: 1px solid #7799dd;">
+<div class="maincontheaderbox">
+  <div class="secttlbarwrap">
+  <div><table cellpadding=0 cellspacing=0 width="100%"><tr><td><div style="background: url(http://groups.google.com/groups/roundedcorners?c=7799dd&amp;bc=white&amp;w=4&amp;h=4&amp;a=af) 0px 0px; width: 4px; height: 4px"></div><td bgcolor="#7799dd" width="100%" height="4"><img alt="" width=1 height=1><td><div style="background: url(http://groups.google.com/groups/roundedcorners?c=7799dd&amp;bc=white&amp;w=4&amp;h=4&amp;a=af) 4px 0px; width: 4px; height: 4px"></div></table></div>
+  <div class="secttlbar">
+  <div class="lf secttl">
+  Home
+  </div>
+  <div class="clear"></div>
+  </div>
+  <div><table cellpadding=0 cellspacing=0 width="100%"><tr><td><div style="background: url(http://groups.google.com/groups/roundedcorners?c=7799dd&amp;bc=white&amp;w=4&amp;h=4&amp;a=af) 0px 4px; width: 4px; height: 4px"></div><td bgcolor="#7799dd" width="100%" height="4"><img alt="" width=1 height=1><td><div style="background: url(http://groups.google.com/groups/roundedcorners?c=7799dd&amp;bc=white&amp;w=4&amp;h=4&amp;a=af) 4px 4px; width: 4px; height: 4px"></div></table></div>
+  </div>
+</div>
+<div class="maincontheaderboxatt">
+  <div class="vspace"></div>
+  <div><table cellpadding=0 cellspacing=0 width="100%"><tr><td><div style="background: url(http://groups.google.com/groups/roundedcorners?c=c3d9ff&amp;bc=white&amp;w=4&amp;h=4&amp;a=af) 0px 0px; width: 4px; height: 4px"></div><td bgcolor="#c3d9ff" width="100%" height="4"><img alt="" width=1 height=1><td><div style="background: url(http://groups.google.com/groups/roundedcorners?c=c3d9ff&amp;bc=white&amp;w=4&amp;h=4&amp;a=af) 4px 0px; width: 4px; height: 4px"></div></table></div>
+  <div class="sshdr" style="background-color:#c3d9ff;">
+  <table class="sshdrt" cellpadding=0 cellspacing=0 width="100%"><tr><td>
+  <div class="lf sshdrtxt">
+  <img src="http://groups.google.com/groups/img/gsecs/discussions_24.gif" width="24" height="24" alt="" class="vamdl icon24" style="">
+  <a class="ssabln" href="http://groups.google.com/group/urchin-help-5/topics"><b>Urchin 5</b></a><img width="10" height="1" alt="" src="http://groups.google.com/groups/img/dot_clear.gif"><span style="color: #333">2 of 368 messages</span>
+  <img width="10" height="1" alt="" src="http://groups.google.com/groups/img/dot_clear.gif"><a class="ssabhln" href="http://groups.google.com/group/urchin-help-5/topics">view all &raquo;</a>
+  </div>
+  <div class="rf ">
+  <form method="POST" action="http://groups.google.com/group/urchin-help-5/post">
+  <input type="submit" class="bt" style="margin-bottom:3px;"   value="+ new post">
+  </form>
+  </div>
+  <div class="clear"></div>
+  </td></tr></table>
+  </div>
+  <div><table cellpadding=0 cellspacing=0 width="100%"><tr><td><div style="background: url(http://groups.google.com/groups/roundedcorners?c=c3d9ff&amp;bc=white&amp;w=4&amp;h=4&amp;a=af) 0px 4px; width: 4px; height: 4px"></div><td bgcolor="#c3d9ff" width="100%" height="4"><img alt="" width=1 height=1><td><div style="background: url(http://groups.google.com/groups/roundedcorners?c=c3d9ff&amp;bc=white&amp;w=4&amp;h=4&amp;a=af) 4px 4px; width: 4px; height: 4px"></div></table></div>
+  <div class="vspace"></div>
+<div class="module" id="moduleRecentDiscussionsModule1">
+  <div class="moduleFULL">
+  <div class="modtxtidt-20 ">
+  <table cellpadding=0 cellspacing=0><tr valign="top">
+  <td width=18>
+  <td>
+  <span class="fontsize4">
+  <a href="http://groups.google.com/group/urchin-help-5/t/36062127b702ee6a" class="on">[urchin-user] Tracking stats on PDFs</a>
+  </span><br>
+  <span style="color: #777">
+  By Caleb Whitmore - Analytics Pros -
+Mar 20 - 2 authors -
+  1 reply
+  </span>
+  </tr>
+  </table>
+  </div>
+  <div class="modtxtidt-20 padt5">
+  <table cellpadding=0 cellspacing=0><tr valign="top">
+  <td width=18>
+  <td>
+  <span class="fontsize4">
+  <a href="http://groups.google.com/group/urchin-help-5/t/6386636f982c9965" class="on">[urchin-user] Need Help Regarding urchin 7 configuration</a>
+  </span><br>
+  <span style="color: #777">
+  By Gabriel Pugliese -
+Dec 13 2011 - 2 authors -
+  1 reply
+  </span>
+  </tr>
+  </table>
+  </div>
+  </div>
+</div>
+<script language="javascript1.3"><!--
+
+(function () {
+  var module = document.getElementById('moduleRecentDiscussionsModule1');
+
+  module.getChildElement = function(child_id) {
+    return document.getElementById(this.id + '_' + child_id);
+  }
+
+  module.load = function() {
+  }
+
+  module.load();
+})();
+
+//--></script>
+  <div class="vspace"></div>
+  <div><table cellpadding=0 cellspacing=0 width="100%"><tr><td><div style="background: url(http://groups.google.com/groups/roundedcorners?c=c3d9ff&amp;bc=white&amp;w=4&amp;h=4&amp;a=af) 0px 0px; width: 4px; height: 4px"></div><td bgcolor="#c3d9ff" width="100%" height="4"><img alt="" width=1 height=1><td><div style="background: url(http://groups.google.com/groups/roundedcorners?c=c3d9ff&amp;bc=white&amp;w=4&amp;h=4&amp;a=af) 4px 0px; width: 4px; height: 4px"></div></table></div>
+  <div class="sshdr" style="background-color:#c3d9ff;">
+  <table class="sshdrt" cellpadding=0 cellspacing=0 width="100%"><tr><td>
+  <div class="lf sshdrtxt">
+  <img src="http://groups.google.com/groups/img/gsecs/discussions_24.gif" width="24" height="24" alt="" class="vamdl icon24" style="">
+  <a class="ssabln" href="http://groups.google.com/group/urchin-help-6/topics"><b>Urchin 6</b></a><img width="10" height="1" alt="" src="http://groups.google.com/groups/img/dot_clear.gif"><span style="color: #333">8 of 3989 messages</span>
+  <img width="10" height="1" alt="" src="http://groups.google.com/groups/img/dot_clear.gif"><a class="ssabhln" href="http://groups.google.com/group/urchin-help-6/topics">view all &raquo;</a>
+  </div>
+  <div class="rf ">
+  <form method="POST" action="http://groups.google.com/group/urchin-help-6/post">
+  <input type="submit" class="bt" style="margin-bottom:3px;"   value="+ new post">
+  </form>
+  </div>
+  <div class="clear"></div>
+  </td></tr></table>
+  </div>
+  <div><table cellpadding=0 cellspacing=0 width="100%"><tr><td><div style="background: url(http://groups.google.com/groups/roundedcorners?c=c3d9ff&amp;bc=white&amp;w=4&amp;h=4&amp;a=af) 0px 4px; width: 4px; height: 4px"></div><td bgcolor="#c3d9ff" width="100%" height="4"><img alt="" width=1 height=1><td><div style="background: url(http://groups.google.com/groups/roundedcorners?c=c3d9ff&amp;bc=white&amp;w=4&amp;h=4&amp;a=af) 4px 4px; width: 4px; height: 4px"></div></table></div>
+  <div class="vspace"></div>
+<div class="module" id="moduleRecentDiscussionsModule2">
+  <div class="moduleFULL">
+  <div class="modtxtidt-20 ">
+  <table cellpadding=0 cellspacing=0><tr valign="top">
+  <td width=18>
+  <td>
+  <span class="fontsize4">
+  <a href="http://groups.google.com/group/urchin-help-6/t/5c3ae0aff82ac74a" class="on">Probably need to create new sub-forum for Urchin 7</a>
+  </span><br>
+  <span style="color: #777">
+  By GSLION -
+12:04am - 2 authors -
+  1 reply
+  </span>
+  </tr>
+  </table>
+  </div>
+  <div class="modtxtidt-20 padt5">
+  <table cellpadding=0 cellspacing=0><tr valign="top">
+  <td width=18>
+  <td>
+  <span class="fontsize4">
+  <a href="http://groups.google.com/group/urchin-help-6/t/8d4e72a52a700796" class="on">[urchin-user] Re: General Urchin Help</a>
+  </span><br>
+  <span style="color: #777">
+  By Ryan Bend -
+Mar 14 - 3 authors -
+  6 replies
+  </span>
+  </tr>
+  </table>
+  </div>
+  <div class="modtxtidt-20 padt5">
+  <table cellpadding=0 cellspacing=0><tr valign="top">
+  <td width=18>
+  <td>
+  <span class="fontsize4">
+  <a href="http://groups.google.com/group/urchin-help-6/t/ef7a0d151f302eea" class="on">Urchin application doesnt read IIS 7.5 logs</a>
+  </span><br>
+  <span style="color: #777">
+  By Abhilash Potlapalli -
+Mar 4 - 1 author -
+  0 replies
+  </span>
+  </tr>
+  </table>
+  </div>
+  <div class="modtxtidt-20 padt5">
+  <table cellpadding=0 cellspacing=0><tr valign="top">
+  <td width=18>
+  <td>
+  <span class="fontsize4">
+  <a href="http://groups.google.com/group/urchin-help-6/t/af7760b6a042c447" class="on">data is avaliable only in IT Reports(no data in marketing,content,advertising optimization)</a>
+  </span><br>
+  <span style="color: #777">
+  By eknath kouda -
+Mar 1 - 3 authors -
+  3 replies
+  </span>
+  </tr>
+  </table>
+  </div>
+  <div class="modtxtidt-20 padt5">
+  <table cellpadding=0 cellspacing=0><tr valign="top">
+  <td width=18>
+  <td>
+  <span class="fontsize4">
+  <a href="http://groups.google.com/group/urchin-help-6/t/d9b67df8707ca276" class="on">is urchin tracking possible in this case?</a>
+  </span><br>
+  <span style="color: #777">
+  By eknath kouda -
+Feb 29 - 1 author -
+  0 replies
+  </span>
+  </tr>
+  </table>
+  </div>
+  <div class="modtxtidt-20 padt5">
+  <table cellpadding=0 cellspacing=0><tr valign="top">
+  <td width=18>
+  <td>
+  <span class="fontsize4">
+  <a href="http://groups.google.com/group/urchin-help-6/t/6d0ecc848fc7d772" class="on">How to enable Conversion Summary report under Executive Dashboard?</a>
+  </span><br>
+  <span style="color: #777">
+  By Robert Mark Bram -
+Feb 21 - 1 author -
+  0 replies
+  </span>
+  </tr>
+  </table>
+  </div>
+  <div class="modtxtidt-20 padt5">
+  <table cellpadding=0 cellspacing=0><tr valign="top">
+  <td width=18>
+  <td>
+  <span class="fontsize4">
+  <a href="http://groups.google.com/group/urchin-help-6/t/e53ef17282d7eb8" class="on">Getting the loadtime</a>
+  </span><br>
+  <span style="color: #777">
+  By GVLabs -
+Feb 20 - 1 author -
+  0 replies
+  </span>
+  </tr>
+  </table>
+  </div>
+  <div class="modtxtidt-20 padt5">
+  <table cellpadding=0 cellspacing=0><tr valign="top">
+  <td width=18>
+  <td>
+  <span class="fontsize4">
+  <a href="http://groups.google.com/group/urchin-help-6/t/67319dc8898b09da" class="on">Switching from Urchin to Google Analytics</a>
+  </span><br>
+  <span style="color: #777">
+  By GVLabs -
+Feb 20 - 5 authors -
+  6 replies
+  </span>
+  </tr>
+  </table>
+  </div>
+  </div>
+</div>
+<script language="javascript1.3"><!--
+
+(function () {
+  var module = document.getElementById('moduleRecentDiscussionsModule2');
+
+  module.getChildElement = function(child_id) {
+    return document.getElementById(this.id + '_' + child_id);
+  }
+
+  module.load = function() {
+  }
+
+  module.load();
+})();
+
+//--></script>
+  <div class="vspace"></div>
+  <div class="vspace"></div>
+</div>
+<div class="maincontboxfoot"></div>
+<br>
+<div style="text-align: center; ">
+  <a href="http://groups.google.com/groups/abuse?group=urchin-help&amp;type=group&amp;url=http%3A%2F%2Fgroups.google.com%2Fgroup%2Furchin-help">Report this group</a> &nbsp;
+</div>
+  <div class="padt10 clear"></div>
+  </td><td style="background-color: #e8eef7; ">
+  <div style="width: 32ex; height: 500px;">
+  <img width=1 height=500 alt="">
+  </div>
+  </table>
+  <div style="background-color: #e8eef7">
+<div class="padt10 padb10">
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr valign=center>
+  <td align="center" style="padding-right:1em;" class="fontsize2">
+  <b><a style="color: #00c" target=_top href="http://groups.google.com/groups/create?lnk=gcf">Create a group</a></b><font color="#333"> - </font>
+  <a style="color: #00c" target=_top href="http://groups.google.com/">Google Groups</a><font color="#333"> - </font>
+  <a style="color: #00c" target=_top href="http://www.google.com/webhp?hl=en">Google Home</a><font color="#333"> - </font>
+  <a style="color: #00c" target=_top href="http://groups.google.com/intl/en/googlegroups/terms_of_service3.html">Terms of Service</a><font color="#333"> - </font>
+  <a style="color: #00c" target=_top href="http://groups.google.com/intl/en/googlegroups/privacy3.html">Privacy Policy</a>
+  </td>
+  </tr>
+  <tr>
+  <td align="center" style="color: #333" class="fontsize1 padt5" >&copy;2012 Google</td>
+  </tr>
+  </table>
+</div>
+  </div>
+<script language="javascript"><!--
+if( loaddef != "" ) {
+  window.onload=new Function( loaddef );
+}
+if( resizedef != "" ) {
+  window.onresize = new Function( resizedef );
+}
+//--></script>
+  <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"> </script>
+  <script type="text/javascript"><!--
+      
+        _uacct = "UA-1044941-1";
+      
+      urchinTracker("\x2Fgroup\x2Furchin-help\x2F?als_gt=group\x26als_greg=US\x26als_gact=\x26als_gsubs=1265\x26als_gview=ANYONE\x26als_gpjoin=y\x26");
+    //--></script>
+</body>
+
+<!-- Mirrored from groups.google.com/group/urchin-help/ by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+</html>

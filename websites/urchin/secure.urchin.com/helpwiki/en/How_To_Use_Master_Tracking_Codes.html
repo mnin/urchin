@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/How_To_Use_Master_Tracking_Codes.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>How To Use Master Tracking Codes</strong> <p class="line874">Urchin allows you to tag your links using master tracking codes (a utm_id) instead of individual variables. You simply use utm_id in your links, and define the meaning of each utm_id in a table. For example, instead of <pre>http://www.hostsite.com/?utm_source=overture&amp;utm_medium=cpc&amp;utm_campaign=springpromo
+</pre><p class="line874">you can use the UTM variable utm_id as follows. <pre>http://www.hostsite.com/?utm_id=2
+</pre><p class="line874">Using utm_id hides your campaign tracking variables from web surfers and makes your tagging process less error-prone, since campaign tracking variable values are specified in a table, where corrections and changes are easily made. <p class="line874">To use master tracking codes, you <ul><li>Define your codes in a table </li><li>Apply the table as a filter to your profile </li><li>Use your master tracking codes in your links  </li></ul><p class="line867"><strong>Defining Your Codes</strong> <p class="line874">To define your codes: <ol type="1"><li>Create a table in Excel that maps your codes to a set of campaign variables. <ul><li style="list-style-type:none">The first row of the file must begin with "#Fields:", followed by UTM variable names in any order. Each row defines the campaign variable settings for the master tracking code you place in the #Fields column. Use a hyphen (-) to indicate no value. You may omit any fields from the table for which there are no values for any code. Add a blank line in the end of the file. (The last line of the file should not have any text). </li></ul></li><li class="gap">Save the Excel table as a tab delimited plain text file in the lib/custom/lookuptables directory of your Urchin distribution. You must save the file with an extension of ".lt".  </li></ol><p class="line867"><img alt="How_To_Use_Master_Tracking_Codes" src="https://secure.urchin.com/helpwiki/images/How_To_Use_Master_Tracking_Codes.jpg" title="How_To_Use_Master_Tracking_Codes" /> <p class="line867"><strong>Applying the Table to Your Profile</strong> <p class="line874">To apply the table to a profile: <ol type="1"><li>Log in to Urchin as an administrator and click Configuration (top right of interface). </li><li>Edit the profile to which you wish to apply the master tracking codes. </li><li>On the Filters tab, click the Add icon. </li><li>In the Filter Wizard, under Filter Type, select Lookup Table. <ul><li style="list-style-type:none">The Table Name field appears in the wizard. </li></ul></li><li>From the Table Name drop down list, select the name of the table you created. If your table does not appear in the drop down list, make sure that the table file name ends with .lt and that it has been saved in the lib/custom/lookuptables directory of your Urchin distribution. </li><li>From the Filter Field drop down list, select utm_id (AUTO). </li><li>Click Finish.  </li></ol><p class="line867"><strong>Using Your Codes in Your Links</strong> <p class="line874">Use the values in the Fields column of your lookup table as utm_id values. For example, using the lookup table created in this article, above, you might tag a link as follows: <pre>http://www.hostsite.com/?utm_id=1
+</pre><p class="line867"><strong>Additional Notes</strong> <p class="line874">If you use utm_id in conjunction with other UTM variables in a link (such as utm_source), the values of the other variables will be overwritten with the values you defined in your lookup table. </div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/How_To_Use_Master_Tracking_Codes.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

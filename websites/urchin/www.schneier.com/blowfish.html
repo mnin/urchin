@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+
+<!-- Mirrored from www.schneier.com/blowfish.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:41 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+<head>
+	<title>Blowfish</title>
+	<link rel="STYLESHEET" type="text/css" href="http://www.schneier.com/schneier-safe.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>	  
+
+<table class="main" cellspacing=0>
+<tr><td class="bodycolor"></td><td class="kludge">&nbsp;</td><td class="masthead"><p class="mastname"><!-- robots content="noindex" -->Bruce Schneier<!-- /robots --></td><td class="kludge">&nbsp;</td><td class="bodycolor"></td></tr>
+
+<tr><td class="menua">
+<!-- robots content="noindex" -->
+<P class="menusingle"><a class="menulink" href="http://www.schneier.com/">Blog</a>
+
+<P class="menusingle"><a class="menulink" href="http://www.schneier.com/crypto-gram.html">Crypto-Gram Newsletter</a>
+
+<P class="menusingle"><a class="menulink" href="http://www.schneier.com/books.html">Books</a>
+
+<P class="menusingle"><a class="menulink" href="http://www.schneier.com/essays.html">Essays and Op Eds</a>
+
+<P class="menusingle"><a class="menulink" href="http://www.schneier.com/news.html">News and Interviews</a>
+
+<P class="menusingle"><a class="menulink" href="http://www.schneier.com/av.html">Audio and Video</a>
+
+<P class="menusingle"><a class="menulink" href="http://www.schneier.com/schedule.html">Speaking Schedule</a>
+
+<P class="menusingle"><a class="menulink" href="http://www.schneier.com/passsafe.html">Password Safe</a>
+
+<P class="menusingle"><a class="menulink" href="http://www.schneier.com/cryptography.html">Cryptography</a>
+
+<P class="menusingle"><a class="menulink" href="http://www.schneier.com/about.html">About Bruce Schneier</a>
+
+<P class="menusingle"><a class="menulink" href="http://www.schneier.com/contact.html">Contact Information</a>
+<!-- /robots -->
+</td>
+<td class="kludge">&nbsp;</td>
+<td class="contentcell">
+
+<!-- begin page content -->
+
+
+
+
+
+<h1>The Blowfish Encryption Algorithm</h1>
+
+
+<p><table class="legacy">
+<tr valign=top>
+<td class="legacycell">
+<a href="http://www.schneier.com/blowfish-products.html">Products that use Blowfish</a>
+
+<P><a href="http://www.schneier.com/blowfish-speed.html">Block Cipher Speed Comparison</a><BR>
+18 clock cycles per byte of encryption on a Pentium.  8.3 Megabytes per second on a Pentium 150.
+<P><STRONG>News:</STRONG>  Blowfish has been added to the mainline <a href="http://www.kernel.org/">Linux kernel</a>, starting with v2.5.47.
+</td><td class="legacycell"><UL>
+<LI>Block cipher: 64-bit block
+<LI>Variable key length: 32 bits to 448 bits
+<LI>Designed by Bruce Schneier
+<LI>Much faster than DES and IDEA
+<LI>Unpatented and royalty-free
+<LI>No license required
+<LI><a href="http://www.schneier.com/blowfish-download.html">Free source code available</a>
+</UL>
+</td></tr>
+</table>
+<BR clear=all>
+
+<p><b>Sighting:</b> <a href="http://www.schneier.com/blog/archives/2005/04/blowfish_on_24.html">Blowfish on <cite>24</cite></a>
+
+
+<P>Blowfish is a symmetric block cipher that can be used as a drop-in
+replacement for DES or IDEA.  It takes a variable-length key, from 32 bits to 448 bits, making it ideal for both domestic and exportable use.
+Blowfish was designed in 1993 by Bruce Schneier as a fast, free alternative to existing encryption algorithms.  Since then it has been analyzed considerably, and it is slowly gaining acceptance as a strong encryption algorithm.  Blowfish is unpatented and license-free, and is available free for all uses.
+
+<P>The original Blowfish <a href="http://www.schneier.com/paper-blowfish-fse.html">paper</a> was presented at the First Fast Software Encryption workshop in Cambridge, UK (proceedings published by Springer-Verlag, <CITE>Lecture Notes in Computer Science #809</CITE>, 1994) and the April 1994 issue of <CITE>Dr. Dobb's Journal</CITE>. <a href="http://www.schneier.com/paper-blowfish-oneyear.html">&quot;Blowfish--One Year Later&quot;</a>
+appeared in the September 1995 issue of <CITE>Dr. Dobb's Journal</CITE>.
+
+<P>Many cryptographers have examined Blowfish, although there are few
+published results. <a href="http://lasecwww.epfl.ch/~vaudenay/">Serge
+Vaudenay</a> examined weak keys in Blowfish; there is a class of  keys that can be detected--although not broken--in Blowfish variants of 14 rounds or less.  <a href="http://www.esat.kuleuven.ac.be/~rijmen/">Vincent Rijmen</a>'s 
+Ph.D. thesis includes a second-order differential attack on 4-round 
+Blowfish that cannot be extended to more rounds.
+
+<P>Everyone is welcome to download Blowfish and use it in their application.
+There are no rules about use, although I would appreciate being notified of
+any commercial applications using the product so that I can list them on
+this website.
+<!-- 
+Other sites that have free Blowfish source code available for
+download include 
+<a href="ftp://ftp.ox.ac.uk/pub/crypto/misc/">ftp.ox.ac.uk</a> (UK), <a href="http://www.task.gda.pl/pub/security/crypto/LIBS/blowfish/">www.task.gda.pl</a> (Poland), and <a href="http://cryptography.org/">cryptography.org</a> (US and Canada residents only). -->
+<!--
+<P>Markus Hahn has written two very fast implementations of Blowfish, for C# and Java; see his <a href="http://members.tripod.com/markus_hahn/software.html">software page</a>.  The Java implementation runs at 2.6 MB/s on a Pentium 200 under NT4.  Another <a href="blowfish-java.zip">Java implementation of Blowfish</a> is available as part of <a href="http://www.cryptix.org/">Cryptix</a>.  There are Visual Basic Versions by <a href="http://www.di-mgt.com.au/crypto.html">David Ireland</a> and <a href="http://www.verino.com/~fyool2000/crypto/index.html">David Midkiff</a>.
+-->
+<!-- <P>Leevi Martilla has demonstrated a <a 
+href="http://personal.sip.fi/~lm/c2txt2c/">C-to-English translator</a> by 
+creating an <a href="http://personal.sip.fi/~lm/c2txt2c/blowfish.txt">English 
+version of Blowfish</a>. -->
+
+<P><a href="http://www.geocities.com/SiliconValley/Campus/9853/">David Honig</a> has written a paper about implementing Blowfish in hardware.
+
+<P>For Blowfish implementors, 
+here are the <a href="http://www.schneier.com/code/constants.txt">hexadecimal digits of pi</a>, arranged as 
+four s_boxes and one p_array, as per the Blowfish default.
+Those who want to experiment with longer-round
+variants of Blowfish can find 65535 hex digits of pi
+<a href="http://www.jjj.de/hfloat/hfloatpage.html">here</a>.
+<P>Here are new <a href="http://www.schneier.com/code/vectors.txt">test vectors</a> so that you can test your own implementation of Blowfish.
+Here are the <a href="http://www.schneier.com/code/vectors2.txt">test vectors rewritten in a format more friendly to C programmers</a>.
+
+<P class="extraspace"><STRONG>NOTE</STRONG>: There is a bug in some source code implementations of
+Blowfish.  Here are the <a href="http://www.schneier.com/blowfish-bug.txt">details</a>.  The reference
+implementation does not have this bug.
+
+
+
+                  
+<!-- end page content -->
+
+<!-- robots content="noindex" -->
+
+<p class="disclaim">Schneier.com is a personal website.  Opinions expressed are not necessarily those of <a href="http://www.bt.com/">BT</a>.
+</td>
+<td class="kludge">&nbsp;</td>
+<td class="rightcol">
+
+<table class="sidebox" cellspacing=0><tr><td class="sidemast">Search</td></tr>
+<tr><td class="sidebody">
+<form method="get" action="http://www.google.com/search">
+<input type="hidden" name="domains" value="www.schneier.com">
+<input type="hidden" name="sitesearch" value="www.schneier.com">
+<input id="search" name="q" size="15" maxlength="255"><br>
+<input type="radio" name="hq" value="inurl:www.schneier.com/blog">blog only<br>
+<input type="radio" name="hq" value="inurl:www.schneier.com/essay">essays and op eds only<br>
+<input type="radio" name="hq" value="inurl:www.schneier.com" checked>whole site<br>
+<input type="submit" value="Search">
+</form>
+</td></tr></table>
+
+<table class="sidebox" cellspacing=0><tr><td class="sidemast">Crypto-Gram Newsletter</td></tr>
+<tr><td class="sidebody">
+A free monthly e-mail newsletter on security and security technology.
+<br><a href="http://www.schneier.com/crypto-gram.html">read more</a>
+</td></tr></table>
+
+<table class="sidebox" cellspacing=0><tr><td class="sidemast">Latest Book</td></tr>
+<tr><td class="sidebody"><a href="http://www.schneier.com/book-lo.html"><img class="sidepic" WIDTH="175" HEIGHT="263" alt="Liars &amp; Outliers" border=0 src="http://www.schneier.com/images/book-lo-175w.jpg"></a>
+<br><a href="http://www.schneier.com/books.html">more books by Bruce Schneier</a>
+</td></tr></table>
+
+<table class="sidebox" cellspacing=0><tr><td class="sidemast">Schneier on Security</td></tr>
+<tr><td class="sidebody">
+A blog covering security and security technology.
+<br><a href="http://www.schneier.com/blog/">read more</a>
+</td></tr></table>
+
+<!-- /robots -->
+
+
+</td></tr>
+</table>
+</body>
+
+<!-- Mirrored from www.schneier.com/blowfish.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:41 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+</html>

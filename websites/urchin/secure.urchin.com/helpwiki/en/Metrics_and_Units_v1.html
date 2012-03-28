@@ -1,0 +1,302 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Metrics_and_Units_v1.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Metrics and Units v1</strong> <p class="line867"><a href="https://secure.urchin.com/helpwiki/en/Data_API.html">API Table of Contents</a> <div><table><tbody><tr>  <td><p class="line891"><strong>idx</strong> </td>
+  <td><p class="line862">  <strong>name</strong> </td>
+  <td><p class="line862">   <strong>type</strong> </td>
+  <td><p class="line862">   <strong>description</strong> </td>
+  <td><p class="line862">    <strong>Unit of measurement</strong> </td>
+</tr>
+<tr>  <td><p class="line862">1 </td>
+  <td><p class="line862">  hits </td>
+  <td><p class="line862">               xsd:long </td>
+  <td><p class="line862">     Number of hits </td>
+  <td><p class="line862">       number </td>
+</tr>
+<tr>  <td><p class="line862">2 </td>
+  <td><p class="line862">  validhits </td>
+  <td><p class="line862">          xsd:long </td>
+  <td><p class="line862">     Number of valid hits, server status=[200-300], 302, 304 </td>
+  <td><p class="line862">      number </td>
+</tr>
+<tr>  <td><p class="line862">3 </td>
+  <td><p class="line862">  errorhits </td>
+  <td><p class="line862">          xsd:long </td>
+  <td><p class="line862">     Number of error hits, server status not equal to valid (see validhits) </td>
+  <td><p class="line862">       number </td>
+</tr>
+<tr>  <td><p class="line862">4 </td>
+  <td><p class="line862">  bytes </td>
+  <td><p class="line862">               xsd:long </td>
+  <td><p class="line862">     Number of bytes </td>
+  <td><p class="line862">      number </td>
+</tr>
+<tr>  <td><p class="line862">5 </td>
+  <td><p class="line862">  pages </td>
+  <td><p class="line862">              xsd:long </td>
+  <td><p class="line862">     Number of pages </td>
+  <td><p class="line862">      number </td>
+</tr>
+<tr>  <td><p class="line862">6 </td>
+  <td><p class="line862">  nonpages </td>
+  <td><p class="line862">             xsd:long </td>
+  <td><p class="line862">     Number of pages, that don't have a visitor key, session id or complete visitor cookie sets for UTM </td>
+  <td><p class="line862">   number </td>
+</tr>
+<tr>  <td><p class="line862">7 </td>
+  <td><p class="line862">  entrancepages </td>
+  <td><p class="line862">         xsd:long </td>
+  <td><p class="line862">     Number of entrance pages </td>
+  <td><p class="line862">      number </td>
+</tr>
+<tr>  <td><p class="line862">8 </td>
+  <td><p class="line862">   exitpages </td>
+  <td><p class="line862">          xsd:long </td>
+  <td><p class="line862">     Number of exit pages </td>
+  <td><p class="line862"> number </td>
+</tr>
+<tr>  <td><p class="line862">9 </td>
+  <td><p class="line862">  bouncepages </td>
+  <td><p class="line862">          xsd:long </td>
+  <td><p class="line862">     Number of bounce pages </td>
+  <td><p class="line862">       number </td>
+</tr>
+<tr>  <td><p class="line862">10 </td>
+  <td><p class="line862"> pagetime </td>
+  <td><p class="line862">              xsd:long </td>
+  <td><p class="line862">     Time on page </td>
+  <td><p class="line862"> seconds </td>
+</tr>
+<tr>  <td><p class="line862">11 </td>
+  <td><p class="line862"> visits </td>
+  <td><p class="line862">             xsd:long </td>
+  <td><p class="line862">     Number of sessions </td>
+  <td><p class="line862">   number </td>
+</tr>
+<tr>  <td><p class="line862">12 </td>
+  <td><p class="line862"> visitors </td>
+  <td><p class="line862">          xsd:long </td>
+  <td><p class="line862">     Number of vistors (new + returning) </td>
+  <td><p class="line862">  number </td>
+</tr>
+<tr>  <td><p class="line862">13 </td>
+  <td><p class="line862"> newvisitors </td>
+  <td><p class="line862">          xsd:long </td>
+  <td><p class="line862">     Number of new visitors </td>
+  <td><p class="line862">       number </td>
+</tr>
+<tr>  <td><p class="line862">14 </td>
+  <td><p class="line862">priorvisitors </td>
+  <td><p class="line862">     xsd:long </td>
+  <td><p class="line862">     Number of returning visitors </td>
+  <td><p class="line862"> number </td>
+</tr>
+<tr>  <td><p class="line862">15 </td>
+  <td><p class="line862">  transactions </td>
+  <td><p class="line862">         xsd:long </td>
+  <td><p class="line862">     Number of transactions </td>
+  <td><p class="line862">number </td>
+</tr>
+<tr>  <td><p class="line862">16 </td>
+  <td><p class="line862">  customers </td>
+  <td><p class="line862">         xsd:long </td>
+  <td><p class="line862">     Number of customers (new + returning) </td>
+  <td><p class="line862">        number </td>
+</tr>
+<tr>  <td><p class="line862">17 </td>
+  <td><p class="line862"> newcustomers </td>
+  <td><p class="line862">          xsd:long </td>
+  <td><p class="line862">     Number of new customers </td>
+  <td><p class="line862">      number </td>
+</tr>
+<tr>  <td><p class="line862">18 </td>
+  <td><p class="line862">  priorcustomers </td>
+  <td><p class="line862">        xsd:long </td>
+  <td><p class="line862">     Number of returning customers </td>
+  <td><p class="line862">         number </td>
+</tr>
+<tr>  <td><p class="line862">19 </td>
+  <td><p class="line862"> revenue </td>
+  <td><p class="line862">             xsd:decimal </td>
+  <td><p class="line862">  Revenue value based on transaction parameter "ecommerce_total" (for "E-Commerce Website"=yes) or goal conversion (for "E-Commerce Website"=no) </td>
+  <td><p class="line862">       currency*100 </td>
+</tr>
+<tr>  <td><p class="line862">20 </td>
+  <td><p class="line862"> tax </td>
+  <td><p class="line862">               xsd:decimal </td>
+  <td><p class="line862">  Tax value based on transaction parameter "ecommerce_tax" </td>
+  <td><p class="line862">     currency*100 </td>
+</tr>
+<tr>  <td><p class="line862">21 </td>
+  <td><p class="line862"> shipping </td>
+  <td><p class="line862">           xsd:decimal </td>
+  <td><p class="line862">  Shipping value based on transaction parameter "ecommerce_shipping" </td>
+  <td><p class="line862">   currency*100 </td>
+</tr>
+<tr>  <td><p class="line862">22 </td>
+  <td><p class="line862">  items </td>
+  <td><p class="line862">               xsd:long </td>
+  <td><p class="line862">     Number of items based on transaction parameter "ecommerce_quantity" </td>
+  <td><p class="line862">  number </td>
+</tr>
+<tr>  <td><p class="line862">23 </td>
+  <td><p class="line862"> itemrevenue </td>
+  <td><p class="line862">       xsd:decimal </td>
+  <td><p class="line862">  Revenue value based on transaction parameter "ecommerce_unit_price" </td>
+  <td><p class="line862">  currency*100 </td>
+</tr>
+<tr>  <td><p class="line862">24 </td>
+  <td><p class="line862">responses </td>
+  <td><p class="line862">       xsd:long </td>
+  <td><p class="line862">     Number of UTM campaign responses where utm_new_campaign is equal to "1" </td>
+  <td><p class="line862">      number </td>
+</tr>
+<tr>  <td><p class="line862">25 </td>
+  <td><p class="line862"> impressions </td>
+  <td><p class="line862">         xsd:long </td>
+  <td><p class="line862">     Number of UTM campaign impressions based on utm_campaign_impressions or where utm_type is equal to "imp" </td>
+  <td><p class="line862">     number </td>
+</tr>
+<tr>  <td><p class="line862">26 </td>
+  <td><p class="line862"> clicks </td>
+  <td><p class="line862">           xsd:long </td>
+  <td><p class="line862">Number of UTM campaign clicks based on utm_campaign_clicks </td>
+  <td><p class="line862"> number </td>
+</tr>
+<tr>  <td><p class="line862">27 </td>
+  <td><p class="line862"> cost </td>
+  <td><p class="line862">                xsd:decimal </td>
+  <td><p class="line862">  Cost of UTM campaign based on utm_campaign_cost </td>
+  <td><p class="line862">      currency*100 </td>
+</tr>
+<tr>  <td><p class="line862">28 </td>
+  <td><p class="line862"> goals1 </td>
+  <td><p class="line862">               xsd:long </td>
+  <td><p class="line862">     Number of achieved "Goal 1" goals </td>
+  <td><p class="line862">    number </td>
+</tr>
+<tr>  <td><p class="line862">29 </td>
+  <td><p class="line862"> goals2 </td>
+  <td><p class="line862">           xsd:long </td>
+  <td><p class="line862">     Number of achieved "Goal 2" goals </td>
+  <td><p class="line862">    number </td>
+</tr>
+<tr>  <td><p class="line862">30 </td>
+  <td><p class="line862">  goals3 </td>
+  <td><p class="line862">              xsd:long </td>
+  <td><p class="line862">     Number of achieved "Goal 3" goals </td>
+  <td><p class="line862">    number </td>
+</tr>
+<tr>  <td><p class="line862">31 </td>
+  <td><p class="line862"> goals4 </td>
+  <td><p class="line862">           xsd:long </td>
+  <td><p class="line862">     Number of achieved "Goal 4" goals </td>
+  <td><p class="line862">    number </td>
+</tr>
+<tr>  <td><p class="line862">32 </td>
+  <td><p class="line862"> goalstarts1 </td>
+  <td><p class="line862">         xsd:long </td>
+  <td><p class="line862">     Number of started "Goal 1" goals </td>
+  <td><p class="line862">     number </td>
+</tr>
+<tr>  <td><p class="line862">33 </td>
+  <td><p class="line862"> goalstarts2 </td>
+  <td><p class="line862">          xsd:long </td>
+  <td><p class="line862">     Number of started "Goal 2" goals </td>
+  <td><p class="line862">     number </td>
+</tr>
+<tr>  <td><p class="line862">34 </td>
+  <td><p class="line862"> goalstarts3 </td>
+  <td><p class="line862">          xsd:long </td>
+  <td><p class="line862">     Number of started "Goal 3" goals </td>
+  <td><p class="line862">     number </td>
+</tr>
+<tr>  <td><p class="line862">35 </td>
+  <td><p class="line862"> goalstarts4 </td>
+  <td><p class="line862">         xsd:long </td>
+  <td><p class="line862">     Number of started "Goal 4" goals </td>
+  <td><p class="line862">     number </td>
+</tr>
+<tr>  <td><p class="line862">36 </td>
+  <td><p class="line862"> score </td>
+  <td><p class="line862">                xsd:decimal </td>
+  <td><p class="line862">  Number of goals multiplied by goal values </td>
+  <td><p class="line862">    number </td>
+</tr>
+<tr>  <td><p class="line862">37 </td>
+  <td><p class="line862"> avgsessiontime </td>
+  <td><p class="line862">       xsd:long </td>
+  <td><p class="line862">  Average session duration in seconds </td>
+  <td><p class="line862">    seconds </td>
+</tr>
+</tbody></table></div></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Metrics_and_Units_v1.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

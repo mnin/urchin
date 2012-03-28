@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Wildcard_&_Date_Substitution_in_Log_Path.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Wildcard &amp; Date Substitution in Log Path</strong> <p class="line867"><strong>Overview</strong> <p class="line874">Urchin allows you to specify wildcard and date matching variables in the path to a log file. When an Urchin task is executed and the log path is read, these variables are converted and compared for matches with the directories and filenames on your system. <p class="line874">The date matching capabilities in Urchin 6 are more extensive than those provided in previous versions of Urchin, namely: <ul><li>Date substitution may happen at any point in the pathname of the logfile; previous versions of Urchin only allowed substitutions in the actual filename specification </li><li>A more robust and flexible data pattern matching algorithm has been implemented, although the previous YYYYMMDD-style pattern matching is still supported for backward compatibility </li></ul><p class="line874">The most commonly used time matching variables and formats are shown next. The full set of all supported time formatting variables is listed at the end of this article. <p class="line874">* an asterisk matches zero or more consecutive characters DD is replaced by the 2 digit numeric day of the month, e.g. 01-31 %d is equivalent to DD MM is replaced by the 2 digit numeric month, e.g. 01-12 %m is equivalent to MM YY is replaced by the 2 digit numeric year, e.g. 01-99 YYYY is replaced by the 4 digit numeric year, e.g. 0001-2003 %Y is equivalent to YYYY <p class="line874">Note that the asterisk in this context behaves like filename matching as you'd have in a command shell in UNIX or DOS, not like regular expression matching where this character would match zero or more instances of the preceeding character. These variables can be combined in any way the user chooses. <p class="line874">The list below shows examples of how instances of these variables would translate on 08/13/2003. Note that the day specifiers DD and %d get converted into the day before 13. <ul><li>YYYYMMDD would translate into 20030812 </li><li>%Y-%m-%d would translate into 2003-08-12 </li><li>%Y/%m/%d would translate into 2003/08/12 (note that this has implications in a path) </li><li>*YYYYMMDD would match any filename ending in the string 20030812  </li></ul><p class="line874">The DD and %d day specifiers get converted into the previous day by default because of the way webserver logs and Urchin processing are typically managed. Your logs will usually be rotated daily to keep them from growing too large and so that each log contains primarily data for a single day. This rotation happens most frequently just before midnight. Urchin processing would usually occur after this when the clock has moved past midnight to the next day of the month. If you were adding a YYYYMMDD style timestamp to your log file name as it is rotated, then that date and Urchin's run time would differ by one day. Evaluating a day conversion at the time Urchin is run would result in a failure to find the correct log name since the log timestamp would read 20030812, but Urchin would be executed on 20030813. <p class="line874">Although this is the most common model for log management, it isn't the only option. So Urchin has a configuration parameter that controls the manner in which these variables get resolved to a particular day. The Date/Time Wildcard Substitution in Log Path Name setting can be used to adjust a time offset that controls how DD and %d are evaluated. This setting is explained in greater detail at the end of this article. <p class="line874">The year, month, and day variables can be used either in the log file name or in the directory/folder path to the log file. The asterisk can only be used in the filename portion of the log file path. As well, time format variables can be repeated within a log source path, but the asterisk may only be used once. The examples in the Procedure section will help clarify this. <p class="line867"><strong>Procedure</strong> <p class="line874">When creating or editing a Log Source, you should use the time variables in the path you use in the Log File Path box under the Log Settings tab. As an example, a typical daily Apache webserver log rotation scheme creates a log with the datestamp indicating the date of the log entries, e.g. at 1 minute after midnight on 07/16/2002 the log rotation mechanism archives the log: <pre>/var/log/httpd/access.log
+</pre><p class="line874">and saves it as <pre>/var/log/httpd/access.log.20020715
+</pre><p class="line874">To match this pattern in the log source for an Urchin Profile, you'd simply specify <pre>/var/log/httpd/access.log.YYYYMMDD
+</pre><p class="line874">in the Log File Path and Urchin will automatically look for the previous day's log when it runs that day. As another example, when Microsoft's IIS webserver is configured to rotate logs daily, it will name the logfile and include the current date as part of the filename, e.g. ex021127.log. Therefore, to process a daily IIS log, you would use a logfile specification something like: <pre>C:\WINNT\System32\LogFiles\W3SVC1\exYYMMDD.log
+</pre><p class="line874">in the Log File Path field of the Log Source for the Profile. <p class="line874">To allow Urchin to process logs that are rotated more frequently than just a daily basis, you can use a combination of the YYYYMMDD syntax and wildcards to match all logfiles created the previous day. To do this, you would need to ensure that the rotated log file was named consistently, e.g. with an hour appended to the filename. In the Log File Path specification, you'd then use a pattern such as: <pre>/var/log/httpd/access.log.YYYYMMDD*
+</pre><p class="line874">or <pre>C:\WINNT\System32\LogFiles\W3SVC1\exYYMMDD*.log
+</pre><p class="line874">A more complex usage would be one where logs are stored in directories named so that they reflect the year, month, and day. Suppose you had the following directory paths for storing logs: <pre>/logs/2003/07
+/logs/2003/08
+/logs/2003/09
+</pre><p class="line874">and you kept all logs for a given month in their respective directories and each log had the day of the month appended to it (e.g. access.log.01, access.log.02). To allow Urchin to figure out what logs to process you could use one of the following log path formats: <pre>/logs/YYYY/MM/access.log.DD
+/logs/%Y/%M/access.log.%d
+</pre><p class="line874">At log processing times, Urchin will then process all logs matching yesterday's date pattern, with any suffix. As with any use of wildcards in the Log File Path field specification, it is important that Log Tracking for the Profile be enabled to ensure that Urchin does not re-process logs. <p class="line867"><strong>Considerations</strong> <p class="line874">To determine the date for the replacement pattern, Urchin subtracts 24 hours from the current time, based on the local time. It will properly handle month and year boundaries. However, this can be modified using the Date/Time Wildcard Substitution in Log Path Name setting under the Advanced Settings tab of a log source. You can select either Localtime or GMT time as the basis for your time adjustments, then using the Hours edit box specify a plus or minus offset in hours. <p class="line867"><strong>Complete Date and Time Format Reference</strong> <p class="line874">This is the full list of supported time format variables, which follows conventions used in the Standard C Library strftime() routine: <ul><li>%A = national representation of the full weekday name. </li><li>%a = national representation of the abbreviated weekday name. </li><li>%B = national representation of the full month name. </li><li>%b = national representation of the abbreviated month name. </li><li>%d = the day of the month as a decimal number (01-31). </li><li>%e = the day of month as a decimal number (1-31); single digits are preceded by a blank. </li><li>%H = the hour (24-hour clock) as a decimal number (00-23). </li><li>%I = the hour (12-hour clock) as a decimal number (01-12). </li><li>%j = the day of the year as a decimal number (001-366). </li><li>%k = the hour (24-hour clock) as a decimal number (0-23); single digits are preceded by a blank. </li><li>%l = the hour (12-hour clock) as a decimal number (1-12); single digits are preceded by a blank. </li><li>%M = the minute as a decimal number (00-59). </li><li>%m = the month as a decimal number (01-12). </li><li>%p = national representation of either "ante meridiem" or "post meridiem" as appropriate. </li><li>%S = the second as a decimal number (00-60). </li><li>%s = the number of seconds since the Epoch, UTC (see mktime(3)). </li><li>%w = the weekday (Sunday as the first day of the week) as a decimal number (0-6). </li><li>%Y = the year with century as a decimal number. </li><li>%y = the year without century as a decimal number (00-99). </li><li>%z = the time zone offset from UTC; a leading plus sign stands for east of UTC, a minus sign for west of UTC, hours and minutes follow with two digits each and no delimiter between them (common form for RFC 822 date headers). </li><li>%% = `%'. (for use when a literal percent sign is needed inside a date/time entry)  </li></ul></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Wildcard_&_Date_Substitution_in_Log_Path.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

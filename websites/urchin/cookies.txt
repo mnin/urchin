@@ -1,0 +1,9 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+www.google.com	TRUE	/support	FALSE	1999999999	N_T	sess%3D354ba224b318bd90%26v%3D2%26c%3D7829da31%26s%3D4f7320f1%26t%3DI%3A0%3A%7CA%3A46%3A151265%7CI%3A50%3A%26sessref%3Dhttp%253A%252F%252Fwww.google.com%252Furchin%252Fsupport_policies.html
+wallet.google.com	TRUE	/	FALSE	1999999999	settings	<lang|en|0><country|US|0>
+.google.com	TRUE	/	FALSE	1999999999	S	static_files=mb4C2vJAS10
+.google.com	TRUE	/	FALSE	1999999999	PREF	ID=57cd94b88e0255c2:FF=0:TM=1332945217:LM=1332945217:S=JIPptmL1itsvRmG6
+.google.com	TRUE	/	FALSE	1999999999	NID	58=zYTZ3TfOxFwf6IdQ2_ClkCuawPS1BNMS2AReqPTJmunxFQnJ0M1S_odSv2TvYQs4uCHBO6SyhOBVOZfO3zXgsTwJPgTBbPI91eFczer52_dYCc7v9l6HyN-Vidv7Gicz
+support.google.com	TRUE	/	FALSE	1999999999	N_T	sess%3D38a2fe388df91b69%26v%3D2%26c%3Db1c04cb0%26s%3D4f732137%26t%3Ds%3A0%3Ats.cs%7Cs%3A1%3Ats.cs%7CA%3A2%3A112783%7CA%3A2%3A97706%7Cs%3A3%3Aguide.cs%7CA%3A4%3A178897%7CA%3A5%3A173733%7CA%3A5%3A173733%7Cs%3A5%3Aguide.cs%7CA%3A6%3A180744%7CI%3A12%3A%26sessref%3Dhttp%253A%252F%252Fsecure.urchin.com%252Fhelpwiki%252Fen%252FHelp_Center.html
+

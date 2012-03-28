@@ -1,0 +1,622 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/What_information_do_the_filter_fields_represent%253F.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>What information do the filter fields represent?</strong> <p class="line867"><strong>Overview</strong> <p class="line874">When a hit or entry in a log file is read during processing, the hit is broken down into 'Raw Fields'. Fields are generally separated by spaces, tabs, or commas. The Log Format determines how these Raw Fields are assigned internally. Once the Raw Fields are read, Urchin calculates a number of 'Auto Fields' based on the 'Raw Fields'. Most reports use these Auto Fields for updating. <p class="line874">Filters can be applied to either Raw or Auto Fields. The following table lists all available Fields and their purpose. <p class="line867"><strong>Complete Field List</strong> <div><table class="zeroBorder" style="border-collapse: collapse; ; height: 2764px; width: 693px"><tbody><tr>  <td class="xl64" id="s15m" style="text-align: center; ; height: 20px; width: 184px"><p class="line891"><strong>Field</strong> </td>
+  <td class="xl64" id="s:bo" style="text-align: center; ; width: 52px"><p class="line891"><strong>Type</strong> </td>
+  <td class="xl64" id="v33m" style="text-align: center; ; width: 314px"><p class="line891"><strong>Purpose</strong> </td>
+</tr>
+<tr>  <td class="xl66" id="lqwt" style="width: 184px; height: 20px"><p class="line862">apache_time </td>
+  <td class="xl65" id="hdff" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="topd" style="width: 314px"><p class="line862">Apache raw date &amp;   time of hit field. </td>
+</tr>
+<tr>  <td class="xl66" id="wuco" style="width: 184px; height: 20px"><p class="line862">browser_base </td>
+  <td class="xl65" id="o2xp" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="lele" style="width: 314px"><p class="line862">Browser name (e.g.,   Netscape). </td>
+</tr>
+<tr>  <td class="xl66" id="m-ql" style="width: 184px; height: 20px"><p class="line862">browser_version </td>
+  <td class="xl65" id="m6rl" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="exkz" style="width: 314px"><p class="line862">Browser version. </td>
+</tr>
+<tr>  <td class="xl66" id="v5vj" style="width: 184px; height: 20px"><p class="line862">c_host </td>
+  <td class="xl65" id="nt2t" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="bdi6" style="width: 314px"><p class="line862">Client hostname   (converts to c_ip if necessary). </td>
+</tr>
+<tr>  <td class="xl66" id="mv5d" style="width: 184px; height: 20px"><p class="line862">c_ip </td>
+  <td class="xl65" id="zj_u" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="mqip" style="width: 314px"><p class="line862">Client IP Address. </td>
+</tr>
+<tr>  <td class="xl66" id="ctji" style="width: 184px; height: 20px"><p class="line862">client_hostname </td>
+  <td class="xl65" id="o2xp" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="sbur" style="width: 314px"><p class="line862">Client hostname. </td>
+</tr>
+<tr>  <td class="xl66" id="suo4" style="width: 184px; height: 20px"><p class="line862">client_ipaddress </td>
+  <td class="xl65" id="m6rl" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="g-8v" style="width: 314px"><p class="line862">Client IP Address. </td>
+</tr>
+<tr>  <td class="xl66" id="awm9" style="width: 184px; height: 20px"><p class="line862">cs_cookie </td>
+  <td class="xl65" id="pz-t" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="d_2x" style="width: 314px"><p class="line862">Cookies sent by   browser. </td>
+</tr>
+<tr>  <td class="xl66" id="nm.8" style="width: 184px; height: 20px"><p class="line862">cs_host </td>
+  <td class="xl65" id="s2vp" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="gevc" style="width: 314px"><p class="line862">Requested virtualhost by   Client. </td>
+</tr>
+<tr>  <td class="xl66" id="b9gz" style="width: 184px; height: 20px"><p class="line862">cs_method </td>
+  <td class="xl65" id="f8d:" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="yi14" style="width: 314px"><p class="line862">IIS raw request method   field. </td>
+</tr>
+<tr>  <td class="xl66" id="wvmc" style="width: 184px; height: 20px"><p class="line862">cs_referer </td>
+  <td class="xl65" id="ux65" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="abgn" style="width: 314px"><p class="line862">Raw Referral information   (could be internal). </td>
+</tr>
+<tr>  <td class="xl66" id="wvmc" style="width: 184px; height: 20px"><p class="line862">cs_request </td>
+  <td class="xl65" id="ux65" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="cn_y" style="width: 314px"><p class="line862">IIS raw request URI </td>
+</tr>
+<tr>  <td class="xl66" id="u-ht" style="width: 184px; height: 20px"><p class="line862">cs_uriquery </td>
+  <td class="xl65" id="zpiz" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="f062" style="width: 314px"><p class="line862">IIS raw request query   field. </td>
+</tr>
+<tr>  <td class="xl66" id="wntj" style="width: 184px; height: 20px"><p class="line862">cs_uristem </td>
+  <td class="xl65" id="sj4s" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="gy5h" style="width: 314px"><p class="line862">IIS raw request stem   field. </td>
+</tr>
+<tr>  <td class="xl66" id="v5mu" style="width: 184px; height: 20px"><p class="line862">cs_useragent </td>
+  <td class="xl65" id="srd4" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="rxvc" style="width: 314px"><p class="line862">Browser user-agent   information. </td>
+</tr>
+<tr>  <td class="xl66" id="ps93" style="width: 184px; height: 20px"><p class="line862">cs_username </td>
+  <td class="xl65" id="jlxe" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="c1jn" style="width: 314px"><p class="line862">Client username (if any) </td>
+</tr>
+<tr>  <td class="xl66" id="u9fs" style="width: 184px; height: 20px"><p class="line862">cs_version </td>
+  <td class="xl65" id="bs63" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="kb9b" style="width: 314px"><p class="line862">IIS Raw HTTP version. </td>
+</tr>
+<tr>  <td class="xl66" id="laqh" style="width: 184px; height: 20px"><p class="line862">custom_date </td>
+  <td class="xl65" id="t67x" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="i1ef" style="width: 314px"><p class="line862">Used for datestamp in   Custom Logs. </td>
+</tr>
+<tr>  <td class="xl66" id="jg.g" style="width: 184px; height: 20px"><p class="line862">custom_time </td>
+  <td class="xl65" id="nr84" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="d5.m" style="width: 314px"><p class="line862">Used for timestamp in   Custom Logs. </td>
+</tr>
+<tr>  <td class="xl66" id="y6.n" style="width: 184px; height: 20px"><p class="line862">domain_complete </td>
+  <td class="xl65" id="ppad" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="btz_" style="width: 314px"><p class="line862">Complete domain. (e.g.   urchin.com). </td>
+</tr>
+<tr>  <td class="xl66" id="e540" style="width: 184px; height: 20px"><p class="line862">domain_primary </td>
+  <td class="xl65" id="pmca" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="xlu-" style="width: 314px"><p class="line862">First level domain.   (e.g. com). </td>
+</tr>
+<tr>  <td class="xl66" id="qzmi" style="width: 184px; height: 20px"><p class="line862">ecommerce_affiliation </td>
+  <td class="xl65" id="pmca" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="i6qg" style="width: 314px"><p class="line862">E-commernce transaction id. </td>
+</tr>
+<tr>  <td class="xl66" id="p3ad" style="width: 184px; height: 20px"><p class="line862">ecommerce_bill_city </td>
+  <td class="xl65" id="pmca" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="o1gi" style="width: 314px"><p class="line862">Billing city for e-commernce transaction. </td>
+</tr>
+<tr>  <td class="xl66" id="nhx1" style="width: 184px; height: 20px"><p class="line862">ecommerce_bill_country </td>
+  <td class="xl65" id="pmca" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="k_0h" style="width: 314px"><p class="line862">Billing country for e-commernce transaction. </td>
+</tr>
+<tr>  <td class="xl66" id="fjo." style="width: 184px; height: 20px"><p class="line862">ecommerce_bill_region </td>
+  <td class="xl65" id="pmca" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="d3_j" style="width: 314px"><p class="line862">Billing region (state/province) for e-commernce transaction. </td>
+</tr>
+<tr>  <td class="xl66" id="ozx3" style="width: 184px; height: 20px"><p class="line862">ecommerce_orderid </td>
+  <td class="xl65" id="pmca" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="wm9f" style="width: 314px"><p class="line862">E-commerce order id   number. </td>
+</tr>
+<tr>  <td class="xl66" id="r6gq" style="width: 184px; height: 20px"><p class="line862">ecommerce_product_code </td>
+  <td class="xl65" id="pmca" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="ezvt" style="width: 314px"><p class="line862">E-commerce product   code. </td>
+</tr>
+<tr>  <td class="xl66" id="d4qb" style="width: 184px; height: 20px"><p class="line862">ecommerce_product_name </td>
+  <td class="xl65" id="pmca" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="w875" style="width: 314px"><p class="line862">E-commerce product name. </td>
+</tr>
+<tr>  <td class="xl66" id="kslp" style="width: 184px; height: 20px"><p class="line862">ecommerce_quantity </td>
+  <td class="xl65" id="pmca" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="dgz0" style="width: 314px"><p class="line862">E-commerce product   quantity. </td>
+</tr>
+<tr>  <td class="xl66" id="a45h" style="width: 184px; height: 20px"><p class="line862">ecommerce_shipping </td>
+  <td class="xl65" id="pmca" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="lgd6" style="width: 314px"><p class="line862">E-commerce shipping   amount. </td>
+</tr>
+<tr>  <td class="xl66" id="o01m" style="width: 184px; height: 20px"><p class="line862">ecommerce_tax </td>
+  <td class="xl65" id="pmca" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="vj7w" style="width: 314px"><p class="line862">E-commerce tax amount. </td>
+</tr>
+<tr>  <td class="xl66" id="x8.9" style="width: 184px; height: 20px"><p class="line862">ecommerce_total </td>
+  <td class="xl65" id="pmca" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="cl0f" style="width: 314px"><p class="line862">E-commerce transaction   amount. </td>
+</tr>
+<tr>  <td class="xl66" id="d9b5" style="width: 184px; height: 20px"><p class="line862">ecommerce_unit_price </td>
+  <td class="xl65" id="pmca" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="a024" style="width: 314px"><p class="line862">E-commerce product unit price. </td>
+</tr>
+<tr>  <td class="xl66" id="ap87" style="width: 184px; height: 20px"><p class="line862">ecommerce_variation </td>
+  <td class="xl65" id="pmca" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="a42v" style="width: 314px"><p class="line862">E-commerce product   variation. </td>
+</tr>
+<tr>  <td class="xl66" id="mef0" style="width: 184px; height: 20px"><p class="line862">elf_billcity </td>
+  <td class="xl65" id="a22z" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="vfqb" style="width: 314px"><p class="line862">E-commerce customer   city. </td>
+</tr>
+<tr>  <td class="xl66" id="hod5" style="width: 184px; height: 20px"><p class="line862">elf_billcountry </td>
+  <td class="xl65" id="dd.6" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="m85b" style="width: 314px"><p class="line862">E-commerce customer   country. </td>
+</tr>
+<tr>  <td class="xl66" id="opl2" style="width: 184px; height: 20px"><p class="line862">elf_billstate </td>
+  <td class="xl65" id="xli7" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="si7y" style="width: 314px"><p class="line862">E-commerce customer   state. </td>
+</tr>
+<tr>  <td class="xl66" id="y1ev" style="width: 184px; height: 20px"><p class="line862">elf_billzip </td>
+  <td class="xl65" id="ogo0" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="e2-f" style="width: 314px"><p class="line862">E-commerce customer zip   code. </td>
+</tr>
+<tr>  <td class="xl66" id="soci" style="width: 184px; height: 20px"><p class="line862">elf_orderid </td>
+  <td class="xl65" id="ebfm" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="lrz4" style="width: 314px"><p class="line862">E-commerce order id   number. </td>
+</tr>
+<tr>  <td class="xl66" id="z4tf" style="width: 184px; height: 20px"><p class="line862">elf_price </td>
+  <td class="xl65" id="lbqk" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="s9qd" style="width: 314px"><p class="line862">E-commerce product   price. </td>
+</tr>
+<tr>  <td class="xl66" id="gl8:" style="width: 184px; height: 20px"><p class="line862">elf_productcode </td>
+  <td class="xl65" id="rkzg" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="xxr:" style="width: 314px"><p class="line862">E-commerce product   code. </td>
+</tr>
+<tr>  <td class="xl66" id="f_f." style="width: 184px; height: 20px"><p class="line862">elf_productname </td>
+  <td class="xl65" id="m:mw" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="u.so" style="width: 314px"><p class="line862">E-commerce product name. </td>
+</tr>
+<tr>  <td class="xl66" id="ppz." style="width: 184px; height: 20px"><p class="line862">elf_quantity </td>
+  <td class="xl65" id="f.iv" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="xozs" style="width: 314px"><p class="line862">E-commerce product   quantity. </td>
+</tr>
+<tr>  <td class="xl66" id="c11z" style="width: 184px; height: 20px"><p class="line862">elf_region </td>
+  <td class="xl65" id="n8pk" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="yfy2" style="width: 314px"><p class="line862">E-Commerce region   drilldown information. </td>
+</tr>
+<tr>  <td class="xl66" id="kmzq" style="width: 184px; height: 20px"><p class="line862">elf_sessionid </td>
+  <td class="xl65" id="wi_r" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="n49y" style="width: 314px"><p class="line862">E-commerce session id. </td>
+</tr>
+<tr>  <td class="xl66" id="x.:3" style="width: 184px; height: 20px"><p class="line862">elf_shipping </td>
+  <td class="xl65" id="w5.v" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="l.md" style="width: 314px"><p class="line862">E-commerce shipping   amount. </td>
+</tr>
+<tr>  <td class="xl66" id="y:uj" style="width: 184px; height: 20px"><p class="line862">elf_store </td>
+  <td class="xl65" id="vxad" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="celq" style="width: 314px"><p class="line862">E-commerce store name. </td>
+</tr>
+<tr>  <td class="xl66" id="o8d-" style="width: 184px; height: 20px"><p class="line862">elf_tax </td>
+  <td class="xl65" id="zb2v" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="ze.e" style="width: 314px"><p class="line862">E-commerce tax amount. </td>
+</tr>
+<tr>  <td class="xl66" id="rqi:" style="width: 184px; height: 20px"><p class="line862">elf_total </td>
+  <td class="xl65" id="nm6d" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="h..n" style="width: 314px"><p class="line862">E-commerce transaction   amount. </td>
+</tr>
+<tr>  <td class="xl66" id="g9ul" style="width: 184px; height: 20px"><p class="line862">elf_unit_price </td>
+  <td class="xl65" id="nm6d" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="qmdo" style="width: 314px"><p class="line862">E-commerce product unit price. </td>
+</tr>
+<tr>  <td class="xl66" id="e3t7" style="width: 184px; height: 20px"><p class="line862">elf_upsold </td>
+  <td class="xl65" id="mcmn" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="sddk" style="width: 314px"><p class="line862">E-commerce upsold   variable. </td>
+</tr>
+<tr>  <td class="xl66" id="d6qo" style="width: 184px; height: 20px"><p class="line862">elf_variation </td>
+  <td class="xl65" id="lj5u" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="iha-" style="width: 314px"><p class="line862">E-commerce product   variation. </td>
+</tr>
+<tr>  <td class="xl66" id="xd4v" style="width: 184px; height: 20px"><p class="line862">geo_country </td>
+  <td class="xl65" id="n8pk" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="j:en" style="width: 314px"><p class="line862">Visitor Country </td>
+</tr>
+<tr>  <td class="xl66" id="xd4v" style="width: 184px; height: 20px"><p class="line862">geo_city </td>
+  <td class="xl65" id="n8pk" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="j:en" style="width: 314px"><p class="line862">Visitor City </td>
+</tr>
+<tr>  <td class="xl66" id="xd4v" style="width: 184px; height: 20px"><p class="line862">geo_connection_speed </td>
+  <td class="xl65" id="n8pk" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="j:en" style="width: 314px"><p class="line862">Visitor Connection Speed </td>
+</tr>
+<tr>  <td class="xl66" id="j.dv" style="width: 184px; height: 20px"><p class="line862">geo_isp </td>
+  <td class="xl65" id="n8pk" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="d0t_" style="width: 314px"><p class="line862">Visitor ISP </td>
+</tr>
+<tr>  <td class="xl66" id="t1rd" style="width: 184px; height: 20px"><p class="line862">geo_latitude </td>
+  <td class="xl65" id="n8pk" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="z2wr" style="width: 314px"><p class="line862">Visitor Latitude </td>
+</tr>
+<tr>  <td class="xl66" id="cgzv" style="width: 184px; height: 20px"><p class="line862">geo_longitude </td>
+  <td class="xl65" id="n8pk" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="tqbq" style="width: 314px"><p class="line862">Visitor Longitude </td>
+</tr>
+<tr>  <td class="xl66" id="it_2" style="width: 184px; height: 20px"><p class="line862">geo_organization </td>
+  <td class="xl65" id="n8pk" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="vgn6" style="width: 314px"><p class="line862">Visitor Organization or Network Location </td>
+</tr>
+<tr>  <td class="xl66" id="axby" style="width: 184px; height: 20px"><p class="line862">geo_region </td>
+  <td class="xl65" id="n8pk" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="c:sh" style="width: 314px"><p class="line862">Visitor Region </td>
+</tr>
+<tr>  <td class="xl66" id="s:bu" style="width: 184px; height: 20px"><p class="line862">iis_date </td>
+  <td class="xl65" id="bry8" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="ak7g" style="width: 314px"><p class="line862">IIS raw date of hit   field. </td>
+</tr>
+<tr>  <td class="xl66" id="d52y" style="width: 184px; height: 20px"><p class="line862">iis_time </td>
+  <td class="xl65" id="svj." style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="ucz5" style="width: 314px"><p class="line862">IIS raw time of hit   field. </td>
+</tr>
+<tr>  <td class="xl66" id="d52y" style="width: 184px; height: 20px"><p class="line862">organic_source </td>
+  <td class="xl65" id="svj." style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="ucz5" style="width: 314px"><p class="line862">Organic source </td>
+</tr>
+<tr>  <td class="xl66" id="d52y" style="width: 184px; height: 20px"><p class="line862">log_source_name </td>
+  <td class="xl65" id="svj." style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="ucz5" style="width: 314px"><p class="line862">Name of the log source </td>
+</tr>
+<tr>  <td class="xl66" id="vh1u" style="width: 184px; height: 20px"><p class="line862">platform_base </td>
+  <td class="xl65" id="t_51" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="p410" style="width: 314px"><p class="line862">Platform (e.g.,   Windows). </td>
+</tr>
+<tr>  <td class="xl66" id="i31e" style="width: 184px; height: 20px"><p class="line862">platform_version </td>
+  <td class="xl65" id="z4jf" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="z6yv" style="width: 314px"><p class="line862">Platform version. </td>
+</tr>
+<tr>  <td class="xl66" id="jrn2" style="width: 184px; height: 20px"><p class="line862">referral_anchor </td>
+  <td class="xl65" id="abn6" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="ytve" style="width: 314px"><p class="line862">Referral information   after # tag. </td>
+</tr>
+<tr>  <td class="xl66" id="h4lv" style="width: 184px; height: 20px"><p class="line862">referral_directory </td>
+  <td class="xl65" id="vrdd" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="fzbk" style="width: 314px"><p class="line862">Referral directory up to   filename. </td>
+</tr>
+<tr>  <td class="xl66" id="zyvy" style="width: 184px; height: 20px"><p class="line862">referral_filename </td>
+  <td class="xl65" id="gs9a" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="m6k7" style="width: 314px"><p class="line862">Referral filename   without directory. </td>
+</tr>
+<tr>  <td class="xl66" id="q9v_" style="width: 184px; height: 20px"><p class="line862">referral_host </td>
+  <td class="xl65" id="tru2" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="nywt" style="width: 314px"><p class="line862">Referral complete   hostname. </td>
+</tr>
+<tr>  <td class="xl66" id="wczr" style="width: 184px; height: 20px"><p class="line862">referral_keywords </td>
+  <td class="xl65" id="kkpw" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="ld:i" style="width: 314px"><p class="line862">Referral search engine   keywords </td>
+</tr>
+<tr>  <td class="xl66" id="of1m" style="width: 184px; height: 20px"><p class="line862">referral_mime </td>
+  <td class="xl65" id="jqdv" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="seic" style="width: 314px"><p class="line862">Referral mime type (file   extension) </td>
+</tr>
+<tr>  <td class="xl66" id="izxm" style="width: 184px; height: 20px"><p class="line862">referral_port </td>
+  <td class="xl65" id="m3u1" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="gw-c" style="width: 314px"><p class="line862">Referral port number (if   any). </td>
+</tr>
+<tr>  <td class="xl66" id="u.yh" style="width: 184px; height: 20px"><p class="line862">referral_protocol </td>
+  <td class="xl65" id="yj1r" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="ggo1" style="width: 314px"><p class="line862">Referral protocol   (http/https/etc.) </td>
+</tr>
+<tr>  <td class="xl66" id="c8if" style="width: 184px; height: 20px"><p class="line862">referral_query </td>
+  <td class="xl65" id="ebnd" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="cz:j" style="width: 314px"><p class="line862">Referral Query info by   itself. </td>
+</tr>
+<tr>  <td class="xl66" id="l166" style="width: 184px; height: 20px"><p class="line862">referral_stem </td>
+  <td class="xl65" id="iz5v" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="a575" style="width: 314px"><p class="line862">Referral URI stem   without query info. </td>
+</tr>
+<tr>  <td class="xl66" id="bdtx" style="width: 184px; height: 20px"><p class="line862">referral_uri </td>
+  <td class="xl65" id="fcxj" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="u-bu" style="width: 314px"><p class="line862">Referral complete URI.   (no host) </td>
+</tr>
+<tr>  <td class="xl66" id="pim1" style="width: 184px; height: 20px"><p class="line862">referral_url </td>
+  <td class="xl65" id="g9i4" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="dvf2" style="width: 314px"><p class="line862">Referral complete URL.   (includes host) </td>
+</tr>
+<tr>  <td class="xl66" id="n-q4" style="width: 184px; height: 20px"><p class="line862">request_anchor </td>
+  <td class="xl65" id="o0bn" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="asfq" style="width: 314px"><p class="line862">Request information   after # tag </td>
+</tr>
+<tr>  <td class="xl66" id="efvj" style="width: 184px; height: 20px"><p class="line862">request_directory </td>
+  <td class="xl65" id="idal" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="en8s" style="width: 314px"><p class="line862">Request directory   without filename. </td>
+</tr>
+<tr>  <td class="xl66" id="c4ne" style="width: 184px; height: 20px"><p class="line862">request_download </td>
+  <td class="xl65" id="d6bf" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="smo4" style="width: 314px"><p class="line862">Download requests. </td>
+</tr>
+<tr>  <td class="xl66" id="hcns" style="width: 184px; height: 20px"><p class="line862">request_filename </td>
+  <td class="xl65" id="sak0" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="d_e0" style="width: 314px"><p class="line862">Request filename   without directory. </td>
+</tr>
+<tr>  <td class="xl66" id="hcns" style="width: 184px; height: 20px"><p class="line862">request_form </td>
+  <td class="xl65" id="sak0" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="bymn" style="width: 314px"><p class="line862">Requested "posted form". </td>
+</tr>
+<tr>  <td class="xl66" id="zor1" style="width: 184px; height: 20px"><p class="line862">request_host </td>
+  <td class="xl65" id="sak0" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="gmmc" style="width: 314px"><p class="line862">Request hostname (if   any). </td>
+</tr>
+<tr>  <td class="xl66" id="g7s1" style="width: 184px; height: 20px"><p class="line862">request_method </td>
+  <td class="xl65" id="esku" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="gvyf" style="width: 314px"><p class="line862">Request method   (GET/POST/etc.). </td>
+</tr>
+<tr>  <td class="xl66" id="de0i" style="width: 184px; height: 20px"><p class="line862">request_mime </td>
+  <td class="xl65" id="io1a" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="v9vm" style="width: 314px"><p class="line862">Request mime type (file   extension). </td>
+</tr>
+<tr>  <td class="xl66" id="hsru" style="width: 184px; height: 20px"><p class="line862">request_origfilepath </td>
+  <td class="xl65" id="a.3a" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="h8as" style="width: 314px"><p class="line862">Request original uri   stem if UTM. </td>
+</tr>
+<tr>  <td class="xl66" id="w3z5" style="width: 184px; height: 20px"><p class="line862">request_origmime </td>
+  <td class="xl65" id="kuo1" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="mc81" style="width: 314px"><p class="line862">Request original mime   type if UTM. </td>
+</tr>
+<tr>  <td class="xl66" id="qlqg" style="width: 184px; height: 20px"><p class="line862">request_port </td>
+  <td class="xl65" id="gqih" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="bwjq" style="width: 314px"><p class="line862">Request port number (if   any). </td>
+</tr>
+<tr>  <td class="xl66" id="m:tt" style="width: 184px; height: 20px"><p class="line862">request_protocol </td>
+  <td class="xl65" id="cce9" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="o2.q" style="width: 314px"><p class="line862">Request protocol   (HTTP/etc.). </td>
+</tr>
+<tr>  <td class="xl66" id="rex8" style="width: 184px; height: 20px"><p class="line862">request_query </td>
+  <td class="xl65" id="b_zc" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="xx0j" style="width: 314px"><p class="line862">Request query   information (e.g., after ?) </td>
+</tr>
+<tr>  <td class="xl66" id="f2j7" style="width: 184px; height: 20px"><p class="line862">request_stem </td>
+  <td class="xl65" id="ypdi" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="p6.q" style="width: 314px"><p class="line862">Request URI without   query. </td>
+</tr>
+<tr>  <td class="xl66" id="zyab" style="width: 184px; height: 20px"><p class="line862">request_uri </td>
+  <td class="xl65" id="mbwn" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="eai7" style="width: 314px"><p class="line862">Request URI with query. </td>
+</tr>
+<tr>  <td class="xl66" id="z97y" style="width: 184px; height: 20px"><p class="line862">request_url </td>
+  <td class="xl65" id="rgou" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="n.p4" style="width: 314px"><p class="line862">Request complete URL (if   provided). </td>
+</tr>
+<tr>  <td class="xl66" id="ve2." style="width: 184px; height: 20px"><p class="line862">request_version </td>
+  <td class="xl65" id="sym_" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="cpn_" style="width: 314px"><p class="line862">Request protocol   version. </td>
+</tr>
+<tr>  <td class="xl66" id="zz.0" style="width: 184px; height: 20px"><p class="line862">robot_agent </td>
+  <td class="xl65" id="sym_" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="xx6t" style="width: 314px"><p class="line862">Robot (crawlers) requests. </td>
+</tr>
+<tr>  <td class="xl66" id="zb3a" style="width: 184px; height: 20px"><p class="line862">s_computername </td>
+  <td class="xl65" id="eh_i" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="no6b" style="width: 314px"><p class="line862">IIS Computer name. </td>
+</tr>
+<tr>  <td class="xl66" id="ztht" style="width: 184px; height: 20px"><p class="line862">s_ip </td>
+  <td class="xl65" id="mavk" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="zlht" style="width: 314px"><p class="line862">IIS Server IP address. </td>
+</tr>
+<tr>  <td class="xl66" id="ke.9" style="width: 184px; height: 20px"><p class="line862">s_port </td>
+  <td class="xl65" id="ag.e" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="b4ka" style="width: 314px"><p class="line862">Server port number. </td>
+</tr>
+<tr>  <td class="xl66" id="lcki" style="width: 184px; height: 20px"><p class="line862">s_sitename </td>
+  <td class="xl65" id="tv90" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="kury" style="width: 314px"><p class="line862">IIS Server site name. </td>
+</tr>
+<tr>  <td class="xl66" id="okwm" style="width: 184px; height: 20px"><p class="line862">sc_bytes </td>
+  <td class="xl65" id="tq8q" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="o1ou" style="width: 314px"><p class="line862">Number of bytes   transferred for request. </td>
+</tr>
+<tr>  <td class="xl66" id="b6mh" style="width: 184px; height: 20px"><p class="line862">sc_status </td>
+  <td class="xl65" id="dt6j" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="wz-o" style="width: 314px"><p class="line862">Return status code from   server. </td>
+</tr>
+<tr>  <td class="xl66" id="d_p:" style="width: 184px; height: 20px"><p class="line862">sid </td>
+  <td class="xl65" id="gz.k" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="rfsp" style="width: 314px"><p class="line862">Session id (if any). </td>
+</tr>
+<tr>  <td class="xl66" id="d_p:" style="width: 184px; height: 20px"><p class="line862">user_defined_variable </td>
+  <td class="xl65" id="gz.k" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="rfsp" style="width: 314px"><p class="line862">User defined var extracted from utm_cookiev variable. </td>
+</tr>
+<tr>  <td class="xl66" id="d_p:" style="width: 184px; height: 20px"><p class="line862">username </td>
+  <td class="xl65" id="gz.k" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="rfsp" style="width: 314px"><p class="line862">Client username (if any). </td>
+</tr>
+<tr>  <td class="xl66" id="d_p:" style="width: 184px; height: 20px"><p class="line862">utm_campaign </td>
+  <td class="xl65" id="gz.k" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="rfsp" style="width: 314px"><p class="line862">UTM campaign name. </td>
+</tr>
+<tr>  <td class="xl66" id="n:ql" style="width: 184px; height: 20px"><p class="line862">utm_campaign_clicks </td>
+  <td class="xl65" id="uxm7" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="qqaf" style="width: 314px"><p class="line862">UTM compaign clicks. </td>
+</tr>
+<tr>  <td class="xl66" id="n:ql" style="width: 184px; height: 20px"><p class="line862">utm_campaign_cost </td>
+  <td class="xl65" id="uxm7" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="xnxf" style="width: 314px"><p class="line862">UTM compaign cost. </td>
+</tr>
+<tr>  <td class="xl66" id="n:ql" style="width: 184px; height: 20px"><p class="line862">utm_campaign_goal </td>
+  <td class="xl65" id="uxm7" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="o8.f" style="width: 314px"><p class="line862">UTM compaign goals met. </td>
+</tr>
+<tr>  <td class="xl66" id="n:ql" style="width: 184px; height: 20px"><p class="line862">utm_campaign_hour </td>
+  <td class="xl65" id="uxm7" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="jj1f" style="width: 314px"><p class="line862">Hour of the day when that compaign hit occured. </td>
+</tr>
+<tr>  <td class="xl66" id="n:ql" style="width: 184px; height: 20px"><p class="line862">utm_campaign_impressions </td>
+  <td class="xl65" id="uxm7" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="i3ok" style="width: 314px"><p class="line862">UTM compaign impressions count. </td>
+</tr>
+<tr>  <td class="xl66" id="n:ql" style="width: 184px; height: 20px"><p class="line862">utm_campaign_uri </td>
+  <td class="xl65" id="uxm7" style="width: 52px"><p class="line862">(RAW) </td>
+  <td class="xl65" id="mch2" style="width: 314px"><p class="line862">URI for UTM compaign. </td>
+</tr>
+<tr>  <td class="xl66" id="n:ql" style="width: 184px; height: 20px"><p class="line862">utm_content </td>
+  <td class="xl65" id="uxm7" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="ft:0" style="width: 314px"><p class="line862">UTM compaign content. </td>
+</tr>
+<tr>  <td class="xl66" id="isac" style="width: 184px; height: 20px"><p class="line862">utm_cookiea </td>
+  <td class="xl65" id="o3bp" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="buwt" style="width: 314px"><p class="line862">UTM-2 cookie-a </td>
+</tr>
+<tr>  <td class="xl66" id="uxlv" style="width: 184px; height: 20px"><p class="line862">utm_cookieb </td>
+  <td class="xl65" id="lxfk" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="hfqu" style="width: 314px"><p class="line862">UTM-2 cookie-b </td>
+</tr>
+<tr>  <td class="xl66" id="o21t" style="width: 184px; height: 20px"><p class="line862">utm_cookiec </td>
+  <td class="xl65" id="zeph" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="yz4-" style="width: 314px"><p class="line862">UTM-2 cookie-c </td>
+</tr>
+<tr>  <td class="xl66" id="o21t" style="width: 184px; height: 20px"><p class="line862">utm_cookiev </td>
+  <td class="xl65" id="zeph" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="yz4-" style="width: 314px"><p class="line862">UTM-2 cookie-v </td>
+</tr>
+<tr>  <td class="xl66" id="o21t" style="width: 184px; height: 20px"><p class="line862">utm_cookiez </td>
+  <td class="xl65" id="zeph" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="yz4-" style="width: 314px"><p class="line862">UTM-2 cookie-z </td>
+</tr>
+<tr>  <td class="xl66" id="o21t" style="width: 184px; height: 20px"><p class="line862">utm_flash_version </td>
+  <td class="xl65" id="zeph" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="yz4-" style="width: 314px"><p class="line862">Flash version info </td>
+</tr>
+<tr>  <td class="xl66" id="o21t" style="width: 184px; height: 20px"><p class="line862">utm_id </td>
+  <td class="xl65" id="zeph" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="yz4-" style="width: 314px"><p class="line862">UTM campaign id </td>
+</tr>
+<tr>  <td class="xl66" id="a0z:" style="width: 184px; height: 20px"><p class="line862">utm_java_enabled </td>
+  <td class="xl65" id="z8wh" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="vcif" style="width: 314px"><p class="line862">yes|no if java is   enabled. </td>
+</tr>
+<tr>  <td class="xl66" id="c5ox" style="width: 184px; height: 20px"><p class="line862">utm_js_version </td>
+  <td class="xl65" id="s6bc" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="rrej" style="width: 314px"><p class="line862">Javascript version info. </td>
+</tr>
+<tr>  <td class="xl66" id="ihpp" style="width: 184px; height: 20px"><p class="line862">utm_language </td>
+  <td class="xl65" id="ht8y" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="w.dg" style="width: 314px"><p class="line862">Browser language code   setting. </td>
+</tr>
+<tr>  <td class="xl66" id="l1b0" style="width: 184px; height: 20px"><p class="line862">utm_medium </td>
+  <td class="xl65" id="ht8y" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="pz:e" style="width: 314px"><p class="line862">UTM medium (cpc|cpm|link|email|organic) </td>
+</tr>
+<tr>  <td class="xl66" id="e2ly" style="width: 184px; height: 20px"><p class="line862">utm_new_campaign </td>
+  <td class="xl65" id="ht8y" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="cgb9" style="width: 314px"><p class="line862">UTM new campaigns. </td>
+</tr>
+<tr>  <td class="xl66" id="p35j" style="width: 184px; height: 20px"><p class="line862">utm_page </td>
+  <td class="xl65" id="wdls" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="rd0w" style="width: 314px"><p class="line862">UTM page variable (used   for request_ variables). </td>
+</tr>
+<tr>  <td class="xl66" id="p35j" style="width: 184px; height: 20px"><p class="line862">utm_page_title </td>
+  <td class="xl65" id="wdls" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="j.s5" style="width: 314px"><p class="line862">UTM page title </td>
+</tr>
+<tr>  <td class="xl66" id="gz.x" style="width: 184px; height: 20px"><p class="line862">utm_referral </td>
+  <td class="xl65" id="xvv." style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="u_8w" style="width: 314px"><p class="line862">UTM Referral (used for   referral_ variables). </td>
+</tr>
+<tr>  <td class="xl66" id="p3ga" style="width: 184px; height: 20px"><p class="line862">utm_request_hostname </td>
+  <td class="xl65" id="xvv." style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="wd5e" style="width: 314px"><p class="line862">Host name of the compaign hit. </td>
+</tr>
+<tr>  <td class="xl66" id="ecz0" style="width: 184px; height: 20px"><p class="line862">utm_screen_colors </td>
+  <td class="xl65" id="upkx" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="fywm" style="width: 314px"><p class="line862">Screen color bit depth. </td>
+</tr>
+<tr>  <td class="xl66" id="j-3h" style="width: 184px; height: 20px"><p class="line862">utm_screen_resolution </td>
+  <td class="xl65" id="fp_6" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="sn4u" style="width: 314px"><p class="line862">Screen resolution (e.g.,   800x600). </td>
+</tr>
+<tr>  <td class="xl66" id="nsqg" style="width: 184px; height: 20px"><p class="line862">utm_source </td>
+  <td class="xl65" id="xvv." style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="zw4b" style="width: 314px"><p class="line862">UTM compaign source. </td>
+</tr>
+<tr>  <td class="xl66" id="xr7t" style="width: 184px; height: 20px"><p class="line862">utm_term </td>
+  <td class="xl65" id="upkx" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="kpc5" style="width: 314px"><p class="line862">UTM compaign term. </td>
+</tr>
+<tr>  <td class="xl66" id="b6yj" style="width: 184px; height: 20px"><p class="line862">utm_type </td>
+  <td class="xl65" id="fp_6" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="k72e" style="width: 314px"><p class="line862">UTM type (transaction, item, var) </td>
+</tr>
+<tr>  <td class="xl66" id="r:v_" style="width: 184px; height: 20px"><p class="line862">utm_unique_id </td>
+  <td class="xl65" id="bz_m" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td class="xl65" id="ircn" style="width: 314px"><p class="line862">UTM unique visitor id. </td>
+</tr>
+<tr>  <td class="xl63" id="mfiz" style="height: 20px"><p class="line862">visitor_type </td>
+  <td class="xl65" id="bz_m" style="width: 52px"><p class="line862">(AUTO) </td>
+  <td id="ouvm"><p class="line862">New vs Returning visitors </td>
+</tr>
+</tbody></table></div></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/What_information_do_the_filter_fields_represent%253F.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

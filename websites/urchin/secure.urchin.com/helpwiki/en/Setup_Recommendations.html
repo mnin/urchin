@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Setup_Recommendations.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Setup Recommendations</strong> <p class="line867"><strong>Overview</strong> <p class="line874">Once Urchin is installed, there are some initial operational parameters that will have to be configured. This is done via a Setup Wizard that runs when you connect to your Urchin administration interface for the first time, and during the first stages while you are establishing Profiles. These initial configuration actions include: <ul><li>Licensing Urchin </li><li>Configure Admin Settings for remote report and administration access, as well as establishing Data Center Mode operation </li><li>Setting the Urchin Administrator account password </li><li>Scheduling tasks for each of your profiles to process data </li><li>Log management  </li></ul><p class="line867"><strong>Procedure</strong> <p class="line862">Connect to the Urchin administration interface. On Windows systems you can go to Start-&gt;Programs-&gt;Urchin-&gt;Urchin Administration. On UNIX- type systems, you can use the URL <tt>http://hostname:9999</tt>, where hostname is the registered hostname of your Urchin system. For a new installation you should use the following to login: <p class="line874">Username: admin Password: urchin <p class="line874">You'll be presented with an Urchin Setup Wizard welcome screen. Click Continue to proceed through each of the following wizard screens. Note that the choices you make in this initial configuration can always be altered later on. <p class="line867"><strong>License Urchin</strong> <p class="line862">Follow the instructions in <a href="https://secure.urchin.com/helpwiki/en/Licensing_Urchin.html">Licensing Urchin</a>. <p class="line867"><strong>Admin Settings</strong> <ul><li>Remote Access Settings - select On for each case if you want to allow remote browser connections. If you select Off for either of these, then the only allowed access is on the console of the system where Urchin is installed. </li><li>Data Center Mode - this setting determines whether Urchin is configured to allow creation of Accounts, which allow you to logically organize Profiles, Groups, and Users into restricted access categories. If you are undecided it is best to set this to On as it adds no overhead and gives you the flexibility to use it in the future.  </li></ul><p class="line867"><strong>Administrative User</strong> <ul><li>Reset the password for the admin account and record this password for safekeeping. </li></ul><p class="line867"><strong>Scheduling Tasks</strong> <p class="line874">When you create profiles you are given the option to schedule what time to run the task that processes the data for that profile. You should check the settings for each profile to be sure that the timing of your task makes sense in terms of when the log data will be available, how long it will take to process that data, and when you want the updated reports available to your users. <p class="line867"><strong>Log Management</strong> <p class="line874">Urchin includes a log tracking module which keeps track of how far into each log it has processed so far. Thus, log file rotation does not necessarily need to be coordinated with Urchin operation. However, Urchin does provide automation for log rotation or removal under the Advanced Settings for each Log Source.  Read <a href="https://secure.urchin.com/helpwiki/en/Log_Management.html">Log Management</a> for more information. </div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Setup_Recommendations.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Using_External_Authentication_or_Authentication_Bypass.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Using External Authentication or Authentication Bypass</strong> <p class="line867"><strong>Overview</strong> <p class="line874">By default, Urchin authentication is performed when the Urchin Session Controller (session.cgi) calls the "auth" binary located in the "bin" directory of the Urchin Installation. This binary queries the configuration database and compares the username and password provided with that stored in the configuration. An exit code signifying either success or failure is returned to the Session Controller. The location of the authentication binary can be controlled with a configuration change. This modular design allows administrators to call an external authentication program instead of the default "auth" binary. <p class="line867"><img alt="Using_External_Authentication" src="https://secure.urchin.com/helpwiki/images/Using_External_Authentication.jpg" title="Using_External_Authentication" /> <p class="line874">Shown in the above diagram, this external authentication program could perform any desired authentication function including "LDAP" and other database calls. As long as the program is executable by the same user that "urchinwebd" (Urchin's Apache web server) is running as and conforms to the input/output requirements, Urchin can be easily modified to use a different form of authentication. <p class="line867"><strong>Specifying the Authentication Routine</strong> <p class="line874">To configure which authentication routine the Session Controller calls, edit the "etc/session.conf" file located in the Urchin Installation. This file contains configurable parameters that control the behavior of the Session Controller including which routine to call for authentication. Edit the line: <pre>    AUTHENTICATION: ../bin/auth 
+</pre><p class="line874">Replace, the "../bin/auth" with the path to your authentication routine. Be sure that the authentication routine is executable by the same user that "urchinwebd" is running as. <p class="line867"><strong>Input/Output Requirements</strong> <p class="line874">When the Session Controller calls the authentication routine, it will pass the username, password, and the remote IP address of the user as command line arguments, such that: <pre>    argv[1] = username
+    argv[2] = password
+    argv[3] = remote_addr 
+</pre><p class="line874">The external authentication routine could choose to ignore any or all of these parameters. But typical authentication routines will at least look at the first two. After performing any or all desired authentication, the routine should exit with a code equal to zero for success and a minus one for failure. <pre>    Exit Code
+     0 = successful authentication
+    -1 = authentication failed 
+</pre><p class="line874">The above authentication interface allows administrators to easily customize their own routines for validating user logins. <p class="line867"><strong>Bypassing Authentication</strong> <p class="line874">Using the above techniques, the Urchin authentication can be purposefully bypassed. In the case where a hosting provider wants to use the entire Urchin System for controlling users and groups, but they have already authenticated the user by the time the user arrives at Urchin, bypassing the authentication is an option to avoid a double login. As long as the host can guarantee that access to the Urchin System is controlled from an authenticating portal and that the username cannot be tampered with, the host can bypass authentication using the following technique. <p class="line874">To bypass the authentication create a dummy external authentication routine that always exits with a zero. For example, perl code might look like: <pre>    #!/usr/bin/perl
+    exit(0); 
+</pre><p class="line874">Point the Session Controller at this dummy authentication routine by editing the "etc/session.conf" file to point to this dummy routine as described above. Next, simply provide a link that looks like: <pre>    http://hostname:9999/session.cgi?action=login&amp;user=paul 
+</pre><p class="line874">Modify the above link to point to your actual hostname and port, and modify the user to the point to the desired username or variable. The dummy authentication routine will automatically approve this login. Please use this method with care to avoid security problems. <p class="line867"><strong>Note for Windows Users</strong> <p class="line874">In order to provide similiar functionality in Windows environments where Perl is not installed, a simple noauth.exe binary is available from the Helper Scripts area of the Urchin Support web site. This binary is merely a "no-op" - it simply returns a successful status when called. Be sure you understand the security implications of this before implementing this solution. </div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Using_External_Authentication_or_Authentication_Bypass.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

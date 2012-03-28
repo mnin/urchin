@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Overview_of_Urchin_Integration_Capabilities.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Overview of Urchin Integration Capabilities</strong> <p class="line867"><strong>Introduction</strong> <p class="line874">The Urchin front end is built on modular components and industry standard techniques to allow administrators to integrate Urchin report access into their existing or planned infrastructures. As part of our commitment to hosting providers and data centers, we test and support three integration points which should allow Urchin to integrate into most architectures. <p class="line874">The following diagram illustrates the primary components of the Urchin front-end and the three integration points. Both administrative and reporting functions are web-based and delivered from this system. <p class="line867"><img alt="Overview_of_Urchin_Integration" src="https://secure.urchin.com/helpwiki/images/Overview_of_Urchin_Integration.jpg" title="Overview_of_Urchin_Integration" /> <p class="line874">All content from the Urchin system is delivered via an Apache server that is installed as "urchinwebd" shown in the left side of the diagram. Requests are handled by the Apache server and passed using the CGI interface to a Session Controller application (session.cgi). The Session Controller performs Authentication and depending on the action passes the request on to either the Admin Engine (admin) or the Urchin Report Engine (urchin.cgi). Content with embedded session identifiers is passed back to the user. <p class="line874">The three points labeled "A", "B", and "C" are the three integration points mentioned previously. Point "A" allows the administrator to either replace or bypass the Urchin web server. Point "B" allows for external or no authentication. And point "C" allows for direct access to the reporting via a wrapper or portal. <p class="line867"><strong>Point A: Web Server Integration</strong> <p class="line874">Many hosting companies will already have a running web server or have a specially compiled web server that runs within their systems. As long as a web server is providing basic CGI operations, you may replace the Apache binary or use an existing web server to provide access to Urchin. <p class="line874">This integration point keeps the rest of the Urchin system intact. The Urchin interface will be used for administration, authentication, and report delivery. Users and Profiles will need to be configured within the Urchin system so as a user enters the system, Urchin will know which reports to allow them access to. <p class="line867"><strong>Point B: External Authentication or Authentication Bypass</strong> <p class="line874">Complex hosting environments will often have existing centralized controls for providing user authentication such as LDAP. With a simple configuration change, the Session Controller can call an authentication routine of your choice. A simple interface is provided for returning successful or failed logins. Existing authentication routines can be easily wrapped to provide the correct framework for both systems. Using integration at point "B", it also possible to bypass the authentication with a dummy routine and link directly to the landing page. <p class="line862">By using integration at point "B", the overall Urchin system remains intact with the exception that authentication is performed by an external application. Users and Profiles will need to be configured within the Urchin system so as a user enters the system, Urchin will know which reports to allow them access to. For complete details on the interface for using external authentication and an example of how to bypass authentication, please see <a href="https://secure.urchin.com/helpwiki/en/Using_External_Authentication_or_Authentication_Bypass.html">Using External Authentication or Authentication Bypass</a>. <p class="line867"><strong>Point C: Link Directly to Reports from Wrapper or Portal</strong> <p class="line874">Many of our customers have a one-to-one relation between a customer and a website, and wish to link to reporting for a particular website directly from the website's administration area. This area is typically already authenticated. Point C integration makes it easy to link directly to reporting either via a wrapper script or from an existing portal. In this scenario, the Urchin authentication and initial report selection screen are bypassed as users are taken directly to the Urchin reports. <p class="line874">By using integration at point "C", it is assumed that the service provider has control over who gets to view what, either by a one-to-one relation or by an existing configuration database. Urchin will still need to be configured for generating Profile reports, but this can be automated within or outside of the administrative interface. Urchin provides the capability to link directly to an Urchin report with a specific URL when the "Direct Report Linking" is enabled in the administration interface. Access to the Urchin report is controlled via a ".report.conf" file embedded in the directory specified by this URL. <p class="line874">For a complex portal integration, the Urchin reporting engine will propagate session and other portal variables in order to keep the session operating.  </div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Overview_of_Urchin_Integration_Capabilities.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Dimensions_v1.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>Dimensions v1</strong> <p class="line867"><a href="https://secure.urchin.com/helpwiki/en/Data_API.html">API Table of Contents</a> <div><table><tbody><tr>  <td><p class="line891"><strong>idx</strong> </td>
+  <td><p class="line862">  <strong>Name</strong> </td>
+  <td><p class="line891"><strong>Description</strong> </td>
+</tr>
+<tr>  <td><p class="line862">10 </td>
+  <td><p class="line862">sc_status </td>
+  <td><p class="line862">Return status code from server. </td>
+</tr>
+<tr>  <td><p class="line862">13 </td>
+  <td><p class="line862">cs_useragent </td>
+  <td><p class="line862">Browser user-agent information. </td>
+</tr>
+<tr>  <td><p class="line862">77 </td>
+  <td><p class="line862">referral_host </td>
+  <td><p class="line862">Referral complete hostname. </td>
+</tr>
+<tr>  <td><p class="line862">82 </td>
+  <td><p class="line862">referral_stem </td>
+  <td><p class="line862">Referral URI stem without query info. </td>
+</tr>
+<tr>  <td><p class="line862">98 </td>
+  <td><p class="line862">request_stem </td>
+  <td><p class="line862">Request URI without query. </td>
+</tr>
+<tr>  <td><p class="line862">99 </td>
+  <td><p class="line862">request_query </td>
+  <td><p class="line862">Request query information (e.g., after ?) </td>
+</tr>
+<tr>  <td><p class="line862">104 </td>
+  <td><p class="line862">request_origfilepath </td>
+  <td><p class="line862">Request original uri stem if UTM. </td>
+</tr>
+<tr>  <td><p class="line862">105 </td>
+  <td><p class="line862">request_origmime </td>
+  <td><p class="line862">Request original mime type if UTM. </td>
+</tr>
+<tr>  <td><p class="line862">108 </td>
+  <td><p class="line862">browser_base </td>
+  <td><p class="line862">Browser name (e.g., Netscape) </td>
+</tr>
+<tr>  <td><p class="line862">109 </td>
+  <td><p class="line862">browser_version </td>
+  <td><p class="line862">Browser version </td>
+</tr>
+<tr>  <td><p class="line862">110 </td>
+  <td><p class="line862">platform_base </td>
+  <td><p class="line862">Platform (e.g., Windows). </td>
+</tr>
+<tr>  <td><p class="line862">111 </td>
+  <td><p class="line862">platform_version </td>
+  <td><p class="line862">Platform version. </td>
+</tr>
+<tr>  <td><p class="line862">112 </td>
+  <td><p class="line862">domain_primary </td>
+  <td><p class="line862">First level domain. (e.g. com). </td>
+</tr>
+<tr>  <td><p class="line862">113 </td>
+  <td><p class="line862">domain_complete </td>
+  <td><p class="line862">Complete domain. (e.g. urchin.com). </td>
+</tr>
+<tr>  <td><p class="line862">137 </td>
+  <td><p class="line862">utm_campaign </td>
+  <td><p class="line862">UTM campaign name. </td>
+</tr>
+<tr>  <td><p class="line862">138 </td>
+  <td><p class="line862">utm_medium </td>
+  <td><p class="line862">The utm_medium helps to qualify the source (cpc|cpm|link|email|organic) </td>
+</tr>
+<tr>  <td><p class="line862">139 </td>
+  <td><p class="line862">utm_source </td>
+  <td><p class="line862">Every referral to a web site has an origin, or source. Examples of sources are the Google search engine, the AOL search engine, the name of a newsletter, or the name of a referring web site. </td>
+</tr>
+<tr>  <td><p class="line862">140 </td>
+  <td><p class="line862">utm_term </td>
+  <td><p class="line862">The utm_term or keyword is the word or phrase that a user types into a search engine </td>
+</tr>
+<tr>  <td><p class="line862">141 </td>
+  <td><p class="line862">utm_content </td>
+  <td><p class="line862">The utm_content dimension describes the version of an advertisement on which a visitor clicked. </td>
+</tr>
+<tr>  <td><p class="line862">126 </td>
+  <td><p class="line862">utm_screen_resolution </td>
+  <td><p class="line862">Screen resolution (e.g., 800x600). </td>
+</tr>
+<tr>  <td><p class="line862">129 </td>
+  <td><p class="line862">utm_screen_colors </td>
+  <td><p class="line862">Screen color bit depth. </td>
+</tr>
+<tr>  <td><p class="line862">130 </td>
+  <td><p class="line862">utm_language </td>
+  <td><p class="line862">Browser language code setting. </td>
+</tr>
+<tr>  <td><p class="line862">131 </td>
+  <td><p class="line862">utm_java_enabled </td>
+  <td><p class="line862">yes|no if java is enabled. </td>
+</tr>
+<tr>  <td><p class="line862">134 </td>
+  <td><p class="line862">utm_js_version </td>
+  <td><p class="line862">Javascript version info. </td>
+</tr>
+<tr>  <td><p class="line862">150 </td>
+  <td><p class="line862">utm_campaign_hour </td>
+  <td><p class="line862">Hour of the day when that compaign hit occured. </td>
+</tr>
+<tr>  <td><p class="line862">151 </td>
+  <td><p class="line862">utm_campaign_goal </td>
+  <td><p class="line862">UTM compaign goals met. </td>
+</tr>
+<tr>  <td><p class="line862">152 </td>
+  <td><p class="line862">log_source_name </td>
+  <td><p class="line862">Name of the log source </td>
+</tr>
+<tr>  <td><p class="line862">156 </td>
+  <td><p class="line862">robot_agent </td>
+  <td><p class="line862">Robot (crawlers) requests. </td>
+</tr>
+<tr>  <td><p class="line862">157 </td>
+  <td><p class="line862">client_ipaddress </td>
+  <td><p class="line862">Client IP Address. </td>
+</tr>
+<tr>  <td><p class="line862">159 </td>
+  <td><p class="line862">username </td>
+  <td><p class="line862">Client username (if any). </td>
+</tr>
+<tr>  <td><p class="line862">160 </td>
+  <td><p class="line862">geo_country </td>
+  <td><p class="line862">Visitor Country </td>
+</tr>
+<tr>  <td><p class="line862">161 </td>
+  <td><p class="line862">geo_region </td>
+  <td><p class="line862">Visitor Region </td>
+</tr>
+<tr>  <td><p class="line862">162 </td>
+  <td><p class="line862">geo_city </td>
+  <td><p class="line862">Visitor City </td>
+</tr>
+<tr>  <td><p class="line862">163 </td>
+  <td><p class="line862">geo_latitude </td>
+  <td><p class="line862">Visitor Latitude </td>
+</tr>
+<tr>  <td><p class="line862">164 </td>
+  <td><p class="line862">geo_longitude </td>
+  <td><p class="line862">Visitor Longitude </td>
+</tr>
+<tr>  <td><p class="line862">166 </td>
+  <td><p class="line862">geo_organization </td>
+  <td><p class="line862">Visitor Organization </td>
+</tr>
+<tr>  <td><p class="line862">167 </td>
+  <td><p class="line862">geo_connection_speed </td>
+  <td><p class="line862">Visitor Connection Speed </td>
+</tr>
+<tr>  <td><p class="line862">168 </td>
+  <td><p class="line862">utm_flash_version </td>
+  <td><p class="line862">Flash version info </td>
+</tr>
+<tr>  <td><p class="line862">169 </td>
+  <td><p class="line862">utm_page_title </td>
+  <td><p class="line862">UTM page title </td>
+</tr>
+<tr>  <td><p class="line862">170 </td>
+  <td><p class="line862">visitor_type </td>
+  <td><p class="line862">New vs Returning visitors </td>
+</tr>
+<tr>  <td><p class="line862">172 </td>
+  <td><p class="line862">user_defined_variable </td>
+  <td><p class="line862">User defined var extracted from utm_cookiev variable. </td>
+</tr>
+<tr>  <td><p class="line862">174 </td>
+  <td><p class="line862">ecommerce_affiliation </td>
+  <td><p class="line862">Affiliate marketing for e-commerce transaction. </td>
+</tr>
+<tr>  <td><p class="line862">178 </td>
+  <td><p class="line862">ecommerce_bill_city </td>
+  <td><p class="line862">Billing city for e-commernce transaction. </td>
+</tr>
+<tr>  <td><p class="line862">179 </td>
+  <td><p class="line862">ecommerce_bill_region </td>
+  <td><p class="line862">Billing region (state/province) for e-commernce transaction. </td>
+</tr>
+<tr>  <td><p class="line862">180 </td>
+  <td><p class="line862">ecommerce_bill_country </td>
+  <td><p class="line862">Billing country for e-commernce transaction. </td>
+</tr>
+<tr>  <td><p class="line862">181 </td>
+  <td><p class="line862">ecommerce_product_code </td>
+  <td><p class="line862">E-commerce product code. </td>
+</tr>
+<tr>  <td><p class="line862">182 </td>
+  <td><p class="line862">ecommerce_product_name </td>
+  <td><p class="line862">E-commerce product name. </td>
+</tr>
+<tr>  <td><p class="line862">183 </td>
+  <td><p class="line862">ecommerce_variation </td>
+  <td><p class="line862">E-commerce product variation. </td>
+</tr>
+<tr>  <td><p class="line862">186 </td>
+  <td><p class="line862">utm_request_hostname </td>
+  <td><p class="line862">Host name of the compaign hit. </td>
+</tr>
+<tr>  <td><p class="line862">187 </td>
+  <td><p class="line862">request_download </td>
+  <td><p class="line862">Download requests. </td>
+</tr>
+<tr>  <td><p class="line862">188 </td>
+  <td><p class="line862">request_form </td>
+  <td><p class="line862">Requested "posted form". </td>
+</tr>
+<tr>  <td><p class="line862">318 </td>
+  <td><p class="line862">transaction_id </td>
+  <td><p class="line862">E-commernce transaction id. </td>
+</tr>
+<tr>  <td><p class="line862">317 </td>
+  <td><p class="line862">visitor_id </td>
+  <td><p class="line862">Visitor ID </td>
+</tr>
+<tr>  <td><p class="line862">312 </td>
+  <td><p class="line862">totals </td>
+  <td><p class="line862">Totals aggregation of "total" table </td>
+</tr>
+<tr>  <td><p class="line862">314 </td>
+  <td><p class="line862">month </td>
+  <td><p class="line862">Monthly aggregation of "total" table </td>
+</tr>
+<tr>  <td><p class="line862">315 </td>
+  <td><p class="line862">day </td>
+  <td><p class="line862">Daily aggregation of "total" table </td>
+</tr>
+<tr>  <td><p class="line862">316 </td>
+  <td><p class="line862">hour </td>
+  <td><p class="line862">Hourly aggregation of "total" table </td>
+</tr>
+<tr>  <td><p class="line862">301 </td>
+  <td><p class="line862">clickthru_page_from </td>
+  <td><p class="line862">Click through (PA-&gt;PB): PA - page from (clickthru_page_from)  PB - page to (clickthru_page_to) </td>
+</tr>
+<tr>  <td><p class="line862">302 </td>
+  <td><p class="line862">clickthru_page_to </td>
+  <td><p class="line862">Click through (PA-&gt;PB): PA - page from (clickthru_page_from)  PB - page to (clickthru_page_to) </td>
+</tr>
+<tr>  <td><p class="line862">305 </td>
+  <td><p class="line862">initial_path_page1 </td>
+  <td><p class="line862">Initial path (P1-&gt;P2-&gt;P3): P1 - inintial_path_page1, P2 - inintial_path_page2, P3 - inintial_path_page3 </td>
+</tr>
+<tr>  <td><p class="line862">306 </td>
+  <td><p class="line862">initial_path_page2 </td>
+  <td><p class="line862">Initial path (P1-&gt;P2-&gt;P3): P1 - inintial_path_page1, P2 - inintial_path_page2, P3 - inintial_path_page3 </td>
+</tr>
+<tr>  <td><p class="line862">307 </td>
+  <td><p class="line862">initial_path_page3 </td>
+  <td><p class="line862">Initial path (P1-&gt;P2-&gt;P3): P1 - inintial_path_page1, P2 - inintial_path_page2, P3 - inintial_path_page3 </td>
+</tr>
+<tr>  <td><p class="line862">303 </td>
+  <td><p class="line862">goal_clickthru_entrance_page </td>
+  <td><p class="line862">Goal Click through : PG - Entrance Page (goal_clickthru_entrance_page), CD - Abandonment Page (goal_clickthru_exit_page) </td>
+</tr>
+<tr>  <td><p class="line862">304 </td>
+  <td><p class="line862">goal_clickthru_exit_page </td>
+  <td><p class="line862">Goal Click through : PG - Entrance Page (goal_clickthru_entrance_page), CD - Abandonment Page (goal_clickthru_exit_page) </td>
+</tr>
+<tr>  <td><p class="line862">308 </td>
+  <td><p class="line862">rev_goal_path </td>
+  <td><p class="line862">Reverse Goal Path (R3-&gt;R2-&gt;R1-&gt;GX): GX - Goal path (rev_goal_path) </td>
+</tr>
+<tr>  <td><p class="line862">309 </td>
+  <td><p class="line862">rev_goal_path_page1 </td>
+  <td><p class="line862">Reverse Goal Path (R3-&gt;R2-&gt;R1-&gt;GX): R1 - page 1 (rev_goal_path_page1) </td>
+</tr>
+<tr>  <td><p class="line862">310 </td>
+  <td><p class="line862">rev_goal_path_page2 </td>
+  <td><p class="line862">Reverse Goal Path (R3-&gt;R2-&gt;R1-&gt;GX): R2 - page 2 (rev_goal_path_page2) </td>
+</tr>
+<tr>  <td><p class="line862">311 </td>
+  <td><p class="line862">rev_goal_path_page3 </td>
+  <td><p class="line862">Reverse Goal Path (R3-&gt;R2-&gt;R1-&gt;GX): R3 - page 3 (rev_goal_path_page3) </td>
+</tr>
+</tbody></table></div></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/Dimensions_v1.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/udb-sanitizer%253A_Database_Maintenance.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<title>Urchin Help Center</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+<script src="https://www.google.com/jsapi?key=ABQIAAAAvPzYLgPpAOeJ0xjAg6pKFhRGcY8VlLy7Y2P8U9wt5aDaQy0DWRS8RVFCHazNhZTg2y6EtkRl4utk9A" type="text/javascript"></script>
+<script src="https://secure.urchin.com/helpwiki/assets/helpwiki.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="https://secure.urchin.com/helpwiki/assets/common.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="https://secure.urchin.com/helpwiki/assets/screen.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="https://secure.urchin.com/helpwiki/assets/print.css"> 
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="https://secure.urchin.com/helpwiki/assets/projection.css"> 
+ 
+<!-- css only for MS IE6/IE7 browsers --> 
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../assets/msie.css">
+<![endif]--> 
+</head><body>
+
+<table id="top_location_line" width="100%">
+  <tr>
+    <td><a href="http://www.urchin.com/"><img style="border:0;width:135px;height:41px" src="https://secure.urchin.com/helpwiki/images/google_sm.gif" alt="Urchin Home"></a></td>
+    <td style="width:100%">
+      <span id="top_line">
+        <span id="top_title">Help Center</span>
+        <span id="searchcontrol">&nbsp; Loadding search control...</span>
+        <span id="languagecontrol"><script type="text/javascript">chooser.create()</script></span>
+      </span><br />
+     <span id="u_sunset"><b>Urchin WebAnalytics Software is discontinued. Sales will end on March 28th, 2012</b></span>
+    </td>
+  </tr>
+</table>
+<ul id="navibar">
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Help_Center.html">Help Center</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Installation_and_Upgrades.html">Installation and Upgrades</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Initial_Configuration.html">Initial Configuration</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Overview.html">Administration Overview</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Tracking_Campaigns.html">Tracking Campaigns</a></li>
+  <li class="wikilink"><a href="https://secure.urchin.com/helpwiki/en/Ecommerce.html">Ecommerce</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/support_policies.html">Support Policies</a></li>
+  <li class="wikilink"><a href="http://www.google.com/urchin/eula.html">Urchin EULA</a></li>
+  <li class="wikilink"><a href="http://www.google.com/support/urchin45/">Urchin 4/5 Help Center</a></li>
+</ul>
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en">
+<p class="line867"><strong>udb-sanitizer: Database Maintenance Utility</strong> <p class="line867"><strong>Overview</strong>  <p class="line874">The Urchin Database Maintenance Utility, udb-sanitizer, provides a means for checking the Urchin 6 profile databases and performing various maintenance operations on these databases.  <p class="line874">The types of operations that udb-sanitizer can perform are:  <ul><li>Roll back databases to a previous saved backup state </li><li class="gap">Delete profile data for a day, multiple days, or an entire month  </li></ul><p class="line867"><strong>Usage</strong>  <p class="line874">udb-sanitizer is located in the util directory of the Urchin 6 distribution.  <p class="line874">Usage of the utility is as follows:  <pre>  udb-sanitizer [-h] (prints usage message and exits)
+
+  udb-sanitizer [-v] (prints version and exits)
+
+  udb-sanitizer -p profile [-d YYYYMM[DD]] -bfhprq] [-z [-e DD]] 
+</pre><p class="line874">where:  <pre>   -b  go directly to rollback option
+
+   -d  specifies year-month and optionally the day to operate on
+
+   -e  with z and d options, zero multiple days (range d-&gt;e) in same month
+
+   -f  force action to occur without confirmation
+
+   -h  print this help information
+
+   -p  specifies name of profile (required)
+
+   -a  specifies name of account
+
+   -r  go directly to remove option
+
+   -q  quiet mode, suppress output except for critical user confirmation
+
+   -z  go directly to zero-day option 
+
+</pre><p class="line867"><span class="u">Note</span>: When udb-sanitizer is called with options that do not completely describe what action to take,  it will display the usage text (equivalent to <tt>-h</tt> option).  You can cause an action to be performed without any user interaction by using a combination of options <tt>–f</tt> and <tt>-q</tt> in conjunction with applicable use of the <tt>-d</tt>, <tt>-b</tt>,  <tt>-r</tt>,  or <tt>-z</tt> options.  <p class="line867"><strong>Operation</strong>  <p class="line874">In normal operation, udb-sanitizer is invoked from a command shell with providing options applicable for planned type of operation.    <p class="line874">Actions associated with an available options presented above are:  <p class="line874">1. Data rollback (–r) <ul><li style="list-style-type:none">This options allows user to revert back to an already archived data for a profile. The user is presented with a list of ZIP archive backups to choose from and the contents of the selected archive file replaces the existing reporting database. The ZIP archives are named with the following convention "YYYYMM-backupv6-YYYYMMDDHHMMSS.zip", where the first YYYYMM refers to the month of data being backed up (e.g. 200803 refers to March 2008), and the YYYYMMDDHHMMSS portion is the timestamp of when the ZIP archive was created. This timestamp should be helpful in determining which ZIP archive you want to roll back to. </li></ul><p class="line874">2. Delete monthly data (-d) <ul><li style="list-style-type:none">All data for a particular profile for the specified month is removed. This option is useful for zeroing out the statistics for a month if the data is incorrect, e.g. the wrong filters were applied or the wrong logs were processed; or perhaps some of the advanced profile parameters were changed such as the click path depth or referral level and it is desirable to update that month's Urchin reporting data to reflect the change. This action can be performed without user interaction by invoking udb-sanitizer with the -f, -r and -q arguments.  </li></ul><p class="line867"><pre>udb-sanitizer -f –q -r -d 200309 -p mysite.com 
+</pre><p class="line874">3. Zero data for one or more days <ul><li style="list-style-type:none">This option allows data for selected range of days within one month to be zeroed out, thereby allowing Urchin log processing to be rerun for those days only (e.g. urchin -p profile -d YYYYMMDD). This action can be performed without user interaction to zero out a single day by invoking udb-sanitizer with the -f, –q, -z and -d arguments, e.g.  </li></ul><p class="line867"><pre>udb-sanitizer –f -q -z -d 20030907 -p mysite.com 
+</pre><ul><li style="list-style-type:none">and for multiple days by including the "-e" argument as well to specify an end date, e.g.  </li></ul><p class="line867"><pre>udb-sanitizer -f -z -d 20030907 -e 10 -p mysite.com 
+</pre><ul><li style="list-style-type:none">which will zero out data for September 7th through the 10th. Note that –e argument only expects the ending day. This is more efficient than invoking multiple instances of udb-sanitizer to zero out a single day at a time, as the database indexes and headers are only checked once. The index/header checking operation can require a noticeable amount of time on profiles with a lot of data.  </li></ul><p class="line874">4. If the profile is part of an account, then account name should be specified using the -a argument.   <p class="line867"><span class="u">Important</span>: Actions that delete daily or monthly data cannot be undone! The only recourse is to reprocess the webserver logs for that time period to repopulate the profile databases. Use these options with care. </div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer"></div>                                               
+<div id="copyright" style="text-align: center;">
+  <span>&copy;2011 Google</span>
+  <span> - <a href="http://www.google.com/urchin/index.html">Urchin Home</a></span>
+  <span> - <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a></span>
+  <span> - <a href="http://www.google.com/urchin/eula.html">Terms and Conditions</a></span>
+</div>
+<script type="text/javascript"><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript"><!--
+try {
+  var pageTracker = _gat._getTracker("UA-18001-5");
+  pageTracker._trackPageview();
+} catch(err) {}
+//-->
+</script>
+</body>
+<!-- Mirrored from secure.urchin.com/helpwiki/en/udb-sanitizer%253A_Database_Maintenance.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 28 Mar 2012 14:33:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>
